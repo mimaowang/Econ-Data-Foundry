@@ -9,8 +9,6 @@ Because every entry is anchored to a real published study, the catalog is more t
 
 The current catalog focuses on Chinese economic and social data, so its records mix Chinese official names with English guidance. The same engine can be retargeted to any country, market, or economics subfield—finance, labor, development, trade, environment, urban, health—without changing its core logic.
 
----
-
 ## How to use it with an AI agent
 
 This project is designed to be read and operated by an AI coding agent. The Markdown records, JSON indexes, and scripts are the agent's working material, not a manual interface for the user.
@@ -45,8 +43,6 @@ The agent will:
 
 You do not need to browse files, search tags, or read codebooks yourself. You ask; the agent reads the project for you.
 
----
-
 ## A 60-second example
 
 You open Claude Code or Codex and say:
@@ -64,8 +60,6 @@ The agent reads `DATASET_INDEX.md`, `datasets/cfps.md`, and `datasets/charls.md`
 - **Caveat:** Fine geography and sensitive variables require a separate application.
 
 In under a minute you have a justified choice, an acquisition recipe, and an honest list of limitations—without opening a single file yourself.
-
----
 
 ## Where the data comes from
 
@@ -85,8 +79,6 @@ Every canonical record answers:
 - **Joins:** Which other datasets can it link to, using what keys, with what risk?
 - **Acquisition:** Direct URL, requirements, ordered steps, cost, deliverable, and caveats.
 
----
-
 ## Why this works for long-running agents
 
 The project is designed so that an agent can run for many iterations without losing sight of the goal or inflating quality:
@@ -97,8 +89,6 @@ The project is designed so that an agent can run for many iterations without los
 - **Deterministic generated views.** `DATASET_INDEX.md`, `dist/`, `docs/`, and the quality card are rebuilt from canonical records, not hand-edited.
 - **Task queue with provenance.** `scripts/task_queue.py` ensures one agent owns one task at a time, records failures and retries, and prevents duplicate work.
 - **Blind benchmarks.** `benchmarks/idea-routing/` and `benchmarks/collection/` test whether the agent can actually match ideas to data and continue collecting without quality drift.
-
----
 
 ## Retarget to any country or field
 
@@ -113,8 +103,6 @@ To collect data for another country or economics subfield:
 5. Adapt the literature discovery portfolio. The default starts from economics Top 5, FT50, UTD24, ABS 3/4-star, and respected field journals, then layers in domain-specific outlets.
 6. Rebuild canonical records, aliases, benchmarks, and ledgers for the new scope.
 7. Run the full offline gate and a small canary of real collection tasks before a long `/loop`.
-
----
 
 ## Release gate
 
@@ -138,8 +126,6 @@ On macOS or Linux, replace backslashes with `/`.
 
 A non-zero exit means the knowledge base should not be treated as ready for unattended expansion.
 
----
-
 ## Repository map
 
 | Path | Role |
@@ -156,8 +142,6 @@ A non-zero exit means the knowledge base should not be treated as ready for unat
 | `docs/` | Generated static Idea Router for GitHub Pages |
 | `guides/adaptation.md` | How to retarget the engine to another country or domain |
 
----
-
 ## Data quality contract
 
 The primary measure is not the number of records. It is whether one record is sufficient to answer:
@@ -172,25 +156,17 @@ Statuses are deliberately conservative:
 - `candidate` — a discovery lead, not a recommendation.
 - `deprecated` — retained only to redirect to a successor.
 
----
-
 ## Automation safety
 
 Agents should read [`guides/operations.md`](guides/operations.md) and [`guides/usage.md`](guides/usage.md) before editing. Canonical Markdown records are the source of truth; generated files must be rebuilt, not hand-edited. One agent should claim one task at a time, preserve source identity, and leave clear provenance.
-
----
 
 ## Contributing
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md), [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md), and [`SECURITY.md`](SECURITY.md). Dataset corrections are especially welcome when they improve research matching or turn a vague access statement into a concrete, verifiable route.
 
----
-
 ## License
 
 The software and automation are licensed under the Apache License 2.0. Original catalog content is intended to be shared under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), while third-party dataset terms remain with their respective providers. See [`LICENSE`](LICENSE) and [`LICENSE-CC-BY-4.0.md`](LICENSE-CC-BY-4.0.md).
-
----
 
 ## Citation
 
