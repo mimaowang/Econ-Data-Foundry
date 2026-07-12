@@ -1,0 +1,257 @@
+version: 2
+purpose: Blind-development prompts for testing idea routing, rapid retrieval, uncertainty handling, and multi-dataset reasoning.
+  This file intentionally contains no expected datasets or scoring answers.
+cases:
+- id: talent-policy-education-signals
+  family: household-policy-mechanism
+  difficulty: hard
+  prompt: Do local talent introduction policies influence parents' subjective judgments of their children's educational returns
+    by changing the high educational return signals observed in ordinary families, and further alter family educational expectations,
+    educational investment, tutoring, educational savings, and parental academic participation?
+  variants:
+    oral: I want to see if ordinary parents feel that university is more worthwhile when a city starts competing for talent,
+      so they are more willing to enroll their children in classes, save money for education, and focus more on their studies.
+      What data can be used to do this?
+    incomplete: Will local talent policies make parents pay more attention to education?
+- id: hospital-expansion-family-risk
+  family: household-policy-mechanism
+  difficulty: hard
+  prompt: Does expanding county hospitals reduce families' concerns about major illness expenses and change education savings,
+    entrepreneurial risk-taking, and labor supply for adult children? It is necessary to distinguish between healthcare supply,
+    subjective risk, and household economic outcomes.
+  variants:
+    oral: After the county hospital became stronger, was the family less afraid of getting sick? Would educational savings
+      and entrepreneurial decisions also change?
+    incomplete: Will hospital expansion change family behavior?
+- id: land-transparency-fertility
+  family: urban-household-multi-dataset
+  difficulty: hard
+  prompt: Does transparency in the land transfer system affect young families' birth plans, down payment savings, and investment
+    in children's education through housing prices and housing expectations? There is a need for urban policy shocks, land
+    transactions, family outcomes, and possible housing channels.
+  variants:
+    oral: After land auctions become more regulated, will there be a chain between housing and investment in childbirth and
+      education?
+    incomplete: Will the land market affect fertility?
+- id: air-quality-skilled-migration
+  family: migration-environment
+  difficulty: medium
+  prompt: After air quality information is disclosed, will the highly educated floating population choose their new city of
+    residence faster than the low-educated floating population? Please distinguish between short-term pollution shocks, long-term
+    exposure, migration flows, and individual-level migration choices.
+  variants:
+    oral: When the air quality worsens, do people with higher education move out more easily?
+    incomplete: Does air pollution affect population movement?
+- id: teacher-rotation-tutoring
+  family: education-household
+  difficulty: hard
+  prompt: Does the county-level teacher rotation policy change family tutoring spending, parents' academic participation,
+    and expectations for their children's education, and does this effect reversely affect families with different incomes?
+  variants:
+    oral: After teachers rotate through schools, do parents enroll in fewer classes, or become more anxious and willing to
+      spend money?
+    incomplete: Will teacher rotation affect family education?
+- id: rural-ecommerce-education-path
+  family: rural-household-labor
+  difficulty: hard
+  prompt: Does the entry of rural e-commerce or livestreaming industries change parents' perceptions of the different returns
+    of regular high school, vocational education, and migrant work, and influence their children's educational choices? It
+    is necessary to identify industry entry, rather than just focusing on urban-rural correlation.
+  variants:
+    oral: After the village started doing e-commerce, would parents think their children could earn money without attending
+      university, and that their educational choices would change?
+    incomplete: Will rural e-commerce affect children's schooling?
+- id: pension-intergenerational-transfer
+  family: aging-household
+  difficulty: medium
+  prompt: Does the arrival of the new rural pension insurance change the arrangements of elderly parents for cohabitation,
+    money transfers, marriage, and bride price arrangements for their children by reducing the expectation of "raising children
+    for old age"? Elderly outcomes, family relationships, and policies are needed to be implemented in phases.
+  variants:
+    oral: Now that the elderly have a pension, does that mean they no longer rely so much on their sons for retirement? Will
+      family transfers and marriage arrangements change?
+    incomplete: Will pensions change intergenerational relationships?
+- id: minimum-wage-household-balance-sheet
+  family: labor-household-finance
+  difficulty: hard
+  prompt: Does the minimum wage increase make low-income families more willing to borrow and spend, or does rising employment
+    risk increase precautionary savings? It is necessary to simultaneously observe labor income, debt, consumption, and regional
+    policy timelines.
+  variants:
+    oral: After the minimum wage rises, will poorer families be more willing to spend money and borrow money, or will they
+      be more afraid of losing their jobs?
+    incomplete: Will the minimum wage affect household savings?
+- id: high-speed-rail-elder-care
+  family: migration-aging
+  difficulty: hard
+  prompt: Does the opening of high-speed rail make it easier for adult children to work away from home, while still maintaining
+    the time and financial support for elderly parents? Traffic impacts, family members' geographic locations, migration,
+    and care outcomes are required.
+  variants:
+    oral: After the high-speed rail opens, will it be more convenient for children to work in other cities, but they can still
+      come back to care for their parents?
+    incomplete: Will improved transportation affect retirement?
+- id: patent-fast-track-nonlisted-firms
+  family: firm-innovation
+  difficulty: hard
+  prompt: Does the expedited patent examination policy only increase the number of patent applications, or does it also change
+    the true productivity, export capacity, and quality of innovation of non-listed manufacturing companies? It is necessary
+    to distinguish between listed and unlisted companies and handle the company name connections.
+  variants:
+    oral: With patent examination speeding up, have companies just applied for more patents, or have productivity and exports
+      truly improved?
+    incomplete: Will patent policy boost corporate innovation?
+- id: pollution-enforcement-skills
+  family: firm-environment-labor
+  difficulty: hard
+  prompt: Does the digitalization of environmental enforcement change the skill structure of polluting enterprises, not just
+    emissions and productivity? Please explain the potential gaps between existing enterprise emissions data, industrial enterprise
+    data, and workforce skill variables.
+  variants:
+    oral: With more digital environmental supervision, will polluting companies hire more skilled workers?
+    incomplete: Will environmental supervision affect enterprise employment?
+- id: heat-cognition-care
+  family: aging-environment
+  difficulty: hard
+  prompt: Does extreme heat accelerate cognitive decline among middle-aged and elderly people, and affect the labor supply
+    for adult children through family care needs? High-frequency meteorological exposure, personal cognitive tracking, and
+    family care outcomes are needed.
+  variants:
+    oral: As the weather gets hotter, will it worsen the elderly's perception and cause their children to work less to care
+      for them?
+    incomplete: Will high temperatures affect the health of the elderly?
+- id: sex-ratio-daughter-investment
+  family: demography-household
+  difficulty: hard
+  prompt: Does changes in the gender ratio in the marriage market affect education investment, housing savings, and resource
+    allocation for marriage for daughters in families? It is necessary to distinguish regional sex ratios, household gender
+    structures, and different age cohorts.
+  variants:
+    oral: If there are more boys than girls in a place, will families with daughters be more willing to spend money on education
+      and housing?
+    incomplete: Will the gender ratio affect family education?
+- id: local-debt-public-services
+  family: public-finance-household
+  difficulty: hard
+  prompt: Does local government debt pressure affect family migration, educational choices, and subjective welfare through
+    changes in school, healthcare, and public service spending? Regional fiscal panels are needed with micro-household results
+    and to indicate whether debt data is included in the current knowledge base.
+  variants:
+    oral: With high local government debt, will schools and hospitals deteriorate or cause families to move away or change
+      children's education?
+    incomplete: Will local government debt affect families?
+- id: broadband-trust-survey
+  family: social-attitudes
+  difficulty: medium
+  prompt: Does broadband penetration affect adults' trust in government, social fairness, and subjective class, and does it
+    allow the use of duplicate cross-sections without requiring tracking of the same person?
+  variants:
+    oral: After people can access the internet at home, will people trust the government more, or will they feel it's even
+      more unfair?
+    incomplete: Will the internet affect social attitudes?
+- id: trade-input-innovation
+  family: firm-trade-innovation
+  difficulty: hard
+  prompt: How do imported intermediate goods affect innovation and productivity in manufacturing enterprises? Enterprise–product–origin
+    country transactions, industrial enterprise production results, patent innovations, and explanations of the company name
+    or code matching risks.
+  variants:
+    oral: After importing more components, will companies be more innovative and more efficient?
+    incomplete: Will imports boost corporate innovation?
+- id: rural-land-productivity
+  family: rural-household-agriculture
+  difficulty: hard
+  prompt: How does the reform of rural land lease rights affect farmers' land allocation and crop division productivity? A
+    farmer-crop panel is needed, rather than just looking at total rural household income.
+  variants:
+    oral: After land can be rented out more freely, will farmers reallocate their land, and will the efficiency of growing
+      different crops change?
+    incomplete: Will land reform improve rural productivity?
+- id: nutrition-hypertension
+  family: health-nutrition
+  difficulty: medium
+  prompt: How have changes in dietary structure since 1989 affected BMI and hypertension? Long-term diets, physical measurements,
+    health outcomes, and early provincial coverage restrictions are needed.
+  variants:
+    oral: As Chinese people's eating habits change, do their weight and high blood pressure change as well?
+    incomplete: Does diet affect health?
+- id: historical-income-inequality
+  family: income-labor
+  difficulty: medium
+  prompt: How did the income inequality and wage structure change between urban and rural areas in China from 1988 to 2018?
+    It does not require tracking the same family, but requires historical span and comparability between urban and rural or
+    migrant populations.
+  variants:
+    oral: I want to see how income gaps change among different groups after the reform and opening up, without needing to
+      track the same family.
+    incomplete: How has China's income gap changed?
+- id: firm-regulation-productivity
+  family: firm-environment
+  difficulty: medium
+  prompt: How do water environment regulations affect TFP and pollution emissions in manufacturing enterprises? Please clarify
+    that corporate emissions and urban air pollution exposure are not the same concept.
+  variants:
+    oral: After water management, did the factory discharge less waste, but was productivity affected?
+    incomplete: Will environmental protection affect manufacturing?
+- id: pollution-migration
+  family: environment-migration
+  difficulty: medium
+  prompt: How did long-term PM2.5 changes from 1995 to 2010 affect county-level population migration? Long-term nationwide
+    continuous exposure and census migration information are needed, along with explanations of why monitoring station data
+    may be insufficient.
+  variants:
+    oral: From the 1990s until around 2010, will long-term air pollution cause some counties to move out?
+    incomplete: Will pollution affect migration?
+- id: unclear-air-youth
+  family: clarification
+  difficulty: hard
+  prompt: People online say that better air quality can keep young people. I want to study this explanation, but I haven't
+    decided whether to move short-term, long-term, or personal health and employment choices.
+  variants:
+    oral: If the air is better, will young people stop leaving?
+    incomplete: What does air have to do with young people?
+- id: no-current-digital-gig-data
+  family: knowledge-gap
+  difficulty: hard
+  prompt: Do food delivery platform algorithms change the working hours, health, and family care of flexible workers? If the
+    current knowledge base lacks sufficient platform labor microdata, clearly identify gaps and the closest alternatives,
+    rather than treating general household surveys as platform data.
+  variants:
+    oral: Will the delivery platform's algorithm make riders work longer and affect their ability to care for their families?
+    incomplete: Will platform algorithms affect labor?
+- id: free-only-firm-trade
+  family: access-constraint
+  difficulty: hard
+  prompt: I can only use free, publicly available data to study the impact of Chinese manufacturing imports of intermediates
+    on enterprise productivity and innovation. Please explain what existing knowledge bases can and cannot do, and which key
+    variables will be lost due to missing access conditions.
+  variants:
+    oral: I don't have access to the school database—can I still study imported intermediate goods and enterprise innovation
+      for free?
+    incomplete: Is there free business trade data?
+- id: future-policy-no-outcome
+  family: temporal-abstention
+  difficulty: hard
+  prompt: I would like to assess the impact of the newly introduced local talent policy in 2026 on family education investment
+    in 2026-2027. If you only use the current knowledge base, should you directly recommend data and wait for future rounds,
+    or clearly state that it cannot be verified at present?
+  variants:
+    oral: Will the policies just introduced this year affect family education in the next two years, and can they be implemented
+      now?
+    incomplete: Can the effects of the new policy be studied immediately?
+- id: aging-biomarkers-retirement
+  family: aging-health
+  difficulty: medium
+  prompt: Studying the impact of retirement on cognition and objective health indicators among people over 45 requires blood
+    samples or physical measurements, and it is important to note that the survey rounds are not strictly annual.
+  variants:
+    oral: Will the elderly's cognition and physical indicators change after retirement? Preferably with a blood sample.
+    incomplete: Will retirement affect health?
+- id: household-balance-sheet
+  family: household-finance
+  difficulty: medium
+  prompt: It studies how household housing leverage affects consumption, requiring property ownership, mortgages, financial
+    assets, and household consumption, and compares balance sheet depth with the typical household panel.
+  variants:
+    oral: Will a high mortgage make families spend less? I want property, debt, and financial assets.
+    incomplete: Will housing affect consumption?

@@ -1,0 +1,381 @@
+{
+  "graph_schema_version": 1,
+  "nodes": [
+    {
+      "id": "asif",
+      "name": "Annual Survey of Industrial Firms (ASIF; China Industrial Enterprise Database)",
+      "status": "grounding"
+    },
+    {
+      "id": "cfps",
+      "name": "China Family Panel Studies (CFPS)",
+      "status": "ready"
+    },
+    {
+      "id": "cgss",
+      "name": "China General Social Survey (CGSS)",
+      "status": "ready"
+    },
+    {
+      "id": "charls",
+      "name": "China Health and Retirement Longitudinal Study (CHARLS)",
+      "status": "ready"
+    },
+    {
+      "id": "chfs",
+      "name": "China Household Finance Survey (CHFS)",
+      "status": "ready"
+    },
+    {
+      "id": "china-air-quality-monitoring",
+      "name": "China National Ambient Air Quality Monitoring Data (CNEMC/MEE)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-census",
+      "name": "China Census (Population Census/National 1% Population Sample Survey)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-customs",
+      "name": "China Customs Trade Statistics (CCTS)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-firm-pollution",
+      "name": "Environmental Survey of Industrial Firms",
+      "status": "grounding"
+    },
+    {
+      "id": "china-io-table",
+      "name": "China Input-Output Tables",
+      "status": "ready"
+    },
+    {
+      "id": "china-land-transaction",
+      "name": "China Land Market Data (China Land Transaction Data/China Land Transfer Data)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-patents",
+      "name": "China Patent Data (CNIPA / SIPO)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-pollution",
+      "name": "China pollution data (old mixed entry, split)",
+      "status": "deprecated"
+    },
+    {
+      "id": "china-satellite-pm25",
+      "name": "Chinese satellite retrieval and fusion of PM2.5 data",
+      "status": "grounding"
+    },
+    {
+      "id": "china-stat-yearbook",
+      "name": "China Statistical Yearbook System (including statistical yearbooks at national/provincial/municipal/county levels)",
+      "status": "ready"
+    },
+    {
+      "id": "china-tax-survey",
+      "name": "Chinese Enterprise Tax Survey Microdata",
+      "status": "grounding"
+    },
+    {
+      "id": "chip",
+      "name": "Chinese Household Income Project (CHIP)",
+      "status": "ready"
+    },
+    {
+      "id": "chns",
+      "name": "China Health and Nutrition Survey (CHNS)",
+      "status": "ready"
+    },
+    {
+      "id": "cmds",
+      "name": "China Migrants Dynamic Survey (CMDS)",
+      "status": "ready"
+    },
+    {
+      "id": "csmar",
+      "name": "Guotai'an CSMAR China Economic and Financial Research Database",
+      "status": "ready"
+    },
+    {
+      "id": "era5-land",
+      "name": "ERA5-Land land surface reanalysis meteorological data (ERA5-Land)",
+      "status": "ready"
+    },
+    {
+      "id": "rfd",
+      "name": "National Rural Fixed Point Survey (NFP/NFPS)",
+      "status": "grounding"
+    },
+    {
+      "id": "rhs",
+      "name": "National Bureau of Statistics Rural Household Survey (RHS)",
+      "status": "grounding"
+    },
+    {
+      "id": "uhs",
+      "name": "China Urban Household Survey (UHS)",
+      "status": "grounding"
+    },
+    {
+      "id": "wind",
+      "name": "Wind financial terminal",
+      "status": "grounding"
+    }
+  ],
+  "edges": [
+    {
+      "source": "china-air-quality-monitoring",
+      "target": "china-census",
+      "relation": "complement",
+      "keys": [
+        "city code",
+        "Year"
+      ],
+      "method": "aggregate-level",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-air-quality-monitoring",
+      "target": "cmds",
+      "relation": "complement",
+      "keys": [
+        "city code",
+        "date/year"
+      ],
+      "method": "spatiotemporal",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-firm-pollution",
+      "target": "asif",
+      "relation": "complement",
+      "keys": [
+        "Company name",
+        "Legal person/organization code",
+        "address"
+      ],
+      "method": "deterministic-plus-fuzzy",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-firm-pollution",
+      "target": "china-customs",
+      "relation": "complement",
+      "keys": [
+        "Company name"
+      ],
+      "method": "fuzzy-name-match",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-firm-pollution",
+      "target": "china-patents",
+      "relation": "complement",
+      "keys": [
+        "Company name"
+      ],
+      "method": "fuzzy-name-match",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-satellite-pm25",
+      "target": "china-census",
+      "relation": "complement",
+      "keys": [
+        "County/city code",
+        "Year"
+      ],
+      "method": "spatial-aggregation",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-satellite-pm25",
+      "target": "cmds",
+      "relation": "complement",
+      "keys": [
+        "city code",
+        "Year"
+      ],
+      "method": "spatial-aggregation",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-tax-survey",
+      "target": "asif",
+      "relation": "complement",
+      "keys": [
+        "Business name or restricted business identity",
+        "Year",
+        "Industry/region auxiliary key"
+      ],
+      "method": "entity-resolution",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-tax-survey",
+      "target": "china-customs",
+      "relation": "complement",
+      "keys": [
+        "Business name or restricted business identity",
+        "Year"
+      ],
+      "method": "entity-resolution",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-tax-survey",
+      "target": "china-patents",
+      "relation": "complement",
+      "keys": [
+        "Business name or restricted business identity",
+        "Year"
+      ],
+      "method": "entity-resolution",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "chip",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "Province",
+        "Year"
+      ],
+      "method": "aggregate-level",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "chip",
+      "target": "uhs",
+      "relation": "related-sampling-frame",
+      "keys": [
+        "Year",
+        "town sample"
+      ],
+      "method": "harmonized-comparison",
+      "evidence_status": "official-description"
+    },
+    {
+      "source": "csmar",
+      "target": "china-land-transaction",
+      "relation": "complement",
+      "keys": [
+        "Full company name"
+      ],
+      "method": "fuzzy-name-match",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "csmar",
+      "target": "china-patents",
+      "relation": "complement",
+      "keys": [
+        "Full company name",
+        "Unified social credit code"
+      ],
+      "method": "deterministic-plus-fuzzy",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "csmar",
+      "target": "wind",
+      "relation": "substitute-and-benchmark",
+      "keys": [
+        "Stock code",
+        "Date"
+      ],
+      "method": "exact",
+      "evidence_status": "routinely-used"
+    },
+    {
+      "source": "era5-land",
+      "target": "cfps",
+      "relation": "complement",
+      "keys": [
+        "Restricted village/community/county level geographical information",
+        "Investigation date or investigation period"
+      ],
+      "method": "spatial-temporal-match",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "era5-land",
+      "target": "charls",
+      "relation": "complement",
+      "keys": [
+        "Restricted community/county geographic information",
+        "Investigation date or investigation period"
+      ],
+      "method": "spatial-temporal-match",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "era5-land",
+      "target": "china-satellite-pm25",
+      "relation": "complement",
+      "keys": [
+        "Grid/Administrative District",
+        "date/year"
+      ],
+      "method": "spatial-temporal-match",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "era5-land",
+      "target": "rfd",
+      "relation": "complement",
+      "keys": [
+        "Village/county/province spatial information",
+        "Year or farming season window"
+      ],
+      "method": "spatial-temporal-match",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "rfd",
+      "target": "china-census",
+      "relation": "benchmark",
+      "keys": [
+        "Provincial code",
+        "Year"
+      ],
+      "method": "aggregate-level",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "rfd",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "Provincial code",
+        "Year"
+      ],
+      "method": "exact",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "rhs",
+      "target": "rfd",
+      "relation": "often-confused-with",
+      "keys": [],
+      "method": "not-directly-joinable",
+      "evidence_status": "verified-distinct"
+    },
+    {
+      "source": "rhs",
+      "target": "uhs",
+      "relation": "predecessor-parallel",
+      "keys": [
+        "Year",
+        "Provincial code"
+      ],
+      "method": "harmonized-aggregate",
+      "evidence_status": "plausible"
+    }
+  ]
+}

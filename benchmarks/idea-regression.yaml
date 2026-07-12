@@ -1,0 +1,116 @@
+version: 1
+purpose: It tests whether AI can perform idea matching, candidate comparison, joining, and answer extraction solely based
+  on the knowledge base.
+answer_contract:
+  required_sections:
+  - Preferred data
+  - Reasons for Selection
+  - Exclusion and substitution
+  - Coverage constraints
+  - Necessary joining
+  - Steps to get it
+  - Uncertainty
+  rule: Deprecated entries cannot be recommended; Grounding entries must explicitly indicate that the grounding is not fully
+    grounded.
+cases:
+- id: household-balance-sheet
+  idea: Studying how household housing leverage affects consumption, it requires property ownership, mortgages, financial
+    assets, and household consumption.
+  expected_top:
+  - chfs
+  acceptable_alternatives:
+  - cfps
+  avoid:
+  - charls
+  - cgss
+  must_explain: CHFS has better asset-liability depth than CFPS; CFPS can be used to provide robustness or complement family
+    behaviors.
+- id: aging-biomarkers-retirement
+  idea: Studying the impact of retirement on cognition and objective health indicators in people over 45 requires blood samples
+    or physical measurements.
+  expected_top:
+  - charls
+  acceptable_alternatives:
+  - chns
+  avoid:
+  - cgss
+  - chfs
+  must_explain: CHALLS's age samples, biomarkers, and retirement information are the best matched.
+- id: firm-regulation-productivity
+  idea: Study how water environment regulations affect TFP and emissions in manufacturing enterprises.
+  expected_top:
+  - china-firm-pollution
+  - asif
+  acceptable_alternatives: []
+  avoid:
+  - china-air-quality-monitoring
+  - china-satellite-pm25
+  must_explain: Corporate emissions and ASIF need to be integrated; Urban AQI/satellite PM2.5 cannot replace corporate emission
+    results.
+- id: pollution-migration
+  idea: The study investigated the impact of long-term PM2.5 changes on county-level population migration from 1995 to 2010.
+  expected_top:
+  - china-satellite-pm25
+  - china-census
+  acceptable_alternatives:
+  - china-air-quality-monitoring
+  avoid:
+  - china-firm-pollution
+  must_explain: Long-term continuous nationwide exposure to priority satellite PM2.5, linked to census migration data by county/year.
+- id: trade-innovation
+  idea: Studying how imported intermediates affect innovation and productivity in manufacturing enterprises.
+  expected_top:
+  - china-customs
+  - asif
+  - china-patents
+  acceptable_alternatives:
+  - csmar
+  avoid:
+  - china-stat-yearbook
+  must_explain: Customs, ASIF, and patents require company name/code matching and indicate the risk of ambiguous matching.
+- id: rural-land-productivity
+  idea: Study how rural land lease reform affects farmers' land allocation and crop productivity.
+  expected_top:
+  - rfd
+  acceptable_alternatives:
+  - cfps
+  - chfs
+  avoid:
+  - rhs
+  must_explain: RFD/NFP includes the farmer-crop panel; RHS cannot be confused with RFD, and RFD has a high threshold for
+    obtaining it.
+- id: social-attitudes
+  idea: Studying how broadband adoption affects adults' trust in government and sense of social equity allows for repeated
+    cross-sectional DID.
+  expected_top:
+  - cgss
+  acceptable_alternatives:
+  - cfps
+  avoid:
+  - chfs
+  - charls
+  must_explain: CGSS has the strongest attitude variable, but not a personal tracking panel.
+- id: nutrition-transition
+  idea: This study investigated how changes in dietary structure since 1989 affect BMI and hypertension.
+  expected_top:
+  - chns
+  acceptable_alternatives:
+  - charls
+  avoid:
+  - chfs
+  - cgss
+  must_explain: Long-term dietary reviews and physical measurements of CHNS are irreplaceable, while also suggesting early
+    provincial representativeness.
+- id: historical-income-inequality
+  idea: The study studied urban-rural income inequality and wage structure changes in China from 1988 to 2018, without requiring
+    tracking of the same family.
+  expected_top:
+  - chip
+  acceptable_alternatives:
+  - rhs
+  - uhs
+  - cfps
+  avoid:
+  - chfs
+  must_explain: CHIP's six-wheel historical repeat cross-sections are the most matched; You can't treat CHIP and UHS/RHS as
+    the same data, nor claim they're home panels.

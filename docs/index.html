@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Econ-Data-Foundry - China Catalog</title>
+  <style>
+    :root { color-scheme: light; --ink: #17212b; --muted: #5c6874; --line: #d9e0e6; --paper: #ffffff; --wash: #f4f7f9; --accent: #0b6e69; --accent-soft: #dcefed; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: var(--wash); font: 16px/1.55 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    main { max-width: 1180px; margin: 0 auto; padding: 42px 20px 64px; }
+    header { border-bottom: 1px solid var(--line); padding-bottom: 26px; margin-bottom: 22px; }
+    h1 { margin: 0 0 8px; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.08; letter-spacing: 0; }
+    h2 { margin: 0; font-size: 1.35rem; letter-spacing: 0; }
+    p { margin: 0 0 12px; }
+    .lede { max-width: 820px; color: var(--muted); }
+    .controls { display: grid; grid-template-columns: minmax(0, 1fr) 170px; gap: 10px; margin: 22px 0; }
+    input, select { width: 100%; min-height: 44px; border: 1px solid #aebac4; border-radius: 6px; background: var(--paper); color: var(--ink); padding: 9px 12px; font: inherit; }
+    input:focus, select:focus { outline: 3px solid var(--accent-soft); border-color: var(--accent); }
+    .meta { color: var(--muted); margin-bottom: 14px; }
+    .results { display: grid; gap: 12px; }
+    article { background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 18px; }
+    article h2 { margin-bottom: 6px; }
+    article h2 a { color: var(--ink); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .status { display: inline-block; margin-left: 8px; padding: 2px 7px; border-radius: 4px; background: var(--accent-soft); color: #07534f; font-size: .78rem; font-weight: 650; vertical-align: 2px; }
+    dl { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 4px 12px; margin: 14px 0 0; }
+    dt { color: var(--muted); font-weight: 600; }
+    dd { margin: 0; overflow-wrap: anywhere; }
+    .empty { color: var(--muted); padding: 24px 0; }
+    footer { margin-top: 34px; color: var(--muted); font-size: .9rem; }
+    @media (max-width: 640px) { main { padding: 28px 14px 48px; } .controls { grid-template-columns: 1fr; } dl { grid-template-columns: 1fr; gap: 1px; } dt { margin-top: 8px; } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Econ-Data-Foundry</h1>
+    <p class="lede">Search the China catalog by research idea, topic, coverage, or alias. Each result points to a canonical record with research fit, acquisition routes, and limitations.</p>
+  </header>
+  <section aria-label="Dataset search">
+    <div class="controls">
+      <input id="query" type="search" placeholder="Search an idea, dataset, topic, alias, or variable" autocomplete="off">
+      <select id="status" aria-label="Filter by status"><option value="">All statuses</option><option value="ready">Ready</option><option value="grounding">Grounding</option><option value="needs-review">Needs review</option><option value="candidate">Candidate</option><option value="deprecated">Deprecated</option></select>
+    </div>
+    <p id="meta" class="meta" aria-live="polite">Loading catalog…</p>
+    <div id="results" class="results"></div>
+  </section>
+  <footer>Generated from the repository catalog. Verify provider terms and current availability before acquiring data.</footer>
+</main>
+<script>
+(() => {
+  const query = document.getElementById('query');
+  const status = document.getElementById('status');
+  const meta = document.getElementById('meta');
+  const results = document.getElementById('results');
+  let datasets = [];
+  const text = value => Array.isArray(value) ? value.join(' ') : (value && typeof value === 'object' ? Object.values(value).join(' ') : String(value || ''));
+  const haystack = item => [item.id, item.name, item.provider, item.aka, item.domains, item.key_variables, item.good_for, item.research_fit, item.description_markdown, item.unit_of_observation].map(text).join(' ').toLowerCase();
+  const esc = value => String(value || '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+  const fit = item => { const value = item.research_fit && item.research_fit.best_for; return text(value || item.good_for || 'No best-use note recorded.'); };
+  const coverage = item => [text(item.unit_of_observation), text(item.time_span), text(item.geography)].filter(Boolean).join(' · ');
+  const safeUrl = value => { try { const parsed = new URL(String(value || '')); return ['http:', 'https:'].includes(parsed.protocol) && !parsed.username && !parsed.password ? parsed.href : ''; } catch { return ''; } };
+  const url = item => { const routes = item.access_routes || []; const first = routes.map(route => safeUrl(route && route.direct_url)).find(Boolean); return first || safeUrl(item.access && item.access.url); };
+  function render() {
+    const needle = query.value.trim().toLowerCase();
+    const chosen = status.value;
+    const filtered = datasets.filter(item => (!chosen || item.catalog_status === chosen) && (!needle || haystack(item).includes(needle)));
+    meta.textContent = `${filtered.length} of ${datasets.length} records`;
+    results.innerHTML = filtered.map(item => {
+      const source = item.source_path || '#';
+      const access = url(item);
+      return `<article><h2><a href="../${esc(source)}">${esc(item.name || item.id)}</a><span class="status">${esc(item.catalog_status)}</span></h2><p>${esc(fit(item))}</p><dl><dt>Coverage</dt><dd>${esc(coverage(item) || 'Not recorded')}</dd><dt>Access</dt><dd>${access ? `<a href="${esc(access)}" rel="noopener noreferrer">${esc(access)}</a>` : 'Route requires verification'}</dd><dt>Cost</dt><dd>${esc(item.access && item.access.cost || 'See access routes')}</dd></dl></article>`;
+    }).join('') || '<p class="empty">No matching records.</p>';
+  }
+  fetch('catalog.json').then(response => { if (!response.ok) throw new Error('catalog unavailable'); return response.json(); }).then(payload => { datasets = payload.datasets || []; render(); }).catch(() => { meta.textContent = 'Catalog unavailable. Open the repository records directly.'; results.innerHTML = ''; });
+  query.addEventListener('input', render); status.addEventListener('change', render);
+})();
+</script>
+</body>
+</html>

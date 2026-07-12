@@ -1,0 +1,67 @@
+version: 1
+purpose: >-
+  Public prompts for evaluating cold-start literature discovery, Chinese-data extraction,
+  knowledge recording, abstention, acquisition grounding, and long-run collection quality.
+  This file contains no expected papers, datasets, scores, or gold answers.
+tasks:
+  - id: cold-start-autonomous
+    phase: cold-start
+    prompt: >-
+      Continue collecting and reading literature to improve the dataset knowledge base.
+      Based on the repository's actual current state, independently choose and complete
+      the smallest high-value work unit.
+
+  - id: high-quality-economics
+    phase: controlled-breadth
+    prompt: >-
+      Within the project's recognized high-quality economics journals, independently
+      identify and process an empirical source that has not been adequately handled and
+      genuinely uses Chinese data. Complete the smallest unit that adds the most future
+      decision value. A canonical record is not required: retain a candidate, record a
+      block, or skip when the evidence is insufficient.
+
+  - id: high-quality-business
+    phase: controlled-breadth
+    source_focus: business-top
+    prompt: >-
+      Search high-quality finance, accounting, management, marketing, operations, or
+      information-systems journals recognized by the project and process one empirical
+      source that genuinely uses Chinese data. Distinguish platform names, modules, and
+      exact data products; do not represent an entire commercial platform as one
+      homogeneous dataset.
+
+  - id: environment-urban-spatial
+    phase: controlled-breadth
+    prompt: >-
+      In environmental economics, urban economics, or spatial research, discover and
+      process one high-quality empirical source using Chinese pollution, weather,
+      geography, transportation, housing, land, remote-sensing, or satellite-derived
+      data. Preserve observation unit, spatial resolution, temporal coverage, and access
+      route. Resolve the identity of similar monitoring networks or model products before
+      deciding whether they belong in the same record.
+
+  - id: identity-and-selectivity
+    phase: adversarial-quality
+    prompt: >-
+      Choose a source from the paper queue or a high-quality journal search that is easy
+      to misclassify, mentions China only superficially, or may be an alias of existing
+      data. Perform rigorous screening and identity verification. Updating, recording a
+      candidate, rejecting an alias, or skipping can all be correct; do not force a
+      publication to create visible output.
+
+  - id: acquisition-grounding
+    phase: access-quality
+    prompt: >-
+      Select a candidate or grounding record whose access uncertainty most weakens future
+      recommendations. Use both research evidence and provider evidence to improve the
+      real acquisition route: where to go, required conditions, ordered steps, expected
+      deliverable, limits, and realistic alternatives when the preferred route is not
+      obtainable.
+
+  - id: late-run-autonomous
+    phase: long-run
+    prompt: >-
+      Continue collecting and reading literature to improve the dataset knowledge base.
+      Once again use the repository's actual current state to choose and complete the
+      smallest high-value work unit, maintaining the same evidence and validation standard
+      as at the beginning of the run.

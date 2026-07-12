@@ -1,0 +1,771 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Dataset",
+      "@id": "dataset:asif",
+      "identifier": "asif",
+      "name": "Annual Survey of Industrial Firms (ASIF; China Industrial Enterprise Database)",
+      "keywords": [
+        "firm",
+        "trade",
+        "IO",
+        "development",
+        "macro",
+        "labor",
+        "innovation",
+        "中国工业企业数据库",
+        "规模以上工业企业数据库",
+        "工业企业调查",
+        "ASIF",
+        "ASIE",
+        "Annual Survey of Industrial Firms",
+        "NBS工业统计"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "National Bureau of Statistics of China (NBS); researchers often obtain processed editions through CAJ, CNRDS, or CSMAR"
+      },
+      "url": "https://microdata.stats.gov.cn/",
+      "temporalCoverage": "1998/2013",
+      "spatialCoverage": "Above-scale industrial firms in mainland China (all state-owned firms plus non-state firms with annual main-business revenue of at least RMB 5 million; the threshold rose to RMB 20 million in 2011)",
+      "isAccessibleForFree": false,
+      "additionalType": "grounding",
+      "source": "datasets/asif.md"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "dataset:cfps",
+      "identifier": "cfps",
+      "name": "China Family Panel Studies (CFPS)",
+      "keywords": [
+        "labor",
+        "development",
+        "health",
+        "education",
+        "consumption",
+        "public",
+        "sociology",
+        "demography",
+        "CFPS",
+        "中国家庭追踪调查",
+        "中国家庭动态跟踪调查",
+        "China Family Panel Studies",
+        "北大CFPS"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "Institute of Social Science Survey, Peking University (ISSS, Institute of Social Science Survey, Peking University)"
+      },
+      "url": "https://cfpsdata.pku.edu.cn/#/home",
+      "temporalCoverage": "2010/ongoing",
+      "spatialCoverage": "25 provinces/municipalities/autonomous regions in mainland China (accounting for approximately 95% of China’s total population); excluding Tibet, Qinghai, Ningxia, Hainan, Inner Mongolia, and Xinjiang",
+      "isAccessibleForFree": true,
+      "additionalType": "ready",
+      "source": "datasets/cfps.md"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "dataset:cgss",
+      "identifier": "cgss",
+      "name": "China General Social Survey (CGSS)",
+      "keywords": [
+        "sociology",
+        "public",
+        "labor",
+        "health",
+        "governance",
+        "development",
+        "demography",
+        "CGSS",
+        "中国综合社会调查",
+        "China General Social Survey",
+        "中国社会综合调查",
+        "人大CGSS"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "National Survey Research Center at Renmin University of China (NSRC, National Survey Research Center at Renmin University of China)"
+      },
+      "url": "http://cnsda.ruc.edu.cn/",
+      "temporalCoverage": "2003/ongoing",
+      "spatialCoverage": "All 31 provinces/municipalities/autonomous regions in mainland China (including urban and rural areas)",
+      "isAccessibleForFree": true,
+      "additionalType": "ready",
+      "source": "datasets/cgss.md"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "dataset:charls",
+      "identifier": "charls",
+      "name": "China Health and Retirement Longitudinal Study (CHARLS)",
+      "keywords": [
+        "health",
+        "labor",
+        "development",
+        "public",
+        "aging",
+        "consumption",
+        "sociology",
+        "CHARLS",
+        "中国健康与养老追踪调查",
+        "中国健康与养老调查",
+        "China Health and Retirement Longitudinal Study",
+        "北大CHARLS"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "National School of Development, Peking University (NSD, National School of Development, Peking University)"
+      },
+      "url": "https://opendata.pku.edu.cn/",
+      "temporalCoverage": "2011/ongoing",
+      "spatialCoverage": "28 provinces/cities/autonomous regions (150 counties/districts, 450 villages/communities) in mainland China, covering approximately 95% of China’s middle-aged and elderly population",
+      "isAccessibleForFree": true,
+      "additionalType": "ready",
+      "source": "datasets/charls.md"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "dataset:chfs",
+      "identifier": "chfs",
+      "name": "China Household Finance Survey (CHFS)",
+      "keywords": [
+        "finance",
+        "labor",
+        "consumption",
+        "housing",
+        "development",
+        "public",
+        "CHFS",
+        "中国家庭金融调查",
+        "China Household Finance Survey",
+        "西南财大CHFS",
+        "中国家庭金融"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "Survey and Research Center for China Household Finance (SWUFE), Southwestern University of Finance and Economics"
+      },
+      "url": "https://chfs.swufe.edu.cn/sjzx.htm",
+      "temporalCoverage": "2011/ongoing",
+      "spatialCoverage": "29 provinces/cities/autonomous regions in mainland China",
+      "isAccessibleForFree": true,
+      "additionalType": "ready",
+      "source": "datasets/chfs.md"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "dataset:china-air-quality-monitoring",
+      "identifier": "china-air-quality-monitoring",
+      "name": "China National Ambient Air Quality Monitoring Data (CNEMC/MEE)",
+      "description": "Official air quality monitoring data provide high-frequency pollution concentrations at monitoring stations/cities, suitable for exposure and short-term behavioral studies. It is three different data objects from corporate emission surveys and satellite retrieval of PM2.5.",
+      "keywords": [
+        "environment",
+        "health",
+        "public",
+        "urban",
+        "finance",
+        "中国空气质量监测数据",
+        "城市空气质量",
+        "CNEMC",
+        "AQI",
+        "API",
+        "空气质量监测站",
+        "全国城市空气质量实时发布"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "China Environmental Monitoring Center (CNEMC) and Ministry of Ecology and Environment (MEE)"
+      },
+      "url": "https://www.mee.gov.cn/hjzl/dqhj/",
+      "temporalCoverage": "2000/ongoing",
+      "spatialCoverage": "Cities at prefecture level and above across the country; monitoring stations and pollutant coverage expand with each year",
+      "isAccessibleForFree": false,
+      "additionalType": "grounding",
+      "source": "datasets/china-air-quality-monitoring.md"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "dataset:china-census",
+      "identifier": "china-census",
+      "name": "China Census (Population Census/National 1% Population Sample Survey)",
+      "keywords": [
+        "labor",
+        "demography",
+        "development",
+        "public",
+        "macro",
+        "health",
+        "education",
+        "人口普查",
+        "全国人口普查",
+        "Population Census of China",
+        "Chinese Census",
+        "中国人口普查数据",
+        "五普/六普/七普",
+        "1%抽样调查",
+        "小普查",
+        "Mini-Census",
+        "全国1%人口抽样调查"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "National Bureau of Statistics (NBS, National Bureau of Statistics of China)"
+      },
+      "url": "https://data.stats.gov.cn/",
+      "temporalCoverage": "Large census: 1990 (fourth census)/2000 (fifth census)/2010 (sixth census)/2020 (seventh census); minor census (1%): 1995/2005/2015; and 1982 (third census) and earlier historical censuses",
+      "spatialCoverage": "All of mainland China (including all provinces/autonomous regions/municipalities except Hong Kong, Macao and Taiwan)",
+      "isAccessibleForFree": false,
+      "additionalType": "grounding",
+      "source": "datasets/china-census.md"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "dataset:china-customs",
+      "identifier": "china-customs",
+      "name": "China Customs Trade Statistics (CCTS)",
+      "keywords": [
+        "trade",
+        "IO",
+        "firm",
+        "development",
+        "macro",
+        "中国海关数据库",
+        "海关数据",
+        "海关进出口",
+        "China Customs",
+        "CCTS",
+        "海关交易级数据",
+        "中国海关贸易统计"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "General Administration of Customs of China; researchers often obtain the processed version through the EPS China Microeconomic Data Query System"
+      },
+      "url": "http://microdata.sozdata.com/",
+      "temporalCoverage": "2000–2017 (different platform versions vary slightly, core range 2000–2016)",
+      "spatialCoverage": "All import and export customs declaration transactions in mainland China; counterparties cover countries around the world",
+      "isAccessibleForFree": false,
+      "additionalType": "grounding",
+      "source": "datasets/china-customs.md"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "dataset:china-firm-pollution",
+      "identifier": "china-firm-pollution",
+      "name": "Environmental Survey of Industrial Firms",
+      "description": "This is corporate emission and governance behavior data, not urban air quality concentration data. Use it when studying corporate emission reductions, environmental regulations and productivity; when studying personal exposure, migration or urban AQI, monitoring stations or satellite PM2.5 should be used instead.",
+      "keywords": [
+        "environment",
+        "firm",
+        "development",
+        "IO",
+        "trade",
+        "中国工业企业环境统计",
+        "企业污染排放数据",
+        "Environmental Survey Database",
+        "ESD",
+        "工业企业污染排放调查",
+        "重点污染源企业调查"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "Department of Ecology and Environment and National Statistics Department; research often uses academic institutions or commercial platforms to compile versions"
+      },
+      "url": "http://microdata.sozdata.com/",
+      "temporalCoverage": "1998/2014",
+      "spatialCoverage": "Mainland China's key polluting industrial enterprises; each research version has different coverage and cleaning measurement definitions",
+      "isAccessibleForFree": false,
+      "additionalType": "grounding",
+      "source": "datasets/china-firm-pollution.md"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "dataset:china-io-table",
+      "identifier": "china-io-table",
+      "name": "China Input-Output Tables",
+      "keywords": [
+        "IO",
+        "trade",
+        "macro",
+        "firm",
+        "environment",
+        "development",
+        "投入产出表",
+        "中国投入产出表",
+        "Input-Output Tables",
+        "China I-O Table",
+        "中国IO表",
+        "全国投入产出表",
+        "省际投入产出表",
+        "区域间投入产出表",
+        "多区域投入产出表",
+        "MRIO"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "National Bureau of Statistics (NBS); Chinese Academy of Sciences/National Information Center and other institutions prepare inter-provincial/multi-regional extended version"
+      },
+      "url": "https://data.stats.gov.cn/",
+      "temporalCoverage": "1987/ongoing",
+      "spatialCoverage": "Mainland China (national table); inter-provincial table covers about 30 provinces/municipalities/autonomous regions",
+      "isAccessibleForFree": false,
+      "additionalType": "ready",
+      "source": "datasets/china-io-table.md"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "dataset:china-land-transaction",
+      "identifier": "china-land-transaction",
+      "name": "China Land Market Data (China Land Transaction Data/China Land Transfer Data)",
+      "keywords": [
+        "public",
+        "urban",
+        "housing",
+        "firm",
+        "development",
+        "macro",
+        "environment",
+        "finance",
+        "土地出让数据",
+        "土地交易数据",
+        "土地市场网数据",
+        "China Land Transaction",
+        "土地招拍挂数据",
+        "中国土地市场网",
+        "Landchina",
+        "土地微观交易",
+        "地块级数据"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "Public announcement on the China Land Market Network (www.landchina.com) under the Ministry of Natural Resources (MNR, formerly the Ministry of Land and Resources MLR)"
+      },
+      "url": "https://www.landchina.com/",
+      "temporalCoverage": "2000-present (data coverage and quality improved significantly after the implementation of the bidding, auction and listing system in 2006; continuously updated)",
+      "spatialCoverage": "All provinces/cities in mainland China (covering all cities at county level and above, the most complete record of urban land transactions in China)",
+      "isAccessibleForFree": false,
+      "additionalType": "grounding",
+      "source": "datasets/china-land-transaction.md"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "dataset:china-patents",
+      "identifier": "china-patents",
+      "name": "China Patent Data (CNIPA / SIPO)",
+      "keywords": [
+        "innovation",
+        "firm",
+        "finance",
+        "trade",
+        "IO",
+        "development",
+        "专利数据",
+        "中国专利",
+        "CNIPA",
+        "SIPO",
+        "国家知识产权局专利",
+        "China Patent",
+        "中国专利数据库",
+        "发明专利申请/授权",
+        "实用新型",
+        "外观设计"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "National Intellectual Property Office (CNIPA, formerly SIPO); researchers often obtain processed versions through CSMAR/CNRDS/Hexiang Xinchuang/Patentics/Google Patents, etc."
+      },
+      "url": "https://pss-system.cponline.cnipa.gov.cn/",
+      "temporalCoverage": "1985/ongoing",
+      "spatialCoverage": "All patents applied for or authorized in China (including patents in China by foreign applicants)",
+      "isAccessibleForFree": false,
+      "additionalType": "grounding",
+      "source": "datasets/china-patents.md"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "dataset:china-pollution",
+      "identifier": "china-pollution",
+      "name": "China pollution data (old mixed entry, split)",
+      "description": "Old `china-pollution` is a topic bucket, not a single data set. Please select according to research question:",
+      "keywords": [
+        "environment",
+        "china-pollution"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "multiple"
+      },
+      "temporalCoverage": "unknown",
+      "isAccessibleForFree": false,
+      "additionalType": "deprecated",
+      "source": "datasets/china-pollution.md"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "dataset:china-satellite-pm25",
+      "identifier": "china-satellite-pm25",
+      "name": "Chinese satellite retrieval and fusion of PM2.5 data",
+      "description": "Satellite/fusion PM2.5 is used for continuous, long-term pollution exposure across the country. It is not corporate emissions, nor is it equivalent to the actual measured value at official monitoring stations. The product, version, resolution and aggregation method must be clearly stated before use.",
+      "keywords": [
+        "environment",
+        "health",
+        "migration",
+        "urban",
+        "development",
+        "卫星PM2.5",
+        "Satellite-derived PM2.5",
+        "Global Annual PM2.5 Grids",
+        "TAP PM2.5",
+        "中国网格PM2.5"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "Multiple independent products; including global satellite retrieval grid and Tracking Air Pollution in China (TAP) fusion product"
+      },
+      "url": "http://tapdata.org.cn/",
+      "temporalCoverage": "1998/ongoing",
+      "spatialCoverage": "Full coverage in mainland China; resolution and year vary by product",
+      "isAccessibleForFree": true,
+      "additionalType": "grounding",
+      "source": "datasets/china-satellite-pm25.md"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "dataset:china-stat-yearbook",
+      "identifier": "china-stat-yearbook",
+      "name": "China Statistical Yearbook System (including statistical yearbooks at national/provincial/municipal/county levels)",
+      "keywords": [
+        "macro",
+        "development",
+        "public",
+        "labor",
+        "trade",
+        "finance",
+        "demography",
+        "IO",
+        "统计年鉴",
+        "中国统计年鉴",
+        "省统计年鉴",
+        "市统计年鉴",
+        "China Statistical Yearbook",
+        "China City Statistical Yearbook",
+        "NBS年鉴",
+        "中国城市统计年鉴",
+        "中国县域统计年鉴"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "National Bureau of Statistics (NBS) and provincial/municipal statistical bureaus"
+      },
+      "url": "https://data.stats.gov.cn/",
+      "temporalCoverage": "1981/ongoing",
+      "spatialCoverage": "All provinces + prefecture-level cities + some districts and counties in mainland China",
+      "isAccessibleForFree": false,
+      "additionalType": "ready",
+      "source": "datasets/china-stat-yearbook.md"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "dataset:china-tax-survey",
+      "identifier": "china-tax-survey",
+      "name": "Chinese Enterprise Tax Survey Microdata",
+      "description": "The microdata of the China Corporate Tax Survey is an important source of corporate annual tax declarations and financial information, and is suitable for research on tax systems, collection and management, and corporate behavior. The current executable route is a version held by specific universities or a commercially processed version, rather than a unified public download; when answering the research idea, you must explain the actual version and the acquisition threshold at the same time.",
+      "keywords": [
+        "tax",
+        "public-finance",
+        "firm",
+        "finance",
+        "trade",
+        "innovation",
+        "中国企业税收调查",
+        "企业税收调查",
+        "中国税收调查企业数据",
+        "全国税收调查企业数据",
+        "企业税收调查微观数据",
+        "China Enterprise Tax Survey"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "China Enterprise Tax Investigation; The verified institutional/commercial versions are held by universities or provided by platforms, and the original investigation authorities and unified application channels still need to be verified."
+      },
+      "url": "https://econpub.xmu.edu.cn/elib/db_detail/23/",
+      "temporalCoverage": "2007/2020",
+      "spatialCoverage": "China corporate tax survey sample; verified version coverage and industry description vary by agency/platform version",
+      "isAccessibleForFree": false,
+      "additionalType": "grounding",
+      "source": "datasets/china-tax-survey.md"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "dataset:chip",
+      "identifier": "chip",
+      "name": "Chinese Household Income Project (CHIP)",
+      "description": "CHIP is a long-term repeated cross-section of China's income distribution and labor market research, covering six rounds of urban, rural and later migrant population samples from 1988 to 2018. Its biggest advantage is the historical span and income details, its biggest limitation is that it cannot track the same household.",
+      "keywords": [
+        "labor",
+        "development",
+        "consumption",
+        "inequality",
+        "poverty",
+        "public",
+        "CHIP",
+        "CHIPs",
+        "中国家庭收入调查",
+        "中国居民收入调查",
+        "Chinese Household Income Project",
+        "北京师范大学CHIP"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "China Household Income Survey Project; organized by the School of Economics and Business Administration of Beijing Normal University since 2007, and has cooperated with the survey system of the National Bureau of Statistics for several rounds"
+      },
+      "url": "http://chip.bnu.edu.cn/",
+      "temporalCoverage": "1988/2018",
+      "spatialCoverage": "Each round selects representative provinces in the east, middle and west, and not all 31 provinces are covered; the specific provinces and sample frames change with the rounds.",
+      "isAccessibleForFree": true,
+      "additionalType": "ready",
+      "source": "datasets/chip.md"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "dataset:chns",
+      "identifier": "chns",
+      "name": "China Health and Nutrition Survey (CHNS)",
+      "keywords": [
+        "health",
+        "nutrition",
+        "labor",
+        "development",
+        "demography",
+        "sociology",
+        "CHNS",
+        "中国健康与营养调查",
+        "China Health and Nutrition Survey",
+        "中国营养与健康调查",
+        "北卡CHNS"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "Jointly implemented by the UNC Carolina Population Center and the Institute of Nutrition and Health, Chinese Center for Disease Control and Prevention (NINH, China CDC)"
+      },
+      "url": "https://www.cpc.unc.edu/projects/china",
+      "temporalCoverage": "1989/ongoing",
+      "spatialCoverage": "Initially covering 9 provinces (Liaoning/Heilongjiang/Jiangsu/Shandong/Henan/Hubei/Hunan/Guangxi/Guizhou); after 2011, Beijing/Shanghai/Chongqing was added; in 2015, Shaanxi/Yunnan/Zhejiang were added - the coverage gradually expanded",
+      "isAccessibleForFree": true,
+      "additionalType": "ready",
+      "source": "datasets/chns.md"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "dataset:cmds",
+      "identifier": "cmds",
+      "name": "China Migrants Dynamic Survey (CMDS)",
+      "keywords": [
+        "labor",
+        "migration",
+        "health",
+        "development",
+        "sociology",
+        "public",
+        "CMDS",
+        "流动人口动态监测",
+        "中国流动人口调查",
+        "China Migrants Dynamic Survey",
+        "流动人口监测",
+        "卫健委流动人口调查"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "National Health Commission (NHC, formerly National Health and Family Planning Commission) Migrant Population Service Center"
+      },
+      "url": "https://www.chinaldrk.org.cn/",
+      "temporalCoverage": "2009/2018",
+      "spatialCoverage": "31 provinces/municipalities/autonomous regions in mainland China (covering major inflow and outflow places)",
+      "isAccessibleForFree": true,
+      "additionalType": "ready",
+      "source": "datasets/cmds.md"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "dataset:csmar",
+      "identifier": "csmar",
+      "name": "Guotai'an CSMAR China Economic and Financial Research Database",
+      "description": "CSMAR is the main academic database for research on finance, accounting and governance of Chinese listed companies. It is not a table, but a collection of a large number of series, sub-databases and data tables; whether specific research can be done depends on which module the institution subscribes to and which year the module actually covers.",
+      "keywords": [
+        "finance",
+        "accounting",
+        "firm",
+        "governance",
+        "innovation",
+        "macro",
+        "CSMAR",
+        "国泰安",
+        "China Stock Market & Accounting Research Database",
+        "希施玛",
+        "CSMAR Solution"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "Shenzhen Xishma Data Technology Co., Ltd."
+      },
+      "url": "https://data.csmar.com/",
+      "temporalCoverage": "1990/ongoing",
+      "spatialCoverage": "Mainly China mainland capital market and listed companies; there are also Hong Kong stocks, overseas and thematic sub-databases, depending on institutional subscriptions",
+      "isAccessibleForFree": false,
+      "additionalType": "ready",
+      "source": "datasets/csmar.md"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "dataset:era5-land",
+      "identifier": "era5-land",
+      "name": "ERA5-Land land surface reanalysis meteorological data (ERA5-Land)",
+      "description": "ERA5-Land is a regular grid product for global land surface reanalysis. It is suitable for constructing long-term, continuous, and reproducible exposures to temperature, precipitation, wind speed, and soil moisture for studies in China; it is not a CMA site readout and cannot alone address microsite-constrained issues.",
+      "keywords": [
+        "environment",
+        "climate",
+        "geography",
+        "health",
+        "agriculture",
+        "urban",
+        "labor",
+        "ERA5-Land",
+        "ERA5陆面再分析",
+        "ERA5气象数据",
+        "ERA5温度数据",
+        "再分析气象数据"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "Copernicus Climate Change Service（C3S）/ European Centre for Medium-Range Weather Forecasts（ECMWF）"
+      },
+      "url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land?tab=overview",
+      "temporalCoverage": "1950-01/ongoing",
+      "spatialCoverage": "Global land coverage, including mainland China; CDS distribution grid 0.1° × 0.1°",
+      "isAccessibleForFree": false,
+      "additionalType": "ready",
+      "source": "datasets/era5-land.md"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "dataset:rfd",
+      "identifier": "rfd",
+      "name": "National Rural Fixed Point Survey (NFP/NFPS)",
+      "description": "The national rural fixed observation point is the annual panel of rural households and villages organized continuously by the Rural Economic Research Center of the Ministry of Agriculture and Rural Affairs. It is significantly stronger than the general household survey in terms of land, crop input and output, and labor allocation. It is a high-value data for agricultural productivity and rural land research, but there is no public download entrance, and access depends on institutional cooperation.",
+      "keywords": [
+        "agriculture",
+        "development",
+        "labor",
+        "land",
+        "public",
+        "migration",
+        "全国农村固定观察点",
+        "农村固定观察点",
+        "National Fixed Point Survey",
+        "NFP",
+        "NFPS",
+        "National Rural Fixed Observation Point Survey"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "Research Center for Rural Economy, Ministry of Agriculture and Rural Affairs (RCRE, formerly Research Center for Rural Economy, Ministry of Agriculture)"
+      },
+      "url": "https://www.rcre.agri.cn/",
+      "temporalCoverage": "1986/unknown",
+      "spatialCoverage": "Fixed observation villages in various provinces in mainland China; the provinces, villages and sample periods of the version used in the paper are not exactly the same",
+      "isAccessibleForFree": false,
+      "additionalType": "grounding",
+      "source": "datasets/rfd.md"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "dataset:rhs",
+      "identifier": "rhs",
+      "name": "National Bureau of Statistics Rural Household Survey (RHS)",
+      "description": "This entry only represents the rural household survey of the National Bureau of Statistics and no longer includes fixed rural observation points of the Ministry of Agriculture and Rural Affairs. It is suitable for research on rural household income and consumption, but it is difficult to obtain the historical micro version, and further grounding is still needed.",
+      "keywords": [
+        "development",
+        "labor",
+        "consumption",
+        "poverty",
+        "agriculture",
+        "RHS",
+        "农村住户调查",
+        "中国农村住户调查",
+        "NBS Rural Household Survey",
+        "国家统计局农村住户调查"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "National Bureau of Statistics Rural Household Survey System"
+      },
+      "url": "https://microdata.stats.gov.cn/",
+      "temporalCoverage": "1986/2015",
+      "spatialCoverage": "Rural areas in mainland China; the provinces, years and sampling ranges of public document holding versions are not uniform",
+      "isAccessibleForFree": false,
+      "additionalType": "grounding",
+      "source": "datasets/rhs.md"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "dataset:uhs",
+      "identifier": "uhs",
+      "name": "China Urban Household Survey (UHS)",
+      "keywords": [
+        "labor",
+        "development",
+        "public",
+        "consumption",
+        "health",
+        "education",
+        "macro",
+        "UHS",
+        "城镇住户调查",
+        "城市住户调查",
+        "中国城镇住户调查",
+        "Urban Household Survey",
+        "NBS Urban Household Survey",
+        "中国城市住户调查"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "National Bureau of Statistics (NBS, National Bureau of Statistics of China)"
+      },
+      "url": "https://microdata.stats.gov.cn/",
+      "temporalCoverage": "1986–2015 (the commonly used version in academia ends around 2009; there are major changes in measurement definition around 2002)",
+      "spatialCoverage": "Urban areas in mainland China; covered some representative provinces in the early stage, and expanded to the whole country after 2002",
+      "isAccessibleForFree": false,
+      "additionalType": "grounding",
+      "source": "datasets/uhs.md"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "dataset:wind",
+      "identifier": "wind",
+      "name": "Wind financial terminal",
+      "keywords": [
+        "finance",
+        "accounting",
+        "macro",
+        "firm",
+        "trade",
+        "Wind",
+        "万得",
+        "Wind资讯",
+        "Wind Information",
+        "Wind金融终端"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "Wind Information Co., Ltd."
+      },
+      "url": "https://www.wind.com.cn/",
+      "temporalCoverage": "1990/ongoing",
+      "spatialCoverage": "Mainly Chinese mainland (A-shares/A-bonds/China macro market) + Hong Kong stocks + US Chinese concept + major global market indices",
+      "isAccessibleForFree": false,
+      "additionalType": "grounding",
+      "source": "datasets/wind.md"
+    }
+  ]
+}

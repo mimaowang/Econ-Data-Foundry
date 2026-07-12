@@ -1,0 +1,28 @@
+schema_version: 1
+catalog_status:
+  - candidate
+  - grounding
+  - ready
+  - needs-review
+  - deprecated
+access_cost:
+  - free
+  - paid
+  - by-application
+  - mixed
+  - registration
+join_evidence_status:
+  - plausible
+  - literature-used
+  - verified
+related_dataset_relation:
+  - substitute
+  - complement
+  - benchmark
+  - predecessor
+  - successor
+  - often-confused-with
+task_result:
+  - processed
+  - skipped
+  - needs-review

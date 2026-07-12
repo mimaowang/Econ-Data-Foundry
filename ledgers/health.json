@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-07-12T00:49:28+08:00",
+  "status": "ok",
+  "errors": [],
+  "warnings": [],
+  "dataset_status_counts": {
+    "deprecated": 1,
+    "grounding": 13,
+    "ready": 11
+  },
+  "active_dataset_count": 24,
+  "ledger_counts": {
+    "pending": 46,
+    "done": 17,
+    "failed": 2,
+    "candidates": 10,
+    "changes": 7
+  },
+  "cache_counts": {
+    "valid": 2,
+    "blocked": 2,
+    "unknown": 0
+  },
+  "idea_benchmark_cases": 9,
+  "blind_benchmark_v2_cases": 27,
+  "collection_benchmark_tasks": 7,
+  "paper_evidence": {
+    "total": 67,
+    "structured_complete": 13,
+    "incomplete": 54,
+    "required_fields": [
+      "cite",
+      "dataset_role",
+      "evidence_type",
+      "evidence_url",
+      "data_note"
+    ],
+    "missing_by_field": {
+      "dataset_role": 31,
+      "evidence_type": 54,
+      "evidence_url": 54
+    },
+    "interpretation": "A maintenance signal for used_by traceability, not a claim that incomplete entries are false."
+  }
+}

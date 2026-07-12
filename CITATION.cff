@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+title: "Econ-Data-Foundry"
+message: "If Econ-Data-Foundry supports your research, please cite the repository and the original dataset providers used in your work."
+type: dataset
+version: "0.2.0"
+date-released: "2026-07-11"
+license: CC-BY-4.0
+authors:
+  - name: "Econ-Data-Foundry Contributors"
+keywords:
+  - economics
+  - China
+  - datasets
+  - research data
+  - metadata
+  - autonomous agents
+  - literature mining

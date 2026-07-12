@@ -1,0 +1,41 @@
+__pycache__/
+*.py[cod]
+ledgers/.*.lock
+*.tmp
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+Thumbs.db
+
+# Credentials and local environment files must never be published.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+credentials.json
+secrets.json
+
+# Local agent configuration and third-party skill checkouts are not project dependencies.
+.claude/
+
+# Internal review artifacts are not part of the public catalog.
+agent-review-reports/
+ledgers/link-check.json
+
+# Benchmark evidence and private evaluations must remain outside the public source tree.
+econ-data-foundry-benchmark-runs/
+econ-data-foundry-collection-benchmark-runs/
+benchmarks/latest-development-result.md
+private-evaluation/
+
+# Local fetch artifacts are evidence for the maintainer, not portable source data.
+ledgers/_fetch_cache/*.html
+ledgers/_fetch_cache/*.htm
