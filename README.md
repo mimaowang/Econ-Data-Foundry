@@ -188,7 +188,7 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md), [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT
 
 ## License
 
-The software and automation are licensed under the Apache License 2.0. Original catalog content is intended to be shared under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), while third-party dataset terms remain with their respective providers. See [`LICENSE`](LICENSE) and [`LICENSE-CONTENT.md`](LICENSE-CONTENT.md).
+The software and automation are licensed under the Apache License 2.0. Original catalog content is intended to be shared under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), while third-party dataset terms remain with their respective providers. See [`LICENSE`](LICENSE) and [`LICENSE-CC-BY-4.0.md`](LICENSE-CC-BY-4.0.md).
 
 ---
 

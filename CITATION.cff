@@ -1,10 +1,12 @@
 cff-version: 1.2.0
 title: "Econ-Data-Foundry"
-message: "If Econ-Data-Foundry supports your research, please cite the repository and the original dataset providers used in your work."
+message: "If Econ-Data-Foundry supports your research, please cite the repository and the original dataset providers used in your work. Software and automation are Apache-2.0; original catalog content is CC-BY-4.0."
 type: dataset
 version: "0.2.0"
 date-released: "2026-07-11"
-license: CC-BY-4.0
+license:
+  - Apache-2.0
+  - CC-BY-4.0
 authors:
   - name: "Econ-Data-Foundry Contributors"
 keywords:
