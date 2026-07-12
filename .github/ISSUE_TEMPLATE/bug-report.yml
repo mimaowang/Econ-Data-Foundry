@@ -1,0 +1,35 @@
+name: Bug report
+description: Report a reproducible problem in validation, generation, export, or queue behavior.
+title: "bug: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Please avoid including credentials, restricted data, or private provider pages.
+  - type: input
+    id: command
+    attributes:
+      label: Command or workflow
+      description: Which command or user workflow failed?
+      placeholder: python scripts/validate_kb.py
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction details
+      description: Include OS, Python version, relevant paths, and sanitized output.
+    validations:
+      required: true

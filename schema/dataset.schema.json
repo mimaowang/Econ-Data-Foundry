@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dataset.schema.json",
+  "title": "EconData Foundry Dataset Record",
+  "description": "The machine-readable contract for one canonical dataset record. The repository validator adds status-specific quality gates.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "catalog_status",
+    "id",
+    "name",
+    "aka",
+    "provider",
+    "china_related",
+    "domains"
+  ],
+  "properties": {
+    "schema_version": {"const": 2},
+    "catalog_status": {"enum": ["candidate", "grounding", "ready", "needs-review", "deprecated"]},
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+    "name": {"type": "string", "minLength": 1},
+    "aka": {"type": "array", "items": {"type": "string"}},
+    "provider": {"type": ["string", "object"]},
+    "china_related": {"type": "boolean"},
+    "domains": {"type": "array", "items": {"type": "string"}},
+    "unit_of_observation": {"type": "string"},
+    "structure": {"type": "string"},
+    "geo_granularity": {"type": "array", "items": {"type": "string"}},
+    "geography": {"type": ["string", "object", "array"]},
+    "time_span": {"type": ["string", "object"]},
+    "frequency": {"type": "array", "items": {"type": "string"}},
+    "sample_size": {},
+    "key_variables": {"type": "array"},
+    "research_fit": {"type": "object"},
+    "good_for": {"type": "array"},
+    "identification": {"type": "array"},
+    "linkable_keys": {"type": "array"},
+    "joins": {"type": "array", "items": {"$ref": "#/$defs/join"}},
+    "access_routes": {"type": "array", "items": {"$ref": "#/$defs/accessRoute"}},
+    "access": {"type": "object"},
+    "caveats": {"type": ["string", "array"]},
+    "quality": {"type": "object"},
+    "used_by": {"type": "array", "items": {"type": "object"}},
+    "provenance": {"type": "array", "items": {"type": "object"}},
+    "related_datasets": {"type": "array"},
+    "superseded_by": {"type": "array", "items": {"type": "string"}}
+  },
+  "$defs": {
+    "join": {
+      "type": "object",
+      "required": ["target", "relation", "keys", "method", "evidence_status"],
+      "properties": {
+        "target": {"type": "string"},
+        "relation": {"type": "string"},
+        "keys": {"type": "array"},
+        "method": {"type": "string"},
+        "evidence_status": {"enum": ["plausible", "literature-used", "verified"]}
+      },
+      "additionalProperties": true
+    },
+    "accessRoute": {
+      "type": "object",
+      "required": ["route", "access_status", "direct_url", "requirements", "steps", "deliverable", "cost", "last_checked"],
+      "properties": {
+        "route": {"type": "string"},
+        "access_status": {"type": "string"},
+        "direct_url": {"type": "string"},
+        "requirements": {},
+        "steps": {"type": "array", "minItems": 1},
+        "deliverable": {"type": "string"},
+        "cost": {"enum": ["free", "paid", "by-application", "mixed", "registration"]},
+        "last_checked": {"type": "string"},
+        "caveat": {"type": ["string", "array"]}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

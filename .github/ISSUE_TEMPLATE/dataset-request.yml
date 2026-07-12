@@ -1,0 +1,28 @@
+name: Dataset or source request
+description: Suggest a dataset or a concrete improvement to a dataset record.
+title: "dataset: "
+labels: [dataset, needs-triage]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Research ideas it should support
+      description: Give concrete questions, treatments, outcomes, or populations.
+    validations:
+      required: true
+  - type: input
+    id: dataset
+    attributes:
+      label: Dataset name or aliases
+    validations:
+      required: true
+  - type: textarea
+    id: access
+    attributes:
+      label: Known acquisition route
+      description: Prefer an official landing page or direct route; do not paste credentials.
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and caveats
+      description: Include coverage, unit, access conditions, and links to authoritative sources.
