@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "econ-data-foundry"
 version = "0.2.0"
-description = "Autonomous literature-to-dataset knowledge infrastructure for empirical research."
+description = "Autonomous literature-to-dataset knowledge infrastructure for empirical datasets and executable acquisition routes."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
@@ -16,7 +16,7 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
   "pytest>=8,<9",
-  "ruff>=0.8,<1",
+  "ruff>=0.15,<0.16",
 ]
 
 [tool.pytest.ini_options]
