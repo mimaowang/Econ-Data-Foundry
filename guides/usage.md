@@ -1,6 +1,6 @@
-# Using Econ-Data-Foundry
+# Using Econ-DataKnowhow
 
-Use Econ-Data-Foundry to turn a research question into a realistic data choice. Start with `AGENTS.md` and the [mental model](mental-model.md), then read only the records relevant to the question. Asking about existing knowledge requires no Python installation, task claim, model-specific setup or file changes. Collection and maintenance are separate tasks described below.
+Use Econ-DataKnowhow to turn a research question into a realistic data choice. Start with `AGENTS.md` and the [mental model](mental-model.md), then read only the records relevant to the question. Asking about existing knowledge requires no Python installation, task claim, model-specific setup or file changes. Collection and maintenance are separate tasks described below.
 
 ## Repository map
 

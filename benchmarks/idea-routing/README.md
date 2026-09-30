@@ -1,6 +1,6 @@
 # Idea-Routing Benchmark
 
-This is an offline, answer-free product test. It measures whether an agent with no prior context can quickly understand Econ-Data-Foundry, retrieve the right canonical records, match unfamiliar research ideas to the best available datasets, and give an acquisition-ready answer using repository knowledge alone.
+This is an offline, answer-free product test. It measures whether an agent with no prior context can quickly understand Econ-DataKnowhow, retrieve the right canonical records, match unfamiliar research ideas to the best available datasets, and give an acquisition-ready answer using repository knowledge alone.
 
 If this README is the only instruction you received, begin the protocol below. Do not ask for benchmark cases in advance.
 
@@ -25,7 +25,7 @@ From the source repository, run:
 python scripts/benchmark_session.py prepare --agent claude-code --model <visible-model-label> --variant-mode balanced
 ```
 
-Use the actual visible model label when known. Never inspect credentials or configuration to infer it. The command prints a new workspace under `econ-data-foundry-benchmark-runs` beside the repository.
+Use the actual visible model label when known. Never inspect credentials or configuration to infer it. The command prints a new workspace under `econ-dataknowhow-benchmark-runs` beside the repository.
 
 Change into the printed `workspace` directory. From that point onward, do not return to the source repository or open files outside the isolated workspace.
 

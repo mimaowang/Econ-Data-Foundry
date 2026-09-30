@@ -1,4 +1,4 @@
-# Adapting Econ-Data-Foundry to Another Country, Market, or Research Domain
+# Adapting Econ-DataKnowhow to Another Country, Market, or Research Domain
 
 This repository is not merely a list of Chinese datasets. It is an AI-maintained research-data decision system: given a research idea, an agent should identify the most suitable dataset, explain why it is preferable to nearby alternatives, state what it covers and cannot support, and give an executable acquisition route using only the knowledge recorded in the repository.
 

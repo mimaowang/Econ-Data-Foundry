@@ -1,4 +1,4 @@
-# Econ-Data-Foundry Operations Guide
+# Econ-DataKnowhow Operations Guide
 
 ## The invariant
 

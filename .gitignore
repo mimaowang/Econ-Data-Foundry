@@ -37,8 +37,8 @@ agent-review-reports/
 ledgers/link-check.json
 
 # Benchmark evidence and private evaluations must remain outside the public source tree.
-econ-data-foundry-benchmark-runs/
-econ-data-foundry-collection-benchmark-runs/
+econ-dataknowhow-benchmark-runs/
+econ-dataknowhow-collection-benchmark-runs/
 benchmarks/latest-development-result.md
 private-evaluation/
 
