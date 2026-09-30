@@ -5,7 +5,7 @@
 <p align="center"><strong>让你的 agent 为研究 idea 匹配最合适的数据，并建立你所在领域的详细数据指南。</strong></p>
 
 <p align="center">
-  <a href="https://github.com/mimaowang/Econ-Data-Foundry/actions/workflows/validate.yml"><img alt="CI" src="https://github.com/mimaowang/Econ-Data-Foundry/actions/workflows/validate.yml/badge.svg"></a>
+  <a href="https://github.com/mimaowang/Econ-DataKnowhow/actions/workflows/validate.yml"><img alt="CI" src="https://github.com/mimaowang/Econ-DataKnowhow/actions/workflows/validate.yml/badge.svg"></a>
   <a href="guides/usage.md"><img alt="Guide" src="https://img.shields.io/badge/Guide-usage-0969da"></a>
   <a href="pyproject.toml"><img alt="Python 3.10+" src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&amp;logoColor=white"></a>
   <a href="LICENSE"><img alt="Software license: Apache 2.0" src="https://img.shields.io/badge/Software-Apache%202.0-2da44e"></a>
