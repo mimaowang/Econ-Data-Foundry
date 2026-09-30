@@ -141,7 +141,7 @@ def test_static_record_links_stay_in_the_published_project() -> None:
     html = (ROOT / "docs" / "index.html").read_text(encoding="utf-8")
     template = re.search(r'<h2><a href="([^"]+)"', html).group(1)
     payload = json.loads((ROOT / "docs" / "catalog.json").read_text(encoding="utf-8"))
-    for base in ("https://example.org/Econ-Data-Foundry/", "http://localhost:8000/"):
+    for base in ("https://example.org/Econ-DataKnowhow/", "http://localhost:8000/"):
         for item in payload["datasets"]:
             link = template.replace("${esc(source)}", item["source_path"])
             resolved = urljoin(base, link)

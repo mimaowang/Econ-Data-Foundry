@@ -691,7 +691,7 @@ def main() -> int:
     prepare.add_argument("--model", default="unknown-model", help="visible model label; never inspect credentials to find it")
     prepare.add_argument("--seed", type=int, default=DEFAULT_SEED)
     prepare.add_argument("--variant-mode", choices=sorted(VARIANT_MODES), default="balanced")
-    prepare.add_argument("--output-root", type=Path, default=ROOT.parent / "econ-data-foundry-benchmark-runs")
+    prepare.add_argument("--output-root", type=Path, default=ROOT.parent / "econ-dataknowhow-benchmark-runs")
 
     subparsers.add_parser("next", help="show the next case and start its harness timer")
     submit = subparsers.add_parser("submit", help="validate and seal the active case answer")

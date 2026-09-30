@@ -1,6 +1,6 @@
 # Autonomous Collection Benchmark
 
-This is a network-enabled, long-horizon product test. It measures whether an agent with no prior context can understand Econ-Data-Foundry, discover high-quality empirical literature using Chinese data, resolve dataset identities, ground coverage and acquisition routes, update the knowledge base conservatively, and maintain quality across repeated autonomous work units.
+This is a network-enabled, long-horizon product test. It measures whether an agent with no prior context can understand Econ-DataKnowhow, discover high-quality empirical literature using Chinese data, resolve dataset identities, ground coverage and acquisition routes, update the knowledge base conservatively, and maintain quality across repeated autonomous work units.
 
 If this README is the only instruction you received, begin the protocol below. Do not ask the user for a target paper or dataset.
 
@@ -39,7 +39,7 @@ From the source repository:
 python scripts/collection_benchmark_session.py prepare --agent claude-code --model <visible-model-label>
 ```
 
-The command prints a new workspace under `econ-data-foundry-collection-benchmark-runs` beside the repository. Change into the printed `workspace` directory. Do not return to the source repository after this point.
+The command prints a new workspace under `econ-dataknowhow-collection-benchmark-runs` beside the repository. Change into the printed `workspace` directory. Do not return to the source repository after this point.
 
 ## 2. Cold-start orientation
 

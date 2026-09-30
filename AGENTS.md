@@ -1,4 +1,4 @@
-# Econ-Data-Foundry Agent Operating Notes
+# Econ-DataKnowhow Agent Operating Notes
 
 This file is the shortest entry point for coding and research agents. Start with [`guides/mental-model.md`](guides/mental-model.md): it explains the judgment this project is trying to preserve through a worked research decision. Use [`guides/operations.md`](guides/operations.md) for maintenance, [`guides/usage.md`](guides/usage.md) for answering research ideas, and [`datasets/template.md`](datasets/template.md) when encoding durable knowledge. These files have different jobs; do not treat them as four rule lists to memorize.
 

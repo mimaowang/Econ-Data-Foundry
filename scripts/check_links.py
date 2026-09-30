@@ -53,7 +53,7 @@ def check(url: str, timeout: float) -> dict[str, object]:
     issues = public_http_url_issues(url, resolve_dns=False)
     if issues:
         return {"url_fingerprint": url_fingerprint(url), "result": "blocked", "issues": issues}
-    request = Request(url, method="HEAD", headers={"User-Agent": "econ-data-foundry-link-check/1.0"})
+    request = Request(url, method="HEAD", headers={"User-Agent": "econ-dataknowhow-link-check/1.0"})
     try:
         with safe_open(request, timeout=timeout) as response:
             return {"url": url, "status": response.status, "final_url": response.geturl(), "result": "ok"}
@@ -63,7 +63,7 @@ def check(url: str, timeout: float) -> dict[str, object]:
         fallback = Request(
             url,
             method="GET",
-            headers={"User-Agent": "econ-data-foundry-link-check/1.0", "Range": "bytes=0-1024"},
+            headers={"User-Agent": "econ-dataknowhow-link-check/1.0", "Range": "bytes=0-1024"},
         )
         try:
             with safe_open(fallback, timeout=timeout) as response:

@@ -1,12 +1,12 @@
-# How to Think About Econ-Data-Foundry
+# How to Think About Econ-DataKnowhow
 
-Econ-Data-Foundry is not a directory of datasets and not an archive of interesting facts from papers. It is durable decision knowledge. Its job is to let a future agent—possibly a small model with no memory of the collection process—turn a research idea into a defensible data choice and a realistic route to the resulting research asset.
+Econ-DataKnowhow is not a directory of datasets and not an archive of interesting facts from papers. It is durable decision knowledge. Its job is to let a future agent—possibly a small model with no memory of the collection process—turn a research idea into a defensible data choice and a realistic route to the resulting research asset.
 
 That distinction matters because dataset discovery is easy to imitate badly. A model can find a familiar name, copy a provider homepage, list attractive variables, and produce a record that looks complete. The failure appears later, when a researcher learns that the sample excludes the population of interest, the required identifier is restricted, the public page contains only raw announcements, or the paper's final table depended on cleaning and matching that were never released. The record was structurally full but decision-empty.
 
 ### Data knowledge and variation knowledge are complementary
 
-The optional companion repository, Econ-Variation, answers a different question: what institutional change created exposure, how assignment worked, what treatment and comparison can be encoded, and which design threats remain. Econ-Data-Foundry can be used independently: it answers what a data product is, what one row represents, which research uses are evidenced, what a researcher can obtain or rebuild, and which joins and coverage limits matter.
+The optional companion repository, Econ-Variation, answers a different question: what institutional change created exposure, how assignment worked, what treatment and comparison can be encoded, and which design threats remain. Econ-DataKnowhow can be used independently: it answers what a data product is, what one row represents, which research uses are evidenced, what a researcher can obtain or rebuild, and which joins and coverage limits matter.
 
 For a study that needs both, keep the two decisions side by side without collapsing them. A variation record cannot make a restricted survey obtainable, and a dataset record cannot make a policy assignment credible. Compare the two repositories at the point of use—population, unit, geography, time, frequency, fields, identifiers, and access—and state which side is missing or conditional. The paper DOI may help discover the corresponding entry in the other repository, but canonical records and maintenance tasks remain independent. This boundary keeps a data-first collection loop from drifting into a second variation database and prevents a variation-first agent from treating any convenient dataset as evidence of identification.
 
