@@ -1,14 +1,16 @@
-# Econ-DataKnowhow
+<h1 align="center">Econ-DataKnowhow</h1>
 
-[简体中文](#简体中文) · [English](#english)
+<p align="center"><a href="#简体中文">简体中文</a> · <a href="#english">English</a></p>
 
-> **把研究想法交给你的 agent，找到合适的经济研究数据，以及取得和使用它的方法。**
+<p align="center"><strong>把研究想法交给你的 agent，找到合适的经济研究数据，以及取得和使用它的方法。</strong></p>
 
-[![CI](https://github.com/mimaowang/Econ-Data-Foundry/actions/workflows/validate.yml/badge.svg)](https://github.com/mimaowang/Econ-Data-Foundry/actions/workflows/validate.yml)
-[![Guide](https://img.shields.io/badge/Guide-usage-0969da)](guides/usage.md)
-[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](pyproject.toml)
-[![Software license: Apache 2.0](https://img.shields.io/badge/Software-Apache%202.0-2da44e)](LICENSE)
-[![Content license: CC BY 4.0](https://img.shields.io/badge/Content-CC%20BY%204.0-2da44e)](LICENSE-CC-BY-4.0.md)
+<p align="center">
+  <a href="https://github.com/mimaowang/Econ-Data-Foundry/actions/workflows/validate.yml"><img alt="CI" src="https://github.com/mimaowang/Econ-Data-Foundry/actions/workflows/validate.yml/badge.svg"></a>
+  <a href="guides/usage.md"><img alt="Guide" src="https://img.shields.io/badge/Guide-usage-0969da"></a>
+  <a href="pyproject.toml"><img alt="Python 3.10+" src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&amp;logoColor=white"></a>
+  <a href="LICENSE"><img alt="Software license: Apache 2.0" src="https://img.shields.io/badge/Software-Apache%202.0-2da44e"></a>
+  <a href="LICENSE-CC-BY-4.0.md"><img alt="Content license: CC BY 4.0" src="https://img.shields.io/badge/Content-CC%20BY%204.0-2da44e"></a>
+</p>
 
 <p align="center"><img src="assets/econ-dataknowhow-hero.png" alt="Papers and data knowledge connect with a research idea" width="75%"></p>
 
