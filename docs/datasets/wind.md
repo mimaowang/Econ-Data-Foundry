@@ -146,23 +146,51 @@ used_by:
 - cite: Chen, Ren & Zha (2018), The Nexus of Monetary Policy and Shadow Banking in China
   journal: AER
   year: 2018
+  dataset_role: Quarterly balance sheet data for 16 listed banks (Q1 2009-Q4 2015), including accounts receivable investments used to measure shadow banking assets
+  evidence_type: online_appendix
+  evidence_url: https://assets.aeaweb.org/asset-server/files/8474.pdf
   data_note: Wind was used to extract quarterly balance sheet data for 16 listed banks (including ARIX—accounts receivable
     investments, used to measure shadow banking assets), from Q1 2009 to Q4 2015
 - cite: 'Gao, Ru & Tang (2021), Subnational Debt of China: The Politics-Finance Nexus'
   journal: JFE
   year: 2021
+  dataset_role: Wind's chengtou bond data as the local-bond-issuance input in the political-finance analysis of subnational debt
+  evidence_type: abstract
+  evidence_url: https://colab.ws/articles/10.1016%2Fj.jfineco.2021.05.028
   data_note: Using Wind's chengtou bond data and political association data of local officials, the political-financial interaction
     in local bond issuance was studied
 - cite: 'Tian, Tu & Wang (2024), The Real Effects of Shadow Banking: Evidence from China'
   journal: Management Science
   year: 2024
+  dataset_role: Wind's entrusted loan data as the shadow-bank lending input, combined with listed-company innovation data
+  evidence_type: abstract
+  evidence_url: https://ideas.repec.org/a/inm/ormnsc/v70y2024i12p8556-8582.html
   data_note: Using Wind's entrusted loan data + innovation data from listed companies, it was found that shadow banks correct
     bank credit mismatches through capital reallocation—promoting innovative output among borrowing enterprises
 - cite: Liu, Yu, Tang & Chen (2025), External Trade Policy Uncertainty, Corporate Risk Exposure, and Stock Market Volatility
   journal: CER
   year: 2025
+  dataset_role: Wind's listed-company financial and stock trading data as the firm-level inputs for corporate risk exposure and stock price volatility under trade policy uncertainty
+  evidence_type: abstract
+  evidence_url: https://ideas.repec.org/a/eee/chieco/v89y2025ics1043951x24002207.html
   data_note: Using Wind's listed company financial + stock trading data, we study how uncertainty in US-China trade policies
     affects corporate risk exposure and stock price fluctuations
+- cite: 'Hua, Wang, Xia & Zhang (2025), Industrial Policy, Congruence, and Innovation: Evidence from "Chinese NASDAQ"'
+  doi: https://doi.org/10.1016/j.respol.2025.105298
+  journal: Research Policy
+  year: 2025
+  dataset_role: Wind NEEQ-listed firm financial data 2013-2019 complementing CSMAR
+  evidence_type: data-section
+  evidence_url: https://www.sciencedirect.com/science/article/pii/S0048733325001271
+  data_note: Uses Wind financial terminal data alongside CSMAR for NEEQ-listed company financials (2013-2019). Combined with CNIPA/Incopat patents, tax records, census, and city statistics to study congruence between firm factor inputs and local factor endowments and its effect on innovation under MIC 2025.
+- cite: 'Yu, Zheng & Liu (2026), Digital Innovation as a Bank Risk Mitigator: Empirical Insights from Chinese Commercial Banks'
+  doi: https://doi.org/10.1016/j.respol.2026.105501
+  journal: Research Policy
+  year: 2026
+  dataset_role: Wind bank-level financial data complementing CSMAR and BankFocus
+  evidence_type: data-section
+  evidence_url: https://www.sciencedirect.com/science/article/pii/S0048733326000922
+  data_note: Uses Wind financial terminal data alongside CSMAR, CNIPA digital patents, and BankFocus for 391 Chinese commercial banks (2009-2018). Complements CSMAR for bank balance sheet and income statement variables in studying how digital innovation reduces bank risk-taking.
 provenance:
 - source: openICPSR replication package https://doi.org/10.3886/E113177V1 (supports Wind as a bank-data source used alongside Bankscope)
   added: '2026-07-08'

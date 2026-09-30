@@ -4,7 +4,7 @@ Thank you for improving the knowledge base. The most valuable contribution is a 
 
 ## Before You Change Anything
 
-Read [`guides/operations.md`](guides/operations.md), [`guides/usage.md`](guides/usage.md), and [`datasets/template.md`](datasets/template.md). Treat `datasets/*.md` as canonical source files. `DATASET_INDEX.md`, `ledgers/aliases.md`, `ledgers/progress.md`, and `dist/` are generated outputs.
+Start with [`AGENTS.md`](AGENTS.md) and [`guides/mental-model.md`](guides/mental-model.md) to understand the decisions the records should support. Use [`guides/operations.md`](guides/operations.md) for maintenance and [`datasets/template.md`](datasets/template.md) when writing a record. Treat `datasets/*.md` as canonical source files. `DATASET_INDEX.md`, `ledgers/aliases.md`, `ledgers/progress.md`, `dist/` and `docs/` are generated outputs.
 
 ## Dataset Record Standard
 
@@ -24,13 +24,17 @@ Do not promote a record to `ready` merely because it has a familiar name or a la
 Use Python 3.10 or later:
 
 ```text
-python -m pip install -r requirements.txt
+python -m pip install -r requirements-dev.txt
 python scripts/check_secrets.py
 python scripts/validate_kb.py --write-report
 python scripts/build_views.py
-python scripts/validate_kb.py
 python scripts/export_catalog.py
+python scripts/build_site.py
+python scripts/build_quality_card.py
+python scripts/check_generated_views.py
+python scripts/validate_kb.py
 python -m pytest
+python -m ruff check .
 ```
 
 On Windows, use backslashes if preferred. Do not commit credentials, restricted data, raw downloads, browser profiles, or provider challenge pages. Network access is not required for the local quality gate.
@@ -42,3 +46,5 @@ Claim one queue item, preserve its source identity, and complete or release it w
 ## Pull Requests
 
 Describe the user-visible improvement, the records or scripts affected, the evidence used, and the checks you ran. Keep generated files in sync. A pull request that changes a canonical record should normally include the regenerated views and catalog artifacts.
+
+When publishing accumulated local work, review the file list as well as the diff: new canonical records and linked guides belong in the update, while downloaded source files, temporary scripts and personal run logs stay local. The ignore patterns cover known scratch locations without excluding `datasets/` or the durable ledgers. Keep existing local materials in place; publication does not require deleting them. Check the remote changes before updating workflows or dependencies so a content release preserves fixes already merged upstream.

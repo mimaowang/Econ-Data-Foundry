@@ -26,6 +26,12 @@ secrets.json
 # Local agent configuration and third-party skill checkouts are not project dependencies.
 .claude/
 
+# Author-specific agent handoffs and visual working files stay local; the selected hero is in assets/.
+/guides/kimi-k3-handoff.zh-CN.md
+/guides/kimi-code-prompts.zh-CN.md
+/guides/designs/
+/visual-studies/
+
 # Internal review artifacts are not part of the public catalog.
 agent-review-reports/
 ledgers/link-check.json
@@ -39,3 +45,30 @@ private-evaluation/
 # Local fetch artifacts are evidence for the maintainer, not portable source data.
 ledgers/_fetch_cache/*.html
 ledgers/_fetch_cache/*.htm
+ledgers/_*.json
+ledgers/_*.jsonl
+
+# Local research scratch work stays on disk, outside the public update.
+/ledgers/_fetch_cache/
+/_scratch*
+/scratch_*
+/.b*-scratch-*/
+/.grounding-*/
+/.human-browser-*/
+/.provider-audit-*/
+/.semantic-recheck-*/
+/.sweep-*/
+/.usedby-backfill-*/
+/.wp-hunt-*/
+/.tmp-gate/
+/.tmpcheck/
+/kb-generated-check-*/
+/kb-gv-*/
+/tmp/
+/tmp_check2/
+/tmp_gvcheck/
+/gate_output*.txt
+/jina_pure.txt
+/jina_wiley.txt
+/orcid_ws.xml
+/desktop.ini

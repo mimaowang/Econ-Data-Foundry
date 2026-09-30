@@ -146,16 +146,74 @@ used_by:
 - cite: 'Kee & Tang (2016), Domestic Value Added in Exports: Theory and Firm Evidence from China'
   journal: AER
   year: 2016
+  dataset_role: Customs transaction data as the export-transaction component for estimating the domestic value-added ratio of Chinese exports
+  evidence_type: article_and_replication
+  evidence_url: https://www.aeaweb.org/articles?id=10.1257/aer.20131687
   data_note: Combines firm-level and customs transaction data to estimate the domestic value-added ratio of Chinese exports
 - cite: 'Zhang, Liu & Wei (2023), Digital Product Imports and Export Product Quality: Firm-level Evidence from China'
   journal: CER
   year: 2023
+  dataset_role: Customs transaction data as the import-export transaction input for studying how digital-product imports affect export product quality
+  evidence_type: abstract
+  evidence_url: https://ideas.repec.org/a/eee/chieco/v79y2023ics1043951x23000664.html
   data_note: Combines customs transactions with firm data to study how digital-product imports affect export product quality
 - cite: Zhang & Zhou (2023), Quota Removal, Destination-Specific Export Shocks, and Skill Acquisition in China
   journal: JDE
   year: 2023
+  dataset_role: China Customs export transaction data as the source of destination-specific export shocks (with quota cancellation) for studying effects on skills training and education investment
+  evidence_type: abstract
+  evidence_url: https://ideas.repec.org/a/eee/deveco/v165y2023ics0304387823001049.html
   data_note: Use China Customs export transaction data + quota cancellation as exogenous shocks to study how export destination-specific
     demand shocks affect corporate skills training and education investment
+- cite: 'Handley & Limão (2017), Policy Uncertainty, Trade, and Welfare: Theory and Evidence for China and the United States'
+  journal: AER
+  year: 2017
+  dataset_role: Firm-product-destination export transaction data for measuring trade policy uncertainty effects
+  evidence_type: data-section
+  evidence_url: https://www.aeaweb.org/articles?id=10.1257/aer.20141419
+  data_note: Used China Customs transaction-level export data (2000–2006) to estimate the impact of WTO accession and trade policy
+    uncertainty reduction on Chinese export entry, volume, and prices. Shows that TPU reduction accounts for substantial export
+    growth to the US, with heterogeneous effects across products and firm types.
+- cite: 'Long & Fan (2026), Can Green Mergers and Acquisitions Drive Firms'' Transition to Green Exports? Evidence from China''s Manufacturing Sector'
+  doi: https://doi.org/10.1016/j.chieco.2026.102738
+  journal: CER
+  year: 2026
+  dataset_role: Chinese Customs transaction records 2007-2016; main export outcome matched to CSMAR listed manufacturing firms
+  evidence_type: data-section
+  evidence_url: https://www.sciencedirect.com/science/article/abs/pii/S1043951X26000544
+  data_note: Matches Customs export transaction records (2007-2016) with A-share listed manufacturing firms to study how green M&As affect green product exports. Proposes a technology-qualification framework where green M&As promote green export entry and continuity through green innovation and environmental legitimacy. Finds stronger effects for firms with higher operational efficiency, weaker green foundation, private ownership, and processing trade.
+- cite: 'Mo & Zhang (2024), Neighboring Capital Imports and Non-Importer Productivity: Evidence from Geocoded Manufacturing Firms in China'
+  doi: https://doi.org/10.1016/j.jue.2024.103692
+  journal: JUE
+  year: 2024
+  dataset_role: Customs import transaction data matched with ASIF geocoded firm panel (2000-2006)
+  evidence_type: data-section
+  evidence_url: https://www.sciencedirect.com/science/article/abs/pii/S0094119024000627
+  data_note: Uses geocoded ASIF-Customs matched firm panel (2000-2006) with NLP product description-HS code matching. Finds neighboring firms' capital goods imports within 10km generate significant TFP spillovers to non-importing firms — raising non-importer productivity by 0.99% on average, six times the productivity gain from own R&D. Spillovers operate through supply-chain linkages (upstream-downstream capital goods) and decay beyond 10km.
+- cite: 'Hau & Ouyang (2024), Can Real Estate Booms Hurt Firms? Evidence on Investment Substitution'
+  doi: https://doi.org/10.1016/j.jue.2024.103695
+  journal: JUE
+  year: 2024
+  dataset_role: Customs trade transaction data matched with ASIF; firm-level exports/imports
+  evidence_type: data-section
+  evidence_url: https://ideas.repec.org/a/eee/juecon/v144y2024ics0094119024000652.html
+  data_note: Uses Customs trade data matched with ASIF manufacturing firms (~900K firms, 2002-2007) to study how real estate booms crowd out firm productive investment. Combined with 172 city-level housing price and land supply data. Exploits exogenous variation in residential land supply as IV for housing prices — finds real estate price increases divert firm resources from capital investment and R&D toward real estate.
+- cite: 'Huang, Jia & Ge (2024), Forced to Innovate? Consequences of United States'' Anti-Dumping Sanctions on Innovations of Chinese Exporters'
+  doi: https://doi.org/10.1016/j.respol.2023.104899
+  journal: Research Policy
+  year: 2024
+  dataset_role: China Customs firm-level export data to the US (HS 8-digit); matched with WTO anti-dumping case data
+  evidence_type: data-section
+  evidence_url: https://www.sciencedirect.com/science/article/abs/pii/S004873302300183X
+  data_note: Uses Customs transaction data (HS 8-digit, 2000-2009) matched with WTO anti-dumping case records to identify targeted Chinese exporters. Combined with ASIF firm data and CNIPA patents. DiD finds that firms hit by US anti-dumping duties significantly increase invention patent output — sanctions act as a "forced innovation" shock. Effect is stronger during China's 2006 pro-innovation policy period.
+- cite: 'Wang, Wu & Wu (2025), Export Slowdown and Increasing Land Supply: Local Government''s Responses to Export Shocks in China'
+  doi: https://doi.org/10.1016/j.jue.2025.103796
+  journal: JUE
+  year: 2025
+  dataset_role: City-year export panel and HS-8 product exports used to measure export shocks and construct a leave-one-out Bartik instrument
+  evidence_type: data_section_and_working_paper
+  evidence_url: https://www.china-ces.org/Files/3055abstract/202401241534361470.pdf
+  data_note: The paper's data section states that the full GACC export sample is aggregated from raw customs records to national HS-8 totals and then to city-year HS-8 exports for 2007-2017, covering 326 prefecture-level cities. The recorded paper uses these aggregates, not a downloadable replacement for the underlying transaction database; the paper-specific cleaning code and current GACC microdata access remain separate questions.
 provenance:
 - source: Crossref abstract for https://doi.org/10.1257/aer.20131687 (supports use of firm- and customs transaction-level data)
   added: '2026-07-08'
@@ -163,6 +221,15 @@ provenance:
   verified: false
 - source: EPS China Microeconomic Data Query System http://microdata.sozdata.com and university-library database descriptions
   added: '2026-07-08'
+  confidence: high
+  verified: true
+- source: Wang, Wu & Wu (2025) working-paper data section https://www.china-ces.org/Files/3055abstract/202401241534361470.pdf and JUE DOI https://doi.org/10.1016/j.jue.2025.103796
+  field_scope:
+  - GACC source identity
+  - HS-8 aggregation
+  - 2007-2017 period
+  - 326-city panel role
+  added: '2026-08-12'
   confidence: high
   verified: true
 related_datasets:

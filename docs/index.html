@@ -35,13 +35,14 @@
 <main>
   <header>
     <h1>Econ-Data-Foundry</h1>
-    <p class="lede">Search the China catalog by research idea, topic, coverage, or alias. Each result points to a canonical record with research fit, acquisition routes, and limitations.</p>
+    <p class="lede">Find data knowledge for your research question. Search by topic, coverage or alias, then open a record for the acquisition route and limitations. Your agent can compare these records with your research needs.</p>
   </header>
   <section aria-label="Dataset search">
     <div class="controls">
       <input id="query" type="search" placeholder="Search an idea, dataset, topic, alias, or variable" autocomplete="off">
-      <select id="status" aria-label="Filter by status"><option value="">All statuses</option><option value="ready">Ready</option><option value="grounding">Grounding</option><option value="needs-review">Needs review</option><option value="candidate">Candidate</option><option value="deprecated">Deprecated</option></select>
+      <select id="status" aria-label="Filter by status"><option value="ready">Ready</option><option value="">All statuses</option><option value="grounding">Grounding</option><option value="needs-review">Needs review</option><option value="candidate">Candidate</option><option value="deprecated">Deprecated</option></select>
     </div>
+    <p class="lede">Ready means usable for the documented purpose under its stated conditions, not necessarily free or a direct download. Choose All statuses to include unresolved leads. Record links open the canonical Markdown; source links may lead to documentation or an application.</p>
     <p id="meta" class="meta" aria-live="polite">Loading catalog…</p>
     <div id="results" class="results"></div>
   </section>
@@ -56,20 +57,68 @@
   let datasets = [];
   const text = value => Array.isArray(value) ? value.join(' ') : (value && typeof value === 'object' ? Object.values(value).join(' ') : String(value || ''));
   const haystack = item => [item.id, item.name, item.provider, item.aka, item.domains, item.key_variables, item.good_for, item.research_fit, item.description_markdown, item.unit_of_observation].map(text).join(' ').toLowerCase();
+  const stopwords = new Set(['about', 'affect', 'china', 'chinese', 'data', 'dataset', 'does', 'economic', 'economics', 'effect', 'from', 'have', 'into', 'research', 'study', 'that', 'their', 'this', 'using', 'what', 'when', 'where', 'which', 'with']);
+  const queryTerms = value => {
+    const normalized = value.trim().toLowerCase();
+    const latin = (normalized.match(/[a-z0-9][a-z0-9-]{2,}/g) || []).filter(term => !stopwords.has(term));
+    const cjk = [];
+    for (const sequence of normalized.match(/[\u3400-\u9fff]+/g) || []) {
+      if (sequence.length <= 2) cjk.push(sequence);
+      else for (let index = 0; index < sequence.length - 1; index += 1) cjk.push(sequence.slice(index, index + 2));
+    }
+    return [...new Set([...latin, ...cjk])];
+  };
+  const termWeights = terms => new Map(terms.map(term => {
+    const documentFrequency = datasets.reduce((count, item) => count + (haystack(item).includes(term) ? 1 : 0), 0);
+    return [term, 1 + Math.log((datasets.length + 1) / (documentFrequency + 1))];
+  }));
+  const matchScore = (item, terms, weights) => {
+    if (!terms.length) return 1;
+    const searchable = haystack(item);
+    const identity = text([item.id, item.name, item.aka]).toLowerCase();
+    return terms.reduce((score, term) => {
+      const weight = weights.get(term) || 1;
+      return score + (searchable.includes(term) ? weight : 0) + (identity.includes(term) ? 2 * weight : 0);
+    }, 0);
+  };
+  const matchCount = (item, terms) => {
+    const searchable = haystack(item);
+    return terms.reduce((count, term) => count + (searchable.includes(term) ? 1 : 0), 0);
+  };
   const esc = value => String(value || '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
   const fit = item => { const value = item.research_fit && item.research_fit.best_for; return text(value || item.good_for || 'No best-use note recorded.'); };
   const coverage = item => [text(item.unit_of_observation), text(item.time_span), text(item.geography)].filter(Boolean).join(' · ');
   const safeUrl = value => { try { const parsed = new URL(String(value || '')); return ['http:', 'https:'].includes(parsed.protocol) && !parsed.username && !parsed.password ? parsed.href : ''; } catch { return ''; } };
   const url = item => { const routes = item.access_routes || []; const first = routes.map(route => safeUrl(route && route.direct_url)).find(Boolean); return first || safeUrl(item.access && item.access.url); };
+  const joinTargets = item => (item.joins || []).map(join => join && join.target).filter(Boolean);
   function render() {
-    const needle = query.value.trim().toLowerCase();
+    const terms = queryTerms(query.value);
+    const weights = termWeights(terms);
     const chosen = status.value;
-    const filtered = datasets.filter(item => (!chosen || item.catalog_status === chosen) && (!needle || haystack(item).includes(needle)));
+    let ranked = datasets
+      .filter(item => !chosen || item.catalog_status === chosen)
+      .map(item => ({item, score: matchScore(item, terms, weights), matches: matchCount(item, terms)}))
+      .filter(result => result.score > 0)
+      .sort((left, right) => right.score - left.score || String(left.item.name).localeCompare(String(right.item.name)));
+    if (terms.length && ranked.length) {
+      const lead = ranked[0];
+      const connected = new Set(joinTargets(lead.item));
+      for (const result of ranked) if (joinTargets(result.item).includes(lead.item.id)) connected.add(result.item.id);
+      ranked = ranked
+        .map(result => ({
+          ...result,
+          score: result.score + (connected.has(result.item.id) && result.matches >= 2 ? lead.score * 0.5 : 0),
+        }))
+        .sort((left, right) => right.score - left.score || String(left.item.name).localeCompare(String(right.item.name)))
+        .slice(0, 12);
+    }
+    const filtered = ranked.map(result => result.item);
     meta.textContent = `${filtered.length} of ${datasets.length} records`;
     results.innerHTML = filtered.map(item => {
       const source = item.source_path || '#';
       const access = url(item);
-      return `<article><h2><a href="../${esc(source)}">${esc(item.name || item.id)}</a><span class="status">${esc(item.catalog_status)}</span></h2><p>${esc(fit(item))}</p><dl><dt>Coverage</dt><dd>${esc(coverage(item) || 'Not recorded')}</dd><dt>Access</dt><dd>${access ? `<a href="${esc(access)}" rel="noopener noreferrer">${esc(access)}</a>` : 'Route requires verification'}</dd><dt>Cost</dt><dd>${esc(item.access && item.access.cost || 'See access routes')}</dd></dl></article>`;
+      const complements = joinTargets(item);
+      return `<article><h2><a href="${esc(source)}">${esc(item.name || item.id)}</a><span class="status">${esc(item.catalog_status)}</span></h2><p>${esc(fit(item))}</p><dl><dt>Coverage</dt><dd>${esc(coverage(item) || 'Not recorded')}</dd>${complements.length ? `<dt>Possible complements</dt><dd>${esc(complements.join(', '))}</dd>` : ''}<dt>Source / access</dt><dd>${access ? `<a href="${esc(access)}" rel="noopener noreferrer">${esc(access)}</a>` : 'Route requires verification'}</dd><dt>Cost</dt><dd>${esc(item.access && item.access.cost || 'See access routes')}</dd></dl></article>`;
     }).join('') || '<p class="empty">No matching records.</p>';
   }
   fetch('catalog.json').then(response => { if (!response.ok) throw new Error('catalog unavailable'); return response.json(); }).then(payload => { datasets = payload.datasets || []; render(); }).catch(() => { meta.textContent = 'Catalog unavailable. Open the repository records directly.'; results.innerHTML = ''; });

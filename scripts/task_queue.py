@@ -95,6 +95,30 @@ def claim(agent: str) -> dict:
     raise RuntimeError("no claimable pending task")
 
 
+def enqueue(task_id: str, task_type: str, goal: str, title: str | None, source: str | None, doi: str | None) -> dict:
+    with workspace_lock("task-queue"):
+        recover_transaction()
+        queue = load_or_fail(QUEUE)
+        done = load_or_fail(DONE)
+        failed = load_or_fail(FAILED)
+        known = {str(row.get("id")) for row in queue + done + failed}
+        if task_id in known:
+            raise RuntimeError(f"task {task_id} already exists in a task ledger")
+        task = {
+            "id": task_id,
+            "type": task_type,
+            "goal": goal,
+            "status": "pending",
+            "created_at": now(),
+        }
+        for key, value in (("title", title), ("source", source), ("doi", doi)):
+            if value:
+                task[key] = value
+        queue.append(task)
+        write_jsonl(QUEUE, queue)
+        return task
+
+
 def peek() -> dict:
     if TRANSACTION.exists():
         raise RuntimeError("task queue has an interrupted transaction; run a mutating queue command to recover it")
@@ -105,7 +129,13 @@ def peek() -> dict:
     for task in queue:
         if task.get("status") == "pending" and str(task.get("id")) not in closed:
             return task
-    raise RuntimeError("no claimable pending task")
+    return {
+        "status": "empty",
+        "message": (
+            "No claimable pending task. Enqueue one bounded, high-value work unit from the candidate ledger, "
+            "a verified literature lead, or a documented knowledge gap; otherwise stop cleanly."
+        ),
+    }
 
 
 def find_claimed(queue: list[dict], task_id: str, agent: str | None = None) -> tuple[int, dict]:
@@ -119,7 +149,14 @@ def find_claimed(queue: list[dict], task_id: str, agent: str | None = None) -> t
     raise RuntimeError(f"task {task_id} not found in queue")
 
 
-def complete(task_id: str, result: str, datasets: list[str], note: str | None, agent: str | None = None) -> dict:
+def complete(
+    task_id: str,
+    result: str,
+    datasets: list[str],
+    note: str | None,
+    agent: str | None = None,
+    audit_outcome: str | None = None,
+) -> dict:
     with workspace_lock("task-queue"):
         recover_transaction()
         queue = load_or_fail(QUEUE)
@@ -128,6 +165,20 @@ def complete(task_id: str, result: str, datasets: list[str], note: str | None, a
         index, task = find_claimed(queue, task_id, agent)
         if any(str(row.get("id")) == task_id for row in done):
             raise RuntimeError(f"task {task_id} already exists in completed ledger")
+        is_semantic_audit = task.get("type") == "semantic-audit"
+        if is_semantic_audit:
+            if result != "audited":
+                raise RuntimeError("semantic-audit tasks close with --result audited and a separate --audit-outcome")
+            if audit_outcome not in {"pass", "repair-needed", "unverifiable"}:
+                raise RuntimeError("semantic-audit tasks require --audit-outcome pass, repair-needed, or unverifiable")
+            if not datasets:
+                raise RuntimeError("semantic-audit tasks must name at least one reviewed dataset")
+        elif result == "audited" or audit_outcome is not None:
+            raise RuntimeError("audited results and --audit-outcome are only valid for semantic-audit tasks")
+        elif result == "processed" and not datasets:
+            raise RuntimeError("processed tasks must name at least one touched dataset; use skipped when no record changed")
+        if result in {"processed", "candidate", "audited"} and not str(note or "").strip():
+            raise RuntimeError(f"{result} tasks require a durable completion note")
         record = {
             "id": task_id,
             "journal": task.get("journal"),
@@ -138,10 +189,14 @@ def complete(task_id: str, result: str, datasets: list[str], note: str | None, a
             "doi": task.get("doi"),
             "goal": task.get("goal"),
             "result": result,
-            "datasets_touched": datasets,
             "finished_at": now(),
             "claimed_by": task.get("claimed_by"),
         }
+        if is_semantic_audit:
+            record["datasets_reviewed"] = datasets
+            record["audit_outcome"] = audit_outcome
+        else:
+            record["datasets_touched"] = datasets
         if note:
             record["note"] = note
         queue.pop(index)
@@ -275,25 +330,34 @@ def main() -> int:
     claim_parser = sub.add_parser("claim")
     claim_parser.add_argument("--agent", required=True)
 
+    enqueue_parser = sub.add_parser("enqueue")
+    enqueue_parser.add_argument("--id", required=True)
+    enqueue_parser.add_argument("--type", required=True)
+    enqueue_parser.add_argument("--goal", required=True)
+    enqueue_parser.add_argument("--title")
+    enqueue_parser.add_argument("--source")
+    enqueue_parser.add_argument("--doi")
+
     sub.add_parser("peek")
 
     complete_parser = sub.add_parser("complete")
     complete_parser.add_argument("--id", required=True)
-    complete_parser.add_argument("--result", choices=["processed", "skipped", "needs-review"], required=True)
+    complete_parser.add_argument("--result", choices=["processed", "candidate", "skipped", "needs-review", "audited"], required=True)
     complete_parser.add_argument("--dataset", action="append", default=[])
     complete_parser.add_argument("--note")
-    complete_parser.add_argument("--agent")
+    complete_parser.add_argument("--agent", required=True)
+    complete_parser.add_argument("--audit-outcome", choices=["pass", "repair-needed", "unverifiable"])
 
     fail_parser = sub.add_parser("fail")
     fail_parser.add_argument("--id", required=True)
     fail_parser.add_argument("--reason", required=True)
     fail_parser.add_argument("--retryable", action="store_true")
-    fail_parser.add_argument("--agent")
+    fail_parser.add_argument("--agent", required=True)
 
     release_parser = sub.add_parser("release")
     release_parser.add_argument("--id", required=True)
     release_parser.add_argument("--note")
-    release_parser.add_argument("--agent")
+    release_parser.add_argument("--agent", required=True)
 
     reclaim_parser = sub.add_parser("reclaim-stale")
     reclaim_parser.add_argument("--older-than-hours", type=float, default=6.0)
@@ -305,20 +369,26 @@ def main() -> int:
     retry_parser.add_argument("--force", action="store_true")
 
     args = parser.parse_args()
-    if args.command == "peek":
-        result = peek()
-    elif args.command == "claim":
-        result = claim(args.agent)
-    elif args.command == "complete":
-        result = complete(args.id, args.result, args.dataset, args.note, args.agent)
-    elif args.command == "fail":
-        result = fail(args.id, args.reason, args.retryable, args.agent)
-    elif args.command == "release":
-        result = release(args.id, args.note, args.agent)
-    elif args.command == "reclaim-stale":
-        result = reclaim_stale(args.older_than_hours, args.note)
-    else:
-        result = retry_failed(args.id, args.note, args.force)
+    try:
+        if args.command == "peek":
+            result = peek()
+        elif args.command == "claim":
+            result = claim(args.agent)
+        elif args.command == "enqueue":
+            result = enqueue(args.id, args.type, args.goal, args.title, args.source, args.doi)
+        elif args.command == "complete":
+            result = complete(args.id, args.result, args.dataset, args.note, args.agent, args.audit_outcome)
+        elif args.command == "fail":
+            result = fail(args.id, args.reason, args.retryable, args.agent)
+        elif args.command == "release":
+            result = release(args.id, args.note, args.agent)
+        elif args.command == "reclaim-stale":
+            result = reclaim_stale(args.older_than_hours, args.note)
+        else:
+            result = retry_failed(args.id, args.note, args.force)
+    except RuntimeError as exc:
+        print(json.dumps({"status": "error", "message": str(exc)}, ensure_ascii=False, indent=2), file=sys.stderr)
+        return 1
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return 0
 

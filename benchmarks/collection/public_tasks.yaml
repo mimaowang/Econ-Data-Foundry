@@ -65,3 +65,22 @@ tasks:
       Once again use the repository's actual current state to choose and complete the
       smallest high-value work unit, maintaining the same evidence and validation standard
       as at the beginning of the run.
+
+  - id: public-source-construction
+    phase: production-pathway
+    prompt: >-
+      Find and process one high-quality empirical study whose final Chinese research data
+      are constructed from public or openly obtainable inputs through cleaning, matching,
+      text processing, geocoding, modeling, or aggregation. Distinguish the raw source
+      from the target research asset and recover only evidence-backed production steps,
+      variables, validation, reproducibility burden, and compliance boundaries.
+
+  - id: self-collected-or-inaccessible
+    phase: production-boundary
+    prompt: >-
+      Evaluate one high-quality study using Chinese data gathered from public webpages,
+      APIs, archives, documents, or another researcher-built source, or a similar study
+      dependent on privileged private access. Decide whether an ordinary researcher can
+      legally and realistically reproduce the data. Record a production pathway when
+      justified; otherwise retain only the unavailable-data boundary needed to prevent a
+      false recommendation.

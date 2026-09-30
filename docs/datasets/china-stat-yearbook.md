@@ -162,6 +162,8 @@ used_by:
   journal: JDE
   year: 2023
   dataset_role: Urban road and area control variables; joined with ASIF firm results
+  evidence_type: abstract
+  evidence_url: https://ideas.repec.org/a/eee/deveco/v162y2023ics0304387823000056.html
   data_note: Use China's prefecture-level city road infrastructure data (statistical yearbook/traffic yearbook) + industrial
     enterprise database to study the impact of highway expansion on resource allocation efficiency and competition promotion
 - cite: 'Cao, Ni & Guo (2025), Broadband Internet and Income Inequality among the Floating Population: Evidence from the ''Broadband
@@ -169,9 +171,141 @@ used_by:
   journal: CER
   year: 2025
   dataset_role: Urban broadband/ICT and macro control; joining with CMDS
+  evidence_type: abstract
+  evidence_url: https://ideas.repec.org/a/eee/chieco/v90y2025ics1043951x25000276.html
   data_note: Using the China Urban Statistical Yearbook (broadband coverage/ICT infrastructure) + CMDS floating population
     data, and using the 'Broadband China' policy as DID, we study the impact of Internet infrastructure on the income inequality
     of the floating population.
+- cite: 'Song, Storesletten & Zilibotti (2011), Growing Like China'
+  journal: AER
+  year: 2011
+  dataset_role: Aggregate NBS statistics for structural model calibration targets
+  evidence_type: replication
+  evidence_url: https://www.openicpsr.org/openicpsr/project/112395/
+  data_note: Calibrated a two-sector growth model using NBS Statistical Yearbook aggregates (GDP, savings, employment shares
+    by ownership, industry-level output and TFP, provincial panels) to explain China's sustained high growth and capital returns
+    despite massive investment.
+- cite: 'Piketty, Yang & Zucman (2019), Capital Accumulation, Private Property, and Rising Inequality in China, 1978–2015'
+  journal: AER
+  year: 2019
+  dataset_role: National accounts and household survey income tables for Distributional National Accounts
+  evidence_type: replication
+  evidence_url: https://www.openicpsr.org/openicpsr/project/116194/
+  data_note: Used NBS national accounts (GDP, capital stock, savings) and household survey income distribution tables (by decile
+    and income source) from the Statistical Yearbook system to construct China's Distributional National Accounts. Combined with
+    CHIP, CFPS wealth surveys, tax data, and Hurun rich list to document rising wealth/income inequality from 1978 to 2015.
+- cite: 'Author (2025), How Government Fiscal Decentralization Shapes Bank Competition Dynamics: City-Level Evidence from China'
+  doi: https://doi.org/10.1016/j.chieco.2025.102570
+  journal: CER
+  year: 2025
+  dataset_role: China City Statistical Yearbook municipal fiscal expenditure data; fiscal decentralization measure
+  evidence_type: data-section
+  evidence_url: https://www.sciencedirect.com/science/article/abs/pii/S1043951X25002365
+  data_note: Uses City Statistical Yearbook fiscal expenditure data combined with CSMAR bank-level financial data (2011-2022, 250 banks across 1,472 bank-year observations) to study how fiscal decentralization affects bank competition at the city level.
+- cite: 'Gerritse, Wang & van Oort (2026), Industrial Transfer Policy in China: Migration and Development'
+  doi: https://doi.org/10.1016/j.jue.2025.103815
+  journal: JUE
+  year: 2026
+  dataset_role: China City Statistical Yearbook city-level GDP, wage, employment, and related urban-development outcomes linked to the migrant survey
+  evidence_type: paper_data_section
+  evidence_url: https://www.sciencedirect.com/science/article/pii/S0094119025000804
+  data_note: The paper's data section identifies China City Statistical Yearbooks issued by the NBS as the source for city-level GDP, wage, and employment variables used alongside the CMDS migration measures and ASIF firm outcomes. The checked evidence does not establish a paper-specific yearbook extract, exact editions, or a new download route; use the main Statistical Yearbook record and verify definitions and city boundaries before joining.
+- cite: 'Author (2025), Structural Transformation and the Urban Growth Shadows: County-Level Evidence from China, 1990-2020'
+  doi: https://doi.org/10.1016/j.regsciurbeco.2025.104141
+  journal: RSUE
+  year: 2025
+  dataset_role: County Statistical Yearbook industrial structure and socioeconomic indicators
+  evidence_type: data-section
+  evidence_url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4765694
+  data_note: Uses county-level Statistical Yearbook data to construct industrial structure measures (agricultural vs. service employment shares) and socioeconomic controls across 2,225 counties over 1990-2020. Combined with Population Census and Economic Census data to document urban growth shadows — structural transformation interacts with city proximity to determine county-level population growth.
+- cite: 'Wang & Felice (2026), Internal Migration and Structural Change in China'
+  doi: https://doi.org/10.1111/jors.70049
+  journal: JRS
+  year: 2026
+  dataset_role: City Statistical Yearbook — GDP per capita, industrial output, disposable income, wages, and land area
+  evidence_type: data-section
+  evidence_url: https://ideas.repec.org/a/bla/jregsc/v66y2026i2p602-625.html
+  data_note: Uses City Statistical Yearbook economic indicators (GDP per capita, industrial output, wages, disposable income) alongside CMDS and IPUMS Census data to estimate how internal migration drives structural change across prefecture-level cities via 2SLS/3SLS. City-level economic controls from yearbooks provide the regional economic context for migration-induced structural transformation.
+- cite: 'Fan, Li & Song (2025), Factor Market Segmentation and Regional Innovation: Evidence From China'
+  doi: https://doi.org/10.1111/jors.70031
+  journal: JRS
+  year: 2025
+  dataset_role: City-level economic statistics across 279 prefecture-level cities (1999-2019) for factor market segmentation index
+  evidence_type: data-section
+  evidence_url: https://metatoc.com/papers/121633-factor-market-segmentation-and-regional-innovation-evidence-from-china
+  data_note: Uses City Statistical Yearbook economic indicators to construct a price-method factor market segmentation index across 279 prefecture-level cities (1999-2019). Combined with patent data to test how labor and capital market segmentation affects regional innovation under fiscal decentralization.
+- cite: 'Hau & Ouyang (2024), Can Real Estate Booms Hurt Firms? Evidence on Investment Substitution'
+  doi: https://doi.org/10.1016/j.jue.2024.103695
+  journal: JUE
+  year: 2024
+  dataset_role: City-level housing prices and land supply data across 172 prefecture-level cities
+  evidence_type: data-section
+  evidence_url: https://ideas.repec.org/a/eee/juecon/v144y2024ics0094119024000652.html
+  data_note: Uses 172 prefecture-level city housing price and residential land supply data from statistical yearbooks as instrumental variables. Exogenous variation in city-level residential land supply identifies the causal effect of housing booms on manufacturing firms' investment and productivity. Combined with ASIF firm panel and Customs trade data.
+- cite: 'Rong, Wang & Zhang (2026), Does Real Estate Expansion Hurt Manufacturing Employment: Evidence from China'
+  doi: https://doi.org/10.1016/j.labeco.2026.102889
+  journal: Labour Economics
+  year: 2026
+  dataset_role: City-level real estate investment, housing prices, GDP growth, and minimum wage statistics across 70 major cities (2000-2009)
+  evidence_type: replication
+  evidence_url: https://data.mendeley.com/datasets/btk3vktc2s/2
+  data_note: >-
+    Uses city-level statistical yearbook data (real estate investment, housing prices, GDP growth, minimum wages, fiscal conditions) across 70 major Chinese cities (2000-2009) combined with ASIF firm panel. IV estimates using province-level residential land transfer as instrument find a 10% increase in real estate investment reduces manufacturing firm employment by 1.46%. Rising wage costs are the primary mechanism rather than reduced capital formation.
+- cite: 'Qin, Yi & Zhang (2025), Quarter of Birth, Gender Inequality, and Economic Development'
+  doi: https://doi.org/10.1086/737993
+  journal: JLE
+  year: 2025
+  dataset_role: Statistical yearbooks and meteorological data for agricultural seasonality and weather shock measurement
+  evidence_type: replication
+  evidence_url: https://opendata.pku.edu.cn/dataverse/pku
+  data_note: >-
+    Uses statistical yearbook data combined with meteorological records to construct measures of agricultural seasonality and weather shocks as exogenous variation in household resource abundance at birth. Combined with six Census waves (1990-2020), CFPS, CEPS, and CHNS. Finds birth quarter effects on lifecycle outcomes — driven by agricultural seasonality interacting with son preference in neonatal investment.
+- cite: 'Li & Yang (2005), The Great Leap Forward: Anatomy of a Central Planning Disaster'
+  doi: https://doi.org/10.1086/430804
+  journal: JPE
+  year: 2005
+  dataset_role: Provincial agricultural output, sown area, draft animals, farm capital, grain retention/procurement, population and mortality controls for the 1954-1989 panel
+  evidence_type: data-section
+  evidence_url: https://www3.nd.edu/~nmark/ChinaCourse/TheWeeks/Li_Yang_GLF_JPE.pdf
+  data_note: >-
+    The paper's Appendix B states that provincial agricultural inputs and outputs come mainly from Compilation of China's Rural Economic Statistics: 1949-86 (Ministry of Agriculture, 1989), with missing years cross-checked against the China Statistical Yearbook and provincial agricultural statistical yearbooks. The authors also conducted a 1999 retrospective province survey with the General Organization of Rural Socio-economic Survey for weather, collective-unit scale, and exit-rights variables. The published yearbook component is therefore a grounded use of this canonical source; the retrospective survey is a separate paper-built source and is not treated as publicly reproducible data.
+- cite: 'Borusyak & Hull (2023), Nonrandom Exposure to Exogenous Shocks'
+  doi: https://doi.org/10.3982/ECTA19367
+  journal: Econometrica
+  year: 2023
+  dataset_role: Prefecture-level urban employment outcome for the 2007-2016 China high-speed-rail market-access application
+  evidence_type: data_appendix
+  evidence_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC10795685/
+  data_note: >-
+    The article's data appendix states that prefecture employment is taken from the 2008-2017 China City Statistical Yearbooks
+    (each yearbook covers the previous year), using the series “The Average Number of Staff and Workers” for the whole prefecture,
+    not only the main urban core. The final outcome sample is 275 prefectures with non-missing, cleaned 2007-2016 employment
+    growth. The paper also uses the 2000 Census for prefecture populations and a separately constructed high-speed-rail network;
+    those inputs are not silently folded into the yearbook record.
+- cite: 'Au & Henderson (2006), Are Chinese Cities Too Small?'
+  doi: https://doi.org/10.1111/j.1467-937X.2006.00387.x
+  journal: ReStud
+  year: 2006
+  dataset_role: City-level output, employment, population, capital, industry mix, FDI, amenities and price controls for the 1990-1997 urban agglomeration analysis
+  evidence_type: data_appendix
+  evidence_url: https://www.brown.edu/Departments/Economics/Faculty/henderson/papers/chinatoosmallcities0905.pdf
+  data_note: >-
+    Appendix B identifies the 1991-1998 annual Urban Statistical Yearbook of China (covering data years 1990-1997) as the main
+    source, supplemented by the compiled volume Cities China 1949-1998. The estimating sample starts from 223 prefecture-level
+    cities and ends at 205 after exclusions; variables are measured for the confined city proper (shi qu), not the entire
+    municipal district (di qu). The paper's historical city compilation and GIS education input remain separate candidate sources.
+- cite: 'Jin & Qian (1998), Public Versus Private Ownership of Firms: Evidence from Rural China'
+  doi: https://doi.org/10.1162/003355398555748
+  journal: QJE
+  year: 1998
+  dataset_role: China Statistical Yearbook component of a provincial rural-enterprise and rural-income panel
+  evidence_type: data_appendix
+  evidence_url: https://paperzz.com/doc/7852221/forthcoming--quarterly-journal-of-economics-public-vs.-pr...
+  data_note: >-
+    The paper's Appendix Table I uses CSY 1987-1994 for gross industrial real output of state enterprises, annual rural consumer
+    price indices used to deflate rural income, and the 1981-1994 CSY editions listed in the bibliography. The paper is a provincial
+    rural-enterprise study with 28 provinces and year-specific measures; the other named inputs (CRSY, CTESY, CRFSY, CAY, CPY,
+    CICAS/CDTSY, and TESM) are distinct products and are tracked as unresolved candidates rather than folded into this record.
 provenance:
 - source: National Bureau of Statistics https://data.stats.gov.cn (supports the yearbook system and data-query functions)
   added: '2026-07-08'
@@ -180,6 +314,41 @@ provenance:
 - source: EPS China city/county database introduction page (confirm the university subscription to obtain the panel format
     compiled version)
   added: '2026-07-08'
+  confidence: high
+  verified: true
+- source: https://academic.oup.com/qje/article-abstract/113/3/773/1851137
+  field_scope:
+  - QJE article identity and DOI
+  - provincial-data scope and rural-enterprise research context
+  added: '2026-08-12'
+  confidence: high
+  verified: true
+- source: https://paperzz.com/doc/7852221/forthcoming--quarterly-journal-of-economics-public-vs.-pr...
+  field_scope:
+  - Appendix Table I CSY variables and year ranges
+  - distinction between the CSY component and the paper's other named yearbooks
+  added: '2026-08-12'
+  confidence: med
+  verified: true
+- source: https://www.stats.gov.cn/sj/ndsj/2024/html/note.htm
+  field_scope:
+  - current official NBS China Statistical Yearbook publication identity and contents
+  - current public yearbook reading route, not historical-edition availability
+  added: '2026-08-12'
+  confidence: high
+  verified: true
+- source: https://www.sciencedirect.com/science/article/pii/S0094119025000804
+  field_scope:
+  - JUE paper identity, Gerritse/Wang/van Oort authorship, volume 151 (2026), and city-yearbook role
+  - city-level GDP, wage, employment, and urban-development linkage to CMDS/ASIF
+  added: '2026-08-12'
+  confidence: high
+  verified: true
+- source: https://papers.tinbergen.nl/24020.pdf
+  field_scope:
+  - NBS China City Statistical Yearbook source description for GDP, wage, and employment controls/outcomes
+  - distinction between yearbook aggregate data and the paper's migrant/firm microdata
+  added: '2026-08-12'
   confidence: high
   verified: true
 related_datasets:

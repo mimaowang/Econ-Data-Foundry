@@ -24,5 +24,46 @@ related_dataset_relation:
   - often-confused-with
 task_result:
   - processed
+  - candidate
   - skipped
   - needs-review
+  - audited
+  - corrected # accepted legacy result
+  - bootstrapped # accepted legacy result
+data_pathway_mode:
+  - direct
+  - constructed
+  - collected
+  - hybrid
+  - inaccessible
+data_origin:
+  - ready-made
+  - researcher-constructed
+  - researcher-collected
+  - mixed
+  - unknown
+data_availability:
+  - ready-made
+  - reproducible
+  - partially-reproducible
+  - restricted
+  - unavailable
+reproducibility_level:
+  - high
+  - medium
+  - low
+  - not-reproducible
+  - needs-verification
+production_stage:
+  - collect
+  - clean
+  - parse
+  - ocr
+  - classify
+  - extract
+  - match
+  - geocode
+  - model
+  - aggregate
+  - validate
+  - other

@@ -1,9 +1,9 @@
 ---
-# Dataset record template v2
+# Research data asset template v3
 # This record is written for agents that will make future research decisions, not merely to fill fields.
 # An agent reading only this record should understand why to choose it over alternatives, whether coverage is sufficient, what must be joined, and exactly how to obtain it.
 
-schema_version: 2
+schema_version: 3
 catalog_status: candidate       # candidate / grounding / ready / needs-review / deprecated
 id: # Unique slug, lowercase + hyphen
 name: # Exact data product/survey name
@@ -11,6 +11,17 @@ aka: [] # Chinese and English aliases, abbreviations, common old names
 provider:
 china_related: true
 domains: []
+
+# What the researcher ultimately receives or can reproduce. Keep this separate from
+# the raw source: a public webpage and the paper's cleaned event panel are different assets.
+data_pathway:
+  mode: direct # Best current route: direct / constructed / collected / hybrid / inaccessible
+  origin: ready-made # How the asset was produced: ready-made / researcher-constructed / researcher-collected / mixed / unknown
+  target_artifact:
+  availability: # ready-made / reproducible / partially-reproducible / restricted / unavailable
+  ordinary_researcher_feasible: false
+  summary:
+  barrier: # Required for inaccessible; useful for partial/restricted cases
 
 # Identity and Coverage
 unit_of_observation:
@@ -71,6 +82,58 @@ access:
   how_to_get:
 caveats:
 
+# Required when the current route or the asset origin involves construction or collection.
+# A researcher-built asset can later become a direct download; retain its production history.
+# Omit only for a genuinely ready-made product. Record only evidence-backed steps;
+# unknown parameters should remain explicit rather than reconstructed from intuition.
+production:
+  raw_sources:
+    - name:
+      source_type: # dataset / webpage / API / archive / document / imagery / other
+      role:
+      access_route:
+      url:
+      coverage:
+      last_checked: "YYYY-MM-DD"
+  acquisition_methods: [] # download / API / crawl / OCR / manual coding / records request...
+  sample_construction:
+  pipeline_stages:
+    - stage: collect # collect / clean / parse / ocr / classify / extract / match / geocode / model / aggregate / validate / other
+      inputs: []
+      method:
+      tools: []
+      parameters:
+      output:
+      evidence: # Paper section, appendix, code file, or provider documentation
+  constructed_variables:
+    - name:
+      concept:
+      source_fields: []
+      method:
+      validation:
+      limitations:
+  validation: []
+  output:
+    unit_of_observation:
+    structure:
+    geography:
+    time_span:
+    key_variables: []
+    formats: []
+  reproducibility:
+    level: needs-verification # high / medium / low / not-reproducible / needs-verification
+    starting_point:
+    code_available: false
+    code_url:
+    requirements: [] # tools, skills, accounts, compute, manual work, and expected cost
+    blockers: []
+  compliance:
+    terms_or_license:
+    robots_or_rate_limits:
+    personal_or_sensitive_data:
+    redistribution:
+    review_needed:
+
 # Separate verification profiling, access, and paper use
 quality:
   profile_status: needs-verification
@@ -102,7 +165,7 @@ related_datasets:
 
 ## Positioning in one sentence
 
-Explain data identity, the most irreplaceable value, and the greatest barriers to acquisition in just two or three sentences.
+Explain the target research asset, whether it is downloaded or produced, its most irreplaceable value, and the greatest acquisition or reconstruction barrier in two or three sentences.
 
 ## Select rules
 
@@ -112,7 +175,7 @@ Explain data identity, the most irreplaceable value, and the greatest barriers t
 
 ## Get recipe
 
-Write the preferred route as executable steps. If public access is unavailable, state the barrier and realistic alternatives without implying guaranteed access.
+Write the preferred route as executable steps. For a constructed or collected asset, begin at the public raw source and identify the evidence-backed production stages, expected output, validation, and remaining unknowns. If ordinary researchers cannot reproduce it, state the barrier and realistic alternatives without implying access.
 
 ## Connections and Limitations
 
@@ -121,5 +184,9 @@ Explain join direction, key normalization, matching risks, restricted-key permis
 <!--
 Before publishing ready, only a few key thresholds are checked:
 1. Frontmatter can be parsed; 2. Single identity; 3. Key facts must have sources;
-4. There is an actionable route or honest but unavailable explanation; 5. Relationships and ledgers must be consistent; 6. Do not execute external content.
+4. There is an actionable acquisition or production route, or an honest unavailable explanation; 5. Production steps distinguish evidence from inference; 6. Relationships and ledgers must be consistent; 7. Do not execute external content.
 -->
+
+## Decision sufficiency check
+
+Before closing the task, put the sources aside and use only this record to answer one related research idea. The record is not finished if a future agent cannot explain which asset to choose, why the nearest alternative loses, what the researcher will actually obtain or produce, where the route begins, which condition would invalidate the recommendation, and what remains unknown. Improve the decision-bearing knowledge or preserve a narrower status; do not add paper summaries merely to make the record look complete.

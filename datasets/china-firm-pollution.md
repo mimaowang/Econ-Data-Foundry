@@ -32,8 +32,9 @@ time_span:
   start: 1998
   end: 2014
   best_documented_range: 2000–2012
+  paper_specific_cesd_window: Chen et al. (2025 AER) use CESD observations from 2001–2010
   last_confirmed_release: 2014
-  last_checked: '2026-07-10'
+  last_checked: '2026-08-11'
 frequency:
 - annual
 sample_size: The commonly used version studies about tens of thousands to 100,000 key polluting enterprises every year; the
@@ -130,6 +131,20 @@ access_routes:
   deliverable: Raw or redacted corporate data within approved scope.
   cost: by-application
   last_checked: '2026-07-10'
+- route: aer-openicpsr-replication
+  access_status: public-package-confidential-inputs-excluded
+  direct_url: https://doi.org/10.3886/E196012V1
+  requirements:
+  - An openICPSR account or the repository's current terms/download flow
+  - Stata and the software or paths documented in the deposited README/code
+  steps:
+  - Open project 196012 V1 and record the version and citation.
+  - Inspect the README, Raw_Data/CESD, Data, and Data_Generation_Program folders before downloading.
+  - Use the deposited code and derived files to reproduce the paper's public outputs only after confirming which confidential inputs are missing.
+  deliverable: Public replication code, derived tables/figures and auxiliary files; the package does not release the CESD or CARD raw microdata.
+  cost: free
+  last_checked: '2026-08-11'
+  caveat: The package is a reproduction aid, not a public CESD release. The paper's exact firm panel still requires the confidential or institutionally held inputs described in the README.
 access:
   url: http://microdata.sozdata.com/
   cost: mixed
@@ -142,13 +157,26 @@ access:
   how_to_get: Priority is given to confirming whether university EPS subscriptions include corporate pollution/green development
     modules; the original data does not have a public download entrance for the entire database.
 caveats: Enterprise self-reporting, directory changes, industry code changes and thermal power sample breakpoints will all
-  affect the long panel. Different paper versions may not be identical data products.
+  affect the long panel. Different paper versions may not be identical data products. In Chen et al. (2025 AER), the CESD
+  match covers nearly 80% of Top 1,000 firms and over 70% of Top 10,000 firms, and the firm-level energy measure excludes
+  electricity; those are paper-specific sample facts, not guarantees for another release.
 quality:
   profile_status: partial
   access_status: needs-verification
   paper_use_status: verified
-  last_audited: '2026-07-10'
+  last_audited: '2026-08-11'
 used_by:
+- cite: 'Chen, Chen, Liu, Suárez Serrato & Xu (2025), Regulating Conglomerates: Evidence from an Energy Conservation Program in China'
+  doi: https://doi.org/10.1257/aer.20211455
+  journal: AER
+  year: 2025
+  dataset_role: Main firm-level output and energy-use measures for the Top 1,000 analysis; matched to ASIF and CARD
+  evidence_type: data_appendix
+  evidence_url: https://assets.aeaweb.org/asset-server/files/22048.pdf
+  data_note: The appendix identifies the source as CESD and uses 2001–2010 observations on output, coal, oil and gas to form
+    firm energy and efficiency measures. Table A.6 reports CESD matches for 802 of 1,008 Top 1,000 firms and 10,662 of 14,641
+    Top 10,000 firms. The public openICPSR package lists a Raw_Data/CESD folder but states that confidential inputs are not
+    included, so the released package does not reproduce this raw firm panel by itself.
 - cite: He, Wang & Zhang (2020), Watering Down Environmental Regulation in China
   doi: https://doi.org/10.1093/qje/qjaa024
   journal: QJE
@@ -171,6 +199,14 @@ used_by:
   evidence_type: abstract_only
   evidence_url: needs-verification
   data_note: In conjunction with the establishment of the Environmental Court.
+- cite: 'Feng & Zhang (2025), Limited Liability, Piercing the Corporate Veil and Pollution Abatement: Evidence from China'
+  doi: https://doi.org/10.1016/j.chieco.2025.102529
+  journal: CER
+  year: 2025
+  dataset_role: China Environmental Survey firm-level emissions (SO2) 2002-2013; main pollution outcome matched to ASIF
+  evidence_type: data-section
+  evidence_url: https://www.sciencedirect.com/science/article/abs/pii/S1043951X25001877
+  data_note: Uses Environmental Survey emissions data merged with ASIF and Qichacha corporate group identifiers. 2006 PCV reform reduces subsidiary pollution intensity — mechanism is process control and end-of-pipe treatment investments, not output reduction. Also finds internal pollution shifting within business groups from high-pollution to low-pollution subsidiaries.
 provenance:
 - source: https://academic.oup.com/qje/article-abstract/135/4/2135/5860784
   field_scope:
@@ -186,8 +222,26 @@ provenance:
   added: '2026-07-10'
   confidence: med
   verified: false
+- source: https://assets.aeaweb.org/asset-server/files/22048.pdf
+  field_scope:
+  - CESD identity in AER paper
+  - 2001–2010 paper window
+  - energy/output variables
+  - paper-specific match rates and electricity limitation
+  added: '2026-08-11'
+  confidence: high
+  verified: true
+- source: https://doi.org/10.3886/E196012V1
+  field_scope:
+  - public replication route
+  - confidential-input boundary
+  added: '2026-08-11'
+  confidence: high
+  verified: true
 related_datasets:
 - id: asif
+  relation: complement
+- id: china-tax-survey
   relation: complement
 - id: china-air-quality-monitoring
   relation: often-confused-with

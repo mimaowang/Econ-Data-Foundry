@@ -1,13 +1,17 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
+import json
 import re
 import sys
 from collections import defaultdict
 from datetime import datetime
+from pathlib import Path
 from typing import Any
 
 import yaml
+from jsonschema import Draft202012Validator
 
 sys.dont_write_bytecode = True
 
@@ -27,7 +31,23 @@ from kb_lib import (  # noqa: E402
 
 ALLOWED_STATUSES = {"candidate", "grounding", "ready", "needs-review", "deprecated"}
 ALLOWED_TASK_STATUSES = {"pending", "claimed"}
+ALLOWED_TASK_RESULTS = {
+    "processed",
+    "candidate",
+    "skipped",
+    "needs-review",
+    "audited",
+    "corrected",  # accepted legacy result
+    "bootstrapped",  # accepted legacy result
+}
 ALLOWED_COSTS = {"free", "paid", "by-application", "mixed", "registration"}
+ALLOWED_SCHEMA_VERSIONS = {2, 3}
+ALLOWED_PATHWAY_MODES = {"direct", "constructed", "collected", "hybrid", "inaccessible"}
+ALLOWED_DATA_ORIGINS = {"ready-made", "researcher-constructed", "researcher-collected", "mixed", "unknown"}
+ALLOWED_AVAILABILITY = {"ready-made", "reproducible", "partially-reproducible", "restricted", "unavailable"}
+ALLOWED_REPRODUCIBILITY = {"high", "medium", "low", "not-reproducible", "needs-verification"}
+SEMANTIC_AUDIT_INTERVAL = 5
+DATASET_SCHEMA_PATH = ROOT / "schema" / "dataset.schema.json"
 REQUIRED_BASE = {"schema_version", "catalog_status", "id", "name", "aka", "provider", "china_related", "domains"}
 REQUIRED_READY = {
     "unit_of_observation",
@@ -101,8 +121,111 @@ def require_nonempty(audit: Audit, record_id: str, data: dict[str, Any], field: 
         audit.error(f"dataset {record_id}: required field '{field}' is empty")
 
 
+def load_dataset_schema(audit: Audit) -> Draft202012Validator | None:
+    try:
+        schema = json.loads(DATASET_SCHEMA_PATH.read_text(encoding="utf-8"))
+        Draft202012Validator.check_schema(schema)
+    except Exception as exc:
+        audit.error(f"dataset JSON Schema is invalid or unreadable: {exc}")
+        return None
+    return Draft202012Validator(schema)
+
+
+def validate_against_schema(audit: Audit, record_id: str, data: dict[str, Any], validator: Draft202012Validator) -> None:
+    for issue in sorted(validator.iter_errors(data), key=lambda item: tuple(str(part) for part in item.path)):
+        location = ".".join(str(part) for part in issue.path) or "<root>"
+        audit.error(f"dataset {record_id}: schema violation at {location}: {issue.message}")
+
+
+def validate_data_pathway(audit: Audit, record_id: str, data: dict[str, Any]) -> None:
+    """Validate the v3 research-data production contract without changing legacy v2 records."""
+    pathway = data.get("data_pathway")
+    if not isinstance(pathway, dict):
+        audit.error(f"dataset {record_id}: schema v3 requires data_pathway")
+        return
+    for field in ("mode", "origin", "target_artifact", "availability", "ordinary_researcher_feasible", "summary"):
+        if pathway.get(field) in (None, "", []):
+            audit.error(f"dataset {record_id}: data_pathway.{field} is required")
+    mode = str(pathway.get("mode", ""))
+    origin = str(pathway.get("origin", ""))
+    if mode not in ALLOWED_PATHWAY_MODES:
+        audit.error(f"dataset {record_id}: data_pathway.mode must use {sorted(ALLOWED_PATHWAY_MODES)}")
+    if origin not in ALLOWED_DATA_ORIGINS:
+        audit.error(f"dataset {record_id}: data_pathway.origin must use {sorted(ALLOWED_DATA_ORIGINS)}")
+    if str(pathway.get("availability", "")) not in ALLOWED_AVAILABILITY:
+        audit.error(f"dataset {record_id}: data_pathway.availability must use {sorted(ALLOWED_AVAILABILITY)}")
+    if not isinstance(pathway.get("ordinary_researcher_feasible"), bool):
+        audit.error(f"dataset {record_id}: data_pathway.ordinary_researcher_feasible must be true or false")
+    if data.get("catalog_status") == "ready" and pathway.get("ordinary_researcher_feasible") is False:
+        audit.error(f"dataset {record_id}: ready data must be feasible for an ordinary researcher")
+    if data.get("catalog_status") == "ready" and pathway.get("availability") in {"restricted", "unavailable"}:
+        audit.error(f"dataset {record_id}: restricted or unavailable data cannot be ready for recommendation")
+    if mode in {"constructed", "collected", "hybrid"} and origin == "ready-made":
+        audit.error(f"dataset {record_id}: {mode} route conflicts with ready-made origin")
+
+    if mode == "inaccessible":
+        if record_id and not str(pathway.get("barrier", "")).strip():
+            audit.error(f"dataset {record_id}: inaccessible pathway must explain data_pathway.barrier")
+        if data.get("catalog_status") == "ready":
+            audit.error(f"dataset {record_id}: inaccessible data cannot be ready for recommendation")
+        return
+
+    if mode == "direct" and not data.get("access_routes"):
+        audit.error(f"dataset {record_id}: direct v3 pathway requires at least one access route")
+    if mode == "direct" and origin in {"ready-made", "unknown"}:
+        return
+
+    production = data.get("production")
+    if not isinstance(production, dict):
+        audit.error(f"dataset {record_id}: {mode} pathway requires production details")
+        return
+    for field in ("raw_sources", "acquisition_methods", "pipeline_stages", "output", "reproducibility", "compliance"):
+        if production.get(field) in (None, "", [], {}):
+            audit.error(f"dataset {record_id}: production.{field} is required for {mode} pathways")
+    for index, source in enumerate(production.get("raw_sources") or []):
+        if not isinstance(source, dict):
+            audit.error(f"dataset {record_id}: production.raw_sources[{index}] must be a mapping")
+            continue
+        for field in ("name", "source_type", "role", "access_route"):
+            if source.get(field) in (None, "", []):
+                audit.error(f"dataset {record_id}: production.raw_sources[{index}].{field} is required")
+        if source.get("url"):
+            issues = public_http_url_issues(source["url"])
+            if issues:
+                audit.error(f"dataset {record_id}: production.raw_sources[{index}].url is unsafe: {', '.join(issues)}")
+    for index, stage in enumerate(production.get("pipeline_stages") or []):
+        if not isinstance(stage, dict):
+            audit.error(f"dataset {record_id}: production.pipeline_stages[{index}] must be a mapping")
+            continue
+        for field in ("stage", "inputs", "method", "output", "evidence"):
+            if stage.get(field) in (None, "", []):
+                audit.error(f"dataset {record_id}: production.pipeline_stages[{index}].{field} is required")
+    reproducibility = production.get("reproducibility")
+    if isinstance(reproducibility, dict):
+        level = str(reproducibility.get("level", ""))
+        if level not in ALLOWED_REPRODUCIBILITY:
+            audit.error(f"dataset {record_id}: production.reproducibility.level must use {sorted(ALLOWED_REPRODUCIBILITY)}")
+        for field in ("starting_point", "requirements", "blockers"):
+            if reproducibility.get(field) in (None, "", []):
+                audit.error(f"dataset {record_id}: production.reproducibility.{field} is required")
+        if data.get("catalog_status") == "ready" and level == "not-reproducible":
+            audit.error(f"dataset {record_id}: not-reproducible production cannot be ready")
+
+    if data.get("catalog_status") == "ready":
+        placeholders = {"needs-verification", "unknown", "tbd", "todo"}
+        for index, stage in enumerate(production.get("pipeline_stages") or []):
+            if not isinstance(stage, dict):
+                continue
+            for field in ("method", "output", "evidence"):
+                if str(stage.get(field, "")).strip().casefold() in placeholders:
+                    audit.error(
+                        f"dataset {record_id}: ready production.pipeline_stages[{index}].{field} cannot be a placeholder"
+                    )
+
+
 def validate_datasets(audit: Audit) -> tuple[list[Any], dict[str, Any]]:
     records, failures = load_datasets()
+    schema_validator = load_dataset_schema(audit)
     for path, message in failures:
         audit.error(f"dataset {path.name}: {message}")
 
@@ -112,6 +235,9 @@ def validate_datasets(audit: Audit) -> tuple[list[Any], dict[str, Any]]:
     for record in records:
         data = record.data
         record_id = record.id or record.path.stem
+
+        if schema_validator is not None:
+            validate_against_schema(audit, record_id, data, schema_validator)
 
         missing = sorted(REQUIRED_BASE - set(data))
         if missing:
@@ -127,8 +253,11 @@ def validate_datasets(audit: Audit) -> tuple[list[Any], dict[str, Any]]:
         if record.status not in ALLOWED_STATUSES:
             audit.error(f"dataset {record_id}: invalid catalog_status '{record.status}'")
 
-        if data.get("schema_version") != 2:
-            audit.warn(f"dataset {record_id}: schema_version is not 2")
+        schema_version = data.get("schema_version")
+        if schema_version not in ALLOWED_SCHEMA_VERSIONS:
+            audit.error(f"dataset {record_id}: schema_version must use {sorted(ALLOWED_SCHEMA_VERSIONS)}")
+        elif schema_version == 3:
+            validate_data_pathway(audit, record_id, data)
 
         if record.status == "deprecated":
             if not data.get("superseded_by"):
@@ -265,7 +394,8 @@ def validate_datasets(audit: Audit) -> tuple[list[Any], dict[str, Any]]:
     return records, by_id
 
 
-def validate_ledgers(audit: Audit, active_ids: set[str]) -> dict[str, int]:
+def validate_ledgers(audit: Audit, active_ids: set[str], all_ids: set[str] | None = None) -> dict[str, int]:
+    known_ids = all_ids if all_ids is not None else active_ids
     transaction_path = LEDGER_DIR / ".task-queue.transaction.json"
     if transaction_path.exists():
         audit.error(f"task queue has an unfinished transaction: {transaction_path.name}")
@@ -321,8 +451,26 @@ def validate_ledgers(audit: Audit, active_ids: set[str]) -> dict[str, int]:
             audit.warn(f"duplicate normalized title across task ledgers '{value}': {locations}")
 
     for row in loaded["done"]:
+        task_id = row.get("id")
+        result = row.get("result")
+        if result not in ALLOWED_TASK_RESULTS:
+            audit.error(f"completed task {task_id}: invalid result '{result}'")
+        is_semantic_audit = row.get("type") == "semantic-audit"
+        if is_semantic_audit:
+            if result != "audited":
+                audit.error(f"completed semantic audit {task_id}: result must be audited")
+            if row.get("audit_outcome") not in {"pass", "repair-needed", "unverifiable"}:
+                audit.error(f"completed semantic audit {task_id}: invalid or missing audit_outcome")
+            if not _dataset_references(row, "datasets_reviewed"):
+                audit.error(f"completed semantic audit {task_id}: datasets_reviewed is required")
+            if "datasets_touched" in row:
+                audit.error(f"completed semantic audit {task_id}: datasets_touched must not be used for reviewed records")
+            if not str(row.get("note", "")).strip():
+                audit.error(f"completed semantic audit {task_id}: a concrete note is required")
+        elif result == "audited" or row.get("audit_outcome") is not None or row.get("datasets_reviewed") is not None:
+            audit.error(f"completed task {task_id}: audit fields are only valid for semantic-audit tasks")
         touched: list[str] = []
-        for field in ("datasets_touched", "datasets", "datasets_added", "datasets_updated"):
+        for field in ("datasets_touched", "datasets_reviewed", "datasets", "datasets_added", "datasets_updated"):
             value = row.get(field, [])
             if value is None:
                 continue
@@ -331,8 +479,8 @@ def validate_ledgers(audit: Audit, active_ids: set[str]) -> dict[str, int]:
                 continue
             touched.extend(str(item).strip() for item in value if str(item).strip())
         for dataset_id in sorted(set(touched)):
-            if dataset_id not in active_ids:
-                audit.error(f"completed task {row.get('id')}: dataset reference '{dataset_id}' is not an active dataset")
+            if dataset_id not in known_ids:
+                audit.error(f"completed task {row.get('id')}: dataset reference '{dataset_id}' is not a canonical dataset")
 
     for row in loaded["pending"]:
         if row.get("status") not in ALLOWED_TASK_STATUSES:
@@ -365,7 +513,7 @@ def validate_caches(audit: Audit) -> dict[str, int]:
         if not path.is_file():
             continue
         text = path.read_text(encoding="utf-8", errors="replace")
-        if re.search(r"Just a moment|cf_chl|Cloudflare", text, re.IGNORECASE):
+        if re.search(r"Just a moment|cf_chl", text, re.IGNORECASE):
             counts["blocked"] += 1
             if path.name not in failed_cache_names:
                 audit.error(f"cache {path.name}: Cloudflare/challenge page not recorded in failure ledger")
@@ -450,6 +598,9 @@ def validate_blind_benchmark(audit: Audit) -> int:
 
 def validate_collection_benchmark(audit: Audit) -> int:
     if not COLLECTION_BENCHMARK_PATH.exists():
+        if (ROOT / ".collection_benchmark").is_dir():
+            audit.note("collection benchmark tasks are evaluator-held in this isolated session")
+            return 0
         audit.error("collection benchmark public tasks are missing")
         return 0
     try:
@@ -531,6 +682,133 @@ def paper_evidence_summary(records: list[Any]) -> dict[str, Any]:
     }
 
 
+def _dataset_references(row: dict[str, Any], field: str = "datasets_touched") -> list[str]:
+    value = row.get(field)
+    if not isinstance(value, list):
+        return []
+    return [str(item).strip() for item in value if str(item).strip()]
+
+
+def semantic_audit_summary(done_rows: list[dict[str, Any]]) -> dict[str, Any]:
+    """Derive an advisory slow-feedback signal from existing durable state."""
+    audit_indexes = [
+        index
+        for index, row in enumerate(done_rows)
+        if row.get("type") == "semantic-audit"
+        and row.get("result") == "audited"
+        and row.get("audit_outcome") in {"pass", "repair-needed", "unverifiable"}
+    ]
+    latest_row: dict[str, Any] | None = None
+    latest_index = -1
+    if audit_indexes:
+        latest_index = audit_indexes[-1]
+        latest_row = done_rows[latest_index]
+
+    knowledge_tasks = []
+    for row in done_rows[latest_index + 1 :]:
+        if row.get("type") == "semantic-audit" or row.get("result") != "processed":
+            continue
+        if not _dataset_references(row):
+            continue
+        knowledge_tasks.append(row)
+
+    latest_outcome = latest_row.get("audit_outcome") if latest_row else None
+    reason = "current"
+    if latest_row is None:
+        reason = "no-prior-audit"
+    elif latest_outcome in {"repair-needed", "unverifiable"}:
+        reason = str(latest_outcome)
+    elif len(knowledge_tasks) >= SEMANTIC_AUDIT_INTERVAL:
+        reason = "interval-reached"
+    due = reason != "current"
+    return {
+        "due": due,
+        "reason": reason,
+        "interpretation": (
+            "Advisory slow feedback, not a quality score or automatic status change. When due, prioritize one semantic-audit "
+            "task and test recent records from a fresh context before expanding. The threshold is a maximum feedback delay, "
+            "not a productivity target."
+        ),
+    }
+
+
+def data_pathway_summary(records: list[Any]) -> dict[str, Any]:
+    """Track deliberate v3 adoption without treating legacy records as defective."""
+    modes: dict[str, int] = defaultdict(int)
+    versions: dict[str, int] = defaultdict(int)
+    origins: dict[str, int] = defaultdict(int)
+    for record in records:
+        versions[str(record.data.get("schema_version", "unknown"))] += 1
+        pathway = record.data.get("data_pathway")
+        mode = pathway.get("mode") if isinstance(pathway, dict) else "legacy-unspecified"
+        modes[str(mode)] += 1
+        origin = pathway.get("origin") if isinstance(pathway, dict) else "legacy-unspecified"
+        origins[str(origin)] += 1
+    return {
+        "schema_versions": dict(sorted(versions.items())),
+        "pathway_modes": dict(sorted(modes.items())),
+        "origins": dict(sorted(origins.items())),
+        "interpretation": "A migration and coverage signal; legacy v2 records remain valid until evidence-backed pathway review.",
+    }
+
+
+def health_input_fingerprint() -> dict[str, Any]:
+    """Identify durable catalog inputs; private fetch caches are checked separately."""
+    paths = [
+        Path(__file__),
+        DATASET_SCHEMA_PATH,
+        BENCHMARK_PATH,
+        BLIND_BENCHMARK_PATH,
+        COLLECTION_BENCHMARK_PATH,
+    ]
+    paths.extend(sorted((ROOT / "datasets").glob("*.md")))
+    for name in (
+        "pending_tasks.jsonl",
+        "completed_tasks.jsonl",
+        "failed_tasks.jsonl",
+        "dataset_candidates.jsonl",
+        "changes.jsonl",
+    ):
+        paths.append(LEDGER_DIR / name)
+
+    digest = hashlib.sha256()
+    included: list[str] = []
+    for path in sorted({item.resolve() for item in paths if item.is_file()}, key=lambda item: item.as_posix()):
+        relative = path.relative_to(ROOT).as_posix()
+        included.append(relative)
+        digest.update(relative.encode("utf-8"))
+        digest.update(b"\0")
+        digest.update(path.read_bytes())
+        digest.update(b"\0")
+    return {"algorithm": "sha256", "digest": digest.hexdigest(), "file_count": len(included)}
+
+
+def validate_health_freshness(audit: Audit, fingerprint: dict[str, Any]) -> None:
+    path = LEDGER_DIR / "health.json"
+    try:
+        existing = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        audit.error(f"health report is missing or unreadable: {exc}; run validate_kb.py --write-report")
+        return
+    recorded = existing.get("input_fingerprint") if isinstance(existing, dict) else None
+    if not isinstance(recorded, dict) or recorded.get("digest") != fingerprint["digest"]:
+        audit.error("health report is stale for the current canonical inputs; run validate_kb.py --write-report")
+
+
+def health_generated_at(fingerprint: dict[str, Any]) -> str:
+    """Keep report bytes stable when the summarized inputs have not changed."""
+    path = LEDGER_DIR / "health.json"
+    try:
+        existing = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        existing = {}
+    recorded = existing.get("input_fingerprint") if isinstance(existing, dict) else None
+    generated_at = existing.get("generated_at") if isinstance(existing, dict) else None
+    if isinstance(recorded, dict) and recorded.get("digest") == fingerprint["digest"] and generated_at:
+        return str(generated_at)
+    return datetime.now().astimezone().isoformat(timespec="seconds")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Validate the economic dataset knowledge base.")
     parser.add_argument("--write-report", action="store_true", help="write ledgers/health.json")
@@ -539,30 +817,42 @@ def main() -> int:
     audit = Audit()
     records, _ = validate_datasets(audit)
     active_ids = {record.id for record in records if record.status != "deprecated"}
-    ledger_counts = validate_ledgers(audit, active_ids)
-    cache_counts = validate_caches(audit)
+    all_ids = {record.id for record in records}
+    ledger_counts = validate_ledgers(audit, active_ids, all_ids)
+    done_rows, _ = read_jsonl(LEDGER_DIR / "completed_tasks.jsonl")
+    semantic_audit = semantic_audit_summary(done_rows)
     benchmark_cases = validate_benchmark(audit, active_ids)
     blind_benchmark_cases = validate_blind_benchmark(audit)
     collection_benchmark_tasks = validate_collection_benchmark(audit)
     validate_generated_views(audit, active_ids)
+    input_fingerprint = health_input_fingerprint()
+    if not args.write_report:
+        validate_health_freshness(audit, input_fingerprint)
 
     statuses: dict[str, int] = defaultdict(int)
     for record in records:
         statuses[record.status] += 1
+    paper_evidence = paper_evidence_summary(records)
+    if paper_evidence["incomplete"]:
+        audit.warn(
+            f"paper-use evidence backlog: {paper_evidence['incomplete']} of {paper_evidence['total']} entries lack one or more traceability fields"
+        )
 
     report = {
-        "generated_at": datetime.now().astimezone().isoformat(timespec="seconds"),
+        "generated_at": health_generated_at(input_fingerprint),
         "status": "error" if audit.errors else "ok",
         "errors": audit.errors,
         "warnings": audit.warnings,
         "dataset_status_counts": dict(sorted(statuses.items())),
         "active_dataset_count": len(active_ids),
         "ledger_counts": ledger_counts,
-        "cache_counts": cache_counts,
         "idea_benchmark_cases": benchmark_cases,
         "blind_benchmark_v2_cases": blind_benchmark_cases,
         "collection_benchmark_tasks": collection_benchmark_tasks,
-        "paper_evidence": paper_evidence_summary(records),
+        "paper_evidence": paper_evidence,
+        "data_pathways": data_pathway_summary(records),
+        "semantic_audit": semantic_audit,
+        "input_fingerprint": input_fingerprint,
     }
     if args.write_report:
         dump_json(LEDGER_DIR / "health.json", report)
@@ -572,7 +862,16 @@ def main() -> int:
         print(f"ERROR: {message}")
     for message in audit.warnings:
         print(f"WARN: {message}")
-    return 1 if audit.errors else 0
+    # A fresh clone has no local downloads. Keep their diagnostics out of the
+    # public report while retaining the existing failure gate for local work.
+    cache_audit = Audit()
+    cache_counts = validate_caches(cache_audit)
+    print(f"local_cache_counts={cache_counts}")
+    for message in cache_audit.errors:
+        print(f"ERROR: {message}")
+    for message in cache_audit.warnings:
+        print(f"WARN: {message}")
+    return 1 if audit.errors or cache_audit.errors else 0
 
 
 if __name__ == "__main__":

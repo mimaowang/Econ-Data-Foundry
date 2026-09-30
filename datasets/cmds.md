@@ -130,6 +130,8 @@ used_by:
   journal: CER
   year: 2026
   dataset_role: Main migrant population health and housing rental outcomes
+  evidence_type: abstract
+  evidence_url: https://ideas.repec.org/a/eee/chieco/v99y2026ics1043951x26000416.html
   data_note: Using CMDS migrant population data to study the impact of housing rent on the health of the migrant population
     - High rent cities significantly reduce the self-rated health and mental health of the migrant population
 - cite: 'Cao, Ni & Guo (2025), Broadband Internet and Income Inequality among the Floating Population: Evidence from the ''Broadband
@@ -137,9 +139,52 @@ used_by:
   journal: CER
   year: 2025
   dataset_role: Income results of migrant population; connected with broadband China urban policy
+  evidence_type: abstract
+  evidence_url: https://ideas.repec.org/a/eee/chieco/v90y2025ics1043951x25000276.html
   data_note: Using CMDS 2011-2018 panel data + DID for 35 major cities, it was found that broadband Internet has significantly
     expanded the income gap within the floating population - the gap between high-skilled vs low-skilled and urban vs rural
     registered migrants has widened, which is a skill-biased technological progress effect.
+- cite: 'Gerritse, Wang & van Oort (2026), Industrial Transfer Policy in China: Migration and Development'
+  doi: https://doi.org/10.1016/j.jue.2025.103815
+  journal: JUE
+  year: 2026
+  dataset_role: CMDS repeated-cross-section migrant survey; 2011-2017 respondent records aggregated to bilateral city flows and migrant composition, wage, and employment outcomes
+  evidence_type: paper_data_section
+  evidence_url: https://www.sciencedirect.com/science/article/pii/S0094119025000804
+  data_note: The JUE paper and its Tinbergen data section identify CMDS as the primary migration source. The working-paper version reports annual respondent counts of 128,200 (2011), 158,556 (2012), 198,795 (2013), 200,937 (2014), 206,000 (2015), 169,000 (2016), and 169,989 (2017), and constructs cross-city migrant flows from destination, origin, industry, skill, wage, and employment information. These are repeated cross-sections, not a panel of the same people; exact public files, weights, and current access remain governed by the main CMDS record.
+- cite: 'Bian & Zhou (2024), The Effects of Robots on Internal Migration: Evidence from China'
+  doi: https://doi.org/10.1111/jors.12691
+  journal: JRS
+  year: 2024
+  dataset_role: CMDS 2014-2018 migrant population panel; individual migration decisions matched to city-level robot exposure
+  evidence_type: data-section
+  evidence_url: https://onlinelibrary.wiley.com/doi/abs/10.1111/jors.12691
+  data_note: Uses CMDS 2014-2018 data combined with IFR city-level industrial robot exposure to study how automation affects internal migration. Finds robot adoption significantly reduces net migration inflows into cities — concentrated among low-skilled, younger, less-educated migrants in manufacturing. Negative effects are amplified by longer migration distances, higher living costs, and Hukou barriers.
+- cite: 'Wang & Felice (2026), Internal Migration and Structural Change in China'
+  doi: https://doi.org/10.1111/jors.70049
+  journal: JRS
+  year: 2026
+  dataset_role: CMDS migrant microdata — individual migration history, employment sector, and socioeconomic characteristics
+  evidence_type: data-section
+  evidence_url: https://ideas.repec.org/a/bla/jregsc/v66y2026i2p602-625.html
+  data_note: Uses CMDS migration microdata combined with IPUMS 2000 Census and City Statistical Yearbooks in a 2SLS/3SLS framework to estimate how internal migration affects structural change (agriculture-to-non-agriculture employment shifts) across prefecture-level cities. Finds migration substantially contributed to structural transformation through both direct effects and indirect effects via increases in relative agricultural productivity.
+- cite: 'Zhang & Zong (2025), Women''s Empowerment and Participation in Innovation: Evidence from the One-Child Policy in China'
+  doi: https://doi.org/10.1016/j.respol.2025.105334
+  journal: Research Policy
+  year: 2025
+  dataset_role: CMDS data for robustness checks on women's migration and labor market outcomes
+  evidence_type: data-section
+  evidence_url: https://www.sciencedirect.com/science/article/abs/pii/S0048733325001635
+  data_note: Uses CMDS data as a robustness check in studying how OCP-induced women's empowerment affects innovation participation. CMDS provides complementary migration and employment data to validate CFPS-based mechanism findings on women's labor market and mobility outcomes.
+- cite: 'An, Qin, Wu & You (2024), The Local Labor Market Effect of Relaxing Internal Migration Restrictions: Evidence from China'
+  doi: https://doi.org/10.1086/722620
+  journal: JLE
+  year: 2024
+  dataset_role: CMDS migration flow data; migrant population wages, employment, and hukou status matched to reform cities
+  evidence_type: data-section
+  evidence_url: https://www.journals.uchicago.edu/doi/10.1086/722620
+  data_note: >-
+    Uses CMDS migration microdata combined with CFPS and Population Census to study the 2014 hukou reform's local labor market effects. CMDS provides the primary migrant worker sample — wage, employment, and migration destination data — for identifying how relaxing internal migration restrictions affects incumbent vs. new migrant workers differently. Finds migrants compete primarily with other migrants (wages ↓2.6-7.9%) while local workers' wages are unaffected.
 provenance:
 - source: Crossref abstract for Liao et al., https://doi.org/10.1016/j.chieco.2026.102691 (supports use of the China Migrants Dynamic Survey)
   added: '2026-07-08'
@@ -147,6 +192,20 @@ provenance:
   verified: true
 - source: China Migrant Population Data Platform https://www.chinaldrk.org.cn (supports survey design, waves, and access conditions)
   added: '2026-07-08'
+  confidence: high
+  verified: true
+- source: https://www.sciencedirect.com/science/article/pii/S0094119025000804
+  field_scope:
+  - JUE paper identity, Gerritse/Wang/van Oort authorship, volume 151 (2026), and primary CMDS role
+  - representative migrant survey from 2010 onward and city-development linkage
+  added: '2026-08-12'
+  confidence: high
+  verified: true
+- source: https://papers.tinbergen.nl/24020.pdf
+  field_scope:
+  - CMDS 2011-2017 annual sample counts and sampling design
+  - destination/origin and migrant-flow construction, respondent characteristics, and repeated-cross-section boundary
+  added: '2026-08-12'
   confidence: high
   verified: true
 related_datasets:

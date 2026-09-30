@@ -60,7 +60,7 @@ research_fit:
   best_for:
   - Industry upstream and downstream input relationships, inter-provincial trade flows and structural model calibration
   choose_over:
-  - When inter-industry intermediate input matrices and impact transmission are needed, priority is given to statistical yearbooks.
+  - Prioritize input-output tables over statistical yearbooks when inter-industry intermediate-input matrices and shock transmission are needed
   - Cannot replace invoice/enterprise transaction data when enterprise transaction network is required
   not_good_for:
   - High Frequency Panel of the Year
@@ -118,6 +118,20 @@ access_routes:
     methods.
   cost: mixed
   last_checked: '2026-07-10'
+- route: AEA/openICPSR Tombe-Zhu V1 replication package
+  access_status: available-with-conditions
+  direct_url: https://www.openicpsr.org/openicpsr/project/113071/version/V1/view
+  requirements:
+  - An openICPSR/ICPSR account and the repository's current download terms; file downloads currently redirect to login.
+  - Read the deposited LICENSE.txt and ReadMe.pdf before reusing or redistributing any file.
+  steps:
+  - Follow the AEA article's Replication Package link to project 113071, version V1.
+  - Inspect the `20150811_data` folder for `trade_ag.csv`, `trade_na.csv`, `trade_data.dta`, and the MATLAB/Stata scripts that consume them.
+  - Treat those files as the paper's deposited internal-trade/model inputs; if a new project needs the underlying official regional input-output tables, obtain and document that source separately.
+  deliverable: A paper-specific deposit of internal-trade files, model inputs, and code; it is not a general public release of the original NBS or other institution's interprovincial input-output tables.
+  cost: registration
+  last_checked: '2026-08-11'
+  caveat: The project page lists a LICENSE.txt and says ICPSR distributes materials as received without reviewing or processing them. The visible file tree does not itself establish the source-table edition, all raw inputs, or redistribution rights.
 access:
   url: https://data.stats.gov.cn (Summary of national benchmark tables); Key Laboratory of Regional Sustainable Development
     Analysis and Modeling, Chinese Academy of Sciences http://www.sres.org.cn provides interprovincial tables; Multiple international
@@ -141,28 +155,55 @@ caveats: The benchmark table is only compiled in every 2 and 7 years, not annual
   of their assumptions before comparing across sources.
 quality:
   profile_status: verified
-  access_status: verified
-  paper_use_status: partial
-  last_audited: '2026-07-10'
+  access_status: partial
+  paper_use_status: verified
+  last_audited: '2026-08-11'
 used_by:
 - cite: 'Tombe & Zhu (2019), Trade, Migration, and Productivity: A Quantitative Analysis of China'
+  doi: https://doi.org/10.1257/aer.20150811
   journal: AER
   year: 2019
-  dataset_role: Interprovincial intra-provincial trade flows; used for spatial general equilibrium model calibration
-  data_note: Calibrate the spatial general equilibrium model using China's regional input-output tables (internal trade data)
-    in 2002 and 2007 to estimate China's inter-provincial trade costs and migration costs
+  dataset_role: Interprovincial internal-trade inputs used to calibrate the spatial general-equilibrium model
+  evidence_type: article_and_replication
+  evidence_url: https://www.openicpsr.org/openicpsr/project/113071/version/V1/view
+  data_note: >-
+    The paper studies internal trade and migration frictions across Chinese regions. The linked V1 deposit describes China,
+    2000-2005, and province-sector-year observations and lists `trade_ag.csv`, `trade_na.csv`, and `trade_data.dta`, alongside
+    `tauhat.csv` and model scripts. These are the paper-specific deposited trade/model files. The deposit does not by itself prove
+    that the original regional input-output tables, their source edition, or every raw input can be downloaded or redistributed;
+    keep that production boundary separate from the public derived files.
 - cite: Jiang, Zhao, Ouyang & Shen (2023), Integration in the Global Value Chain, Structural Change, and the Widening Gender
     Employment Gap in China
   journal: CER
   year: 2023
   dataset_role: Calculation of industry GVC participation and structural changes
+  evidence_type: abstract
+  evidence_url: https://ideas.repec.org/a/eee/chieco/v81y2023ics1043951x23001189.html
   data_note: Using China's input-output table to measure GVC participation in various industries, it was found that GVC integration
     has exacerbated China's gender employment gap - through the channel of industrial structure change
 provenance:
-- source: Tombe and Zhu openICPSR replication package https://doi.org/10.3886/E113071V1 (supports internal trade-flow files including trade_ag.csv and trade_na.csv)
-  added: '2026-07-08'
+- source: https://www.aeaweb.org/articles?id=10.1257/aer.20150811
+  field_scope:
+  - AER paper identity and regional/urban economics scope
+  - internal trade and migration model context for 2000-2005
+  added: '2026-08-11'
   confidence: high
-  verified: false
+  verified: true
+- source: https://www.openicpsr.org/openicpsr/project/113071/version/V1/view
+  field_scope:
+  - replication project identity and citation
+  - China, 2000-2005, province-sector-year metadata
+  - public deposit versus raw input boundary
+  added: '2026-08-11'
+  confidence: high
+  verified: true
+- source: https://www.openicpsr.org/openicpsr/project/113071/version/V1/view?path=%2Fpcms%2Fprojects%2F1%2F1%2F3%2F0%2F113071%2FV1.0.1%2F20150811_data&type=folder
+  field_scope:
+  - deposited `trade_ag.csv`, `trade_na.csv`, `trade_data.dta`, and `tauhat.csv` file names
+  - model code and public file-tree boundary
+  added: '2026-08-11'
+  confidence: high
+  verified: true
 - source: National Bureau of Statistics data.stats.gov.cn input-output special page (confirm that the national benchmark table
     is public and can be downloaded)
   added: '2026-07-08'

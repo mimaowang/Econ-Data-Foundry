@@ -1,6 +1,6 @@
 # Using Econ-Data-Foundry
 
-Econ-Data-Foundry is both a dataset knowledge base and an operating system for agents that maintain it. Canonical records answer research questions; ledgers preserve work state; deterministic generators expose the same knowledge to humans, agents, scripts, and GitHub Pages.
+Use Econ-Data-Foundry to turn a research question into a realistic data choice. Start with `AGENTS.md` and the [mental model](mental-model.md), then read only the records relevant to the question. Asking about existing knowledge requires no Python installation, task claim, model-specific setup or file changes. Collection and maintenance are separate tasks described below.
 
 ## Repository map
 
@@ -30,39 +30,29 @@ Econ-Data-Foundry is both a dataset knowledge base and an operating system for a
 | `tests/` | Offline regression tests |
 | `dist/` and `docs/` | Generated public artifacts and static site |
 
-## Install and verify
-
-Python 3.10 or newer is required.
-
-```powershell
-python -m pip install -r requirements-dev.txt
-python scripts/check_secrets.py
-python scripts/validate_kb.py --write-report
-python scripts/build_views.py
-python scripts/export_catalog.py
-python scripts/build_site.py
-python scripts/build_quality_card.py
-python scripts/check_generated_views.py
-python -m pytest
-python -m ruff check .
-```
-
-On macOS or Linux, use `/` in paths. All required release checks are offline. `scripts/check_links.py` is an optional network freshness diagnostic and never edits canonical records.
-
 ## Match a research idea to data
 
 1. Translate the idea into population, unit of observation, outcomes, treatment or variation, geography, time, frequency, and access constraints. Do not force a polished idea when clarification is genuinely needed.
-2. Search `dist/router_index.json` by aliases, topics, variables, coverage, and access status to form a small candidate set.
-3. Open the corresponding canonical files in `datasets/`. The router is for recall; only canonical records support final factual claims.
-4. Compare `research_fit`, coverage, observation unit, variables, variation, joins, access routes, and caveats.
-5. Recommend the best record, explain why close alternatives lose, identify required joins, and give an executable acquisition recipe.
-6. Distinguish recorded facts from unresolved knowledge. Never fill a repository gap with an ad hoc web search when the task is an offline routing answer.
+2. Search `dist/router_index.json` by aliases, topics, variables, coverage, and pathway summary to form a small candidate set. The router is intentionally lossy: use targeted search rather than loading it as a substitute for the catalog.
+3. Open the corresponding canonical files in `datasets/`. The router is for recall; only canonical records contain the full access recipe, production pathway, evidence, join mechanics, and limitations needed for final factual claims.
+4. Compare `research_fit`, coverage, observation unit, variables, variation, joins, access routes, `data_pathway`, `production`, and caveats.
+5. Decide whether the user should download a ready-made product, construct an asset from public inputs, collect it from public sources, combine these routes, or reject it as inaccessible.
+6. Recommend the best record, explain why close alternatives lose, identify required joins, and give an executable acquisition or reconstruction recipe.
+7. Distinguish recorded facts from unresolved knowledge. For an offline answer, report gaps without filling them from external knowledge. If the user requests current online verification, identify which new source supports each update and distinguish it from the catalog's recorded verification date; answering still does not require editing the catalog.
 
-A useful response usually covers: recommendation and alternatives; observation unit and coverage; observable variables and identification variation; required joins; direct access route, requirements, steps, cost, and deliverable; limitations and confidence.
+Read status at the level of the actual deliverable. A `ready` national series does not satisfy a city-panel question; a `grounding` historical source can remain a promising but conditional alternative. Inspect `used_by` evidence separately before saying a paper used a particular file or method. Explain the result in the user's language, using plain descriptions such as “requires an application” or “historical coverage not yet confirmed” rather than relying on status labels alone.
+
+A useful response usually covers: recommendation and alternatives; observation unit and coverage; observable variables and identification variation; required joins; direct access or public starting point; consequential production stages; requirements, steps, cost, deliverable, validation, compliance, limitations, and confidence. For constructed or collected data, keep the target research asset separate from its raw sources and never imply that raw-source access guarantees the paper's final analysis file.
+
+Treat user capacity as part of fit. A direct release can dominate when the user needs immediate use; a constructed or collected route may dominate when it uniquely measures the mechanism and the user can support the required tools and validation. If the user has not stated those constraints, present the extra burden rather than silently assuming either unlimited engineering capacity or zero willingness to build.
+
+Treat the routing result as a research-design decision, not a search-result list. It may be a single asset, a combination of treatment and outcome assets, a request for one consequential clarification, an explicit knowledge gap, or an inaccessible design. For each recommended component, state its role, why it wins, what would disqualify it, the necessary joins, and the obtainable deliverable. Keep a conceptually ideal but inaccessible asset visible only as a rejected alternative; never let it outrank a feasible route without saying so.
+
+For an unpolished idea, a compact answer should normally make five decisions easy to inspect: the interpreted population/treatment/outcome/unit/time/geography; the recommended asset or asset combination; close alternatives and rejection reasons; acquisition or production steps with effort and constraints; and unresolved gaps that prevent a stronger claim. This is an output contract for reasoning, not a requirement to manufacture certainty or fill every heading.
 
 ## Maintain the knowledge base
 
-Read [`operations.md`](operations.md) before editing. Then:
+Read [`operations.md`](operations.md) and the current collection focus in [`sources/discovery-sources.md`](../sources/discovery-sources.md) before editing. Maintenance requires Python 3.10+; install with `python -m pip install -r requirements-dev.txt`, then follow the [release gate](operations.md#release-gate). Those checks are offline. `scripts/check_links.py` is an optional network freshness diagnostic and never edits canonical records. Then:
 
 1. Inspect `ledgers/health.json`, pending work, failures, candidates, and recent changes.
 2. Claim one task or define one narrow, high-value unit.
@@ -82,8 +72,17 @@ python scripts/task_queue.py peek
 # Claim one item
 python scripts/task_queue.py claim --agent claude-code
 
+# When the queue is empty, register one bounded work unit before claiming it
+python scripts/task_queue.py enqueue --id <unique-task-id> --type <paper-or-source> --goal "<evidence-backed goal>" --title "<title>"
+
 # Complete the claimed task
-python scripts/task_queue.py complete --id <task-id> --result processed --dataset <dataset-id> --agent claude-code
+python scripts/task_queue.py complete --id <task-id> --result processed --dataset <dataset-id> --note "Decision improved; evidence boundary; remaining unknown" --agent claude-code
+
+# Close a task that produced a candidate-ledger entry but no canonical record
+python scripts/task_queue.py complete --id <task-id> --result candidate --note "Candidate identity, evidence gap, and next verification recorded" --agent claude-code
+
+# Close a periodic fresh-context semantic audit (datasets were reviewed, not edited)
+python scripts/task_queue.py complete --id <audit-task-id> --result audited --dataset <reviewed-dataset-id> --audit-outcome pass --note "Idea tested, alternatives compared, route and remaining gaps checked" --agent claude-code
 
 # Return unfinished work without pretending it succeeded
 python scripts/task_queue.py release --id <task-id> --note "Released for the next run" --agent claude-code
@@ -102,7 +101,7 @@ Run `python scripts/task_queue.py --help` for the current command contract.
 
 ## Record and status conventions
 
-Use the filename `<id>.md`, where `id` is lowercase ASCII with hyphens. Keep official Chinese names in `aka` when they are useful search keys. Public explanations should be English.
+Use the filename `<id>.md`, where `id` is lowercase ASCII with hyphens. Keep official Chinese names in `aka` when they are useful search keys. Canonical explanations use English; answer researchers in their requested language.
 
 `ready` means directly recommendable from grounded knowledge. `grounding` means useful with a material unresolved gap. `needs-review` marks stale or conflicting knowledge. `candidate` is a lead, not a recommendation. `deprecated` is a redirect.
 
