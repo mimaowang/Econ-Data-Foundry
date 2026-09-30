@@ -10,7 +10,7 @@
 [![Software license: Apache 2.0](https://img.shields.io/badge/Software-Apache%202.0-2da44e)](LICENSE)
 [![Content license: CC BY 4.0](https://img.shields.io/badge/Content-CC%20BY%204.0-2da44e)](LICENSE-CC-BY-4.0.md)
 
-![Papers and data knowledge connect with a research idea](assets/econ-dataknowhow-hero.png)
+<p align="center"><img src="assets/econ-dataknowhow-hero.png" alt="Papers and data knowledge connect with a research idea" width="75%"></p>
 
 ## 简体中文
 
