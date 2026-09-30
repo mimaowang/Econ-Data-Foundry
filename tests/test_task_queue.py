@@ -34,7 +34,7 @@ def test_completed_task_preserves_identity(monkeypatch, tmp_path) -> None:
     task_queue.write_jsonl(failed_path, [])
 
     task_queue.claim("test-agent")
-    task_queue.complete("paper-1", "processed", ["cfps"], None)
+    task_queue.complete("paper-1", "processed", ["cfps"], "Improved CFPS routing; provider route verified; geography remains restricted")
     rows, errors = kb_lib.read_jsonl(done_path)
 
     assert errors == []
@@ -89,7 +89,7 @@ def test_repeated_claim_release_complete_converges_without_duplicate_tasks(monke
         if index % 7 == 0:
             task_queue.release(task["id"], "temporary session boundary")
             task = task_queue.claim("stress-agent")
-        task_queue.complete(task["id"], "processed", [], None)
+        task_queue.complete(task["id"], "skipped", [], None)
 
     queue_rows, queue_errors = kb_lib.read_jsonl(queue_path)
     done_rows, done_errors = kb_lib.read_jsonl(done_path)
@@ -155,3 +155,84 @@ def test_reclaim_stale_and_optional_owner_check(monkeypatch, tmp_path) -> None:
     queue_rows, _ = kb_lib.read_jsonl(queue_path)
     assert queue_rows[0]["status"] == "pending"
     assert queue_rows[0]["reclaimed_from"] == "agent-a"
+
+
+def test_empty_queue_is_a_clean_automation_boundary(monkeypatch, tmp_path) -> None:
+    monkeypatch.setattr(task_queue, "QUEUE", tmp_path / "queue.jsonl")
+    monkeypatch.setattr(task_queue, "DONE", tmp_path / "done.jsonl")
+    monkeypatch.setattr(task_queue, "FAILED", tmp_path / "failed.jsonl")
+    monkeypatch.setattr(task_queue, "TRANSACTION", tmp_path / "transaction.json")
+    for path in (task_queue.QUEUE, task_queue.DONE, task_queue.FAILED):
+        task_queue.write_jsonl(path, [])
+
+    result = task_queue.peek()
+
+    assert result["status"] == "empty"
+    assert "stop cleanly" in result["message"]
+
+
+def test_enqueue_creates_one_claimable_provenance_unit(monkeypatch, tmp_path) -> None:
+    monkeypatch.setattr(kb_lib, "LEDGER_DIR", tmp_path)
+    monkeypatch.setattr(task_queue, "QUEUE", tmp_path / "queue.jsonl")
+    monkeypatch.setattr(task_queue, "DONE", tmp_path / "done.jsonl")
+    monkeypatch.setattr(task_queue, "FAILED", tmp_path / "failed.jsonl")
+    monkeypatch.setattr(task_queue, "TRANSACTION", tmp_path / "transaction.json")
+    for path in (task_queue.QUEUE, task_queue.DONE, task_queue.FAILED):
+        task_queue.write_jsonl(path, [])
+
+    task = task_queue.enqueue(
+        "paper-new",
+        "paper",
+        "Ground one high-value acquisition route",
+        "A New Paper",
+        "https://example.test/paper",
+        "10.1234/new",
+    )
+
+    assert task["status"] == "pending"
+    assert task_queue.claim("agent-a")["id"] == "paper-new"
+    with pytest.raises(RuntimeError, match="already exists"):
+        task_queue.enqueue("paper-new", "paper", "duplicate", None, None, None)
+
+
+def test_processed_completion_requires_dataset_and_durable_note(monkeypatch, tmp_path) -> None:
+    monkeypatch.setattr(kb_lib, "LEDGER_DIR", tmp_path)
+    monkeypatch.setattr(task_queue, "QUEUE", tmp_path / "queue.jsonl")
+    monkeypatch.setattr(task_queue, "DONE", tmp_path / "done.jsonl")
+    monkeypatch.setattr(task_queue, "FAILED", tmp_path / "failed.jsonl")
+    monkeypatch.setattr(task_queue, "TRANSACTION", tmp_path / "transaction.json")
+    task_queue.write_jsonl(task_queue.QUEUE, [{"id": "content", "type": "paper", "status": "claimed"}])
+    task_queue.write_jsonl(task_queue.DONE, [])
+    task_queue.write_jsonl(task_queue.FAILED, [])
+
+    with pytest.raises(RuntimeError, match="touched dataset"):
+        task_queue.complete("content", "processed", [], "some note")
+    with pytest.raises(RuntimeError, match="completion note"):
+        task_queue.complete("content", "processed", ["cfps"], None)
+
+
+def test_semantic_audit_records_reviewed_not_touched_datasets(monkeypatch, tmp_path) -> None:
+    monkeypatch.setattr(kb_lib, "LEDGER_DIR", tmp_path)
+    monkeypatch.setattr(task_queue, "QUEUE", tmp_path / "queue.jsonl")
+    monkeypatch.setattr(task_queue, "DONE", tmp_path / "done.jsonl")
+    monkeypatch.setattr(task_queue, "FAILED", tmp_path / "failed.jsonl")
+    monkeypatch.setattr(task_queue, "TRANSACTION", tmp_path / "transaction.json")
+    task_queue.write_jsonl(
+        task_queue.QUEUE,
+        [{"id": "audit-1", "type": "semantic-audit", "status": "claimed", "claimed_by": "agent-a"}],
+    )
+    task_queue.write_jsonl(task_queue.DONE, [])
+    task_queue.write_jsonl(task_queue.FAILED, [])
+
+    record = task_queue.complete(
+        "audit-1",
+        "audited",
+        ["cfps", "charls"],
+        "Compared an aging idea; routes were usable; biomarker wave detail remains the limiting fact",
+        "agent-a",
+        "pass",
+    )
+
+    assert record["audit_outcome"] == "pass"
+    assert record["datasets_reviewed"] == ["cfps", "charls"]
+    assert "datasets_touched" not in record

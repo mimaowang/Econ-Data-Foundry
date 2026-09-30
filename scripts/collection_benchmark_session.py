@@ -71,7 +71,6 @@ SNAPSHOT_TEST_FILES = (
     "benchmarks/idea-routing/README.md",
     "benchmarks/idea-routing/public_cases.yaml",
     "benchmarks/collection/README.md",
-    "benchmarks/collection/public_tasks.yaml",
 )
 GENERATED_FILES = {
     "DATASET_INDEX.md",
@@ -400,7 +399,9 @@ def prepare_session(
         raise ValueError("sanitized baseline does not match the selected source project files")
     session = workspace / SESSION_DIRNAME
     (session / "scratch").mkdir(parents=True)
-    queue_path = session / "task_queue.jsonl"
+    evaluator_control = run_dir / "evaluator_control"
+    evaluator_control.mkdir()
+    queue_path = evaluator_control / "task_queue.jsonl"
     atomic_jsonl(queue_path, tasks)
     manifest = {
         "protocol_version": PROTOCOL_VERSION,
@@ -469,7 +470,7 @@ def session_paths(workspace: Path) -> dict[str, Path]:
         "manifest": session / "manifest.json",
         "initial": session / "initial_files.json",
         "state": session / "state.json",
-        "queue": session / "task_queue.jsonl",
+        "queue": workspace.parent / "evaluator_control" / "task_queue.jsonl",
         "current": session / "current_task.json",
         "reports": session / "cycle_reports.jsonl",
         "submission": session / "submission.json",
@@ -616,10 +617,16 @@ def normalize_report(workspace: Path, raw: dict[str, Any], task: dict[str, Any])
             raise ValueError(f"datasets_considered[{index}].name must be non-empty")
         identity_note = str(dataset.get("identity_note", "")).strip()
         access_note = str(dataset.get("access_note", "")).strip()
+        pathway_mode = str(dataset.get("pathway_mode", "")).strip()
+        production_note = str(dataset.get("production_note", "")).strip()
         if action != "no_change" and not identity_note:
             raise ValueError(f"datasets_considered[{index}].identity_note must explain the data-product boundary")
         if action in {"new_record", "updated_record", "candidate"} and not access_note:
             raise ValueError(f"datasets_considered[{index}].access_note must state the route or remaining access gap")
+        if pathway_mode and pathway_mode not in {"direct", "constructed", "collected", "hybrid", "inaccessible"}:
+            raise ValueError(f"datasets_considered[{index}].pathway_mode is invalid")
+        if pathway_mode in {"constructed", "collected", "hybrid"} and not production_note:
+            raise ValueError(f"datasets_considered[{index}].production_note is required for {pathway_mode} data")
         datasets.append(
             {
                 "id": str(dataset.get("id", "")).strip(),
@@ -627,6 +634,8 @@ def normalize_report(workspace: Path, raw: dict[str, Any], task: dict[str, Any])
                 "action": action,
                 "identity_note": identity_note,
                 "access_note": access_note,
+                "pathway_mode": pathway_mode,
+                "production_note": production_note,
             }
         )
 

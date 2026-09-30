@@ -86,7 +86,7 @@ joins:
   relation: often-confused-with
   keys: []
   method: not-directly-joinable
-  evidence_status: verified-distinct
+  evidence_status: verified
 access_routes:
 - route: nbs-institutional
   access_status: no-public-download

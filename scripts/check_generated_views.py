@@ -28,6 +28,7 @@ CORE_ARTIFACTS = (
     "dist/checksums.sha256",
 )
 SITE_ARTIFACTS = (
+    "docs/.nojekyll",
     "docs/catalog.json",
     "docs/catalog.jsonld",
     "docs/joins.json",
@@ -100,7 +101,7 @@ def check(root: Path = ROOT) -> dict[str, Any]:
             gates.append(run_generator(temporary_root, "build_site.py"))
         failures = [item for item in gates if item["exit_code"] != 0]
         if failures:
-            return {"ok": False, "generator_failures": failures, "stale": [], "missing": []}
+            return {"ok": False, "generator_failures": failures, "stale": [], "missing": [], "unexpected": []}
 
         stale: list[str] = []
         missing: list[str] = []
@@ -120,12 +121,24 @@ def check(root: Path = ROOT) -> dict[str, Any]:
                     ],
                     "stale": [],
                     "missing": [],
+                    "unexpected": [],
                 }
             if not actual.is_file():
                 missing.append(relative)
             elif actual.read_bytes() != expected.read_bytes():
                 stale.append(relative)
-        return {"ok": not stale and not missing, "generator_failures": [], "stale": stale, "missing": missing}
+        expected_paths = set(artifact_paths(root))
+        actual_dataset_docs = {
+            path.relative_to(root).as_posix() for path in (root / "docs" / "datasets").glob("*.md")
+        }
+        unexpected = sorted(actual_dataset_docs - expected_paths)
+        return {
+            "ok": not stale and not missing and not unexpected,
+            "generator_failures": [],
+            "stale": stale,
+            "missing": missing,
+            "unexpected": unexpected,
+        }
 
 
 def main() -> int:
@@ -144,12 +157,14 @@ def main() -> int:
         return 1
     print(
         f"generated_view_check={'ok' if result['ok'] else 'stale'} "
-        f"stale={len(result['stale'])} missing={len(result['missing'])}"
+        f"stale={len(result['stale'])} missing={len(result['missing'])} unexpected={len(result['unexpected'])}"
     )
     for relative in result["missing"]:
         print(f"MISSING: {relative}")
     for relative in result["stale"]:
         print(f"STALE: {relative}")
+    for relative in result["unexpected"]:
+        print(f"UNEXPECTED: {relative}")
     if not result["ok"]:
         print("Run: python scripts/build_views.py; python scripts/export_catalog.py; python scripts/build_quality_card.py")
         if (args.root / "docs").is_dir():

@@ -153,9 +153,9 @@ access:
     the data, questionnaire and codebook of the public round after passing; 4) Sensitive fields such as fine geography must
     be applied for separately. When the official platform is unavailable, use https://opendata.pku.edu.cn/ as the backup entrance
     and check the release status on-site.
-caveats: The round interval is two years, non-annual data, and annual panels require interpolation or only use even years.
-  Includes 25 provinces that are not national – provincial/regional estimates are not fully representative of the country
-  when used. Some sensitive variables (such as precise income, community code) require additional application for advanced
+caveats: The survey follows a two-year schedule; interpolated values would be researcher-created, not observed annual responses.
+  Coverage of 25 provinces does not by itself establish representativeness for every province or local subgroup; consult the sampling design and weights for the intended population.
+  Some sensitive variables (such as precise income, community code) require additional application for advanced
   permissions. The content of the questionnaire is fine-tuned in each round (variable names and definitions may change), and
   cross-round matching requires consulting the codebook of each round.
 quality:
@@ -169,6 +169,8 @@ used_by:
   journal: CER
   year: 2023
   dataset_role: Key household microdata; education spending and income inequality
+  evidence_type: abstract
+  evidence_url: https://ideas.repec.org/a/eee/chieco/v78y2023ics1043951x23000172.html
   data_note: Use CFPS tracking data to study how income inequality affects family education expenditures - widening income
     gaps will increase competition for children's education expenditures
 - cite: Hu, Zhai & Yan (2023), Do Social Interactions Foster Household Entrepreneurship? Evidence from Online and Offline
@@ -176,18 +178,24 @@ used_by:
   journal: CER
   year: 2023
   dataset_role: Key household microdata; entrepreneurship and social interactions
+  evidence_type: abstract
+  evidence_url: https://ideas.repec.org/a/eee/chieco/v79y2023ics1043951x23000500.html
   data_note: Using CFPS family entrepreneurship + social interaction data, we found that both online and offline social interaction
     promote family entrepreneurship, and the online social interaction effect is stronger.
 - cite: 'Zhang (2022), Patrilineality, Fertility, and Women''s Income: Evidence from Family Lineage in China'
   journal: CER
   year: 2022
   dataset_role: Key personal/household data; fertility and female earnings
+  evidence_type: provider-literature-portal
+  evidence_url: https://www.isss.pku.edu.cn/cfps/xzyj/wxzsm/1201867cfps1378615.htm
   data_note: Using CFPS data to study the lasting impact of clan culture (patrilineal family tradition) on fertility and female
     labor income
 - cite: 'Huang, Luo, Ta & Wang (2024), Land Expropriation, Household Behaviors, and Health Outcomes: Evidence from China'
   journal: JDE
   year: 2024
   dataset_role: Main household panel results; joined with land acquisition shocks
+  evidence_type: institutional-news
+  evidence_url: https://spft.cufe.edu.cn/info/1022/6589.htm
   data_note: Use CFPS six rounds of data (2010–2020) to identify the economic and health effects of land expropriation on
     households - after expropriation, non-agricultural employment ↑, savings rate ↑14pp, subjective health improvement, but
     no significant changes in physical indicators - using event study method + staggered DID
@@ -196,6 +204,8 @@ used_by:
   journal: JDE
   year: 2025
   dataset_role: Family and child outcomes; combined with CHARLS, census and new rural insurance time points
+  evidence_type: secondary-summary
+  evidence_url: https://cec.blog.caixin.com/archives/280706
   data_note: Using CFPS+CHARLS+2015 mini-census triple data+new rural insurance DDD, it is found that public pensions significantly
     reduce dependence on sons for old-age care → reduce bride price expenditures by 32% and improve newborn sex ratio by 12.7pp
     - the social norm reshaping effect of pensions
@@ -204,10 +214,85 @@ used_by:
   journal: JDE
   year: 2026
   dataset_role: Micro-outcomes of labor force participation; joined with census and family planning policies
+  evidence_type: institutional-news
+  evidence_url: https://cem.cau.edu.cn/art/2026/4/17/art_36277_1108087.html
   data_note: Using CFPS (2012/2014/2016 waves) + 1990/2015 census microdata, using the intensity of family planning fines
     in each province as cohort DID - it was found that the one-child policy distorted the sex ratio and made women's LFP ↓~12pp
     relative to men - explaining the mystery of the decline in China's female labor force participation rate against the global
     trend
+- cite: 'Piketty, Yang & Zucman (2019), Capital Accumulation, Private Property, and Rising Inequality in China, 1978–2015'
+  journal: AER
+  year: 2019
+  dataset_role: Wealth survey microdata (2010 and 2012 waves); combined with CHIP wealth surveys for inequality measurement
+  evidence_type: replication
+  evidence_url: https://www.openicpsr.org/openicpsr/project/116194/
+  data_note: Used CFPS 2010 and 2012 wealth survey microdata together with CHIP 1995/2002 to construct Distributional National
+    Accounts for China. Combined with NBS national accounts, household survey income tables by decile, tax data on top earners,
+    and Hurun rich list to measure China's wealth/income inequality from 1978 to 2015.
+- cite: 'Zha & Zhou (2025), The Long-Term Effect of Television on Children''s Human Capital Development in China'
+  doi: https://doi.org/10.1016/j.jdeveco.2025.103538
+  journal: JDE
+  year: 2025
+  dataset_role: Main individual-level outcomes for non-cognitive skills, cognitive scores, and adult socioeconomic status
+  evidence_type: abstract
+  evidence_url: https://ideas.repec.org/a/eee/deveco/v176y2025ics0304387825000896.html
+  data_note: Uses CFPS 2010 baseline (1977-1994 birth cohorts, N=7,064) combined with community-level cable/satellite TV coverage
+    timing from the CFPS community questionnaire. Exploits staggered DID across communities' TV access timing × CCTV-14 children's
+    channel launch (2003) to identify the effect of exposure to quality children's television during ages 4-14. Finds significant
+    improvement in non-cognitive skills (emotional stability, conscientiousness) but no lasting effect on cognitive scores —
+    an asymmetric effect. Left-behind children and disadvantaged communities benefit most, showing CCTV-14 acted as a "social
+    parent" substitute. Exposure also predicts higher adult SES, better health, and greater digital literacy.
+- cite: 'Author (2026), The Impact of Urbanization on Child Growth: Evidence from City-County Mergers in China'
+  doi: https://doi.org/10.1016/j.regsciurbeco.2025.104187
+  journal: RSUE
+  year: 2026
+  dataset_role: CFPS household panel providing child anthropometric controls and family characteristics
+  evidence_type: data-section
+  evidence_url: https://www.sciencedirect.com/science/article/abs/pii/S0166046225000699
+  data_note: Uses CFPS child and household data as a robustness complement to CHNS to measure child anthropometric outcomes (stunting and wasting) in relation to city-county merger urbanization policy. CFPS provides broad family demographic controls, household economic status, and health indicators.
+- cite: 'Author (2025), Skills and the City in China'
+  doi: https://doi.org/10.1016/j.regsciurbeco.2024.104082
+  journal: RSUE
+  year: 2025
+  dataset_role: CFPS individual-level cognitive and social skill measures matched with city characteristics
+  evidence_type: data-section
+  evidence_url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4517629
+  data_note: Uses CFPS individual-level panel data to construct cognitive and social skill measures at the individual level combined with city-level population and wage data from multiple Census waves (1982-2015). Maps occupational skill intensity using O*NET and the China Dictionary of Occupational Classification (DCOC) through text analysis. Finds larger cities disproportionately attract and reward workers with higher cognitive and social skills.
+- cite: 'Jiang & Yin (2025), Delinking Social Identity From Rural-Urban Stereotypes: The Labor Market Effects of Abolishing Agricultural Hukou in China'
+  doi: https://doi.org/10.1111/jors.70032
+  journal: JRS
+  year: 2025
+  dataset_role: CFPS individual/household panel — labor market outcomes, hukou status, and income
+  evidence_type: data-section
+  evidence_url: https://onlinelibrary.wiley.com/doi/10.1111/jors.70032
+  data_note: Uses CFPS data with CGSS validation in a staggered DiD design across 89 hukou-reform cities (2010-2015). Finds that abolishing agricultural hukou delinks social identity from rural-urban stereotypes — rural stayers gain ~17% earnings and more nonagricultural jobs, but rural-urban migrants see no income gains and urban incumbents face higher nonemployment risk. Effects are heterogeneous by education and regional development level.
+- cite: 'Zhang & Zong (2025), Women''s Empowerment and Participation in Innovation: Evidence from the One-Child Policy in China'
+  doi: https://doi.org/10.1016/j.respol.2025.105334
+  journal: Research Policy
+  year: 2025
+  dataset_role: CFPS 2010-2018 waves; mechanism testing for women's human capital, domestic burden, and gender attitudes
+  evidence_type: data-section
+  evidence_url: https://www.sciencedirect.com/science/article/abs/pii/S0048733325001635
+  data_note: >-
+    Uses CFPS 2010-2018 to test four mechanisms linking One-Child Policy to women's innovation participation — (1) increased educational attainment, (2) reduced domestic chore burden, (3) weakened traditional gender role acceptance, (4) higher probability of remaining unmarried. Combined with CNIPA patents, Census, CMDS, and CSMAR. Instrument — provincial OCP fines. CFPS provides the individual-level mechanism evidence.
+- cite: 'An, Qin, Wu & You (2024), The Local Labor Market Effect of Relaxing Internal Migration Restrictions: Evidence from China'
+  doi: https://doi.org/10.1086/722620
+  journal: JLE
+  year: 2024
+  dataset_role: CFPS household panel; labor market outcomes, hukou status, and subjective satisfaction with public services
+  evidence_type: data-section
+  evidence_url: https://www.journals.uchicago.edu/doi/10.1086/722620
+  data_note: >-
+    Uses CFPS household panel data combined with CMDS and Population Census to study how China's 2014 hukou reform affected local labor markets. CFPS provides individual-level labor market outcomes (wages, employment) and subjective satisfaction with social security services. Finds migrant workers' wages fell 2.6-7.9% post-reform — competition is concentrated among migrant workers with similar skills rather than between migrants and locals. Locals' subjective satisfaction with social security declined despite no wage penalty.
+- cite: 'Qin, Yi & Zhang (2025), Quarter of Birth, Gender Inequality, and Economic Development'
+  doi: https://doi.org/10.1086/737993
+  journal: JLE
+  year: 2025
+  dataset_role: CFPS individual-level panel; lifecycle outcomes (education, labor market) linked to birth quarter
+  evidence_type: replication
+  evidence_url: https://opendata.pku.edu.cn/dataverse/pku
+  data_note: >-
+    Uses CFPS as a key micro dataset alongside six Census waves (1990-2020), CEPS, CHNS, statistical yearbooks, and meteorological data. CFPS provides individual-level lifecycle outcomes (education, employment, income) linked to birth quarter. Finds people born in Q4 have better lifecycle outcomes — effect significantly larger for females, driven by agricultural seasonality interacting with son preference in neonatal investment. Economic development (post-1979 reforms) reduces the gender gap in birth quarter effects.
 provenance:
 - source: CFPS official website https://www.isss.pku.edu.cn/cfps/ and Peking University Open Data Platform https://opendata.pku.edu.cn/
   added: '2026-07-08'
@@ -237,7 +322,7 @@ It is one of the most frequently used publicly released data sets in China's mic
 - **Health and Aging**: Using multiple rounds of tracking + cognitive testing + health examination data, we study how health shocks affect family economic decision-making, labor participation and intergenerational transfer. Complementary to CHARLS (special program for middle-aged and elderly people).
 - **Child Development and Human Capital**: CFPS includes special items on child development (cognitive testing, parenting environment, parental investment) aged 0–15 years old - long-term follow-up studies on child development are relatively scarce in Chinese data.
 - **Urban-rural gap and social stratification**: CFPS covers urban and rural areas + different household registration types, and can be used for urban-rural income/education/health gap decomposition and Blinder-Oaxaca decomposition.
-- **Not suitable for**: extremely segmented regional analysis (25 provinces other than the whole country + cannot be identified below counties), enterprise/industry level issues, research requiring monthly/quarterly frequency, and historical tracking before 2010.
+- **Not suitable for**: local analysis when the approved geography or local sample does not support it, enterprise/industry level issues, research requiring monthly/quarterly observations, and historical tracking before 2010. Fine geographic access must be checked rather than assumed impossible or guaranteed.
 
 ## Key variables/modules
 - **Economic Module**: Total household income (four categories: salary/business/transfer/property), household expenditure (eight categories of consumption), housing conditions and value
@@ -255,13 +340,13 @@ It is one of the most frequently used publicly released data sets in China's mic
 5. If you need sensitive variables (accurate income, community codes, etc.), you need to submit a separate application for advanced permissions to ISSS.
 
 ## Connections to other data
-- **CHARLS**: Also produced by Peking University ISSS and on the same application platform - CHARLS focuses on middle-aged and elderly people aged 45+, including biomarkers and physical examination data; it complements CFPS in covering all ages.
+- **CHARLS**: A separate survey recorded under Peking University's National School of Development, focusing on people aged 45+ and their spouses, with deeper aging and health measures. Consult the CHARLS record for its own application route; a CFPS account does not establish CHARLS access. Compare the surveys as alternatives or complementary evidence, not as automatically person-linkable samples.
 - **CHNS / CGSS / CHFS**: Both are large-scale household micro-surveys that can cross-validate main statistics (income distribution, consumption patterns, education level).
 - **Macro/Policy Data**: "Province/County Code" can be used to connect provincial statistical yearbooks and policy databases to construct regional policy impact variables.
 
 ## Remarks / Pitfalls
-- **Not representative of the entire country**: CFPS covers 25 provinces (excluding Hainan, Inner Mongolia, Ningxia, Qinghai, Tibet, and Xinjiang), and provincial-level estimates are biased.
-- **Two-year interval**: CFPS is a bi-annual survey (even years), please note when doing the "annual" panel - there are no data points for odd years.
+- **Population and local inference**: The record documents coverage of 25 provinces, with six excluded. That fact alone neither establishes every province's representativeness nor invalidates inference to the survey's target population. Check weights, sampling design and the intended subgroup before reporting local estimates.
+- **Two-year interval**: The confirmed waves in this record are biennial. Do not describe interpolated intervening years as observed survey rounds, or assume every variable's reference period is the interview year.
 - **Variable names change across rounds**: Each round of questionnaires is revised and variable names may change. Be sure to check the codebook and variable correspondence table of each round before merging across rounds.
 - **Advanced Permission Stratification**: Core variables are free and open, but precise income, community codes, some province codes, etc. require additional application for advanced permissions (approval is more stringent).
 - **Individual tracking rate**: The panel tracking rate is high (about 80–85%), but there is sample attrition—be careful to check attrition bias when doing long panels.

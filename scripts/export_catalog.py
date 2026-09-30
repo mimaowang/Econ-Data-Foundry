@@ -102,16 +102,23 @@ def join_graph(records: list[Any]) -> dict[str, Any]:
 
 def catalog_payload(records: list[Any]) -> dict[str, Any]:
     entries = [entry_for(record) for record in sorted(records, key=lambda item: item.id)]
+    versions_present = sorted(
+        {int(record.data["schema_version"]) for record in records if isinstance(record.data.get("schema_version"), int)}
+    )
     return {
         "catalog_schema_version": 1,
         "dataset_record_schema_version": 2,
+        "dataset_record_schema_version_semantics": "minimum backward-compatible record version",
+        "latest_dataset_record_schema_version": max(versions_present, default=2),
+        "supported_dataset_record_schema_versions": [2, 3],
+        "dataset_record_schema_versions_present": versions_present,
         "record_count": len(entries),
         "datasets": entries,
     }
 
 
 def router_entry(record: Any) -> dict[str, Any]:
-    """Return the small, decision-oriented record agents can scan first."""
+    """Return a deliberately lossy first-pass index; canonical records remain the evidence."""
     data = record.data
     fit = data.get("research_fit") if isinstance(data.get("research_fit"), dict) else {}
     time_span = data.get("time_span")
@@ -125,16 +132,40 @@ def router_entry(record: Any) -> dict[str, Any]:
                 for key in (
                     "route",
                     "access_status",
-                    "direct_url",
-                    "requirements",
-                    "steps",
-                    "deliverable",
                     "cost",
                     "last_checked",
                 )
                 if route.get(key) not in (None, "", [])
             }
         )
+    pathway = data.get("data_pathway") if isinstance(data.get("data_pathway"), dict) else None
+    pathway_summary = None
+    if pathway is not None:
+        pathway_summary = {
+            key: pathway[key]
+            for key in (
+                "mode",
+                "origin",
+                "target_artifact",
+                "availability",
+                "ordinary_researcher_feasible",
+            )
+            if pathway.get(key) not in (None, "", [])
+        }
+    compact_joins = [
+        {
+            key: join[key]
+            for key in ("target", "relation", "evidence_status")
+            if join.get(key) not in (None, "", [])
+        }
+        for join in data.get("joins", []) or []
+        if isinstance(join, dict) and join.get("target")
+    ]
+    compact_relations = [
+        ({"id": item} if isinstance(item, str) else {key: item[key] for key in ("id", "relation") if item.get(key)})
+        for item in data.get("related_datasets", []) or []
+        if isinstance(item, str) or (isinstance(item, dict) and item.get("id"))
+    ]
     entry: dict[str, Any] = {
         "id": record.id,
         "name": data.get("name"),
@@ -165,8 +196,9 @@ def router_entry(record: Any) -> dict[str, Any]:
             "cost": access_cost(record),
             "routes": routes,
         },
-        "related_datasets": data.get("related_datasets", []),
-        "joins": data.get("joins", []),
+        "data_pathway": pathway_summary,
+        "related_datasets": compact_relations,
+        "joins": compact_joins,
         "source_path": record.path.relative_to(ROOT).as_posix(),
     }
     return {key: value for key, value in entry.items() if value not in (None, "", [])}
@@ -175,8 +207,11 @@ def router_entry(record: Any) -> dict[str, Any]:
 def router_index_payload(records: list[Any]) -> dict[str, Any]:
     entries = [router_entry(record) for record in sorted(records, key=lambda item: item.id)]
     return {
-        "router_index_schema_version": 1,
-        "purpose": "Fast first-pass research-idea routing. Open the canonical record before making a final claim.",
+        "router_index_schema_version": 2,
+        "purpose": (
+            "Lossy first-pass research-idea recall. Open the canonical record for comparison, access, production, joins, "
+            "evidence, and final claims."
+        ),
         "record_count": len(entries),
         "datasets": entries,
     }

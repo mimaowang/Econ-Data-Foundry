@@ -1,16 +1,17 @@
 ---
 schema_version: 2
-catalog_status: grounding
+catalog_status: needs-review
 id: china-satellite-pm25
-name: Chinese satellite retrieval and fusion of PM2.5 data
+name: China PM2.5 exposure-grid leads (TAP and other non-interchangeable products)
 aka:
 - 卫星PM2.5
 - Satellite-derived PM2.5
 - Global Annual PM2.5 Grids
-- TAP PM2.5
 - 中国网格PM2.5
-provider: Multiple independent products; including global satellite retrieval grid and Tracking Air Pollution in China (TAP)
-  fusion product
+provider: >-
+  Multiple distinct producers. This legacy index names TAP and generic global
+  satellite products as leads, but they are not one canonical data asset and
+  must not inherit one another's coverage, access route or paper use.
 china_related: true
 domains:
 - environment
@@ -137,8 +138,8 @@ caveats: Satellite inversion/model fusion is not ground truth measurement; diffe
 quality:
   profile_status: partial
   access_status: partial
-  paper_use_status: verified
-  last_audited: '2026-07-10'
+  paper_use_status: partial
+  last_audited: '2026-09-28'
 used_by:
 - cite: 'Chen, Oliva & Zhang (2022), The Effect of Air Pollution on Migration: Evidence from China'
   doi: https://doi.org/10.1016/j.jdeveco.2022.102833
@@ -147,7 +148,11 @@ used_by:
   dataset_role: County-level five-year average PM2.5; joined with census migration and thermal inversion
   evidence_type: paper_data_section
   evidence_url: https://www.nber.org/system/files/working_papers/w24036/w24036.pdf
-  data_note: Use satellite retrievals of PM2.5 instead of corporate emissions surveys.
+  data_note: >-
+    The published paper's data section now resolves a different identity:
+    MERRA-2 M2TMNXAER 5.12.4 is converted and aggregated by the authors. See
+    china-merra2-pm25-chen-oliva-zhang; this citation does not verify TAP or
+    a generic global annual grid as the used product.
 - cite: Khanna, Liang, Mobarak & Song (2025), The Productivity Consequences of Pollution-Induced Migration in China
   journal: AEJ:Applied
   year: 2025
@@ -172,6 +177,10 @@ provenance:
   confidence: high
   verified: true
 related_datasets:
+- id: tap-china-pm25
+  relation: successor
+- id: china-merra2-pm25-chen-oliva-zhang
+  relation: successor
 - id: china-air-quality-monitoring
   relation: complement
 - id: china-census
@@ -182,4 +191,4 @@ related_datasets:
 
 ## Positioning in one sentence
 
-Satellite/fusion PM2.5 is used for continuous, long-term pollution exposure across the country. It is not corporate emissions, nor is it equivalent to the actual measured value at official monitoring stations. The product, version, resolution and aggregation method must be clearly stated before use.
+This legacy lead groups several non-interchangeable PM2.5 products and is not itself a data asset to select. Use it only to discover a specific product, then open that product's canonical record and confirm its producer, version, access route and measurement construction.

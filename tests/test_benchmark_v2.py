@@ -74,12 +74,16 @@ def test_router_index_keeps_decision_fields_and_access_routes_compact() -> None:
     records, failures = load_datasets()
     assert not failures
     payload = router_index_payload(records)
-    assert payload["router_index_schema_version"] == 1
+    assert payload["router_index_schema_version"] == 2
     assert payload["record_count"] == len(records)
     census = next(item for item in payload["datasets"] if item["id"] == "china-census")
     assert census["research_fit"]["best_for"]
+    assert census["research_fit"]["choose_over"]
+    assert census["linkable_keys"]
     assert census["access"]["routes"]
+    assert all("steps" not in route and "requirements" not in route for route in census["access"]["routes"])
     assert "description_markdown" not in census
+    assert "production" not in census
     json.dumps(payload, ensure_ascii=False)
 
 

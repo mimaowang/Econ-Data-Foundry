@@ -56,8 +56,8 @@ research_fit:
   - Health, cognition, retirement, pensions and intergenerational care in people aged 45 and over, including physical and
     selected biomarkers
   choose_over:
-  - Prioritize CFPS when studying middle-aged and elderly health and retirement; use CFPS instead when studying all ages or
-    children
+  - Prioritize CHARLS over CFPS for deep health, cognition, retirement, pension, and biomarker measures among adults aged 45+;
+    use CFPS instead when studying all ages or children
   - Compare CHNS when studying long-term changes in deep diet; compare CHFS when studying household assets and liabilities
   not_good_for:
   - General population under 45 years old
@@ -143,6 +143,8 @@ used_by:
   journal: CER
   year: 2023
   dataset_role: Main micro-data of middle-aged and elderly people; subjective well-being
+  evidence_type: abstract
+  evidence_url: https://ideas.repec.org/a/eee/chieco/v81y2023ics1043951x23000986.html
   data_note: Using CHARLS data to study the causal effect of digital financial inclusion (mobile payment/digital banking)
     on the subjective well-being of middle-aged and elderly people
 - cite: 'Fu, Ge, Huang & Shi (2022), The Effect of Education on Health and Health Behaviors: Evidence from the College Enrollment
@@ -150,18 +152,24 @@ used_by:
   journal: CER
   year: 2022
   dataset_role: Health and behavioral outcomes; combined with the impact of college enrollment expansion
+  evidence_type: abstract
+  evidence_url: https://ideas.repec.org/a/eee/chieco/v72y2022ics1043951x22000268.html
   data_note: Using CHARLS middle-aged and elderly data + China's university enrollment expansion policy as an IV, it was found
     that education significantly improves the health behaviors and health outcomes of middle-aged and elderly people.
 - cite: 'Wang, Jin & Yuan (2023), The Consequences of Health Shocks on Households: Evidence from China'
   journal: CER
   year: 2023
   dataset_role: Key tracking outcomes; health shocks, income, consumption and labor supply
+  evidence_type: abstract
+  evidence_url: https://ideas.repec.org/a/eee/chieco/v79y2023ics1043951x23000548.html
   data_note: Using CHARLS tracking data to identify the dynamic causal effects of health shocks (cancer/cardiovascular/stroke)
     on household income, consumption and labor supply
 - cite: 'Dai, Gong, Hu & Wei (2026), Rural Pension, Factor Reallocation and Agricultural Productivity: Evidence from China'
   journal: JDE
   year: 2026
   dataset_role: Middle-aged and elderly/pension results; combined with the new rural insurance policy
+  evidence_type: institutional-news
+  evidence_url: http://www.card.zju.edu.cn/2026/0318/c24473a3141956/page.htm
   data_note: Using CHARLS middle-aged and elderly tracking data + New Rural Security (NRPS) pension reform, we study how rural
     pensions improve agricultural productivity through labor reallocation channels
 - cite: 'Guo, Huang & Wang (2025), Public Pensions and Family Dynamics: Eldercare, Child Investment, and Son Preference in
@@ -169,9 +177,19 @@ used_by:
   journal: JDE
   year: 2025
   dataset_role: Aged care and pensions results; linked to CFPS and census
+  evidence_type: secondary-summary
+  evidence_url: https://cec.blog.caixin.com/archives/280706
   data_note: Using CHARLS + CFPS + 2015 mini-census triple data + new rural insurance DDD, it was found that public pensions
     reduced sons living together by 5.2pp, bride price decreased by 32%, and newborn sex ratio improved by 12.7pp - pensions
     fundamentally reshaped the tradition of 'raising children to provide for old age'
+- cite: 'Wu, Yin & Zhang (2026), Information, Pollution, and Cognition: The Impact of Air Pollution Disclosure on Aging Minds'
+  doi: https://doi.org/10.1016/j.chieco.2026.102664
+  journal: CER
+  year: 2026
+  dataset_role: CHARLS longitudinal individual data (2011/2013/2015/2018/2020 waves) matched to city-level air pollution disclosure policy
+  evidence_type: data-section
+  evidence_url: https://www.sciencedirect.com/science/article/abs/pii/S1043951X26000143
+  data_note: Matches CHARLS five-wave panel with staggered city-level Pollution Information Disclosure (PID) policy rollout. Finds PID reduces PM2.5's negative effect on cognition by ~53% through increased environmental awareness and avoidance behavior. Stronger protection for males, higher-educated, internet-using, and co-residing individuals. Effects emerge after ~2 years and persist for at least 7 years.
 provenance:
 - source: CHARLS official website https://charls.pku.edu.cn and Peking University Open Data Platform (confirm survey design,
     variable coverage and access conditions)

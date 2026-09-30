@@ -145,21 +145,66 @@ quality:
   profile_status: partial
   access_status: needs-verification
   paper_use_status: verified
-  last_audited: '2026-07-10'
+  last_audited: '2026-08-11'
 used_by:
+- cite: 'Imbert, Seror, Zhang & Zylberberg (2022), Migrants and Firms: Evidence from China'
+  doi: https://doi.org/10.1257/aer.20191234
+  journal: AER
+  year: 2022
+  dataset_role: Urban-resident labor-market and household-cost comparison for wages, employment states, household consumption prices,
+    and equilibrium effects at destination prefectures
+  evidence_type: appendix_and_replication
+  evidence_url: https://www.aeaweb.org/articles/materials/16850
+  data_note: >-
+    The AEA appendix identifies the NBS Urban Household Survey for 2002–2006: a three-stage stratified cross-section covering 18
+    provinces and 207 prefectures, with roughly 70,000–90,000 individuals per year. It supplies employment, income, household
+    characteristics, detailed consumption prices, and the components used to construct real wages and employment outcomes. The
+    appendix warns that townships and suburban districts are omitted, so rural-urban migrants living on city peripheries are
+    underrepresented. The openICPSR deposit includes UHS cleaning scripts, but the repository listing does not by itself prove that
+    the complete restricted UHS microdata are publicly downloadable.
 - cite: Li, Shi & Wu (2015), The Retirement Consumption Puzzle in China
   journal: AER (P&P)
   year: 2015
+  dataset_role: UHS urban household survey micropanel as the household-consumption panel for the retirement regression-discontinuity analysis
+  evidence_type: abstract
+  evidence_url: https://www.aeaweb.org/articles?id=10.1257/aer.p20151007
   data_note: Using UHS urban household survey micropanel data and mandatory retirement age for RD, it is estimated that the
     causal effect of retirement on household nondurable goods consumption (decreased by about 20%)
 - cite: 'Cai & Zhao (2024), Uniform Agricultural Tax Abolition and Differential Household Labor Supply: Evidence from China''s
     Urban Household Survey'
   journal: CER
   year: 2024
+  dataset_role: UHS data as the urban household labor-supply outcome source in the agricultural-tax-abolition analysis
+  evidence_type: abstract
+  evidence_url: https://ideas.repec.org/a/eee/chieco/v86y2024ics1043951x24000646.html
   data_note: Using UHS data, the abolition of agricultural tax is used to study the differentiated impact of abolishing agricultural
     taxes on urban household labor supply—abolishing agricultural taxes indirectly affects urban residents' behavior through
     food price channels
+- cite: 'Qian (2025), Market-Oriented Reforms and Human Capital Reallocation in Urban China: A Gender Perspective'
+  doi: https://doi.org/10.1016/j.labeco.2025.102811
+  journal: Labour Economics
+  year: 2025
+  dataset_role: UHS repeated cross-section 1986-2014 (1M+ individuals); primary data for occupational choice and education analysis
+  evidence_type: data-section
+  evidence_url: https://www.sciencedirect.com/science/article/pii/S0927537125001356
+  data_note: >-
+    Uses UHS 1986-2014 (over 1 million individuals) combined with Population Census waves (1990, 2000, 2010) as the primary data source. Documents how market-oriented reforms — abolition of job assignment system (1993-1996) and college expansion (1999) — improved human capital allocation in urban China. Quantitative general equilibrium model with gender-specific education and occupation wedges. Finds occupational mismatch fell by ~19% and aggregate output rose by ~0.8%. Female education barriers in high-skill occupations (engineers etc.) account for ~80% of efficiency losses. Without reforms, 2010 young cohort human capital would be 1.6% lower.
 provenance:
+- source: https://www.aeaweb.org/articles/materials/16850
+  field_scope:
+  - AER paper use
+  - UHS 2002–2006 sample and sampling frame
+  - variables and migrant-coverage limitation
+  added: '2026-08-11'
+  confidence: high
+  verified: true
+- source: https://www.openicpsr.org/openicpsr/project/152203/version/V1/view
+  field_scope:
+  - paper-specific UHS cleaning route
+  - public replication versus raw UHS boundary
+  added: '2026-08-11'
+  confidence: high
+  verified: true
 - source: Crossref abstract for https://doi.org/10.1257/aer.p20151007 (supports use of China's Urban Household Survey)
   added: '2026-07-08'
   confidence: high

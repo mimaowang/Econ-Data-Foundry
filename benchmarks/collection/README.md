@@ -70,6 +70,8 @@ Before editing, answer:
 3. What can the evidence prove about observation unit, sample, geography, time, variables, joins, and acquisition?
 4. What remains unknown?
 5. Which action adds the most future routing value without inflating status?
+6. Is the target a ready-made product, a constructed asset, a self-collected asset, a hybrid, or inaccessible to an ordinary researcher?
+7. If production is required, which raw sources, consequential stages, output, validation, burden, and compliance claims are actually evidenced?
 
 ## 4. Make only content-boundary changes
 
@@ -130,7 +132,9 @@ Write `.collection_benchmark/submission.json`:
       "name": "Exact data product name",
       "action": "updated_record",
       "identity_note": "How this product differs from aliases, modules, or close datasets.",
-      "access_note": "What was verified about entry point, requirements, steps, deliverable, and remaining gaps."
+      "access_note": "What was verified about entry point, requirements, steps, deliverable, and remaining gaps.",
+      "pathway_mode": "constructed",
+      "production_note": "Raw source, evidence-backed stages, expected output, validation, reproducibility burden, compliance, and unknowns."
     }
   ],
   "sources_used": [
@@ -154,6 +158,8 @@ Allowed outcomes are `published`, `updated`, `consolidated`, `candidate_only`, `
 
 Paper decisions are `used`, `candidate`, or `rejected`. Journal scopes are `top5`, `field-top`, `business-top`, `china-focused`, `chinese-language`, `other`, or `not-applicable`. Source statuses are `verified`, `lead_only`, or `blocked`. Dataset actions are `new_record`, `updated_record`, `candidate`, `rejected_alias`, or `no_change`.
 
+`pathway_mode` is optional for legacy direct records and otherwise uses `direct`, `constructed`, `collected`, `hybrid`, or `inaccessible`. `production_note` is required in the report for `constructed`, `collected`, and `hybrid` modes. It is evaluator evidence, not a substitute for the canonical record.
+
 Use only public HTTP(S) evidence URLs without credentials or sensitive query parameters. Report blocked pages as blocked evidence, not verified support.
 
 Submit and seal the cycle:
@@ -174,7 +180,7 @@ Inspect mechanical state without judging the research semantics:
 python scripts/collection_benchmark_session.py check
 ```
 
-Watch for late-run drift: shorter evidence chains, repeated familiar sources, vague access recipes, status inflation, candidate accumulation, skipped generation, or increasing willingness to infer unknown facts.
+Watch for late-run drift: shorter evidence chains, repeated familiar sources, vague access or production recipes, status inflation, candidate accumulation, skipped generation, treating every public webpage as a reproducible dataset, or increasing willingness to infer unknown facts.
 
 ## 8. Write final feedback
 

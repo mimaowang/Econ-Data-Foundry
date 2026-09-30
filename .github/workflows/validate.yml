@@ -31,7 +31,11 @@ jobs:
         run: python -m ruff check .
       - name: Scan for committed credentials
         run: python scripts/check_secrets.py
-      - name: Validate source records
+      - name: Check committed generated views before rebuilding
+        run: python scripts/check_generated_views.py
+      - name: Validate committed source records and health report
+        run: python scripts/validate_kb.py
+      - name: Rebuild health report deterministically
         run: python scripts/validate_kb.py --write-report
       - name: Rebuild deterministic views
         run: python scripts/build_views.py
@@ -43,6 +47,8 @@ jobs:
         run: python scripts/build_site.py
       - name: Build quality card
         run: python scripts/build_quality_card.py
+      - name: Check generated views after rebuilding
+        run: python scripts/check_generated_views.py
       - name: Check generated Markdown drift
         shell: bash
         run: git diff --exit-code -- DATASET_INDEX.md ledgers/aliases.md ledgers/progress.md ledgers/quality-card.md dist docs

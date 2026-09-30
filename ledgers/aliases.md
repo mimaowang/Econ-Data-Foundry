@@ -4,27 +4,158 @@
 
 | aliases and common names | canonical slug | status |
 |---|---|---|
+| 高德迁徙排名; AMAP migration top-50 routes; 高德每日迁徙意愿指数排名 | `amap-daily-top50-migration-route-ranking` | ready |
+| 高德POI; Amap POI search API; 高德地图Web服务API-搜索POI; AMAP place data | `amap-poi-data` | grounding |
 | 中国工业企业数据库; 规模以上工业企业数据库; 工业企业调查; ASIF; ASIE; Annual Survey of Industrial Firms; NBS工业统计 | `asif` | grounding |
+| 2020年春节前百度迁徙339城市OD网络; 百度迁徙2020年1月6日至26日城市间OD迁徙数据; Baidu Migration 2020 city OD network | `baidu-qianxi-2020-spring-festival-city-od-network` | grounding |
+| 百度迁徙; Baidu Qianxi; 百度迁徙大数据; Baidu Maps Huiyan migration index; qianxi.baidu.com | `baidu-qianxi-migration` | grounding |
+| 中电联; CEC; CECI (中国电煤采购价格指数); 中国电力统计年鉴; China Electricity Council statistics | `cec-electricity-statistics` | grounding |
+| 全国电力市场交易简况; CEC electricity-market transaction bulletin; 全国电力市场交易电量 | `cec-national-electricity-market-transaction-bulletins` | ready |
+| CEIC; CEIC Data; 中国经济数据库; CEIC中国数据库; China Premium Database; CEIC宏观经济数据库 | `ceic` | ready |
+| CEPS; 中国教育追踪调查; China Education Panel Survey | `ceps` | ready |
 | CFPS; 中国家庭追踪调查; 中国家庭动态跟踪调查; China Family Panel Studies; 北大CFPS | `cfps` | ready |
 | CGSS; 中国综合社会调查; China General Social Survey; 中国社会综合调查; 人大CGSS | `cgss` | ready |
 | CHARLS; 中国健康与养老追踪调查; 中国健康与养老调查; China Health and Retirement Longitudinal Study; 北大CHARLS | `charls` | ready |
 | CHFS; 中国家庭金融调查; China Household Finance Survey; 西南财大CHFS; 中国家庭金融 | `chfs` | ready |
+| 2017年全国生育状况抽样调查; 2017 National Fertility Survey; 2017 China Fertility Survey; 全国生育状况抽样调查 | `china-2017-fertility-survey` | grounding |
+| 51job.com job vacancies May-November 2019; Qian Cheng Wu You 51job.com corpus; Trade War vacancy postings cor… | `china-51job-vacancy-postings-2019` | grounding |
+| 国家5A级旅游景区; 5A级旅游景区名单; 5A景区名录; China 5A tourist attractions; National AAAAA scenic areas | `china-5a-scenic-area-list` | ready |
+| 10.1371/journal.pone.0280317.s001; journal.pone.0280317.s001.dta; Impact of new talent settlement policy on h… | `china-70-city-talent-settlement-policy-housing-panel` | ready |
+| From Fog to Smog replication data; openICPSR project 193441; China pollution-information program evaluation d… | `china-aer-fog-to-smog-behavioral-2024` | ready |
+| Indirect Effects of Access to Finance replication data; China SME loan-product market-level RCT dataset; open… | `china-aer-loan-access-experiment-markets-2024` | ready |
+| openICPSR project 229381; AER 2025 Quid Pro Quo Auto replication package; Bai-Barwick-Cao-Li Chinese auto ind… | `china-aer-quid-pro-quo-auto-replication-2025` | ready |
+| Does the Squeaky Wheel Get More Grease? replication data; China pollution appeals experiment data; CEMS-citiz… | `china-aer-squeaky-wheel-citizen-appeals-2020` | ready |
+| 第一次全国农业普查; China First National Agricultural Census 1997; 1997 Agricultural Census 1% sample; 农业普查1%抽样 | `china-agricultural-census-1997-1pct` | grounding |
+| 中国农业年鉴; China Agricultural Yearbook; Zhongguo nongye nianjian; CAY | `china-agricultural-yearbook` | ready |
 | 中国空气质量监测数据; 城市空气质量; CNEMC; AQI; API; 空气质量监测站; 全国城市空气质量实时发布 | `china-air-quality-monitoring` | grounding |
-| 人口普查; 全国人口普查; Population Census of China; Chinese Census; 中国人口普查数据; 五普/六普/七普; 1%抽样调查; 小普查; Mini-Census; 全国1%人… | `china-census` | grounding |
+| 高德迁徙; 中国主要城市迁徙意愿排行榜; AMAP migration report; Gaode Maps human flow dataset; report.amap.com/migrate | `china-amap-migration-flow-indices` | grounding |
+| 人口普查; 全国人口普查; Population Census of China; Chinese Census; 中国人口普查数据; 五普/六普/七普; 1%抽样调查; 小普查; Mini-Census; 全国1%人… | `china-census` | ready |
+| 新中国城市50年; 新中国城市五十年; Xin Zhongguo Chengshi 50 Nian; Cities China 1949-1998 | `china-cities-1949-1998` | ready |
+| CEADs; 中国碳核算数据库; 城市碳排放; 中国城市二氧化碳排放; Carbon Emission Accounts and Datasets; City-level CO2 emission inventory … | `china-city-co2-emissions` | grounding |
+| Leadership vacuum data; 市委书记空缺数据; unfilled municipal party secretary positions | `china-city-official-vacancy-panel` | grounding |
+| 城际卡车流量数据; G7 卡车 GPS 流量数据; The Economic Cost of Locking down like China replication data; 10.3886/E210761V1 | `china-city-to-city-truck-flows` | ready |
+| Clarksons shipyard production data; Shipyard Quarterly Production Data 1998-2014; Clarksons Research shipyard… | `china-clarksons-shipyard-production-1998-2014` | grounding |
+| CLHLS; CLHLS-HF; 中国老年健康调查; 中国老年健康影响因素跟踪调查; 中国老年健康与家庭幸福调查; Chinese Longitudinal Healthy Longevity and Happy Fa… | `china-clhls` | ready |
+| CNRDS; 中国研究数据服务平台; Chinese Research Data Services; 经禾数据; CNRDS 财经商学数据库 | `china-cnrds` | grounding |
+| GCPT; Global Coal Plant Tracker; 全球燃煤电厂追踪; Coal Plants in China (Units) | `china-coal-power-plant-panel` | ready |
+| 基于通勤的中国都市区; 中国通勤都市圈划分; China's Commuting-Based Metropolitan Areas; Delineating China's Metropolitan Areas Usi… | `china-commuting-based-metropolitan-areas` | ready |
+| 全国中高风险地区名单; 疫情风险等级; 中高风险地区; COVID risk level county panel; 国务院客户端 疫情风险等级查询; bmfw.www.gov.cn/yqfxdjcx/risk.html | `china-county-daily-covid-risk-level-2020-2022` | ready |
+| China Dimensions county population and agriculture data; CITAS county population-agriculture GIS data; CDDC C… | `china-county-population-agriculture-gis-1990` | grounding |
+| China Judgments Online (CJO) civil judgment corpus 2014-2018; 中国裁判文书网民事判决语料（2014-2018）; China Court Trial Onl… | `china-court-judgments-2014-2018-open-justice` | ready |
 | 中国海关数据库; 海关数据; 海关进出口; China Customs; CCTS; 海关交易级数据; 中国海关贸易统计 | `china-customs` | grounding |
+| 中国远洋渔业船队; distant water fishing fleet registry; 远洋渔船名录 | `china-distant-water-fishing-fleet` | grounding |
+| 中国国内贸易年鉴; Almanac of China's Domestic Trade; China Domestic Trade Statistical Yearbook; 中国商业年鉴 (possible pre-… | `china-domestic-trade-statistical-yearbook` | ready |
+| 全国疾病监测系统; 死因监测; 疾病监测点; DSP; NMSS; 全国死因监测系统; 中国死因监测数据集; Disease Surveillance Points; National Mortality Survei… | `china-dsp-mortality-records` | grounding |
+| 经济普查; 工业普查; 全国经济普查; Chinese Industrial Census; CIC; 第三次工业普查; 第一次经济普查; 第二次经济普查 | `china-economic-census` | grounding |
+| 住房公积金; Housing Provident Fund; HPF; 公积金数据; employer-employee matched administrative data China | `china-employer-employee-matched-admin` | grounding |
+| 中国环境执法记录; 地方环境处罚记录; IPE environmental enforcement records; Axbard-Deng enforcement data | `china-environmental-enforcement` | ready |
+| ESIEC; 中国企业创新创业调查; Enterprise Survey for Innovation and Entrepreneurship in China; 北大企业创新创业调查 | `china-esiec-survey` | ready |
 | 中国工业企业环境统计; 企业污染排放数据; Environmental Survey Database; ESD; 工业企业污染排放调查; 重点污染源企业调查 | `china-firm-pollution` | grounding |
+| China Firm Registry Data; SAIC firm registry; SAMR enterprise registration records; 工商登记数据; 企业注册登记数据 | `china-firm-registry` | grounding |
+| GFW; Global Fishing Watch data portal; GFW API v3; AIS vessel presence; fishing effort | `china-fishing-vessel-detection` | ready |
+| Global Flood Database (GFD); 卫星洪水淹没数据; Chang-Zheng flood firm exposure | `china-flood-inundation-firm-exposure` | grounding |
+| 福建增值税发票数据; 福建省企业增值税发票数据; Fujian VAT invoice data; 企业间贸易数据库 (firm-pair trade database) | `china-fujian-vat-invoice-transactions` | grounding |
+| 高考考生数据; NCEE administrative data; gaokao universe 1999-2003; 22,608,392 test takers | `china-gaokao-ncee-universe-1999-2003` | grounding |
+| 政府采购数据; 政府采购合同; 中国政府采购数据库; 政府采购公告; China Government Procurement Contracts; 政府订单数据; 公共采购数据 | `china-gov-procurement` | grounding |
+| Harmonized NTL; Harmonized_DN_NTL; Li–Zhou harmonized nighttime lights; DMSP-VIIRS harmonized nighttime light… | `china-harmonized-nighttime-lights-li-et-al` | ready |
+| China HSR network replication package; BH replication package; 中国高铁网络数据; Non-Random Exposure to Exogenous Sho… | `china-high-speed-rail-network` | ready |
+| Hedging desperation data; Confucian clan kinship network 1470-1910; 宗族网络与饥荒 | `china-historical-clan-kinship-1470-1910` | grounding |
+| 中国历史疫灾数据; historical disease exposure China; epidemic records China; Wang-Ang epidemics dataset | `china-historical-epidemic-records` | grounding |
+| On the Right Track replication package; BoChenLiuZhou_replicate.zip; China historical railroad expansion and … | `china-historical-railroad-industrial-development-replication-1858-1936` | ready |
+| Valuing Long-Term Property Rights replication data; EPRC Hong Kong residential transactions (1992-2020 extrac… | `china-hk-2047-lease-housing-transactions-2024` | ready |
+| HKPSSD; 香港社会动态追踪调查; 香港社會動態追蹤調查; Geospatial relative income and subjective well-being in Hong Kong | `china-hkpssd-geocoded-survey-2026` | grounding |
+| 中国工商行政管理统计四十年; Zhongguo gongshang xingzheng guanli tongji sishi nian; China Industrial and Commerce Administr… | `china-industrial-commerce-administration-statistics-40-years` | ready |
 | 投入产出表; 中国投入产出表; Input-Output Tables; China I-O Table; 中国IO表; 全国投入产出表; 省际投入产出表; 区域间投入产出表; 多区域投入产出表; MRIO | `china-io-table` | ready |
+| Replication Data for "Migration and Resource Misallocation in China"; Li–Ma–Tang JDE replication package; 中国迁… | `china-jde-migration-resource-misallocation-replication-2024` | ready |
+| Development Zone, Land Lease Price, and Firm Productivity data; DZ-Land-Firm; 中国开发区—土地—企业空间数据 | `china-jrs-dz-land-firm-2026` | grounding |
+| Sweating Assets housing transaction records; China second-hand housing transactions (26-city paper sample); 中… | `china-jrs-sweating-assets-housing-transactions-2026` | grounding |
+| Flattening Governments, Flattening Growth replication data; JUE 2026 PMC reform replication package; 中国省直管县改革… | `china-jue-pmc-fiscal-reform-replication-2026` | ready |
 | 土地出让数据; 土地交易数据; 土地市场网数据; China Land Transaction; 土地招拍挂数据; 中国土地市场网; Landchina; 土地微观交易; 地块级数据 | `china-land-transaction` | grounding |
+| MBLL; liuyan.people.com.cn; 领导留言板; Message Board for Leaders; Leader Message Board; 人民网领导留言板 | `china-leaders-message-board-complaints` | grounding |
+| 专精特新"小巨人"企业名单; Little Giant enterprises list; 国家级专精特新小巨人; MIIT Little Giant designations | `china-little-giant-enterprise-list` | grounding |
+| China Living Standards Survey; China Living Standards Survey 1995-1997; Living Standards Survey of China; 中国生… | `china-living-standards-survey-1995-1997` | ready |
+| 政府工作报告文本; Government Work Report corpus; 地方政府工作报告数据库; GWR texts | `china-local-government-work-report-texts` | grounding |
+| 城市空气质量状况月报; 全国城市空气质量报告; 全国城市空气质量月报; MEE city air-quality monthly reports | `china-mee-monthly-city-air-quality-reports` | ready |
+| 全国地表水质量状况; 地表水水质月报; MEE surface-water quality bulletins; national surface-water quality releases | `china-mee-surface-water-quality-bulletins` | ready |
+| M2TMNXAER 5.12.4; MERRA-2 AOD-derived China PM2.5; Chen Oliva Zhang 2022 PM2.5 exposure | `china-merra2-pm25-chen-oliva-zhang` | grounding |
+| 156 Programme plant register; Million-Rouble Plants (MRPs); 中国156项重点工程厂址数据; 一五计划156项重点工程 | `china-million-rouble-plant-register` | ready |
+| 最低工资标准; China Minimum Wage Policy Panel; 全国各地区最低工资标准情况; 区县最低工资数据 | `china-minimum-wage-policy-panel` | ready |
+| 手机信令数据; mobile cellular signaling data; mobile phone signaling data; China Unicom tourist flow data; 联通旅游大数据 | `china-mobile-signaling-mobility-data` | grounding |
+| 电子商务进农村综合示范县名单; 电商进农村综合示范县; E-commerce into Rural Areas Comprehensive Demonstration County lists; 电商进农村示范县; M… | `china-mofcom-rural-ecommerce-demo-counties` | ready |
+| Fan-Wang marketization index; 樊纲市场化指数; 中国分省份市场化指数; 中国市场化指数; 中国分省份市场化指数报告; 分省份市场化指数数据库; China Marketization In… | `china-neri-marketization-index` | ready |
+| ECIN replication package 213181; The Effect of the Anti-Corruption Campaign in China: Evidence from Housing T… | `china-new-housing-buyer-transactions` | ready |
+| 夜间灯光数据; DMSP-OLS; NPP-VIIRS; VIIRS DNB; Nighttime light data; Night-time lights (NTL); 夜光遥感; VNL (EOG annual … | `china-nighttime-lights` | ready |
 | 专利数据; 中国专利; CNIPA; SIPO; 国家知识产权局专利; China Patent; 中国专利数据库; 发明专利申请/授权; 实用新型; 外观设计 | `china-patents` | grounding |
-| 卫星PM2.5; Satellite-derived PM2.5; Global Annual PM2.5 Grids; TAP PM2.5; 中国网格PM2.5 | `china-satellite-pm25` | grounding |
+| PKU-DFIIC; 北大数字普惠金融指数; 北京大学数字金融研究中心数字普惠金融指数; The Peking University Digital Financial Inclusion Index of China | `china-pku-digital-financial-inclusion-index` | ready |
+| 中国人口年鉴 1991; 中国人口年鉴; China Population Yearbook; Almanac of China's Population; CPY 1991 | `china-population-yearbook-1991` | ready |
+| 政府采购中标与落标企业数据; Local Favoritism in China's Public Procurement replication data; 中国政府采购拍卖投标数据（含中标与落标者）; 10.176… | `china-procurement-auction-bids-winners-losers` | ready |
+| chinawomen.csv; QSS Table 7.4 China sex-ratio and agricultural-crop data; QSS chinawomen R dataset; 中国县—出生年份性… | `china-qss-chinawomen-derived-2017` | ready |
+| Melons as Lemons replication package; Bai watermelon branding experiment data; Zenodo 10.5281/zenodo.13909671… | `china-restud-melon-market-labels-2025` | ready |
+| openICPSR project 117506 V2; 10.3886/E117506V2; Connecting the Countryside via E-Commerce replication data; R… | `china-rural-ecommerce-couture-2021-replication` | ready |
+| 中国农村经济统计大全：1949-1986; 中国农村经济统计大全: 1949-1986; China Rural Economic Statistics Encyclopedia, 1949-1986; Compila… | `china-rural-economic-statistics-1949-1986` | ready |
+| 中国农村金融统计年鉴; China Rural Finance Statistical Yearbook; Zhongguo nongcun jinrong tongji nianjian; CRFSY | `china-rural-finance-statistical-yearbook` | ready |
+| 中国农村统计年鉴; China Rural Statistical Yearbook; Rural Statistical Yearbook of China; CRSY | `china-rural-statistical-yearbook-1984-1994` | ready |
+| 卫星PM2.5; Satellite-derived PM2.5; Global Annual PM2.5 Grids; 中国网格PM2.5 | `china-satellite-pm25` | needs-review |
+| Second Industrial Census; 第二次工业普查; 1985 Industrial Survey; 1985年第二次工业普查数据 | `china-second-industrial-survey-1985` | grounding |
+| Arrival of Young Talent replication data; China send-down movement county dataset; 上山下乡县级教育数据; census_1990_cl… | `china-senddown-county-exposure` | ready |
+| 友好城市; Sister city ties; 国际友好城市关系; CPAFFC friendship cities | `china-sister-city-ties` | ready |
 | 统计年鉴; 中国统计年鉴; 省统计年鉴; 市统计年鉴; China Statistical Yearbook; China City Statistical Yearbook; NBS年鉴; 中国城市统计年鉴; 中国县… | `china-stat-yearbook` | ready |
+| Steel Association Reports; 中国钢铁工业协会钢铁企业年度报表; Chinese steel plant annual reports | `china-steel-plant-performance-reports` | grounding |
+| 淘宝村淘宝镇名单数据; Taobao village list; Taobao town list; 淘宝村名单信息表; 淘宝镇名单信息表; AliResearch Taobao village/town list s… | `china-taobao-village-town-lists` | ready |
 | 中国企业税收调查; 企业税收调查; 中国税收调查企业数据; 全国税收调查企业数据; 企业税收调查微观数据; China Enterprise Tax Survey | `china-tax-survey` | grounding |
+| Construction of Third Front exposure; 三线建设; TF campaign exposure; 1985 industrial census employment share mea… | `china-third-front-construction-exposure` | grounding |
+| 天眼查; Tianyancha; Tianyancha Open Platform; 天眼查企业数据接口 | `china-tianyancha-firm-information` | ready |
+| 中国人口普查分乡、镇、街道资料; 分乡镇街道人口普查资料; Tabulation on 2010/2020 China population census by township; 七普分乡、镇、街道资料 | `china-township-census-population-2010-2020` | ready |
+| 乡镇企业统计资料; Township Enterprises Statistical Material 1978-1985; (全国)乡镇企业简明统计史料汇编 1978-1985 (related/reprinted … | `china-township-enterprises-statistical-material-1978-1985` | grounding |
+| 中国乡镇企业统计资料 1978-2002年; China Township Enterprises Statistical Materials 1978-2002; DT363-C3 | `china-township-enterprises-statistical-materials-1978-2002` | ready |
+| 中国乡镇企业统计年鉴; China Township Enterprises Statistical Yearbook; 中国乡镇企业年鉴; China Township and Village Enterprises… | `china-township-enterprises-statistical-yearbook` | grounding |
+| 商标数据; 中国商标; 商标注册数据; CNIPA商标; 国家知识产权局商标; 中国商标注册; 中国商标网数据; China Trademark Database; CNIPA trademark registrati… | `china-trademarks` | ready |
+| 被拐儿童流入数据; Baby Come Back Home (BCBH) trafficked children records; 宝贝回家数据 | `china-trafficked-children-inflow` | grounding |
+| 中国交通网络数据; Transportation Networks of China; prefecture travel time China; Ma-Tang transport networks | `china-transportation-networks-travel-time-1994-2024` | ready |
+| 货车司机遥测数据; truck driver GPS labor data; Too hot to haul dataset; JEEM 103338 truck data | `china-truck-driver-telematics` | grounding |
+| 银联线下跨城消费数据; UnionPay offline transaction data; 中国银联跨城旅游消费; cross-city tourism expenditure flows | `china-unionpay-cross-city-consumption-flows` | grounding |
+| Should Governments Promote or Restrain Urbanization replication package; Wu & You (2025) JIE urbanization rep… | `china-urbanization-city-calibration-wu-you-2025` | ready |
+| 车辆注册数据; 交强险上险数据; vehicle registration data China; Compulsory Traffic Accident Liability Insurance records; 中国… | `china-vehicle-registration-2010-2023` | grounding |
+| 国家地表水水质监测数据; 国控断面水质; 全国地表水水质; 地表水水质自动监测; China surface water quality monitoring | `china-water-quality-monitoring` | grounding |
+| 省级生猪价格周度数据; Weekly provincial hog prices (China); zhujiage.com.cn hog prices; Chinese hog market weekly price… | `china-weekly-provincial-hog-prices` | grounding |
+| Zero2IPO; PEDATA; PEDATA MAX; 清科数据; 清科数据库; Zero2IPO Group PE/VC database | `china-zero2ipo-pedata-vc-pe` | ready |
+| Zhaopin.com job ads; 智联招聘招聘广告数据; GenderDiscrimData; China online recruitment advertisements 2008-2010 | `china-zhaopin-job-ads-2008-2010` | ready |
+| 自如南京合租房源; Ziroom Nanjing bedroom listings; 自如网房源数据; Gender homophily and rent premiums in platform-mediated s… | `china-ziroom-shared-housing-listings-2026` | grounding |
 | CHIP; CHIPs; 中国家庭收入调查; 中国居民收入调查; Chinese Household Income Project; 北京师范大学CHIP | `chip` | ready |
 | CHNS; 中国健康与营养调查; China Health and Nutrition Survey; 中国营养与健康调查; 北卡CHNS | `chns` | ready |
+| CLASS; 中国老年社会追踪调查; 中国老年社会追踪调查评估; RUC CLASS | `class-china-longitudinal-aging-social-survey` | ready |
+| CLCD; China Land Cover Dataset; 中国土地覆被数据集; Yang and Huang land cover; 30m annual land cover China | `clcd-land-cover` | ready |
+| CLDS; China Labour-force Dynamics Survey; 中国劳动力动态调查 | `clds` | ready |
+| 中国气象数据网; data.cma.cn; 中国地面气象观测数据; 中国地面气候资料日值数据集 V3.0 (commonly cited family member; product page unverified);… | `cma-surface-climate-data` | grounding |
 | CMDS; 流动人口动态监测; 中国流动人口调查; China Migrants Dynamic Survey; 流动人口监测; 卫健委流动人口调查 | `cmds` | ready |
+| 全国实时空气质量监测; CNEMC city AQI dashboard; 中国环境监测总站城市空气质量实时数据 | `cnemc-current-national-city-air-quality-dashboard` | ready |
+| 全国水质自动监测; CNEMC current water-quality dashboard; 中国环境监测总站断面水质实时展示 | `cnemc-current-national-surface-water-quality-dashboard` | ready |
+| 中国各地区政府工作报告文本数据; CnOpenData 政府工作报告数据库; Chinese Government Work Report Text Data | `cnopendata-local-government-work-report-corpus` | ready |
+| CRRS; 中国乡村振兴综合调查; China Rural Revitalization Survey; CASS RDI CRRS | `crrs-rural-revitalization-survey` | ready |
 | CSMAR; 国泰安; China Stock Market & Accounting Research Database; 希施玛; CSMAR Solution | `csmar` | ready |
+| CSS; 中国社会状况综合调查; Chinese Social Survey, CASS; 社科院CSS调查 | `css-chinese-social-survey` | ready |
 | ERA5-Land; ERA5陆面再分析; ERA5气象数据; ERA5温度数据; 再分析气象数据 | `era5-land` | ready |
+| GFW fishing effort v3; Global static dataset of AIS-based apparent fishing effort; global-fishing-watch.fishi… | `gfw-static-apparent-fishing-effort-v3-2012-2024` | ready |
+| GFD v1; GLOBAL_FLOOD_DB/MODIS_EVENTS/V1; Tellman et al. Global Flood Database | `global-flood-database-v1-modis-events-2000-2018` | ready |
+| 中央生态环境保护督察; central environmental inspection; central eco-environmental protection inspection; MEE inspection… | `mee-central-environmental-inspection` | grounding |
+| 事故及灾害查处; 重大生产安全事故查处挂牌督办; 事故调查报告; MEM accident records; 安委督 | `mem-work-safety-accident-records` | grounding |
+| 第三批专精特新“小巨人”企业公示名单; 第三批小巨人公示名单; MIIT Little Giant third-batch publicity list | `miit-third-batch-little-giant-publicity-roster-2021` | ready |
+| 中国自然资源公报 不动产统一登记统计; 全国不动产统一登记年度统计; MNR national real-estate registration bulletin statistics | `mnr-national-real-estate-registration-bulletins` | ready |
+| 不动产登记; 不动产统一登记; 不动产权证书; 不动产登记簿; 不动产登记资料; Real Estate Registration; Unified Real Estate Registration | `mnr-real-estate-registration` | grounding |
+| 全国月度劳动力调查; 劳动力调查; urban surveyed unemployment rate; China Labor Force Survey (CLFS) | `nbs-monthly-labor-force-survey` | grounding |
+| 全国城镇调查失业率; 城镇调查失业率; National urban surveyed unemployment rate | `nbs-national-monthly-urban-surveyed-unemployment-rate` | ready |
+| 第三次全国时间利用调查公报; 全国居民主要活动领域和主要活动大类时间利用情况; 2024 China Time Use Survey public bulletins | `nbs-third-national-time-use-survey-2024-public-bulletins` | ready |
+| 全国时间利用调查; 时间利用调查; NBS National Time Use Survey (NTUS); 全国时间利用调查公报 | `nbs-time-use-survey` | grounding |
+| 国家药品监督管理局数据查询; NMPA data query; 药监局数据查询; NMPA datasearch | `nmpa-drug-approval-database` | grounding |
+| 北大法宝; 北大法律信息网; PKULaw; Beida Fabao; 中国法律数据库; China Legal Database; Peking University Law Database | `pkulaw` | ready |
+| 企查查; Qichacha; qcc.com; 企查查开放平台; 企查查智能体数据平台 | `qichacha-firm-information` | grounding |
+| RESSET; RESSET/DB; 锐思数据; 锐思金融研究数据库; 锐思数据库; RESSET金融研究数据库; RESSET经济数据库; RESSET/ED | `resset` | ready |
 | 全国农村固定观察点; 农村固定观察点; National Fixed Point Survey; NFP; NFPS; National Rural Fixed Observation Point Survey | `rfd` | grounding |
 | RHS; 农村住户调查; 中国农村住户调查; NBS Rural Household Survey; 国家统计局农村住户调查 | `rhs` | grounding |
+| 食品安全抽检通告; 食品抽检不合格通告; SAMR food sampling announcements; 市场监管总局关于XX批次食品抽检情况的通告 | `samr-food-sampling-inspection` | grounding |
+| 微博数据; 新浪微博; Weibo; Sina Weibo; Chinese social media data; 社交媒体数据; 微博帖子数据 | `sina-weibo` | grounding |
+| TAP PM2.5; Tracking Air Pollution in China; 中国大气污染追踪 PM2.5 | `tap-china-pm25` | ready |
 | UHS; 城镇住户调查; 城市住户调查; 中国城镇住户调查; Urban Household Survey; NBS Urban Household Survey; 中国城市住户调查 | `uhs` | grounding |
+| WCPFC RFV; WCPFC Record of Fishing Vessels; WCPFC vessel registry CSV | `wcpfc-current-vessel-registry` | ready |
 | Wind; 万得; Wind资讯; Wind Information; Wind金融终端 | `wind` | grounding |
+| WDI China; World Development Indicators China; World Bank Open Data China; data.worldbank.org China | `worldbank-china-data` | ready |

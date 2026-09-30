@@ -114,3 +114,13 @@ cases:
   - chfs
   must_explain: CHIP's six-wheel historical repeat cross-sections are the most matched; You can't treat CHIP and UHS/RHS as
     the same data, nor claim they're home panels.
+- id: plot-level-land-market-build
+  idea: I want to study whether industrial-land allocation affects firm location and agglomeration. I need plot-level prices, uses, transfer methods, and transferee names, and I can build data from public records if there is no clean bulk download.
+  expected_top:
+  - china-land-transaction
+  acceptable_alternatives:
+  - csmar
+  - china-stat-yearbook
+  avoid:
+  - china-census
+  must_explain: The official announcements are raw sources rather than a guaranteed historical bulk panel. The answer must describe the collected pathway, parsing and normalization burden, coverage audit, compliance check, and commercial structured alternative.

@@ -55,7 +55,7 @@ research_fit:
   - Nationally replicated cross-section of adult social attitudes, trust in government, sense of fairness, subjective class,
     and values
   choose_over:
-  - Prioritizes CFPS/CHFS when studying attitudes and values
+  - Prioritize CGSS over CFPS/CHFS when nationally repeated cross-sections of adult attitudes and values are the primary outcome
   - When you need to track causal changes for the same person or family, give priority to panels such as CFPS/CHARLS.
   not_good_for:
   - personal tracking
@@ -129,12 +129,16 @@ used_by:
   journal: CER
   year: 2025
   dataset_role: Labor unemployment duration results; joined with robot exposure
+  evidence_type: abstract
+  evidence_url: https://ideas.repec.org/a/eee/chieco/v89y2025ics1043951x24001949.html
   data_note: Use CGSS data to study the impact of industrial robot penetration on the duration of worker unemployment—low-skilled
     workers are more affected
 - cite: 'Yang & Zhang (2024), Social Capital Meets Guanxi: Social Networks and Income Inequality in China'
   journal: CER
   year: 2024
   dataset_role: Social networks, social capital, and income outcomes
+  evidence_type: abstract
+  evidence_url: https://ideas.repec.org/a/eee/chieco/v83y2024ics1043951x23001797.html
   data_note: Use the social network and social capital variables of CGSS to study the impact of 'guanxi' (guanxi) on income
     inequality - social networks strengthen the intergenerational transmission of income advantages
 - cite: 'Mu (2022), Perceived Relative Income, Fairness, and the Role of Government: Evidence from a Randomized Survey Experiment
@@ -142,8 +146,27 @@ used_by:
   journal: CER
   year: 2022
   dataset_role: Sense of fairness, relative income and government role attitudes; survey experimental results
+  evidence_type: abstract
+  evidence_url: https://ideas.repec.org/a/eee/chieco/v73y2022ics1043951x22000426.html
   data_note: Using CGSS data + randomized experimental methods, we study the impact of subjective relative income on fairness
     perceptions and government redistribution preferences.
+- cite: 'Jiang & Yin (2025), Delinking Social Identity From Rural-Urban Stereotypes: The Labor Market Effects of Abolishing Agricultural Hukou in China'
+  doi: https://doi.org/10.1111/jors.70032
+  journal: JRS
+  year: 2025
+  dataset_role: CGSS nationally representative survey data — rural stayer and migrant labor market outcomes
+  evidence_type: data-section
+  evidence_url: https://onlinelibrary.wiley.com/doi/10.1111/jors.70032
+  data_note: Uses CGSS repeated cross-sections combined with CFPS for validation in a staggered DiD across 89 cities where agricultural hukou was abolished (2010-2015). Finds ~17% annual earnings increase for rural stayers, no income gains for rural-urban migrants, and higher nonemployment risk for urban incumbents. CGSS provides broad social attitudes and labor market measures complementing CFPS income data.
+- cite: 'Chen Chen (2025), Long-Run Impacts of Fertility Restriction Policy on China''s Gender Gap in Career Advancement'
+  doi: https://doi.org/10.1016/j.labeco.2025.102782
+  journal: Labour Economics
+  year: 2025
+  dataset_role: CGSS 12 waves (2003-2021); repeated cross-section for career advancement and gender gap outcomes
+  evidence_type: data-section
+  evidence_url: https://www.sciencedirect.com/science/article/abs/pii/S092753712500106X
+  data_note: >-
+    Uses CGSS 12 waves (2003-2021) as the primary individual-level data source, combined with Census-based provincial fertility data. Cohort triple-difference (DDD) exploiting staggered provincial implementation of China's "Later, Longer, Fewer" (LLF) campaign in the 1970s. Finds LLF reduced the gender gap in managerial positions by ~20% and administrative rank by ~18%. Mechanism — women pursued more college education, increased labor input, and relied less on offspring for old-age support. Effects stronger in state sector (~25%) and non-white-collar, non-female-dominated industries.
 provenance:
 - source: CGSS official site http://cgss.ruc.edu.cn and CNSDA platform http://cnsda.ruc.edu.cn (supports survey design, waves, variable coverage, and access conditions)
   added: '2026-07-08'

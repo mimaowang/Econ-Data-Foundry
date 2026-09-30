@@ -2,9 +2,49 @@
   "graph_schema_version": 1,
   "nodes": [
     {
+      "id": "amap-daily-top50-migration-route-ranking",
+      "name": "AMAP public daily top-50 inter-city migration-route ranking (高德迁徙前50名)",
+      "status": "ready"
+    },
+    {
+      "id": "amap-poi-data",
+      "name": "Amap (高德地图) POI data via the Web Service API (搜索POI)",
+      "status": "grounding"
+    },
+    {
       "id": "asif",
       "name": "Annual Survey of Industrial Firms (ASIF; China Industrial Enterprise Database)",
       "status": "grounding"
+    },
+    {
+      "id": "baidu-qianxi-2020-spring-festival-city-od-network",
+      "name": "Baidu Qianxi 2020 Spring Festival 339-city daily origin-destination migration network (paper-specific extraction)",
+      "status": "grounding"
+    },
+    {
+      "id": "baidu-qianxi-migration",
+      "name": "Baidu Migration Index (百度迁徙, 百度地图慧眼)",
+      "status": "grounding"
+    },
+    {
+      "id": "cec-electricity-statistics",
+      "name": "CEC China electricity industry statistics (中国电力企业联合会 电力统计/供需报告)",
+      "status": "grounding"
+    },
+    {
+      "id": "cec-national-electricity-market-transaction-bulletins",
+      "name": "CEC national electricity-market transaction bulletins (全国电力市场交易简况)",
+      "status": "ready"
+    },
+    {
+      "id": "ceic",
+      "name": "CEIC China Economic Database (中国经济数据库 / China Premium Database)",
+      "status": "ready"
+    },
+    {
+      "id": "ceps",
+      "name": "China Education Panel Survey (CEPS)",
+      "status": "ready"
     },
     {
       "id": "cfps",
@@ -27,14 +67,129 @@
       "status": "ready"
     },
     {
+      "id": "china-2017-fertility-survey",
+      "name": "2017 China Fertility Survey (2017年全国生育状况抽样调查)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-51job-vacancy-postings-2019",
+      "name": "51job.com (前程无忧) vacancy postings corpus used by He, Mau & Xu (2021 Labour Economics)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-5a-scenic-area-list",
+      "name": "China National 5A Scenic Area designation list (国家5A级旅游景区名单/名录)",
+      "status": "ready"
+    },
+    {
+      "id": "china-70-city-talent-settlement-policy-housing-panel",
+      "name": "Zhang et al. (2023 PLoS ONE) 70-city talent-settlement-policy housing-price panel (Supporting Information S1 Data)",
+      "status": "ready"
+    },
+    {
+      "id": "china-aer-fog-to-smog-behavioral-2024",
+      "name": "China air-quality-disclosure behavioral-response data (avoidance, defensive spending, mortality; Barwick, Li, Lin & Zou 2024 AER)",
+      "status": "ready"
+    },
+    {
+      "id": "china-aer-loan-access-experiment-markets-2024",
+      "name": "Cai & Szeidl (2024 AER) China loan-access field experiment data (3,173 firms in 78 retail markets)",
+      "status": "ready"
+    },
+    {
+      "id": "china-aer-quid-pro-quo-auto-replication-2025",
+      "name": "Data and Code for: Quid Pro Quo, Knowledge Spillovers, and Industrial Quality Upgrading: Evidence from the Chinese Auto Industry (openICPSR 229381 V1)",
+      "status": "ready"
+    },
+    {
+      "id": "china-aer-squeaky-wheel-citizen-appeals-2020",
+      "name": "Buntaine et al. China CEMS and citizen-appeals replication bundle (AER 2024)",
+      "status": "ready"
+    },
+    {
+      "id": "china-agricultural-census-1997-1pct",
+      "name": "1997 China First National Agricultural Census 1% sample (county-level extract)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-agricultural-yearbook",
+      "name": "China Agricultural Yearbook, 1981-1994 (中国农业年鉴)",
+      "status": "ready"
+    },
+    {
       "id": "china-air-quality-monitoring",
       "name": "China National Ambient Air Quality Monitoring Data (CNEMC/MEE)",
       "status": "grounding"
     },
     {
+      "id": "china-amap-migration-flow-indices",
+      "name": "Gaode Maps (AMAP) inter-city human migration flow indices (高德地图城际迁徙指数)",
+      "status": "grounding"
+    },
+    {
       "id": "china-census",
       "name": "China Census (Population Census/National 1% Population Sample Survey)",
+      "status": "ready"
+    },
+    {
+      "id": "china-cities-1949-1998",
+      "name": "Cities China 1949-1998 (新中国城市50年)",
+      "status": "ready"
+    },
+    {
+      "id": "china-city-co2-emissions",
+      "name": "CEADs China City-Level CO2 Emission Inventories (城市碳排放核算清单)",
       "status": "grounding"
+    },
+    {
+      "id": "china-city-official-vacancy-panel",
+      "name": "Hand-collected municipal party-secretary vacancy panel, China 2003-2019",
+      "status": "grounding"
+    },
+    {
+      "id": "china-city-to-city-truck-flows",
+      "name": "China city-to-city truck flow panel from real-time truck GPS (G7 telematics; Chen, Chen, Liu, Luo & Song 2025 JUE; replication package openICPSR 210761 V1)",
+      "status": "ready"
+    },
+    {
+      "id": "china-clarksons-shipyard-production-1998-2014",
+      "name": "Clarksons Research Shipyard Quarterly Production Data (1998 Q1–2014 Q1)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-clhls",
+      "name": "Chinese Longitudinal Healthy Longevity Survey (CLHLS) / 中国老年健康影响因素跟踪调查 (now CLHLS-HF 中国老年健康与家庭幸福调查)",
+      "status": "ready"
+    },
+    {
+      "id": "china-cnrds",
+      "name": "China Research Data Services Platform (CNRDS 中国研究数据服务平台)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-coal-power-plant-panel",
+      "name": "Global Energy Monitor China coal-fired-unit status summary (GCPT)",
+      "status": "ready"
+    },
+    {
+      "id": "china-commuting-based-metropolitan-areas",
+      "name": "China's commuting-based metropolitan areas (Chen, Gu & Zou 2024 JUE; delineation files on Mendeley Data 10.17632/9ng8663r8c.1)",
+      "status": "ready"
+    },
+    {
+      "id": "china-county-daily-covid-risk-level-2020-2022",
+      "name": "County-daily COVID-19 Risk Level panel from the State Council risk-level directory (paper release: combined_data_1215_revisitJan012024.xlsx, CER 2024 zero-COVID study)",
+      "status": "ready"
+    },
+    {
+      "id": "china-county-population-agriculture-gis-1990",
+      "name": "China County-Level Data on Population (Census) and Agriculture, Keyed to 1:1M GIS Map (1990)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-court-judgments-2014-2018-open-justice",
+      "name": "China civil judgment corpus 2014-2018 (6.42M judgments) with court live-broadcast records (Chen, Chen & Yang, ReStud 2026)",
+      "status": "ready"
     },
     {
       "id": "china-customs",
@@ -42,13 +197,138 @@
       "status": "grounding"
     },
     {
+      "id": "china-distant-water-fishing-fleet",
+      "name": "Chinese distant water fishing fleet registry and fuel-subsidy panel (RFMO + Rongcheng, 2015-2020)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-domestic-trade-statistical-yearbook",
+      "name": "China Domestic Trade Yearbook source family, 1991-1994 (中国国内贸易年鉴及其前身)",
+      "status": "ready"
+    },
+    {
+      "id": "china-dsp-mortality-records",
+      "name": "China Disease Surveillance Points (DSP) / National Mortality Surveillance System mortality records",
+      "status": "grounding"
+    },
+    {
+      "id": "china-economic-census",
+      "name": "China Economic Census / Industrial Census (中国经济普查/工业普查)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-employer-employee-matched-admin",
+      "name": "China employer-employee matched Housing Provident Fund (HPF) administrative records (JHR 2024)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-environmental-enforcement",
+      "name": "China Environmental Enforcement Records and Geocoded Firm-City Panel used by Axbard & Deng (2010-2017)",
+      "status": "ready"
+    },
+    {
+      "id": "china-esiec-survey",
+      "name": "PKU Enterprise Survey for Innovation and Entrepreneurship in China (ESIEC; 中国企业创新创业调查)",
+      "status": "ready"
+    },
+    {
       "id": "china-firm-pollution",
       "name": "Environmental Survey of Industrial Firms",
       "status": "grounding"
     },
     {
+      "id": "china-firm-registry",
+      "name": "China Administrative Firm Registry (SAIC/SAMR registration records)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-fishing-vessel-detection",
+      "name": "Global Fishing Watch (GFW) public AIS-based vessel and fishing activity data",
+      "status": "ready"
+    },
+    {
+      "id": "china-flood-inundation-firm-exposure",
+      "name": "China firm-level flood inundation exposure panel 2000-2009 (GFD satellite inundation x ASIF)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-fujian-vat-invoice-transactions",
+      "name": "Fujian firm-level VAT invoice transaction data (福建省企业增值税发票数据; tax-authority Golden-Tax family; Wang, Liang, Zhang & Chen 2026 CWE)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-gaokao-ncee-universe-1999-2003",
+      "name": "National College Entrance Exam (NCEE/gaokao) participant administrative microdata, universe 1999-2003 (China; Li, Meng, Mu & Wang 2024 JDE)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-gov-procurement",
+      "name": "China Government Procurement Data (中国政府采购网/政府采购数据)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-harmonized-nighttime-lights-li-et-al",
+      "name": "Li et al. harmonized DMSP–VIIRS nighttime-light grid, including China (1992–2024)",
+      "status": "ready"
+    },
+    {
+      "id": "china-high-speed-rail-network",
+      "name": "Borusyak–Hull China high-speed-rail network and market-access replication asset",
+      "status": "ready"
+    },
+    {
+      "id": "china-historical-clan-kinship-1470-1910",
+      "name": "Historical China prefecture-decade clan, weather and cannibalism panel (Chen, Lin & Zhang 2024 JCE)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-historical-epidemic-records",
+      "name": "Historical China county-level epidemic exposure panel 1368-1949 (Wang & Ang 2024 JCE; construction documented in NTU PhD thesis Chapter 1 + Appendix A1)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-historical-railroad-industrial-development-replication-1858-1936",
+      "name": "Bo--Chen--Liu--Zhou historical China railroad and industrial-development replication package (1858-1936)",
+      "status": "ready"
+    },
+    {
+      "id": "china-hk-2047-lease-housing-transactions-2024",
+      "name": "Hong Kong housing transaction data with 2047 land-lease-horizon variation (He, Hu, Wang & Yao 2024 AER)",
+      "status": "ready"
+    },
+    {
+      "id": "china-hkpssd-geocoded-survey-2026",
+      "name": "Hong Kong Panel Study of Social Dynamics (HKPSSD) linked to LSBG-level census neighborhood statistics (Zhang & Zhang 2026 Urban Studies)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-industrial-commerce-administration-statistics-40-years",
+      "name": "China Industrial and Commerce Administration Statistics 40 Years, 1950-1990 source family (中国工商行政管理统计四十年)",
+      "status": "ready"
+    },
+    {
       "id": "china-io-table",
       "name": "China Input-Output Tables",
+      "status": "ready"
+    },
+    {
+      "id": "china-jde-migration-resource-misallocation-replication-2024",
+      "name": "Li–Ma–Tang Migration and Resource Misallocation in China replication data and derived firm-friction asset",
+      "status": "ready"
+    },
+    {
+      "id": "china-jrs-dz-land-firm-2026",
+      "name": "Mei & Xi (2026 JRS) DZ-Land-Firm spatial dataset",
+      "status": "grounding"
+    },
+    {
+      "id": "china-jrs-sweating-assets-housing-transactions-2026",
+      "name": "Pang, Feng & Zhao (2026 JRS) second-hand housing transaction data",
+      "status": "grounding"
+    },
+    {
+      "id": "china-jue-pmc-fiscal-reform-replication-2026",
+      "name": "Chen–Li–Sun China Province-Managing-County reform replication data package",
       "status": "ready"
     },
     {
@@ -57,9 +337,84 @@
       "status": "grounding"
     },
     {
+      "id": "china-leaders-message-board-complaints",
+      "name": "人民网领导留言板 (People's Daily Online Leader Message Board, MBLL) complaint messages",
+      "status": "grounding"
+    },
+    {
+      "id": "china-little-giant-enterprise-list",
+      "name": "MIIT national-level 'Little Giant' (专精特新小巨人) enterprise designation lists",
+      "status": "grounding"
+    },
+    {
+      "id": "china-living-standards-survey-1995-1997",
+      "name": "China Living Standards Survey (CLSS/LSS), 1995-1997",
+      "status": "ready"
+    },
+    {
+      "id": "china-local-government-work-report-texts",
+      "name": "Chinese local government work reports text corpus (政府工作报告文本语料)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-mee-monthly-city-air-quality-reports",
+      "name": "MEE National City Air Quality Monthly Reports (全国城市空气质量月报)",
+      "status": "ready"
+    },
+    {
+      "id": "china-mee-surface-water-quality-bulletins",
+      "name": "MEE National Surface-Water Quality Bulletins (全国地表水质量状况 and 地表水水质月报)",
+      "status": "ready"
+    },
+    {
+      "id": "china-merra2-pm25-chen-oliva-zhang",
+      "name": "Chen, Oliva and Zhang China county PM2.5 exposure constructed from MERRA-2 aerosol diagnostics",
+      "status": "grounding"
+    },
+    {
+      "id": "china-million-rouble-plant-register",
+      "name": "China Million-Rouble Plant register and replication asset",
+      "status": "ready"
+    },
+    {
+      "id": "china-minimum-wage-policy-panel",
+      "name": "China minimum wage standards (province/tier/county standards panel, reconstructable from official notices)",
+      "status": "ready"
+    },
+    {
+      "id": "china-mobile-signaling-mobility-data",
+      "name": "China mobile-phone signaling datasets for urban mobility and tourism flows (research-partnership products; three paper-specific layers, no public product)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-mofcom-rural-ecommerce-demo-counties",
+      "name": "MOFCOM E-commerce into Rural Areas Comprehensive Demonstration Counties batch lists (电子商务进农村综合示范县名单)",
+      "status": "ready"
+    },
+    {
+      "id": "china-neri-marketization-index",
+      "name": "NERI Marketization Index of China's Provinces (中国分省份市场化指数)",
+      "status": "ready"
+    },
+    {
+      "id": "china-new-housing-buyer-transactions",
+      "name": "Chu, Kuang & Zhao (ECIN 2025) new-housing transaction data with buyer identity (anti-corruption)",
+      "status": "ready"
+    },
+    {
+      "id": "china-nighttime-lights",
+      "name": "China nighttime lights from the DMSP-OLS and NPP-VIIRS family (EOG official composites; China-corrected versions PANDA and harmonized NTL)",
+      "status": "ready"
+    },
+    {
       "id": "china-patents",
       "name": "China Patent Data (CNIPA / SIPO)",
       "status": "grounding"
+    },
+    {
+      "id": "china-pku-digital-financial-inclusion-index",
+      "name": "Peking University Digital Financial Inclusion Index of China (PKU-DFIIC, 北京大学数字普惠金融指数)",
+      "status": "ready"
     },
     {
       "id": "china-pollution",
@@ -67,9 +422,64 @@
       "status": "deprecated"
     },
     {
+      "id": "china-population-yearbook-1991",
+      "name": "China Population Yearbook, 1991 (中国人口年鉴 1991)",
+      "status": "ready"
+    },
+    {
+      "id": "china-procurement-auction-bids-winners-losers",
+      "name": "China public-procurement auction bid data with winning and losing bidders (Tang, Wang & Wu 2025 JUE; replication on Mendeley Data 10.17632/nw6tjvzk33.1)",
+      "status": "ready"
+    },
+    {
+      "id": "china-qss-chinawomen-derived-2017",
+      "name": "QSS chinawomen public county-cohort and crop derivative",
+      "status": "ready"
+    },
+    {
+      "id": "china-restud-melon-market-labels-2025",
+      "name": "Shijiazhuang watermelon retail-market experiment data (sellers, transactions, household purchases; Bai 2025 ReStud)",
+      "status": "ready"
+    },
+    {
+      "id": "china-rural-ecommerce-couture-2021-replication",
+      "name": "Data and Code for: Connecting the Countryside via E-Commerce (Couture, Faber, Gu & Liu 2021 AER:Insights replication package, openICPSR 117506 V2)",
+      "status": "ready"
+    },
+    {
+      "id": "china-rural-economic-statistics-1949-1986",
+      "name": "Compilation of China's Rural Economic Statistics, 1949-1986 (中国农村经济统计大全：1949-1986)",
+      "status": "ready"
+    },
+    {
+      "id": "china-rural-finance-statistical-yearbook",
+      "name": "China Rural Finance Statistical Yearbook, 1989-1994 (中国农村金融统计年鉴)",
+      "status": "ready"
+    },
+    {
+      "id": "china-rural-statistical-yearbook-1984-1994",
+      "name": "China Rural Statistical Yearbook, 1984-1994 (中国农村统计年鉴)",
+      "status": "ready"
+    },
+    {
       "id": "china-satellite-pm25",
-      "name": "Chinese satellite retrieval and fusion of PM2.5 data",
+      "name": "China PM2.5 exposure-grid leads (TAP and other non-interchangeable products)",
+      "status": "needs-review"
+    },
+    {
+      "id": "china-second-industrial-survey-1985",
+      "name": "China Second Industrial Survey (1985) firm-level dataset",
       "status": "grounding"
+    },
+    {
+      "id": "china-senddown-county-exposure",
+      "name": "Chen et al. China send-down census, gazetteer, and county education data",
+      "status": "ready"
+    },
+    {
+      "id": "china-sister-city-ties",
+      "name": "China international sister/friendship city ties (中国国际友好城市/省州关系名录, CPAFFC)",
+      "status": "ready"
     },
     {
       "id": "china-stat-yearbook",
@@ -77,8 +487,108 @@
       "status": "ready"
     },
     {
+      "id": "china-steel-plant-performance-reports",
+      "name": "China Steel Association plant annual performance reports",
+      "status": "grounding"
+    },
+    {
+      "id": "china-taobao-village-town-lists",
+      "name": "Taobao Village and Taobao Town lists (淘宝村淘宝镇名单; AliResearch platform-identified e-commerce villages/towns, official series 2009-2022; CnOpenData structured module 2017-2022 excl 2018)",
+      "status": "ready"
+    },
+    {
       "id": "china-tax-survey",
       "name": "Chinese Enterprise Tax Survey Microdata",
+      "status": "grounding"
+    },
+    {
+      "id": "china-third-front-construction-exposure",
+      "name": "Third Front (三线建设) industrialization exposure and human-capital outcomes (JCE 2026)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-tianyancha-firm-information",
+      "name": "Tianyancha Firm Information and Relationship Data (天眼查企业信息/API)",
+      "status": "ready"
+    },
+    {
+      "id": "china-township-census-population-2010-2020",
+      "name": "Tabulation on China population census by township (中国人口普查分乡、镇、街道资料), 2010 and 2020 volumes",
+      "status": "ready"
+    },
+    {
+      "id": "china-township-enterprises-statistical-material-1978-1985",
+      "name": "Township Enterprises Statistical Material 1978-1985 (TESM, 1986 issue)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-township-enterprises-statistical-materials-1978-2002",
+      "name": "China Township Enterprises Statistical Materials, 1978-2002 (中国乡镇企业统计资料)",
+      "status": "ready"
+    },
+    {
+      "id": "china-township-enterprises-statistical-yearbook",
+      "name": "China Township Enterprises Statistical Yearbook, 1987-1994 (中国乡镇企业统计年鉴)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-trademarks",
+      "name": "China Trademark Registration Data (CNIPA 中国商标数据)",
+      "status": "ready"
+    },
+    {
+      "id": "china-trafficked-children-inflow",
+      "name": "BCBH-based inflow of trafficked/illegally-adopted children dataset (China, prefecture-year)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-transportation-networks-travel-time-1994-2024",
+      "name": "China Transportation Networks dataset - prefecture-pair road/rail travel times 1994-2024 (Lin Ma release; related paper Ma & Tang 2024 JIE)",
+      "status": "ready"
+    },
+    {
+      "id": "china-truck-driver-telematics",
+      "name": "Guangdong heavy-duty truck driver telematics and labor panel 2023-2025 (Ding, Wang, Wang & Wang 2026 JEEM \"Too hot to haul?\")",
+      "status": "grounding"
+    },
+    {
+      "id": "china-unionpay-cross-city-consumption-flows",
+      "name": "UnionPay offline cross-city consumption/tourism expenditure flows 2013-2018 (China UnionPay proprietary transaction data; Wang, Chen & Yang 2025 CWE)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-urbanization-city-calibration-wu-you-2025",
+      "name": "Wu–You China urbanization city-calibration replication asset",
+      "status": "ready"
+    },
+    {
+      "id": "china-vehicle-registration-2010-2023",
+      "name": "China city-month vehicle sales panel 2010-2023 (registration + compulsory-insurance records)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-water-quality-monitoring",
+      "name": "China National Surface-Water Quality Monitoring Data (MEE 国控断面 network)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-weekly-provincial-hog-prices",
+      "name": "China weekly provincial hog-price panel (2016-2020, 29 provinces)",
+      "status": "grounding"
+    },
+    {
+      "id": "china-zero2ipo-pedata-vc-pe",
+      "name": "Zero2IPO / PEDATA MAX (清科数据) China PE/VC database",
+      "status": "ready"
+    },
+    {
+      "id": "china-zhaopin-job-ads-2008-2010",
+      "name": "Zhaopin.com Job Advertisements Corpus used by Kuhn & Shen (2008-2010)",
+      "status": "ready"
+    },
+    {
+      "id": "china-ziroom-shared-housing-listings-2026",
+      "name": "Ziroom (自如) Nanjing bedroom rental listings, weekly web-scraped July 2021-June 2022 (Cao 2026 Urban Studies)",
       "status": "grounding"
     },
     {
@@ -92,8 +602,48 @@
       "status": "ready"
     },
     {
+      "id": "class-china-longitudinal-aging-social-survey",
+      "name": "China Longitudinal Aging Social Survey (CLASS 中国老年社会追踪调查)",
+      "status": "ready"
+    },
+    {
+      "id": "clcd-land-cover",
+      "name": "CLCD 30 m annual land cover dataset of China (中国30米年度土地覆被数据集)",
+      "status": "ready"
+    },
+    {
+      "id": "clds",
+      "name": "China Labor-force Dynamics Survey",
+      "status": "ready"
+    },
+    {
+      "id": "cma-surface-climate-data",
+      "name": "China Meteorological Data Service Center surface climate observations (中国气象数据网 地面气象观测数据)",
+      "status": "grounding"
+    },
+    {
       "id": "cmds",
       "name": "China Migrants Dynamic Survey (CMDS)",
+      "status": "ready"
+    },
+    {
+      "id": "cnemc-current-national-city-air-quality-dashboard",
+      "name": "CNEMC public current national city air-quality dashboard (全国城市实时空气质量展示)",
+      "status": "ready"
+    },
+    {
+      "id": "cnemc-current-national-surface-water-quality-dashboard",
+      "name": "CNEMC public current national surface-water quality dashboard (全国水质自动监测展示)",
+      "status": "ready"
+    },
+    {
+      "id": "cnopendata-local-government-work-report-corpus",
+      "name": "CnOpenData Chinese local government work-report text corpus",
+      "status": "ready"
+    },
+    {
+      "id": "crrs-rural-revitalization-survey",
+      "name": "China Rural Revitalization Survey (CRRS 中国乡村振兴综合调查)",
       "status": "ready"
     },
     {
@@ -102,8 +652,88 @@
       "status": "ready"
     },
     {
+      "id": "css-chinese-social-survey",
+      "name": "Chinese Social Survey (CSS 中国社会状况综合调查)",
+      "status": "ready"
+    },
+    {
       "id": "era5-land",
       "name": "ERA5-Land land surface reanalysis meteorological data (ERA5-Land)",
+      "status": "ready"
+    },
+    {
+      "id": "gfw-static-apparent-fishing-effort-v3-2012-2024",
+      "name": "Global Fishing Watch static AIS-based apparent fishing effort, version 3 (2012-2024)",
+      "status": "ready"
+    },
+    {
+      "id": "global-flood-database-v1-modis-events-2000-2018",
+      "name": "Global Flood Database v1 MODIS event inundation maps (2000-2018)",
+      "status": "ready"
+    },
+    {
+      "id": "mee-central-environmental-inspection",
+      "name": "MEE Central Environmental Inspection public records (中央生态环境保护督察 进驻/整改/管理)",
+      "status": "grounding"
+    },
+    {
+      "id": "mem-work-safety-accident-records",
+      "name": "MEM work-safety accident investigation and supervision records (生产安全事故查处/挂牌督办/调查报告)",
+      "status": "grounding"
+    },
+    {
+      "id": "miit-third-batch-little-giant-publicity-roster-2021",
+      "name": "MIIT third-batch Little Giant enterprise publicity roster (2021)",
+      "status": "ready"
+    },
+    {
+      "id": "mnr-national-real-estate-registration-bulletins",
+      "name": "MNR annual national real-estate registration statistics in the China Natural Resources Bulletin",
+      "status": "ready"
+    },
+    {
+      "id": "mnr-real-estate-registration",
+      "name": "MNR Real-Estate Registration System Data (自然资源部不动产登记数据)",
+      "status": "grounding"
+    },
+    {
+      "id": "nbs-monthly-labor-force-survey",
+      "name": "NBS Monthly Labor Force Survey (全国月度劳动力调查) and urban surveyed unemployment rate (城镇调查失业率)",
+      "status": "grounding"
+    },
+    {
+      "id": "nbs-national-monthly-urban-surveyed-unemployment-rate",
+      "name": "NBS national monthly urban surveyed unemployment rate (全国城镇调查失业率)",
+      "status": "ready"
+    },
+    {
+      "id": "nbs-third-national-time-use-survey-2024-public-bulletins",
+      "name": "Third National Time Use Survey (2024) public national bulletin tabulations",
+      "status": "ready"
+    },
+    {
+      "id": "nbs-time-use-survey",
+      "name": "NBS Time Use Survey (全国时间利用调查) - diary microdata with a documented 2018 laboratory route",
+      "status": "grounding"
+    },
+    {
+      "id": "nmpa-drug-approval-database",
+      "name": "NMPA drug/device/cosmetics approval and registration query database (国家药品监督管理局数据查询)",
+      "status": "grounding"
+    },
+    {
+      "id": "pkulaw",
+      "name": "PKULaw / Beida Fabao (北大法宝 — Peking University Legal Information Database)",
+      "status": "ready"
+    },
+    {
+      "id": "qichacha-firm-information",
+      "name": "Qichacha (企查查) firm information platform",
+      "status": "grounding"
+    },
+    {
+      "id": "resset",
+      "name": "RESSET Financial and Economic Research Database",
       "status": "ready"
     },
     {
@@ -117,17 +747,482 @@
       "status": "grounding"
     },
     {
+      "id": "samr-food-sampling-inspection",
+      "name": "SAMR national food-safety sampling inspection announcements (食品安全抽检通告)",
+      "status": "grounding"
+    },
+    {
+      "id": "sina-weibo",
+      "name": "Sina Weibo Social Media Data (新浪微博数据)",
+      "status": "grounding"
+    },
+    {
+      "id": "tap-china-pm25",
+      "name": "Tracking Air Pollution in China (TAP) gridded PM2.5 products",
+      "status": "ready"
+    },
+    {
       "id": "uhs",
       "name": "China Urban Household Survey (UHS)",
       "status": "grounding"
     },
     {
+      "id": "wcpfc-current-china-flagged-vessel-register",
+      "name": "Deprecated duplicate of WCPFC current public vessel registry",
+      "status": "deprecated"
+    },
+    {
+      "id": "wcpfc-current-vessel-registry",
+      "name": "WCPFC Record of Fishing Vessels current public CSV export (China-filterable)",
+      "status": "ready"
+    },
+    {
       "id": "wind",
       "name": "Wind financial terminal",
       "status": "grounding"
+    },
+    {
+      "id": "worldbank-china-data",
+      "name": "World Bank WDI - China country indicators",
+      "status": "ready"
     }
   ],
   "edges": [
+    {
+      "source": "amap-daily-top50-migration-route-ranking",
+      "target": "china-amap-migration-flow-indices",
+      "relation": "component",
+      "keys": [
+        "origin city",
+        "destination city",
+        "date"
+      ],
+      "method": "This ranking is a visible subset of the AMAP product family. It does not supply evidence that the full paper-relevant city-dyad series is available or that unranked routes have zero flow.",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "amap-daily-top50-migration-route-ranking",
+      "target": "china-commuting-based-metropolitan-areas",
+      "relation": "often-confused-with",
+      "keys": [],
+      "method": "AMAP's ranked migration routes and Baidu-derived commuting delineations have different providers, units and research roles; do not merge them.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "amap-poi-data",
+      "target": "china-amap-migration-flow-indices",
+      "relation": "often-confused-with",
+      "keys": [],
+      "method": "both are Amap products but different assets - POI search API (place records) vs the public migration report page (city-dyad flow indices); keep separate",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "amap-poi-data",
+      "target": "china-tianyancha-firm-information",
+      "relation": "complement",
+      "keys": [
+        "firm name/address"
+      ],
+      "method": "POI place records can geolocate firm addresses; entity resolution needed",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "baidu-qianxi-2020-spring-festival-city-od-network",
+      "target": "baidu-qianxi-migration",
+      "relation": "often-confused-with",
+      "keys": [
+        "city",
+        "date"
+      ],
+      "method": "The current public page offers only top-20 rankings; it cannot be substituted for this paper's 339-city bilateral network without changing the data object.",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "baidu-qianxi-2020-spring-festival-city-od-network",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "city name or code",
+        "year"
+      ],
+      "method": "Add city economic controls only after verifying the historical city concordance in the acquired mobility file.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "baidu-qianxi-migration",
+      "target": "china-amap-migration-flow-indices",
+      "relation": "substitute",
+      "keys": [
+        "city + date"
+      ],
+      "method": "distinct provider products (Baidu vs Gaode) with different index construction; compare series before combining, never merge blindly",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "baidu-qianxi-migration",
+      "target": "china-commuting-based-metropolitan-areas",
+      "relation": "often-confused-with",
+      "keys": [],
+      "method": "Baidu-derived but different product (2017 commuting delineations vs daily migration indices)",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "cec-electricity-statistics",
+      "target": "china-coal-power-plant-panel",
+      "relation": "complement",
+      "keys": [],
+      "method": "plant-level vs industry-aggregate layers are different assets; do not merge",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "cec-electricity-statistics",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "year"
+      ],
+      "method": "combine national electricity aggregates with macro yearbook series; subnational needs the yearbook family",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "cec-national-electricity-market-transaction-bulletins",
+      "target": "cec-electricity-statistics",
+      "relation": "component",
+      "keys": [
+        "observation window"
+      ],
+      "method": "The bulletin is one distinct public output within the broader CEC information family; retain the source page and reporting-window label rather than assuming its measures equal a yearbook series.",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "cec-national-electricity-market-transaction-bulletins",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "year"
+      ],
+      "method": "Add annual macro or subnational context only after making the frequency conversion explicit.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "ceic",
+      "target": "china-neri-marketization-index",
+      "relation": "complement",
+      "keys": [
+        "Province",
+        "Year"
+      ],
+      "method": "Join by province-year after checking indicator definitions",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "ceic",
+      "target": "china-stat-yearbook",
+      "relation": "substitute-and-benchmark",
+      "keys": [
+        "Region",
+        "Indicator",
+        "Year"
+      ],
+      "method": "Compare series definitions before joining; CEIC series may have different definitions/vintages than NBS yearbooks",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "ceps",
+      "target": "cfps",
+      "relation": "complement",
+      "keys": [
+        "Age/cohort and documented region, with no assumption of person-level matching",
+        "Survey year and urban-rural or hukou definitions"
+      ],
+      "method": "Use CEPS for school and peer context and CFPS for broader household or adult outcomes; compare harmonized definitions rather than attempting individual linkage.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "ceps",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "Approved county/district code or documented sample-PSU crosswalk",
+        "Reference year"
+      ],
+      "method": "Add province/city or other public local context only after verifying that the released CEPS geography key is stable and permitted. The official CEPS pages establish the 28-PSU design but do not release a universal public crosswalk in the checked materials; a coarser join may be the only lawful option.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "chfs",
+      "target": "era5-land",
+      "relation": "complement",
+      "keys": [
+        "County or community geography when authorized, otherwise a documented coarser location",
+        "Survey date or interview period"
+      ],
+      "method": "A plausible design is to aggregate hourly or daily ERA5-Land grid weather to the permitted survey geography and exposure window, then merge spatially and temporally. The recorded CHFS heat paper establishes a county-level daily-temperature join but does not identify ERA5-Land as its source.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-2017-fertility-survey",
+      "target": "china-census",
+      "relation": "complement",
+      "keys": [
+        "Province",
+        "Year"
+      ],
+      "method": "Use census aggregates for population denominators and long-run fertility outcomes; the survey adds intentions and services not in the census.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-2017-fertility-survey",
+      "target": "cmds",
+      "relation": "complement",
+      "keys": [
+        "Province",
+        "Year"
+      ],
+      "method": "CMDS is the NHC migrant-focused survey; compare sampling frames before any combined use.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-51job-vacancy-postings-2019",
+      "target": "china-customs",
+      "relation": "complement",
+      "keys": [
+        "Firm name (normalized Chinese company name)"
+      ],
+      "method": "The paper matches firm names stated on 51job.com to Chinese Customs statistics to build the trade-exposed firm sample (30,123 firms)",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-51job-vacancy-postings-2019",
+      "target": "china-zhaopin-job-ads-2008-2010",
+      "relation": "often-confused-with",
+      "keys": [
+        "None (different platform, different period)"
+      ],
+      "method": "Keep the two products separate: Zhaopin.com 2008-2010 (that record) vs 51job.com May-November 2019 (this record); both are Chinese online vacancy corpora but different platforms, periods, and releases",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "china-5a-scenic-area-list",
+      "target": "cfps",
+      "relation": "complement",
+      "keys": [
+        "City or county name",
+        "Survey year"
+      ],
+      "method": "Normalize city/county names to the survey geography; verify codes; the roster itself carries no codes",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-5a-scenic-area-list",
+      "target": "china-census",
+      "relation": "complement",
+      "keys": [
+        "County/city code or name",
+        "Census year"
+      ],
+      "method": "Match on normalized names/codes for local controls; beware boundary changes across census vintages",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-5a-scenic-area-list",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "City name",
+        "Year"
+      ],
+      "method": "Join city-level outcomes by normalized name/code",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-70-city-talent-settlement-policy-housing-panel",
+      "target": "china-jrs-sweating-assets-housing-transactions-2026",
+      "relation": "often-confused-with",
+      "keys": [
+        "City"
+      ],
+      "method": "Keep the two housing products separate: this record is a 70-city city-year average-price panel; that record is transaction-level second-hand housing in 26 cities for an extreme-heat study",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "china-70-city-talent-settlement-policy-housing-panel",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "City",
+        "Year"
+      ],
+      "method": "The paper states housing prices and economic controls come from the China City Statistical Yearbook and China Regional Economic Statistical Yearbook; use the yearbook record for extending variables or validating hp",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-70-city-talent-settlement-policy-housing-panel",
+      "target": "pkulaw",
+      "relation": "complement",
+      "keys": [
+        "City",
+        "Policy document date"
+      ],
+      "method": "Use PKULaw raw policy texts to recover month-level announcement/effective dates per city for the 70-city sample; the released panel only codes implementation year",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-aer-fog-to-smog-behavioral-2024",
+      "target": "cfps",
+      "relation": "complement",
+      "keys": [
+        "CFPS individual identifiers",
+        "City and year"
+      ],
+      "method": "The paper uses CFPS 2012-2018 environmental-concern items; deeper CFPS modules can extend household-level analysis.",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-aer-fog-to-smog-behavioral-2024",
+      "target": "china-air-quality-monitoring",
+      "relation": "complement",
+      "keys": [
+        "City",
+        "Week/date"
+      ],
+      "method": "Ground-station PM2.5 (post-2013) validates or extends the MODIS AOD exposure measure; the fog paper itself uses monitoring data after rollout.",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-aer-fog-to-smog-behavioral-2024",
+      "target": "china-satellite-pm25",
+      "relation": "often-confused-with",
+      "keys": [
+        {
+          "City and week (different constructions": "MODIS AOD direct retrieval vs modeled PM2.5)"
+        }
+      ],
+      "method": "Do not equate AOD with modeled PM2.5; the paper deliberately uses AOD to avoid measurement contamination by the policy.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-aer-loan-access-experiment-markets-2024",
+      "target": "china-firm-registry",
+      "relation": "complement",
+      "keys": [
+        "Firm name/registration identifiers if released and mappable"
+      ],
+      "method": "External validation of firm existence or characteristics would require the deposit's identifiers; registry extracts cover different vintages and coverage, so matching is unverified.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-aer-quid-pro-quo-auto-replication-2025",
+      "target": "asif",
+      "relation": "complement",
+      "keys": [
+        "Firm name (ownership groups) - exact identifiers in the deposit unverified"
+      ],
+      "method": "Firm-level financials joined to model-level quality requires name normalization across different units (firm vs model); the deposit's identifier set is unverified.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-aer-quid-pro-quo-auto-replication-2025",
+      "target": "china-customs",
+      "relation": "complement",
+      "keys": [
+        "Firm name - unverified"
+      ],
+      "method": "The paper does not use customs data; a trade-outcome extension would need its own firm-level matching.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-aer-quid-pro-quo-auto-replication-2025",
+      "target": "china-patents",
+      "relation": "complement",
+      "keys": [
+        "Firm name - unverified"
+      ],
+      "method": "The paper's SIPO patent-transfer layer (2001-2018) overlaps china-patents coverage; package files unverified.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-aer-squeaky-wheel-citizen-appeals-2020",
+      "target": "china-air-quality-monitoring",
+      "relation": "complement",
+      "keys": [
+        "City or prefecture code",
+        "Date"
+      ],
+      "method": "Aggregate or align firm records to the city/date level only after checking whether the deposited file retains a stable location and time field.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-aer-squeaky-wheel-citizen-appeals-2020",
+      "target": "china-firm-pollution",
+      "relation": "complement",
+      "keys": [
+        "Firm name or identifier",
+        "Industry code",
+        "Address/city",
+        "Year"
+      ],
+      "method": "Normalize names and administrative codes, then inspect the exact file-level definitions before matching; do not assume that two pollution products share a firm universe.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-aer-squeaky-wheel-citizen-appeals-2020",
+      "target": "china-firm-registry",
+      "relation": "complement",
+      "keys": [
+        "Firm name",
+        "Legal registration identifier where retained",
+        "Registered address"
+      ],
+      "method": "Use deterministic identifiers if present and otherwise a documented name/address match; the SAMR input named by the project is not evidence that the current registry record is identical.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-agricultural-census-1997-1pct",
+      "target": "china-county-population-agriculture-gis-1990",
+      "relation": "complement",
+      "keys": [
+        "County"
+      ],
+      "method": "The paper matched the 1990 census and the 1997 agricultural census within one cross-section; public GIS keys require name/boundary normalization",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-agricultural-yearbook",
+      "target": "china-rural-economic-statistics-1949-1986",
+      "relation": "predecessor",
+      "keys": [
+        "Province or region",
+        "Year",
+        "Agricultural/rural indicator"
+      ],
+      "method": "Use the 1949-1986 compilation only for earlier historical context and overlapping table checks; it does not replace the 1981-1994 CAY issues.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-agricultural-yearbook",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "Province or region",
+        "Year",
+        "Indicator and unit"
+      ],
+      "method": "Use the general Statistical Yearbook for broad macro, state-industry, price and population cross-checks, recording any revisions or definition breaks.",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-agricultural-yearbook",
+      "target": "china-township-enterprises-statistical-yearbook",
+      "relation": "complement",
+      "keys": [
+        "Province or region",
+        "Year/reference year",
+        "Rural-enterprise or agricultural indicator"
+      ],
+      "method": "Use CAY for agriculture/rural revenue, land and population inputs and CTESY for township-enterprise activity; preserve issue, table and unit definitions instead of blending similarly named aggregates.",
+      "evidence_status": "literature-used"
+    },
     {
       "source": "china-air-quality-monitoring",
       "target": "china-census",
@@ -148,6 +1243,463 @@
         "date/year"
       ],
       "method": "spatiotemporal",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-amap-migration-flow-indices",
+      "target": "china-commuting-based-metropolitan-areas",
+      "relation": "often-confused-with",
+      "keys": [],
+      "method": "Both are mobility-layer assets but different products: Baidu-Maps-derived 2017 township commuting delineations (released) vs AMAP daily city-pair migration indices (provider-run public page)",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-amap-migration-flow-indices",
+      "target": "china-tianyancha-firm-information",
+      "relation": "complement",
+      "keys": [
+        "city (prefecture-level name matching)"
+      ],
+      "method": "Paper-level fusion: AMAP flow indices (2019 CSF) for functional polycentricity; Tianyancha daily net registrations (Jan 2020-Jul 2021) for resilience outcomes, both aggregated to city-week/city-wave",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-cities-1949-1998",
+      "target": "china-county-population-agriculture-gis-1990",
+      "relation": "complement",
+      "keys": [
+        "Historical city/county boundary concordance",
+        "1990 reference year"
+      ],
+      "method": "If reproducing the education aggregation, build and document a separate county-to-city crosswalk; the checked sources do not show that this book contains the GIS layer itself",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-cities-1949-1998",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "City name and province",
+        "Year 1990-1997",
+        "Statistical table/indicator label"
+      ],
+      "method": "Use the book to supplement or cross-check annual Yearbook entries; preserve the source edition and definition instead of silently blending values",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-city-co2-emissions",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "city",
+        "year"
+      ],
+      "method": "city-year covariates (GDP, population) matching",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-city-official-vacancy-panel",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "city",
+        "year"
+      ],
+      "method": "city-year outcome matching",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "china-city-to-city-truck-flows",
+      "target": "china-nighttime-lights",
+      "relation": "complement",
+      "keys": [
+        "City (aggregate)"
+      ],
+      "method": "The WP validates truck outflows against night-light intensity (correlation 0.86); use for cross-validation of flow activity measures",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-city-to-city-truck-flows",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "City"
+      ],
+      "method": "City-level GDP and controls are used in the paper for validation and structural estimation; join on city identifiers normalized to the paper's 315-city sample",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-clarksons-shipyard-production-1998-2014",
+      "target": "asif",
+      "relation": "complement",
+      "keys": [
+        "Shipyard or firm name",
+        "Province/city",
+        "Year"
+      ],
+      "method": "Reproduce the paper's documented firm-linking logic only after obtaining both products. Do not match by name alone; preserve ownership, city boundaries, missing years, and the fact that ASIF/NBS is annual while Clarksons is quarterly.",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-clhls",
+      "target": "charls",
+      "relation": "often-confused-with",
+      "keys": [
+        "Province or county",
+        "Age group"
+      ],
+      "method": "Compare samples and modules before any combined analysis; the two surveys have different age targets, waves, and sampling frames, so treat them as separate products.",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "china-clhls",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "Province code",
+        "Year"
+      ],
+      "method": "Join province-year macro controls by province/year; check the geographic codes actually released in the CLHLS files.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-cnrds",
+      "target": "asif",
+      "relation": "complement",
+      "keys": [
+        "Firm name",
+        "Unified social credit code where recorded"
+      ],
+      "method": "CNRDS markets processed editions of NBS industrial-firm data (recorded in the asif record as a distribution channel); the exact module, cleaning and fields must be verified before treating it as ASIF.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-cnrds",
+      "target": "china-customs",
+      "relation": "complement",
+      "keys": [
+        "Firm name",
+        "Customs record identifiers where recorded"
+      ],
+      "method": "CNRDS provides processed customs-trade modules for some years per the china-customs record; verify module scope before substituting for the original customs route.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-cnrds",
+      "target": "china-high-speed-rail-network",
+      "relation": "complement",
+      "keys": [
+        "Station names",
+        "City codes"
+      ],
+      "method": "The Economic Featured Library includes a high-speed-rail/airline database (CRAD) used by papers for HSR connectivity; compare its station/route fields and vintage with the dedicated network record before use.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-cnrds",
+      "target": "china-land-transaction",
+      "relation": "complement",
+      "keys": [
+        "Full company name",
+        "City/county codes"
+      ],
+      "method": "The Company Featured Library includes a listed-company land-market database (LMID); treat it as a processed convenience route and verify coverage against the official land-transfer record route.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-cnrds",
+      "target": "china-patents",
+      "relation": "complement",
+      "keys": [
+        "Full company name",
+        "Unified social credit code",
+        "Patent number"
+      ],
+      "method": "CNRDS patent modules provide matched listed-firm patent panels; the official CNIPA database remains the original source and the module's matching procedure is commercial.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-cnrds",
+      "target": "csmar",
+      "relation": "substitute-and-benchmark",
+      "keys": [
+        "Stock code",
+        "Full company name"
+      ],
+      "method": "Both platforms cover listed-company finance/governance tables; join or cross-check by stock code with attention to different variable definitions and reporting vintages.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-cnrds",
+      "target": "wind",
+      "relation": "substitute-and-benchmark",
+      "keys": [
+        "Stock code",
+        "Macro indicator name"
+      ],
+      "method": "Wind is preferred for real-time market, bond-terminal and API use; CNRDS modules are table-oriented academic exports; cross-check definitions before pooling.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-coal-power-plant-panel",
+      "target": "china-city-co2-emissions",
+      "relation": "complement",
+      "keys": [
+        "Province/region",
+        "Release vintage"
+      ],
+      "method": "Compare only at an aggregate province level; this workbook cannot be geocoded to prefectures or plants.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-commuting-based-metropolitan-areas",
+      "target": "china-census",
+      "relation": "complement",
+      "keys": [
+        "Township",
+        "County"
+      ],
+      "method": "Paper validates flow-data populations against the 2020 census and uses the 2015 1% survey (work/home townships) for commuting-flow validation; 2010 census township shapefiles are the GIS base for boundaries",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-commuting-based-metropolitan-areas",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "City",
+        "County"
+      ],
+      "method": "Official population counts from censuses and statistical-yearbook estimates used to corroborate the cellphone-based flows",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-county-daily-covid-risk-level-2020-2022",
+      "target": "china-amap-migration-flow-indices",
+      "relation": "complement",
+      "keys": [
+        "date",
+        "prefecture city (市 name; AMAP is prefecture-level, risk panel is county-level - aggregate risk panel to prefecture or map AMAP indices to counties with weights)"
+      ],
+      "method": "Overlap check (2026-08-15, canonical records read): AMAP = city-dyad DAILY migration intensity indices (Gaode LBS users, 365 prefecture cities, provider-run public page); risk panel = county-day administrative risk-designation flags (paper-constructed from the State Council directory). Different unit (city-dyad vs county-day), different construct (mobility intensity vs policy risk state). The CER paper's 'population mobility' layer is unnamed at abstract level - whether it is AMAP is unverified.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-county-daily-covid-risk-level-2020-2022",
+      "target": "china-nighttime-lights",
+      "relation": "complement",
+      "keys": [
+        "county (after zonal aggregation of grids)",
+        "year/month vs day (aggregate risk flags to month/year or NTL to daily where possible)"
+      ],
+      "method": "Overlap check (2026-08-15, canonical record read): NTL = gridded annual/monthly composites (DMSP 1992-2013, VIIRS 2012+, PANDA/harmonized), unit = grid cell; risk panel = county-day policy state. Same paper (CER 102101) uses NTL as economic-activity outcome ('satellite data on night lights', abstract-level; exact product/version unresolved - same status as the RSUE 104246 entry in the NTL record). Complementary roles: treatment layer (risk) vs outcome layer (NTL).",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-county-daily-covid-risk-level-2020-2022",
+      "target": "china-satellite-pm25",
+      "relation": "complement",
+      "keys": [
+        "county (zonal aggregation)",
+        "month/year"
+      ],
+      "method": "CER abstract names 'satellite data on night lights and PM2.5' as activity measures (abstract-level; PM2.5 product identity unverified - likely the canonical china-satellite-pm25 grid family but not read for this paper).",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-county-population-agriculture-gis-1990",
+      "target": "china-census",
+      "relation": "complement",
+      "keys": [
+        "1990 census reference year",
+        "County/province geography where a concordance is available"
+      ],
+      "method": "Use this product for public county aggregates and GIS linkage, and use the census record for broader census releases or restricted microdata; do not treat them as the same file",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-county-population-agriculture-gis-1990",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "Historical county or city name/concordance",
+        "Province or prefecture identifier",
+        "1990 reference year"
+      ],
+      "method": "Aggregate or match the county table to the statistical-yearbook unit only after checking whether the target is city proper, municipal district, or whole prefecture and preserving boundary changes",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-court-judgments-2014-2018-open-justice",
+      "target": "pkulaw",
+      "relation": "often-confused-with",
+      "keys": [
+        "Case number or court where retained"
+      ],
+      "method": "pkulaw is a legal-document database; it is a discovery/reference route, not the bulk corpus the paper built.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-distant-water-fishing-fleet",
+      "target": "china-fishing-vessel-detection",
+      "relation": "complement",
+      "keys": [
+        "Vessel registry name",
+        "MMSI (SSVID)",
+        "Call sign",
+        "IMO"
+      ],
+      "method": "Match registry panel to GFW fishing hours with priority name+MMSI > name+call sign > name+IMO (paper); ~70% match rate",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-domestic-trade-statistical-yearbook",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "Province or region",
+        "Year",
+        "Indicator and unit"
+      ],
+      "method": "Use the general Statistical Yearbook for population, prices and broad macro controls; do not substitute its retail or output aggregates for the paper's rural free-market measure without a table-level comparison.",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-domestic-trade-statistical-yearbook",
+      "target": "china-township-enterprises-statistical-yearbook",
+      "relation": "complement",
+      "keys": [
+        "Province or region",
+        "Year/reference year",
+        "Indicator and unit"
+      ],
+      "method": "Join the market-transaction measure to township-enterprise employment/output only after aligning issue/reference years and preserving each source's category definitions.",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-dsp-mortality-records",
+      "target": "china-aer-fog-to-smog-behavioral-2024",
+      "relation": "complement",
+      "keys": [
+        "city",
+        "week"
+      ],
+      "method": "DSP mortality component of a multi-source panel",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "china-dsp-mortality-records",
+      "target": "china-air-quality-monitoring",
+      "relation": "complement",
+      "keys": [
+        "city",
+        "date"
+      ],
+      "method": "pollution exposure to mortality (literature pattern: Ebenstein et al. 2015)",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-dsp-mortality-records",
+      "target": "china-census",
+      "relation": "complement",
+      "keys": [
+        "county/district code",
+        "year"
+      ],
+      "method": "population denominators for rates",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-economic-census",
+      "target": "asif",
+      "relation": "complement",
+      "keys": [
+        "Firm name or identifier",
+        "Industry code",
+        "Year (census years overlap with ASIF)"
+      ],
+      "method": "entity-resolution",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-economic-census",
+      "target": "china-census",
+      "relation": "complement",
+      "keys": [
+        "County/city/prefecture code",
+        "Industry code (aggregated)"
+      ],
+      "method": "aggregation",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-employer-employee-matched-admin",
+      "target": "china-census",
+      "relation": "complement",
+      "keys": [
+        "city",
+        "year"
+      ],
+      "method": "city-level context (coarse; one city only)",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-environmental-enforcement",
+      "target": "asif",
+      "relation": "complement",
+      "keys": [
+        "firm identity or normalized name/address",
+        "city or county code",
+        "year"
+      ],
+      "method": "Match the supplied firm/enforcement panel to the licensed ASIF edition only after checking identifier and year definitions; the paper used ASIF 2013 as the firm frame.",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-environmental-enforcement",
+      "target": "china-air-quality-monitoring",
+      "relation": "complement",
+      "keys": [
+        "monitor identifier",
+        "city",
+        "date or year",
+        "coordinates"
+      ],
+      "method": "Use the monitor and pollution files supplied with the deposit or a separately verified CNEMC/MEE series; reconcile station openings and measurement definitions before joining.",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-environmental-enforcement",
+      "target": "china-firm-pollution",
+      "relation": "often-confused-with",
+      "keys": [
+        "firm identity",
+        "city",
+        "year"
+      ],
+      "method": "Keep enforcement events separate from emissions or treatment-facility measures; join only when the research question needs both outcomes.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-environmental-enforcement",
+      "target": "china-tianyancha-firm-information",
+      "relation": "complement",
+      "keys": [
+        "firm name",
+        "address",
+        "latitude and longitude"
+      ],
+      "method": "Tianyancha and other web sources were used to identify and geocode firms; a current commercial extract is not assumed to reproduce the historical match.",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-esiec-survey",
+      "target": "china-firm-registry",
+      "relation": "complement",
+      "keys": [
+        "firm name / registration identifiers"
+      ],
+      "method": "match released ESIEC firm identifiers to registry records under the CSDA terms; not verified on the files",
       "evidence_status": "plausible"
     },
     {
@@ -183,6 +1735,953 @@
       "evidence_status": "plausible"
     },
     {
+      "source": "china-firm-registry",
+      "target": "asif",
+      "relation": "complement",
+      "keys": [
+        "Firm name, registration location, industry, and year where available"
+      ],
+      "method": "Use a documented concordance only; the registry covers small/new firms while ASIF covers a different industrial universe and should not be treated as a one-to-one match.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-firm-registry",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "County or city code and boundary vintage",
+        "Year"
+      ],
+      "method": "Aggregate registry records to the same administrative unit and year after confirming code definitions; retain unmatched jurisdictions rather than silently reassigning them.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-flood-inundation-firm-exposure",
+      "target": "asif",
+      "relation": "complement",
+      "keys": [
+        "Firm identifier",
+        "Year"
+      ],
+      "method": "ASIF is the firm layer of this panel; use the canonical asif record for acquisition routes and restrictions",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-flood-inundation-firm-exposure",
+      "target": "china-county-population-agriculture-gis-1990",
+      "relation": "complement",
+      "keys": [
+        "County"
+      ],
+      "method": "Historical county boundaries for flood-prone-county heterogeneity analyses (paper-level use unverified)",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-fujian-vat-invoice-transactions",
+      "target": "china-firm-registry",
+      "relation": "complement",
+      "keys": [
+        "Firm identity (name/unified code)"
+      ],
+      "method": "Firm-level controls and registry joins would need the paper's invoice-side identifiers, which are unread and not public.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-gaokao-ncee-universe-1999-2003",
+      "target": "china-census",
+      "relation": "complement",
+      "keys": [
+        "province",
+        "year"
+      ],
+      "method": "Census education and urban-rural population measures as context or alternative education outcomes",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-gov-procurement",
+      "target": "asif",
+      "relation": "complement",
+      "keys": [
+        "Awardee firm name",
+        "Year"
+      ],
+      "method": "entity-resolution",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-gov-procurement",
+      "target": "china-patents",
+      "relation": "complement",
+      "keys": [
+        "Awardee firm name",
+        "Year"
+      ],
+      "method": "entity-resolution",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-harmonized-nighttime-lights-li-et-al",
+      "target": "china-census",
+      "relation": "complement",
+      "keys": [
+        "boundary geometry or documented administrative concordance",
+        "census year"
+      ],
+      "method": "Aggregate the raster to the census geography using a documented boundary vintage; do not equate a later county polygon with the historical census unit by name alone.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-harmonized-nighttime-lights-li-et-al",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "city/province geometry or documented name-code concordance",
+        "year"
+      ],
+      "method": "Create the light aggregate first, then join it to the matching administrative-year outcome; preserve any boundary mismatch.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-high-speed-rail-network",
+      "target": "china-census",
+      "relation": "complement",
+      "keys": [
+        "Prefecture or city identifier",
+        "2000 population reference year"
+      ],
+      "method": "population-weight and administrative concordance",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-high-speed-rail-network",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "Prefecture or city identifier",
+        "Year"
+      ],
+      "method": "administrative-name and boundary concordance",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-historical-epidemic-records",
+      "target": "china-historical-clan-kinship-1470-1910",
+      "relation": "complement",
+      "keys": [
+        "county",
+        "historical period"
+      ],
+      "method": "Adjacent historical-asset family (clan networks 1470-1910); different construction and sources; useful for joint long-run-development designs",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-historical-epidemic-records",
+      "target": "china-nighttime-lights",
+      "relation": "complement",
+      "keys": [
+        "county"
+      ],
+      "method": "Outcome variable NTL 2010 (NOAA DMSP-OLS) as used in the paper's main specification",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-historical-railroad-industrial-development-replication-1858-1936",
+      "target": "china-high-speed-rail-network",
+      "relation": "complement",
+      "keys": [
+        "no common period without a documented historical-to-modern geography bridge"
+      ],
+      "method": "Treat as separate historical and modern transport assets; do not join merely on a reused place name.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-historical-railroad-industrial-development-replication-1858-1936",
+      "target": "china-transportation-networks-travel-time-1994-2024",
+      "relation": "complement",
+      "keys": [
+        "no direct package key"
+      ],
+      "method": "Use only for a separately designed long-run comparison with a clear boundary and measurement bridge.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-hkpssd-geocoded-survey-2026",
+      "target": "china-census",
+      "relation": "complement",
+      "keys": [
+        "LSBG (large street block group)"
+      ],
+      "method": "HKPSSD residential LSBG to quinquennial census/by-census small-area aggregates (2011 Census for W1, 2016 By-Census for W4); queen contiguity and WorldPop-population-weighted centroids for adjacent-neighborhood construction",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-hkpssd-geocoded-survey-2026",
+      "target": "china-nighttime-lights",
+      "relation": "complement",
+      "keys": [
+        "Geography",
+        "Time"
+      ],
+      "method": "Possible for spatial-context extension, not used in the 2026 paper",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-industrial-commerce-administration-statistics-40-years",
+      "target": "china-domestic-trade-statistical-yearbook",
+      "relation": "complement",
+      "keys": [
+        "Province or region",
+        "Year/reference year",
+        "Market category and indicator"
+      ],
+      "method": "Use CICAS for the earlier historical market-administration component and CDTSY for the later domestic-trade component only after checking overlapping concepts, units and source years. Keep each source and table visible in the reconstructed panel.",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-industrial-commerce-administration-statistics-40-years",
+      "target": "china-township-enterprises-statistical-yearbook",
+      "relation": "complement",
+      "keys": [
+        "Province or region",
+        "Year",
+        "Indicator and unit"
+      ],
+      "method": "Join market measures to township-enterprise activity only after preserving the different administrative and enterprise definitions and aligning the reference year.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-jde-migration-resource-misallocation-replication-2024",
+      "target": "asif",
+      "relation": "complement",
+      "keys": [
+        "Firm identifier",
+        "Year",
+        "Prefecture/city code"
+      ],
+      "method": "Match only against the same ASIF vintage and the paper's cleaning/concordance; the public package does not itself prove a stable cross-vintage key.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-jde-migration-resource-misallocation-replication-2024",
+      "target": "china-economic-census",
+      "relation": "complement",
+      "keys": [
+        "City/prefecture code",
+        "2008 reference year"
+      ],
+      "method": "Use the paper package's documented firm-count-share role only after confirming the exact Second Economic Census table and code vintage.",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-jrs-dz-land-firm-2026",
+      "target": "asif",
+      "relation": "complement",
+      "keys": [
+        "Firm identifier or normalized name",
+        "City/county code",
+        "Industry and year"
+      ],
+      "method": "Attempt a firm join only after the paper package identifies its firm source and identifier; ASIF coverage and cleaning differ from any unknown firm input.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-jrs-dz-land-firm-2026",
+      "target": "china-land-transaction",
+      "relation": "often-confused-with",
+      "keys": [
+        "Parcel or lease identifier",
+        "City/county code",
+        "Transaction/lease year"
+      ],
+      "method": "Compare the author-supplied land source, parcel definitions, and boundary vintage before joining; public land announcements are not evidence of the paper's linked file.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-jrs-dz-land-firm-2026",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "City code or normalized city name",
+        "Year"
+      ],
+      "method": "Add city-level controls after confirming the paper's spatial unit and administrative-boundary vintage.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-jrs-sweating-assets-housing-transactions-2026",
+      "target": "china-land-transaction",
+      "relation": "often-confused-with",
+      "keys": [
+        "City and year only as a broad contextual comparison"
+      ],
+      "method": "Keep second-hand home sales separate from government land-transfer announcements; they are different markets, units, and production routes.",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "china-jrs-sweating-assets-housing-transactions-2026",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "City code or normalized city name",
+        "Year"
+      ],
+      "method": "Use city-year housing, income, population, or macro controls only after checking the paper file's city list and administrative-boundary vintage.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-jrs-sweating-assets-housing-transactions-2026",
+      "target": "era5-land",
+      "relation": "complement",
+      "keys": [
+        "Property coordinates or a documented city/grid location",
+        "Transaction date or month"
+      ],
+      "method": "Match the delivered property or city location to ERA5-Land after defining the spatial aggregation and heat window; do not assume that a city label gives building-level exposure.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-jue-pmc-fiscal-reform-replication-2026",
+      "target": "asif",
+      "relation": "often-confused-with",
+      "keys": [
+        "No verified external firm key"
+      ],
+      "method": "Keep the anonymized firm file separate from ASIF. The README identifies restricted ASIF as an upstream source but states that released firm IDs are anonymized; do not claim a firm-level merge unless the authors provide a lawful concordance.",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "china-jue-pmc-fiscal-reform-replication-2026",
+      "target": "china-land-transaction",
+      "relation": "complement",
+      "keys": [
+        "County/city and year, only for documented contextual joins"
+      ],
+      "method": "A land or development indicator can be joined at county/city-year after boundary checks, but it is not part of this replication package and cannot replace the package's fiscal or firm variables.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-jue-pmc-fiscal-reform-replication-2026",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "County or province code/name",
+        "Year"
+      ],
+      "method": "Use published statistical controls only after checking definitions, price basis, administrative boundaries, and missingness against the package's county/province fields. A matching county name alone is not enough.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-leaders-message-board-complaints",
+      "target": "china-aer-squeaky-wheel-citizen-appeals-2020",
+      "relation": "often-confused-with",
+      "keys": [
+        "City",
+        "Year"
+      ],
+      "method": "Both are citizen-complaint assets but different channels (12369 environmental hotline with released openICPSR bundle vs MBLL leader message board with no release); compare by channel, topic and release status",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "china-leaders-message-board-complaints",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "City name or code",
+        "Year"
+      ],
+      "method": "Join city characteristics/population controls; normalize city names to a common code vintage",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-little-giant-enterprise-list",
+      "target": "china-firm-registry",
+      "relation": "complement",
+      "keys": [
+        "enterprise name / registration identifiers"
+      ],
+      "method": "name-based matching; not verified this round",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-little-giant-enterprise-list",
+      "target": "china-tianyancha-firm-information",
+      "relation": "complement",
+      "keys": [
+        "enterprise name"
+      ],
+      "method": "name-based matching to registry/relationship data; normalization required",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-living-standards-survey-1995-1997",
+      "target": "china-census",
+      "relation": "complement",
+      "keys": [
+        "County or province",
+        "Census year"
+      ],
+      "method": "Geographic aggregate match; do not infer household-level linkage",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-living-standards-survey-1995-1997",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "Province",
+        "Year or study-period reference"
+      ],
+      "method": "Aggregate province-year or period-level match after confirming compatible definitions",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-living-standards-survey-1995-1997",
+      "target": "rfd",
+      "relation": "often-confused-with",
+      "keys": [],
+      "method": "Do not merge records merely because both are RCRE rural surveys; compare questionnaire, sampling frame, years, and identifiers first",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "china-local-government-work-report-texts",
+      "target": "china-gov-procurement",
+      "relation": "often-confused-with",
+      "keys": [
+        "city/province"
+      ],
+      "method": "distinct assets (text corpus vs transaction records); join only by jurisdiction",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-mee-monthly-city-air-quality-reports",
+      "target": "china-air-quality-monitoring",
+      "relation": "often-confused-with",
+      "keys": [
+        "city",
+        "date or month"
+      ],
+      "method": "Use this record only for published monthly summaries. Verify a separate provider route before attempting a high-frequency match to monitoring readings.",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "china-mee-monthly-city-air-quality-reports",
+      "target": "china-firm-pollution",
+      "relation": "often-confused-with",
+      "keys": [
+        "city",
+        "year"
+      ],
+      "method": "Ambient report summaries and firm-emission data answer different questions; do not substitute one for the other.",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "china-mee-surface-water-quality-bulletins",
+      "target": "china-firm-pollution",
+      "relation": "often-confused-with",
+      "keys": [
+        "year",
+        "geography"
+      ],
+      "method": "Ambient surface-water aggregate bulletins and firm discharges are different measurement layers.",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "china-mee-surface-water-quality-bulletins",
+      "target": "china-water-quality-monitoring",
+      "relation": "often-confused-with",
+      "keys": [
+        "period",
+        "basin or geography where applicable"
+      ],
+      "method": "Use this record only for published aggregate conditions; verify a distinct route before linking micro outcomes to section/station readings.",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "china-merra2-pm25-chen-oliva-zhang",
+      "target": "china-census",
+      "relation": "complement",
+      "keys": [
+        "county",
+        "five-year period"
+      ],
+      "method": "The cited paper combines its constructed county exposure with census-derived migration outcomes; exact geographic concordance remains unreleased.",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-million-rouble-plant-register",
+      "target": "asif",
+      "relation": "complement",
+      "keys": [
+        "Plant or descendant name",
+        "Firm name/identifier",
+        "County and year"
+      ],
+      "method": "Use the paper's documented establishment links and name/identifier cleaning; raw ASIF access remains separate",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-million-rouble-plant-register",
+      "target": "china-census",
+      "relation": "complement",
+      "keys": [
+        "Host county or city",
+        "Census year"
+      ],
+      "method": "Explicit geographic concordance; preserve the paper's county boundary vintage before aggregating outcomes",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-million-rouble-plant-register",
+      "target": "china-patents",
+      "relation": "complement",
+      "keys": [
+        "Establishment name or matched firm identifier",
+        "Patent application year"
+      ],
+      "method": "Use the He et al. (2018) establishment-to-patent links or a separately licensed patent product; do not infer matches from names alone",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-million-rouble-plant-register",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "County/city identifier",
+        "Year"
+      ],
+      "method": "Align administrative boundaries and measurement definitions before joining annual controls",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-minimum-wage-policy-panel",
+      "target": "asif",
+      "relation": "complement",
+      "keys": [
+        "County/district",
+        "Year (effective-date matching)"
+      ],
+      "method": "Match firm county to tier by the adjustment in force in the firm-year; watch mid-year adjustments",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-minimum-wage-policy-panel",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "Province",
+        "Year"
+      ],
+      "method": "Join province-year controls; do not confuse yearbook wage levels with minimum standards",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-mobile-signaling-mobility-data",
+      "target": "china-census",
+      "relation": "complement",
+      "keys": [
+        "County",
+        "City"
+      ],
+      "method": "Inner Mongolia paper scales flows with 2020 census population and adjusts for operator penetration; census provides denominators",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-mobile-signaling-mobility-data",
+      "target": "china-commuting-based-metropolitan-areas",
+      "relation": "often-confused-with",
+      "keys": [
+        "City",
+        "Township"
+      ],
+      "method": "Both are location/mobility-derived assets but from different provider families (telecom operator signaling vs Baidu Maps location data) and different units (aggregated operator flows vs township commuting matrix); do not treat as interchangeable",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-mofcom-rural-ecommerce-demo-counties",
+      "target": "cfps",
+      "relation": "complement",
+      "keys": [
+        "County name or county code",
+        "Survey year"
+      ],
+      "method": "Normalize county names to the NBS code vintage used by CFPS; verify each sample county's code before merging; the lists themselves carry no codes",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-mofcom-rural-ecommerce-demo-counties",
+      "target": "china-census",
+      "relation": "complement",
+      "keys": [
+        "County code or name",
+        "Census year"
+      ],
+      "method": "Use census county identifiers for demographic controls; verify code vintage",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-mofcom-rural-ecommerce-demo-counties",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "County or prefecture name",
+        "Year"
+      ],
+      "method": "Join county-level outcomes by normalized name/code; beware boundary changes across batches and yearbook vintages",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-neri-marketization-index",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "Province code",
+        "Year"
+      ],
+      "method": "Merge province-year index scores onto province-year macro data by standard province codes; confirm the index edition's year alignment before merging.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-new-housing-buyer-transactions",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "city",
+        "year"
+      ],
+      "method": "city-year covariate matching",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-nighttime-lights",
+      "target": "china-census",
+      "relation": "complement",
+      "keys": [
+        "County code or name",
+        "Census year"
+      ],
+      "method": "Zonal-mean light by county, matched on NBS codes/boundaries; census geography changes across waves",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-nighttime-lights",
+      "target": "china-satellite-pm25",
+      "relation": "complement",
+      "keys": [
+        "Grid cell",
+        "Year"
+      ],
+      "method": "Both are global grids; aggregate both to the same admin unit or grid scale before joining; verify grid registration (EPSG:4326) and resolution mismatch (1 km vs 0.01 deg)",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-nighttime-lights",
+      "target": "era5-land",
+      "relation": "complement",
+      "keys": [
+        "Grid cell",
+        "Year/month"
+      ],
+      "method": "Spatial-temporal match at grid or admin level; resolution differs (0.1 deg), aggregate consistently",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-pku-digital-financial-inclusion-index",
+      "target": "cfps",
+      "relation": "complement",
+      "keys": [
+        "Province or city identifier",
+        "Year"
+      ],
+      "method": "Same direction; CFPS waves are biennial so index year must be aligned to wave year.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-pku-digital-financial-inclusion-index",
+      "target": "cgss",
+      "relation": "complement",
+      "keys": [
+        "Province or city identifier",
+        "Year (survey wave year)"
+      ],
+      "method": "Match respondent's province/city to the index of the same or prior year; check survey wave timing against annual index values.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-pku-digital-financial-inclusion-index",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "City code or name",
+        "Year"
+      ],
+      "method": "Align administrative-division vintages before joining; the index ships year18/year14 and year14 codes for city and county respectively.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-population-yearbook-1991",
+      "target": "china-agricultural-yearbook",
+      "relation": "complement",
+      "keys": [
+        "Province or region",
+        "Year and issue/reference-year convention",
+        "Rural population or income indicator"
+      ],
+      "method": "Keep CPY's urban-share/population-denominator role separate from CAY's rural income, government-revenue and agricultural-accounting tables; verify province labels and reference years before any join.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-population-yearbook-1991",
+      "target": "china-census",
+      "relation": "complement",
+      "keys": [
+        "Province or region",
+        "1990 census reference date",
+        "Urban/rural population category"
+      ],
+      "method": "Use a census product when the research question needs the underlying census or finer geography. CPY records the paper's population-almanac route; it does not prove that a census microfile or GIS concordance is included.",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-population-yearbook-1991",
+      "target": "china-rural-statistical-yearbook-1984-1994",
+      "relation": "complement",
+      "keys": [
+        "Province or region",
+        "Year",
+        "Rural population and rural/total category"
+      ],
+      "method": "Compare the CPY and CRSY population denominators by issue and definition before joining; the QJE appendix assigns them different source roles even when both contain population measures.",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-population-yearbook-1991",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "Province or region",
+        "Year and reference-year convention",
+        "Population category and unit"
+      ],
+      "method": "Use CPY for the paper-specific urban-population share and population denominator role, and the China Statistical Yearbook for state-industry output or CPI inputs. Preserve the source table and do not substitute a general population table without comparing definitions.",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-procurement-auction-bids-winners-losers",
+      "target": "asif",
+      "relation": "complement",
+      "keys": [
+        "Bidder firm name",
+        "Year"
+      ],
+      "method": "Firm-name entity resolution to enterprise registration; the paper's own match rate is 93.2% to registration data, and tax-survey data are used for TFP (match success low; unmatched treated as zero per secondary summary)",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-procurement-auction-bids-winners-losers",
+      "target": "china-gov-procurement",
+      "relation": "often-confused-with",
+      "keys": [
+        "Procuring agency",
+        "Contract date"
+      ],
+      "method": "Same raw announcement family (ccgp.gov.cn); china-gov-procurement is the contract/award level (2013-2019 Beraja et al. extraction), this asset is the bidder-auction level including losing bidders (2014-2020 per existing entry)",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-procurement-auction-bids-winners-losers",
+      "target": "china-patents",
+      "relation": "complement",
+      "keys": [
+        "Bidder firm name",
+        "Year"
+      ],
+      "method": "CNIPA patent data joined to bidders for innovation outcomes (low match rates per secondary summary)",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-qss-chinawomen-derived-2017",
+      "target": "china-agricultural-yearbook",
+      "relation": "complement",
+      "keys": [
+        "County/province crosswalk",
+        "Reference year"
+      ],
+      "method": "Use yearbook values only for independently documented agricultural controls and record any change in units or geography; they do not reveal the QSS file's source fields or turn it into an annual panel.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-qss-chinawomen-derived-2017",
+      "target": "china-census",
+      "relation": "complement",
+      "keys": [
+        "County code after a verified historical concordance",
+        "Birth/cohort year where the approved census file supports it"
+      ],
+      "method": "Treat the QSS table as a derived outcome/crop table and the census record as a separate source for additional fields or later waves. A shared topic or county label is not evidence of a lossless match.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-qss-chinawomen-derived-2017",
+      "target": "china-county-population-agriculture-gis-1990",
+      "relation": "complement",
+      "keys": [
+        "Historical county identifier or documented name crosswalk",
+        "1990 reference year"
+      ],
+      "method": "Use the GIS product only after obtaining and checking a concordance between its county key and admin. Do not assume that a six-digit-looking admin code has the same meaning or boundary vintage as the GIS product.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-restud-melon-market-labels-2025",
+      "target": "china-weekly-provincial-hog-prices",
+      "relation": "often-confused-with",
+      "keys": [
+        "None (different commodity, unit, and geography)"
+      ],
+      "method": "Keep the Shijiazhuang experiment separate from the provincial hog-price panel; they answer different questions.",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "china-rural-ecommerce-couture-2021-replication",
+      "target": "cfps",
+      "relation": "complement",
+      "keys": [
+        {
+          "None required": "CFPS enters only as expenditure shares for survey design"
+        }
+      ],
+      "method": "Use CFPS only for nationally representative consumption weights or broader household context; do not merge individual records",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-rural-ecommerce-couture-2021-replication",
+      "target": "china-census",
+      "relation": "complement",
+      "keys": [
+        "Township-level units"
+      ],
+      "method": "The paper's market-access measures use 2010 census township populations; replicate the authors' township match if extending their analysis",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-rural-ecommerce-couture-2021-replication",
+      "target": "china-mofcom-rural-ecommerce-demo-counties",
+      "relation": "often-confused-with",
+      "keys": [
+        "County name"
+      ],
+      "method": "Keep the two programs separate: Alibaba Rural Taobao (this package) vs the MOFCOM demonstration program (that record)",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "china-rural-economic-statistics-1949-1986",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "Province name/code",
+        "Year",
+        "Indicator and unit"
+      ],
+      "method": "Use the later Yearbook and provincial Agricultural Statistical Yearbooks to extend 1987-1989 and cross-check missing or conflicting entries. Preserve the book edition and source page instead of silently merging revisions.",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-rural-finance-statistical-yearbook",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "Province or region",
+        "Year",
+        "Indicator and unit"
+      ],
+      "method": "Use the general Statistical Yearbook for population, prices and broad macro controls; do not replace CRFSY bank-specific measures with a similar-sounding aggregate finance table.",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-rural-finance-statistical-yearbook",
+      "target": "china-township-enterprises-statistical-yearbook",
+      "relation": "complement",
+      "keys": [
+        "Province or region",
+        "Year/reference year",
+        "Rural-enterprise category"
+      ],
+      "method": "Join CRFSY loan/savings measures to CTESY employment/output categories only after aligning issue/reference years and preserving each source's enterprise and institution definitions.",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-rural-statistical-yearbook-1984-1994",
+      "target": "china-agricultural-yearbook",
+      "relation": "complement",
+      "keys": [
+        "Province or region",
+        "Year and issue/reference-year convention",
+        "Rural income, revenue or price indicator"
+      ],
+      "method": "Join only after checking the two books' reference years and province labels. CRSY supplies rural production/labor/land context; CAY supplies the separate income, taxes, revenue and price roles in the QJE construction.",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-rural-statistical-yearbook-1984-1994",
+      "target": "china-rural-economic-statistics-1949-1986",
+      "relation": "predecessor",
+      "keys": [
+        "Province or region",
+        "Year",
+        "Rural/agricultural indicator and unit"
+      ],
+      "method": "Use the 1949-1986 compilation only for earlier historical context and overlapping-definition checks; it is not evidence for the paper's later CRSY tables.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-rural-statistical-yearbook-1984-1994",
+      "target": "china-rural-finance-statistical-yearbook",
+      "relation": "complement",
+      "keys": [
+        "Province or region",
+        "Year",
+        "Rural financial indicator"
+      ],
+      "method": "Keep CRSY's rural gross-social-product denominator separate from CRFSY's loan and savings numerators; preserve the previous-year timing used in the paper.",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-rural-statistical-yearbook-1984-1994",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "Province or region",
+        "Year",
+        "Indicator and unit"
+      ],
+      "method": "Use the general Statistical Yearbook for state-industry output or rural CPI inputs and for cross-checking, not as a silent replacement for CRSY rural tables.",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-rural-statistical-yearbook-1984-1994",
+      "target": "china-township-enterprises-statistical-material-1978-1985",
+      "relation": "complement",
+      "keys": [
+        "Province or region",
+        "Year",
+        "Rural population or rural-enterprise context"
+      ],
+      "method": "Use TESM only for the separate 1980/1986 baseline inputs documented in the QJE appendix; do not use it as a substitute for CRSY's 1987-1994 rural labor and land tables.",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-rural-statistical-yearbook-1984-1994",
+      "target": "china-township-enterprises-statistical-yearbook",
+      "relation": "complement",
+      "keys": [
+        "Province or region",
+        "Year and reference-year convention",
+        "Rural labor or enterprise indicator"
+      ],
+      "method": "Use CRSY for rural labor, land and gross-social-product denominators and CTESY for township/private-enterprise employment and output. Preserve each issue, table, unit and missing-value note instead of copying the paper's derived ratios as raw columns.",
+      "evidence_status": "literature-used"
+    },
+    {
       "source": "china-satellite-pm25",
       "target": "china-census",
       "relation": "complement",
@@ -203,6 +2702,127 @@
       ],
       "method": "spatial-aggregation",
       "evidence_status": "plausible"
+    },
+    {
+      "source": "china-second-industrial-survey-1985",
+      "target": "asif",
+      "relation": "complement",
+      "keys": [
+        "Firm name",
+        "County/province",
+        "Industry"
+      ],
+      "method": "Construct a documented concordance; do not assume firm identifiers persist from 1985 to 1998",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-second-industrial-survey-1985",
+      "target": "china-census",
+      "relation": "complement",
+      "keys": [
+        "County",
+        "Province",
+        "Year"
+      ],
+      "method": "Administrative concordance and 1985 timing alignment",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-second-industrial-survey-1985",
+      "target": "china-million-rouble-plant-register",
+      "relation": "complement",
+      "keys": [
+        "Firm/project name",
+        "Location"
+      ],
+      "method": "Use the paper's manual name/location/province matching and preserve unmatched cases",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-senddown-county-exposure",
+      "target": "cfps",
+      "relation": "complement",
+      "keys": [
+        "Individual or household identifier where retained",
+        "County or province identifier where available",
+        "Survey year"
+      ],
+      "method": "use the deposited CFPS extract only for the paper-compatible fields; obtain the provider's current wave and codebook separately for new work",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-senddown-county-exposure",
+      "target": "china-census",
+      "relation": "complement",
+      "keys": [
+        "Census wave",
+        "County identifier"
+      ],
+      "method": "compare file definitions and boundary concordances before merging",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-sister-city-ties",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "Chinese city"
+      ],
+      "method": "normalize Chinese city names to standard city codes; not verified this round",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-steel-plant-performance-reports",
+      "target": "asif",
+      "relation": "complement",
+      "keys": [
+        "Plant/firm name",
+        "County or province",
+        "Year"
+      ],
+      "method": "Match only with documented identifiers or manual checks; the 1998-2000 overlap does not imply a common firm panel",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-steel-plant-performance-reports",
+      "target": "china-census",
+      "relation": "complement",
+      "keys": [
+        "County",
+        "Year"
+      ],
+      "method": "Administrative concordance; preserve the source boundary vintage",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-steel-plant-performance-reports",
+      "target": "china-million-rouble-plant-register",
+      "relation": "complement",
+      "keys": [
+        "Plant name",
+        "Location",
+        "Project or cluster identifier"
+      ],
+      "method": "Use the paper's historical matching files and document any name or boundary normalization",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-taobao-village-town-lists",
+      "target": "china-mofcom-rural-ecommerce-demo-counties",
+      "relation": "often-confused-with",
+      "keys": [
+        "County name (normalized)"
+      ],
+      "method": "Keep the two programs separate: Alibaba/AliResearch Taobao village/town lists vs MOFCOM demonstration-county batches; both are county/village rosters but different selection authorities and purposes.",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "china-taobao-village-town-lists",
+      "target": "china-rural-ecommerce-couture-2021-replication",
+      "relation": "often-confused-with",
+      "keys": [],
+      "method": "The Couture et al. RCT studies Alibaba's Rural Taobao terminals in 100 villages; the village/town lists are a national roster - do not merge.",
+      "evidence_status": "verified"
     },
     {
       "source": "china-tax-survey",
@@ -239,6 +2859,394 @@
       "evidence_status": "plausible"
     },
     {
+      "source": "china-third-front-construction-exposure",
+      "target": "china-census",
+      "relation": "complement",
+      "keys": [
+        "individual records (1990 census microdata)"
+      ],
+      "method": "access the 1990 census microdata under its own restricted route; join county exposure by code",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-third-front-construction-exposure",
+      "target": "china-second-industrial-survey-1985",
+      "relation": "complement",
+      "keys": [
+        "prefecture/industry employment"
+      ],
+      "method": "Construct the published prefecture-level capacity measure only after recovering the exact Fan-and-Zou implementation and authorized census inputs.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-tianyancha-firm-information",
+      "target": "asif",
+      "relation": "complement",
+      "keys": [
+        "Firm name and registration identifiers where available",
+        "Province/city and year"
+      ],
+      "method": "Use a documented entity-resolution crosswalk; do not assume the API's current name or ownership history matches the ASIF vintage",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-tianyancha-firm-information",
+      "target": "china-gov-procurement",
+      "relation": "complement",
+      "keys": [
+        "Awardee firm name",
+        "Tianyancha company ID or unified social credit code where available",
+        "Contract year"
+      ],
+      "method": "Resolve procurement awardee names to a stable firm identity, retain one-to-many and unresolved matches, and preserve the query date and endpoint used",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-tianyancha-firm-information",
+      "target": "china-patents",
+      "relation": "complement",
+      "keys": [
+        "Firm name and normalized identifier",
+        "Application or grant year"
+      ],
+      "method": "Resolve aliases and subsidiaries before aggregating patents to a parent firm",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-township-census-population-2010-2020",
+      "target": "china-census",
+      "relation": "predecessor",
+      "keys": [
+        "township/county statistical zoning codes"
+      ],
+      "method": "china-census documents the family routes; the township volumes are the finer printed sub-product",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-township-enterprises-statistical-material-1978-1985",
+      "target": "china-agricultural-yearbook",
+      "relation": "complement",
+      "keys": [
+        "Province or region",
+        "Year/reference year",
+        "Rural population and asset indicator"
+      ],
+      "method": "Use the agricultural yearbook or another explicitly verified source for rural-population denominators; do not infer denominators from the TESM title or reprint metadata.",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-township-enterprises-statistical-material-1978-1985",
+      "target": "china-township-enterprises-statistical-yearbook",
+      "relation": "successor/complement",
+      "keys": [
+        "Province or region",
+        "Year",
+        "Enterprise category, indicator and unit"
+      ],
+      "method": "Use TESM for the 1980/1986 baseline and CTESY for later annual measures only after comparing category definitions, issue/reference years and province coverage. Keep the source edition visible in every derived panel.",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-township-enterprises-statistical-materials-1978-2002",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "province or region",
+        "year"
+      ],
+      "method": "Join only after documenting units and historical region labels; retain source provenance rather than silently replacing TVE-specific measures.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-township-enterprises-statistical-materials-1978-2002",
+      "target": "china-township-enterprises-statistical-yearbook",
+      "relation": "complement",
+      "keys": [
+        "year",
+        "region",
+        "enterprise category and unit"
+      ],
+      "method": "Compare definition, reference year and table notes before using an overlapping value; the compilation is a later source and does not prove equivalence to the annual CTESY issue.",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "china-township-enterprises-statistical-yearbook",
+      "target": "china-rural-economic-statistics-1949-1986",
+      "relation": "predecessor",
+      "keys": [
+        "Province or region",
+        "Year",
+        "Rural/nonfarm enterprise indicator where present"
+      ],
+      "method": "Use the 1949-1986 rural compilation only for earlier historical context and check overlapping definitions; it does not extend or replace the 1987-1994 CTESY issues.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-township-enterprises-statistical-yearbook",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "Province or region",
+        "Year",
+        "Indicator and unit"
+      ],
+      "method": "Use CTESY for township-enterprise-specific measures and the China Statistical Yearbook for state-enterprise output, CPI or general population denominators. Preserve the issue, table and definition instead of silently blending series.",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-trademarks",
+      "target": "china-firm-registry",
+      "relation": "complement",
+      "keys": [
+        "Applicant name",
+        "Unified social credit code where recorded"
+      ],
+      "method": "Registry records can resolve applicant-name variants for non-listed firms; the registry itself is restricted administrative data.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-trademarks",
+      "target": "china-patents",
+      "relation": "complement",
+      "keys": [
+        "Applicant/registrant name",
+        "Unified social credit code where recorded"
+      ],
+      "method": "Match by normalized applicant name and, where present, unified code to combine trademark and patent portfolios for one firm; name variations are a real matching risk.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-trademarks",
+      "target": "csmar",
+      "relation": "complement",
+      "keys": [
+        "Applicant name matched to listed-firm names"
+      ],
+      "method": "Xiao et al. (2024) explicitly link CNIPA trademark-registration records to CSMAR listed-firm data; the publisher-indexed text does not expose the matching key, algorithm, or treatment of name variants.",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-trafficked-children-inflow",
+      "target": "china-court-judgments-2014-2018-open-justice",
+      "relation": "complement",
+      "keys": [
+        "Prefecture",
+        "Year"
+      ],
+      "method": "Compare/cross-validate trafficking case inflows; different recording universes (court records vs platform reports)",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-transportation-networks-travel-time-1994-2024",
+      "target": "china-census",
+      "relation": "complement",
+      "keys": [
+        "prefecture",
+        "year"
+      ],
+      "method": "The paper's population-flow input is the 2005 One Percent Population Survey (china-census family)",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-transportation-networks-travel-time-1994-2024",
+      "target": "china-customs",
+      "relation": "complement",
+      "keys": [],
+      "method": "The paper estimates the trade elasticity from the Customs Transaction Dataset 2000-2005 (china-customs family)",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-transportation-networks-travel-time-1994-2024",
+      "target": "china-high-speed-rail-network",
+      "relation": "complement",
+      "keys": [
+        "prefecture",
+        "year"
+      ],
+      "method": "HSR network replication asset (Borusyak-Hull) vs this road+rail travel-time dataset; complementary for connectivity measures",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-transportation-networks-travel-time-1994-2024",
+      "target": "china-io-table",
+      "relation": "often-confused-with",
+      "keys": [],
+      "method": "Ma & Tang do NOT construct interprovincial trade flows from IO tables; the Tombe-Zhu internal-trade files in china-io-table are a different asset",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "china-truck-driver-telematics",
+      "target": "china-city-to-city-truck-flows",
+      "relation": "often-confused-with",
+      "keys": [],
+      "method": "Different product: G7 city-pair truck flows (national, 2019-2022) vs Guangdong driver-day telematics (2023-2025). Do not merge; no shared observation unit evidenced.",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "china-truck-driver-telematics",
+      "target": "era5-land",
+      "relation": "complement",
+      "keys": [
+        "location",
+        "time"
+      ],
+      "method": "Hourly ERA5-Land weather along GPS trajectories (the paper's own exposure source)",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-unionpay-cross-city-consumption-flows",
+      "target": "china-amap-migration-flow-indices",
+      "relation": "complement",
+      "keys": [
+        "City pair (name normalization)"
+      ],
+      "method": "AMAP daily city-dyad migration indices are the public substitute for city-pair flow research when UnionPay data are unobtainable; both need city-name normalization.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-urbanization-city-calibration-wu-you-2025",
+      "target": "china-census",
+      "relation": "complement",
+      "keys": [
+        "Prefecture or county identifier",
+        "Census year or five-year reference period"
+      ],
+      "method": "Preserve the paper's boundary and code vintage, then align the approved census wave and migration definitions before joining; do not assume the public derived flow file is a raw census release.",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-urbanization-city-calibration-wu-you-2025",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "Prefecture or city identifier",
+        "Year"
+      ],
+      "method": "Use the yearbook only for variables and definitions that match the paper's published regional controls; reconcile administrative names, units, and price bases before merging.",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-vehicle-registration-2010-2023",
+      "target": "china-firm-registry",
+      "relation": "complement",
+      "keys": [
+        "city",
+        "year"
+      ],
+      "method": "SAIC firm registrations as supply-side controls (paper section 3.2; same SAMR/SAIC registration family, extract vintage differs)",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-vehicle-registration-2010-2023",
+      "target": "china-high-speed-rail-network",
+      "relation": "complement",
+      "keys": [
+        "city",
+        "year"
+      ],
+      "method": "Match a separately sourced transport-network measure to the vehicle panel only by documented city and time keys; this record makes no treatment or causal-design claim.",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-vehicle-registration-2010-2023",
+      "target": "csmar",
+      "relation": "complement",
+      "keys": [
+        "year"
+      ],
+      "method": "national EV trajectory (paper Figure 1, footnote 5: https://data.csmar.com/)",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "china-water-quality-monitoring",
+      "target": "china-air-quality-monitoring",
+      "relation": "complement",
+      "keys": [
+        "city",
+        "time"
+      ],
+      "method": "city-year/month matching of parallel MEE monitoring products",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-water-quality-monitoring",
+      "target": "china-census",
+      "relation": "complement",
+      "keys": [
+        "city code",
+        "year"
+      ],
+      "method": "aggregate-level controls",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-water-quality-monitoring",
+      "target": "china-firm-pollution",
+      "relation": "complement",
+      "keys": [
+        "city",
+        "year"
+      ],
+      "method": "firm-level discharge vs ambient section quality (different units; do not merge)",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-weekly-provincial-hog-prices",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "Province code",
+        "Year"
+      ],
+      "method": "Join province-year macro controls (GDP, agriculture output) with consistent province codes; the panel's price series are research-constructed.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-zero2ipo-pedata-vc-pe",
+      "target": "china-firm-registry",
+      "relation": "complement",
+      "keys": [
+        "Company name",
+        "Unified social credit code (unverified in PEDATA)"
+      ],
+      "method": "Ownership-chain measurement can be replicated via NECIPS/Tianyancha as the JPE paper did; exact PEDATA identifiers unverified.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-zero2ipo-pedata-vc-pe",
+      "target": "csmar",
+      "relation": "complement",
+      "keys": [
+        "Company name (listed companies only)"
+      ],
+      "method": "For listed-firm investors or exits, join via company name; PEDATA entities are mostly unlisted, so overlap is limited.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "china-zhaopin-job-ads-2008-2010",
+      "target": "china-census",
+      "relation": "complement",
+      "keys": [
+        "City or province",
+        "Occupation or industry category",
+        "Gender, age, and education aggregates",
+        "2005 benchmark year"
+      ],
+      "method": "Aggregate benchmark comparison; the QJE paper uses 2005 Census urban employment distributions for this purpose",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "china-ziroom-shared-housing-listings-2026",
+      "target": "china-jrs-sweating-assets-housing-transactions-2026",
+      "relation": "complement",
+      "keys": [
+        "City",
+        "Neighborhood"
+      ],
+      "method": "Rental listings (this record) vs second-hand sales transactions; both price-side assets for Nanjing-related work, different market segments; join on city/neighborhood names requires geocoding (not documented in either paper)",
+      "evidence_status": "plausible"
+    },
+    {
       "source": "chip",
       "target": "china-stat-yearbook",
       "relation": "complement",
@@ -258,7 +3266,157 @@
         "town sample"
       ],
       "method": "harmonized-comparison",
-      "evidence_status": "official-description"
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "class-china-longitudinal-aging-social-survey",
+      "target": "charls",
+      "relation": "substitute",
+      "keys": [],
+      "method": "compare wave years, sample (older adults), modules and access before choosing; both are national aging surveys but distinct products",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "clcd-land-cover",
+      "target": "china-nighttime-lights",
+      "relation": "complement",
+      "keys": [
+        "pixel/zone",
+        "year"
+      ],
+      "method": "physical land cover (CLCD) vs activity intensity (NTL) joint measures of urbanization",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "clcd-land-cover",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "county/city",
+        "year"
+      ],
+      "method": "zonal land-cover aggregates joined to statistical panels",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "clds",
+      "target": "china-air-quality-monitoring",
+      "relation": "complement",
+      "keys": [
+        "Approved community, county, or city geography",
+        "Survey year or interview period"
+      ],
+      "method": "Aggregate exposure to the survey geography and interview window only after the permitted spatial key and timing are known.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "clds",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "Approved province, county, or city code",
+        "Survey year"
+      ],
+      "method": "Add local economic context only after verifying the release's geography key and boundary vintage; do not assume person-level matching.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "cma-surface-climate-data",
+      "target": "china-air-quality-monitoring",
+      "relation": "complement",
+      "keys": [
+        "time",
+        "station identity or coordinates after confirming the CMA download metadata"
+      ],
+      "method": "Weather controls require an evidenced station identity or spatial crosswalk; neither is supplied by the reviewed public landing pages.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "cma-surface-climate-data",
+      "target": "era5-land",
+      "relation": "complement",
+      "keys": [
+        "location",
+        "time"
+      ],
+      "method": "station observations vs reanalysis grid comparison/validation",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "cnemc-current-national-city-air-quality-dashboard",
+      "target": "china-air-quality-monitoring",
+      "relation": "component",
+      "keys": [
+        "city name",
+        "timestamp/date"
+      ],
+      "method": "This is the actually visible public slice of the broader official monitoring family. It does not establish access to the latter's historic research panel or station readings.",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "cnemc-current-national-city-air-quality-dashboard",
+      "target": "china-mee-monthly-city-air-quality-reports",
+      "relation": "complement",
+      "keys": [
+        "city name",
+        "month"
+      ],
+      "method": "A dashboard snapshot and a monthly PDF are distinct publication layers; preserve their different dates, universes and measures before comparison.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "cnemc-current-national-surface-water-quality-dashboard",
+      "target": "china-mee-surface-water-quality-bulletins",
+      "relation": "complement",
+      "keys": [
+        "reporting time"
+      ],
+      "method": "A current section-class display and an aggregate MEE bulletin are different products with different units; neither substitutes for the other.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "cnemc-current-national-surface-water-quality-dashboard",
+      "target": "china-water-quality-monitoring",
+      "relation": "component",
+      "keys": [
+        "monitoring-section name",
+        "time"
+      ],
+      "method": "This is a visible public slice of the broader monitoring family. It does not provide access to that family's historical readings, section roster or paper-specific products.",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "cnopendata-local-government-work-report-corpus",
+      "target": "china-local-government-work-report-texts",
+      "relation": "complement",
+      "keys": [
+        "government level",
+        "jurisdiction",
+        "year"
+      ],
+      "method": "Use this ready-made product for acquisition; use the source-family record when verifying official originals or paper-specific construction.",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "cnopendata-local-government-work-report-corpus",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "city/province",
+        "year"
+      ],
+      "method": "Normalize jurisdiction identity before a geography-year join.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "crrs-rural-revitalization-survey",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "county/province + year"
+      ],
+      "method": "join county-level context with name/code normalization; verify geography fields in the delivered data",
+      "evidence_status": "plausible"
     },
     {
       "source": "csmar",
@@ -290,7 +3448,17 @@
         "Date"
       ],
       "method": "exact",
-      "evidence_status": "routinely-used"
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "css-chinese-social-survey",
+      "target": "cgss",
+      "relation": "complement",
+      "keys": [
+        "wave/individual"
+      ],
+      "method": "compare module coverage and waves across the two national social surveys before choosing",
+      "evidence_status": "plausible"
     },
     {
       "source": "era5-land",
@@ -316,6 +3484,17 @@
     },
     {
       "source": "era5-land",
+      "target": "chfs",
+      "relation": "complement",
+      "keys": [
+        "Restricted county/community geography or a documented coarser location",
+        "Survey date or interview period"
+      ],
+      "method": "spatial-temporal-match; plausibility follows from compatible geography and timing, while the recorded CHFS heat paper does not identify ERA5-Land as its weather source",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "era5-land",
       "target": "china-satellite-pm25",
       "relation": "complement",
       "keys": [
@@ -334,6 +3513,187 @@
         "Year or farming season window"
       ],
       "method": "spatial-temporal-match",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "mee-central-environmental-inspection",
+      "target": "china-air-quality-monitoring",
+      "relation": "complement",
+      "keys": [
+        "prefecture + date"
+      ],
+      "method": "link inspection timing to environmental outcome series",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "mee-central-environmental-inspection",
+      "target": "china-environmental-enforcement",
+      "relation": "complement",
+      "keys": [
+        "province/prefecture + year"
+      ],
+      "method": "compare official inspection records with firm-level enforcement data; normalize geography codes",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "mem-work-safety-accident-records",
+      "target": "china-tianyancha-firm-information",
+      "relation": "complement",
+      "keys": [
+        "enterprise names in documents"
+      ],
+      "method": "entity resolution from accident documents to firm records",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "miit-third-batch-little-giant-publicity-roster-2021",
+      "target": "china-firm-registry",
+      "relation": "complement",
+      "keys": [
+        "enterprise name"
+      ],
+      "method": "Resolve names cautiously to obtain identifiers and location; a PDF name match alone is not an identifier match.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "miit-third-batch-little-giant-publicity-roster-2021",
+      "target": "china-little-giant-enterprise-list",
+      "relation": "component",
+      "keys": [
+        "enterprise name"
+      ],
+      "method": "This is one directly obtainable third-batch publicity input to the broader multi-batch Little Giant collection; do not substitute it for final designation or geocoded output.",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "mnr-national-real-estate-registration-bulletins",
+      "target": "china-land-transaction",
+      "relation": "often-confused-with",
+      "keys": [],
+      "method": "Registration-output totals and public plot-level land-transfer announcements are different institutions, units and research objects.",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "mnr-national-real-estate-registration-bulletins",
+      "target": "mnr-real-estate-registration",
+      "relation": "component",
+      "keys": [
+        "year"
+      ],
+      "method": "This is the public national aggregate layer of the broader registration system. It must not be used to infer access to the restricted property register.",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "nbs-monthly-labor-force-survey",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "year/month"
+      ],
+      "method": "combine the monthly unemployment series with annual yearbook macro variables at national or province-year level",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "nbs-national-monthly-urban-surveyed-unemployment-rate",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "year"
+      ],
+      "method": "Combine national annual or macro context cautiously; frequency conversion must be explicit.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "nbs-national-monthly-urban-surveyed-unemployment-rate",
+      "target": "nbs-monthly-labor-force-survey",
+      "relation": "component",
+      "keys": [
+        "month"
+      ],
+      "method": "This is the public aggregate output of the survey family; it does not establish access to the survey microdata.",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "nbs-third-national-time-use-survey-2024-public-bulletins",
+      "target": "nbs-time-use-survey",
+      "relation": "component",
+      "keys": [
+        "survey round"
+      ],
+      "method": "This ready record is the publicly obtainable aggregate output of the broader survey family; it does not establish access to the survey diaries.",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "nmpa-drug-approval-database",
+      "target": "china-tianyancha-firm-information",
+      "relation": "complement",
+      "keys": [
+        "enterprise name"
+      ],
+      "method": "link approval records to firm characteristics via entity resolution",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "pkulaw",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "Province/city code",
+        "Year"
+      ],
+      "method": "spatial-temporal merge",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "qichacha-firm-information",
+      "target": "china-gov-procurement",
+      "relation": "complement",
+      "keys": [
+        "awardee firm name / credit code"
+      ],
+      "method": "entity resolution with query-date documentation",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "qichacha-firm-information",
+      "target": "china-tianyancha-firm-information",
+      "relation": "substitute",
+      "keys": [
+        "company name / unified social credit code"
+      ],
+      "method": "treat as competing commercial platforms; resolve identities to official codes before any cross-platform merge",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "resset",
+      "target": "china-patents",
+      "relation": "complement",
+      "keys": [
+        "Company name"
+      ],
+      "method": "deterministic-plus-fuzzy",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "resset",
+      "target": "csmar",
+      "relation": "substitute-and-benchmark",
+      "keys": [
+        "Stock code",
+        "Date"
+      ],
+      "method": "exact on stock code/date; cross-check derived indicators",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "resset",
+      "target": "wind",
+      "relation": "substitute-and-benchmark",
+      "keys": [
+        "Stock code",
+        "Date"
+      ],
+      "method": "exact on stock code/date",
       "evidence_status": "plausible"
     },
     {
@@ -364,7 +3724,7 @@
       "relation": "often-confused-with",
       "keys": [],
       "method": "not-directly-joinable",
-      "evidence_status": "verified-distinct"
+      "evidence_status": "verified"
     },
     {
       "source": "rhs",
@@ -375,6 +3735,88 @@
         "Provincial code"
       ],
       "method": "harmonized-aggregate",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "samr-food-sampling-inspection",
+      "target": "china-tianyancha-firm-information",
+      "relation": "complement",
+      "keys": [
+        "enterprise names in announcements"
+      ],
+      "method": "entity resolution from announcement text to firm records",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "tap-china-pm25",
+      "target": "china-air-quality-monitoring",
+      "relation": "complement",
+      "keys": [
+        "date",
+        "station location mapped to grid cell"
+      ],
+      "method": "Compare or validate an exposure surface against monitoring observations only after matching the selected product and timing.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "wcpfc-current-china-flagged-vessel-register",
+      "target": "china-distant-water-fishing-fleet",
+      "relation": "component",
+      "keys": [
+        "vessel name",
+        "registration number",
+        "IRCS",
+        "WIN",
+        "VID"
+      ],
+      "method": "This is the checked current WCPFC input layer. The broader record requires six additional RFMO sources, Rongcheng records and documented deduplication before it becomes the paper-like fleet panel.",
+      "evidence_status": "verified"
+    },
+    {
+      "source": "wcpfc-current-china-flagged-vessel-register",
+      "target": "china-fishing-vessel-detection",
+      "relation": "complement",
+      "keys": [
+        "vessel name",
+        "MMSI/SSVID where separately resolved"
+      ],
+      "method": "Match only after recording identifier provenance and resolving aliases; the present WCPFC export does not itself prove an AIS match.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "wcpfc-current-vessel-registry",
+      "target": "china-distant-water-fishing-fleet",
+      "relation": "component",
+      "keys": [
+        "Vessel name",
+        "IRCS",
+        "WIN",
+        "WCPFC VID",
+        "Flag"
+      ],
+      "method": "Treat this CSV as one current WCPFC input. A wider Chinese fleet panel needs the paper-documented cross-RFMO standardisation and deduplication; do not append this snapshot to that panel without a dated entity-resolution protocol.",
+      "evidence_status": "literature-used"
+    },
+    {
+      "source": "wcpfc-current-vessel-registry",
+      "target": "china-fishing-vessel-detection",
+      "relation": "complement",
+      "keys": [
+        "Vessel name",
+        "IRCS",
+        "WCPFC VID where crosswalked"
+      ],
+      "method": "Match only after checking identifiers and date coverage. The WCPFC register provides identity/authorization information, while the other asset provides AIS-derived fishing activity.",
+      "evidence_status": "plausible"
+    },
+    {
+      "source": "worldbank-china-data",
+      "target": "china-stat-yearbook",
+      "relation": "complement",
+      "keys": [
+        "year"
+      ],
+      "method": "combine WDI national series with subnational yearbook series by year (different units/geography - national vs subnational)",
       "evidence_status": "plausible"
     }
   ]

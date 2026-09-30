@@ -105,7 +105,7 @@ joins:
   - Stock code
   - Date
   method: exact
-  evidence_status: routinely-used
+  evidence_status: literature-used
 - target: china-patents
   relation: complement
   keys:
@@ -186,6 +186,87 @@ used_by:
   evidence_type: abstract_only
   evidence_url: needs-verification
   data_note: Shanghai-Shenzhen-Hong Kong Stock Connect and mispricing.
+- cite: 'Guo, He, Ren & Zhang (2026), Digital Transformation and Climate Transition Risk Management: Evidence from Chinese Listed Firms'
+  doi: https://doi.org/10.1016/j.chieco.2026.102732
+  journal: CER
+  year: 2026
+  dataset_role: Main firm-level panel; CSMAR digital transformation index and financial data, 2011-2021
+  evidence_type: data-section
+  evidence_url: https://www.sciencedirect.com/science/article/abs/pii/S1043951X26000829
+  data_note: Uses CSMAR's multi-dimensional Digital Transformation Index (DTI) and A-share listed firm financials to study how digital maturity affects climate transition risk management. Identification via staggered DiD using National Big Data Comprehensive Experimental Zones.
+- cite: 'Yang, Wan & Yang (2026), How Polluting Enterprises Respond to Pigovian Tax: Evidence from China''s Environmental Protection Tax Law'
+  doi: https://doi.org/10.1016/j.chieco.2026.102742
+  journal: CER
+  year: 2026
+  dataset_role: A-share listed firm financial and pollution data 2008-2021; main firm-level outcomes
+  evidence_type: data-section
+  evidence_url: https://www.sciencedirect.com/science/article/abs/pii/S1043951X26000738
+  data_note: >-
+    Uses CSMAR A-share heavy-polluting industry listed firms (2008-2021) to analyze how the 2018 Environmental Protection Tax Law (Pigovian tax) affects enterprise pollution behavior. Finds significant pollution reduction especially for wastewater. Identifies three-stage response — source prevention, process modification, and end-of-pipe treatment. Enterprises primarily rely on green utility-model innovation rather than substantive invention. Effect weakens gradually over time.
+- cite: 'Author (2025), Industrial Robots, Resource Misallocation, and Firm Innovation Performance: Evidence From China'
+  doi: https://doi.org/10.1111/jors.70035
+  journal: JRS
+  year: 2025
+  dataset_role: CSMAR A-share listed manufacturing firm panel 2011-2019; firm financials and innovation
+  evidence_type: abstract
+  evidence_url: https://ideas.repec.org/a/bla/jregsc/v66y2026i2p399-425.html
+  data_note: >-
+    Abstract/bibliographic level only, downgraded on 2026-08-13: the RePEc record
+    confirms the paper identity and states the combined use of CSMAR firm data, IFR
+    industry-level robot adoption and CNRDS/SIPO patent records for Chinese listed
+    manufacturing firms (2011-2019). The paper's data section was not read when this
+    entry was recorded, so the exact CSMAR module and variables are not verified from
+    the paper itself; the finding summary is abstract-derived and the author names
+    remain unresolved in this record. Do not treat this entry as data-section
+    evidence.
+- cite: 'Li & Branstetter (2024), Does "Made in China 2025" Work for China? Evidence from Chinese Listed Firms'
+  doi: https://doi.org/10.1016/j.respol.2024.105009
+  journal: Research Policy
+  year: 2024
+  dataset_role: CSMAR firm financials, government subsidies (innovation vs non-innovation), and R&D expenditure
+  evidence_type: data-section
+  evidence_url: https://www.sciencedirect.com/science/article/abs/pii/S0048733324000581
+  data_note: Uses CSMAR listed firm data (2015-2018) with DiD, panel event study, and CEM matching to test whether MIC 2025 increased targeted firms' innovation. Text-searches annual reports for MIC 2025 mentions (~1,120 potential beneficiaries). Finds subsidies and R&D intensity increased but no significant improvement in patenting or productivity.
+- cite: 'Hua, Wang, Xia & Zhang (2025), Industrial Policy, Congruence, and Innovation: Evidence from "Chinese NASDAQ"'
+  doi: https://doi.org/10.1016/j.respol.2025.105298
+  journal: Research Policy
+  year: 2025
+  dataset_role: CSMAR NEEQ-listed firm financial data 2013-2019; firm balance sheets and financial variables
+  evidence_type: data-section
+  evidence_url: https://www.sciencedirect.com/science/article/pii/S0048733325001271
+  data_note: Uses CSMAR firm financial data for NEEQ (新三板) listed companies (2013-2019, 88 two-digit industries) combined with Wind, CNIPA/Incopat patents, tax records, census, and city statistics. Introduces "congruence" — the match between firm factor input structure and local factor endowments — finding positive congruence-innovation relationship that MIC 2025 weakens by increasing bank leverage.
+- cite: 'Shi & Zhang (2025), Short Technology Cycle Time and Firm Innovation: Evidence from China'
+  doi: https://doi.org/10.1016/j.respol.2025.105305
+  journal: Research Policy
+  year: 2025
+  dataset_role: CSMAR A-share listed firm financial data for 3,079 firms (1990-2022)
+  evidence_type: data-section
+  evidence_url: https://www.sciencedirect.com/science/article/abs/pii/S0048733325001349
+  data_note: Uses CSMAR financial data for 3,079 A-share listed firms (1990-2022) combined with CNIPA patents and CNRDS. Constructs technology cycle time (TCT) from patent backward citations. Finds shorter TCT significantly boosts firm innovation (~1.1% per unit TCT decrease), with stronger effects for private firms, high-competition industries, and early-lifecycle firms. Human capital and R&D intensity positively moderate.
+- cite: 'He & Lyu (2025), Export Controls and Innovation Transfer within Chinese Business Groups: Evidence from the U.S. Entity List'
+  doi: https://doi.org/10.1016/j.respol.2025.105311
+  journal: Research Policy
+  year: 2025
+  dataset_role: CSMAR A-share listed firm financials and group equity structure data 2010-2022
+  evidence_type: data-section
+  evidence_url: https://www.sciencedirect.com/science/article/abs/pii/S0048733325001404
+  data_note: Uses CSMAR data for A-share listed firms (2010-2022) combined with incoPat patent data and BIS U.S. Entity List information. Multi-period DiD finds indirectly-affected firms in sanctioned business groups increase invention patent applications by 19.62% through intra-group patent transactions and capital/talent reallocation. Documents innovation transfer as structural reallocation within business groups rather than net increase.
+- cite: 'Zhang, Bai, He & Guo (2026), Greening but Concentrating? The Unintended Effects of China''s Voluntary Participatory Environmental Regulations on Firms'' Innovation Portfolios'
+  doi: https://doi.org/10.1016/j.respol.2026.105531
+  journal: Research Policy
+  year: 2026
+  dataset_role: CSMAR Chinese listed manufacturing firm data; patent-based innovation portfolios
+  evidence_type: data-section
+  evidence_url: https://www.sciencedirect.com/science/article/abs/pii/S0048733326001228
+  data_note: Uses CSMAR listed manufacturing firm data in a multi-period DiD with double/debiased machine learning to study China's Green Factory certification. Finds green knowledge recombination creation increases (+0.029) and reuse increases (+0.135), but non-green creation is crowded out (-0.031). Market competition mitigates crowding-out while media attention amplifies it.
+- cite: 'Yu, Zheng & Liu (2026), Digital Innovation as a Bank Risk Mitigator: Empirical Insights from Chinese Commercial Banks'
+  doi: https://doi.org/10.1016/j.respol.2026.105501
+  journal: Research Policy
+  year: 2026
+  dataset_role: CSMAR bank-level financial data for 391 Chinese commercial banks (2009-2018, 2,370 bank-year obs)
+  evidence_type: data-section
+  evidence_url: https://www.sciencedirect.com/science/article/pii/S0048733326000922
+  data_note: Uses CSMAR bank financial data combined with CNIPA digital patent records, Wind, and BankFocus for 391 banks (2009-2018). Constructs a hand-collected five-dimensional digital innovation index from bank patents. Finds digital innovation reduces both default and operating risk through market discipline and market power channels. Stronger for non-SOEs and banks in regions with stronger legal enforcement.
 provenance:
 - source: https://data.csmar.com/
   field_scope:

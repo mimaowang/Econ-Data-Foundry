@@ -53,7 +53,7 @@ research_fit:
   best_for:
   - A balance sheet study of household properties, financial assets, liabilities, credit constraints, and entrepreneurship
   choose_over:
-  - Prioritize CFPS in research on housing, wealth and debt
+  - Prioritize CHFS over CFPS when detailed household balance sheets, housing, wealth, debt, or credit constraints are central
   - Compare CFPS, CHARLS/CHNS, and CGSS respectively when studying child development, in-depth health, or social attitudes
   not_good_for:
   - Corporate level research
@@ -81,12 +81,12 @@ good_for:
   stability
 - Entrepreneurship and Financing Constraints—The Impact of Financial Accessibility and Credit Constraints of Small and Micro
   Business Owners on Entrepreneurial Behavior
-- Housing market - the causal effects of multiple units/vacancy rate/mortgage burden on household consumption and labor supply
+- Housing market - relationships between housing ownership, vacancy, mortgage burden, household consumption and labor supply
 - Financial Literacy and Financial Inclusion – How financial literacy affects household participation in stock market/insurance
   and borrowing behavior
-- Social Security and Household Behavior - The Causal Effects of Medical Insurance/Pension on Household Savings, Consumption
-  and Risk-taking
+- Social security and household behavior - medical insurance, pensions, household savings, consumption and risk-taking
 identification:
+- The approaches below require a separately justified research design; observing financial constraints and outcomes does not by itself identify a causal effect.
 - Panel fixed effects (household/individual)
 - DID (Policy/City Difference)
 - IV (policy/system exogenous impact)
@@ -96,6 +96,14 @@ linkable_keys:
 - City code
 - Community code (authorization required)
 - Family ID
+joins:
+- target: era5-land
+  relation: complement
+  keys:
+  - County or community geography when authorized, otherwise a documented coarser location
+  - Survey date or interview period
+  method: A plausible design is to aggregate hourly or daily ERA5-Land grid weather to the permitted survey geography and exposure window, then merge spatially and temporally. The recorded CHFS heat paper establishes a county-level daily-temperature join but does not identify ERA5-Land as its source.
+  evidence_status: plausible
 access_routes:
 - route: chfs-data-center
   access_status: available-with-application
@@ -132,6 +140,8 @@ used_by:
   journal: CER
   year: 2023
   dataset_role: Main results of family entrepreneurship and financing constraints; joined with the business environment
+  evidence_type: abstract
+  evidence_url: https://ideas.repec.org/a/eee/chieco/v79y2023ics1043951x23000627.html
   data_note: Using CHFS family entrepreneurship + business environment data, we found that optimizing the business environment
     significantly increases the probability of family entrepreneurship - especially for families with strong financial constraints,
     the effect is greater
@@ -139,13 +149,54 @@ used_by:
   journal: JDE
   year: 2022
   dataset_role: Key household micro-outcomes; joined with land title confirmation and business registration data
+  evidence_type: abstract
+  evidence_url: https://ideas.repec.org/a/eee/deveco/v157y2022ics0304387822000281.html
   data_note: 'Using CHFS micro household survey + Ministry of Agriculture land rights confirmation data + enterprise registration
     data, and using land rights confirmation reform as DID, we found that clear land property rights significantly promote
     rural entrepreneurship through four channels: financial capital (rental income), land transfer, human capital and social
     trust.'
+- cite: 'Guo & Yu (2026), Extreme Heat and Household Consumption: Evidence from China'
+  doi: https://doi.org/10.1016/j.chieco.2026.102746
+  journal: CER
+  year: 2026
+  dataset_role: CHFS household consumption and income matched to county-level meteorological data
+  evidence_type: publisher_page_and_crossref
+  evidence_url: https://www.sciencedirect.com/science/article/pii/S1043951X26000969
+  data_note: Uses the 2013, 2015, 2017, and 2019 CHFS waves, matched to county-level meteorological data. Finds extreme heat reduces household consumption and alters consumption structure — households increase defensive spending (healthcare) and decrease enjoyment spending (entertainment, tourism). Mechanisms include income decline and increased risk aversion; rural and credit-constrained households are disproportionately affected. The paper page does not by itself identify the meteorological provider or release a paper-specific raw weather file, so this record does not infer one.
+- cite: 'Sun, Wu, Wang & Wang (2025), Did You Miss the Ride? Housing Boom and Household Wealth in China'
+  doi: https://doi.org/10.1111/jors.12747
+  journal: JRS
+  year: 2025
+  dataset_role: CHFS household panel 2011-2019 waves (25 provinces, urban non-agricultural households, heads age 18-81)
+  evidence_type: data-section
+  evidence_url: https://onlinelibrary.wiley.com/doi/abs/10.1111/jors.12747
+  data_note: Uses 2011-2019 CHFS biennial survey data to document triple polarization in housing wealth — by socioeconomic status, spatial location (superstar cities gain most, rustbelt loses), and social identity (urban hukou, SOE employment, Party membership all boost housing wealth). Finds strong birth cohort effects (pre-1970 cohorts gained most) and financial vulnerability among young homeowners (1986-2001 birth cohorts face negative equity if prices fall >50%).
+- cite: 'Li, Liu & Ye (2026), Urban Administrative Restructuring and Gender Gap in the Labor Market: Evidence From China''s City-County Merger Reform'
+  doi: https://doi.org/10.1111/jors.70068
+  journal: JRS
+  year: 2026
+  dataset_role: CHFS longitudinal survey data — individual labor market outcomes matched to city-county merger timing
+  evidence_type: publisher_full_text
+  evidence_url: https://onlinelibrary.wiley.com/doi/full/10.1111/jors.70068
+  data_note: The publisher's full article page confirms that Li, Liu & Ye use longitudinal CHFS data to study labor-market outcomes and gender wage gaps in the city-county merger study. It does not, on the checked page, establish the exact CHFS waves, permitted geography, merger-timing source, or a paper-specific release, so those details remain governed by the main CHFS access record and are not inferred here.
 provenance:
+- source: Editorial consistency review of this record's variable coverage and application-controlled access route (2026-09-29)
+  field_scope:
+  - Aligned research-use prose with the distinction between measured variables and causal identification.
+  - Aligned download instructions with approved waves and field permissions; no new provider-access or release verification.
+  added: '2026-09-29'
+  confidence: high
+  verified: true
 - source: CHFS official site https://chfs.swufe.edu.cn (supports survey design, waves, variable coverage, and access conditions)
   added: '2026-07-08'
+  confidence: high
+  verified: true
+- source: China Economic Review article page https://www.sciencedirect.com/science/article/pii/S1043951X26000969 and Crossref DOI metadata https://doi.org/10.1016/j.chieco.2026.102746 (support Guo & Yu authorship, 2026 publication, four CHFS waves, and county-level meteorological matching; they do not establish the weather provider's access route)
+  added: '2026-08-12'
+  confidence: high
+  verified: true
+- source: Wiley full article page https://onlinelibrary.wiley.com/doi/full/10.1111/jors.70068 (supports Li, Liu & Ye authorship, 2026 JRS publication, and longitudinal CHFS use for labor-market outcomes; it does not establish exact waves, geography, merger-timing source, or a paper-specific release)
+  added: '2026-08-12'
   confidence: high
   verified: true
 - source: Crossref abstract for Yu et al., https://doi.org/10.1016/j.chieco.2023.101977 (supports use of CHFS)
@@ -163,12 +214,12 @@ related_datasets:
 CHFS (China Household Finance Survey) is China’s most specialized **household finance** tracking survey conducted by Southwestern University of Finance and Economics since 2011——
 Taking household assets (real estate/finance/industrial and commercial), liabilities (mortgage/consumer loan/private lending) and financial behavior as core variables,
 Fills the in-depth gap of CFPS/CHARLS/CGSS in household wealth and financial behavior.
-Free and open to the public every two years, covering about 40,000 households - it is the preferred micro-data for research on household wealth inequality and real estate in China.
+The survey is mainly biennial, with later waves covering about 40,000 households. The documented research-access route is free but application-controlled: survey frequency does not guarantee a release every two years, and approval covers only the waves and fields granted by the provider.
 
 ## Research questions suitable for answering/Typical identification strategies
-- **The "balance sheet" of Chinese households**: The unique value of CHFS is that it simultaneously measures assets (number of real estate units/market value/financial assets) and liabilities (amounts of various loans/interest rates/terms), and can completely depict the distribution of net worth of households.
-- **Housing and Household Behavior**: Proportion of multiple suites, vacancy rate, mortgage-to-income ratio—this information that is not available in other surveys makes CHFS the core data for Chinese real estate research.
-- **Entrepreneurship and Financial Constraints**: CHFS has detailed entrepreneurial behavior (industrial and commercial operations) + credit application and approval records → directly measures the causal effect of financial constraints on entrepreneurship.
+- **The "balance sheet" of Chinese households**: Joint measures of assets (housing units, reported property values and financial holdings) and liabilities (loan balances, interest rates and terms) support net-worth and wealth-distribution research. Prefer CHFS when this balance-sheet detail is central rather than the broader education and health coverage of CFPS.
+- **Housing and Household Behavior**: Multiple-property ownership, vacancy and mortgage-to-income ratios support research on how housing positions relate to household consumption, borrowing and labor supply.
+- **Entrepreneurship and Financial Constraints**: Business operation, start-up funding and credit application/approval records let researchers compare financing access with entrepreneurial activity. These are measured inputs to a causal design, not causal effects by themselves.
 - **Not suitable for**: health/biomarker research (please use CHARLS), cognition/child development (please use CFPS), social attitudes/values (please use CGSS), agricultural production details (please use RHS).
 
 ## Key variables/modules
@@ -182,12 +233,13 @@ Free and open to the public every two years, covering about 40,000 households - 
 ## How to get
 1. Visit https://chfs.swufe.edu.cn → Register an account.
 2. Submit a data use application (research purpose + sign a data use agreement) in the "Data Center".
-3. After approval, download all round data in Stata/CSV format. Free.
+3. After approval, download the waves, fields and documentation authorized for your application, in the formats actually supplied. The documented route is free; sensitive fields may require separate permission.
 
 ## Connections to other data
 - **CFPS**: Cross-validation of household income/consumption/demographic variables; CFPS covers all ages + education/health depth is better, CHFS asset/liability depth is better → the two complement each other.
 - **CHARLS**: CHARLS contains asset/pension information for middle-aged and elderly people 45+, complementary to CHARLS health/biomarkers.
 - **Statistical Yearbook**: Use "province/city code" to connect macro indicators such as housing prices, GDP, and financial development.
+- **Weather exposure**: County-level daily-temperature matching is used in the recorded literature. ERA5-Land is a plausible reproducible grid source when approved CHFS geography and interview timing permit the match, but this record does not claim that the cited heat paper used ERA5-Land.
 
 ## Remarks / Pitfalls
 - **House market values are self-reported**: Respondents may overestimate or underestimate property market values – be aware of measurement error when doing wealth distribution analyses.

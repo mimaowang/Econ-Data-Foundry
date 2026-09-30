@@ -16,6 +16,7 @@ from collection_benchmark_session import (
     find_forbidden_keys,
     finish_session,
     integrity_report,
+    normalize_report,
     prepare_session,
     public_url_issue,
     submit_task,
@@ -158,6 +159,18 @@ def test_collection_source_urls_reject_credentials_and_sensitive_queries() -> No
     assert public_url_issue("https://example.org/data") is None
 
 
+def test_collection_submission_requires_production_note_for_constructed_data(tmp_path: Path) -> None:
+    source = make_source(tmp_path)
+    workspace = prepare_session(
+        source_root=source, output_root=tmp_path / "runs", agent_surface="claude-code", model_label="test-model"
+    )
+    submission_path = write_submission(workspace, "task-0")
+    submission = json.loads(submission_path.read_text(encoding="utf-8"))
+    submission["datasets_considered"][0]["pathway_mode"] = "constructed"
+    with pytest.raises(ValueError, match="production_note"):
+        normalize_report(workspace, submission, {"task_id": "task-0"})
+
+
 def test_collection_metrics_separate_unique_papers_from_evidence_reuse() -> None:
     reports = [
         {
@@ -199,7 +212,11 @@ def test_prepare_is_sanitized_and_outside_source(tmp_path: Path) -> None:
     assert (workspace / "datasets" / "example.md").is_file()
     assert (workspace / "COLLECTION_PROFILE.md").is_file()
     assert not (workspace / "agent-review-reports").exists()
-    assert (workspace / "benchmarks" / "collection" / "public_tasks.yaml").is_file()
+    assert not (workspace / "benchmarks" / "collection" / "public_tasks.yaml").exists()
+    assert not (workspace / ".collection_benchmark" / "task_queue.jsonl").exists()
+    evaluator_queue = workspace.parent / "evaluator_control" / "task_queue.jsonl"
+    assert evaluator_queue.is_file()
+    assert "Collect source 1." in evaluator_queue.read_text(encoding="utf-8")
     assert (workspace.parent / "evaluator_baseline" / "datasets" / "example.md").is_file()
 
 

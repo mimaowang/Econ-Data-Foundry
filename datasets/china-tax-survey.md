@@ -202,8 +202,45 @@ quality:
   profile_status: partial
   access_status: partial
   paper_use_status: needs-verification
-  last_audited: '2026-07-11'
-used_by: []
+  last_audited: '2026-08-11'
+used_by:
+- cite: 'Chen, Chen, Liu, Suárez Serrato & Xu (2025), Regulating Conglomerates: Evidence from an Energy Conservation Program in China'
+  doi: https://doi.org/10.1257/aer.20211455
+  journal: AER
+  year: 2025
+  dataset_role: Tax/ATS robustness measures for output and energy use, especially 2007–2010 fills
+  evidence_type: data_appendix
+  evidence_url: https://assets.aeaweb.org/asset-server/files/22048.pdf
+  data_note: The appendix calls the source ATS in the data-comparison and robustness tables, reports tax-survey energy data,
+    and uses ATS output for 2007–2010 while ASIF supplies 2001–2006 in one comparison. The paper does not establish that ATS
+    is identical to any one university or commercial holding, so the product/version and current export permission must be
+    verified before treating this record as the exact paper input.
+- cite: 'Chen, Liu, Suárez Serrato & Xu (2021), Notching R&D Investment with Corporate Income Tax Cuts in China'
+  doi: https://doi.org/10.1257/aer.20191758
+  journal: AER
+  year: 2021
+  dataset_role: Firm-level tax records with R&D deduction eligibility for bunching and structural estimation
+  evidence_type: replication
+  evidence_url: https://www.openicpsr.org/openicpsr/project/131201/
+  data_note: Used the National Tax Survey (全国税收调查) enterprise panel to study how tax notches affect R&D investment. Combined
+    tax deduction eligibility thresholds with firm-level R&D spending, applied bunching methods and structural estimation to
+    quantify the R&D response to corporate income tax cuts.
+- cite: 'Du, He & Yao (2026), Environmental Regulation and Indirect Innovation Effects Along Supply Chain: Evidence from China''s Water Pollution Prevention and Control Action Plan'
+  doi: https://doi.org/10.1016/j.chieco.2026.102730
+  journal: CER
+  year: 2026
+  dataset_role: Main firm-level panel for upstream innovation outcomes; National Tax Survey matched with SIPO patent data
+  evidence_type: data-section
+  evidence_url: https://www.sciencedirect.com/science/article/abs/pii/S1043951X26000805
+  data_note: Uses the National Tax Survey firm panel combined with water-related green patent records from SIPO to study how downstream environmental regulation (WPPCAP 2015) induces upstream suppliers to produce green patents. Finds that regulated polluters do not innovate in-house but purchase abatement equipment from upstream suppliers, driving a pronounced rise in upstream water-related green patenting.
+- cite: 'Wang, Wu & Wu (2025), Export Slowdown and Increasing Land Supply: Local Government''s Responses to Export Shocks in China'
+  doi: https://doi.org/10.1016/j.jue.2025.103796
+  journal: JUE
+  year: 2025
+  dataset_role: City-year local-government tax-revenue panel constructed from firm-level NTSD tax payments
+  evidence_type: data_section_and_working_paper
+  evidence_url: https://www.china-ces.org/Files/3055abstract/202401241534361470.pdf
+  data_note: The paper states that NTSD is jointly collected by the State Administration of Taxation and Ministry of Finance, covers roughly 680,000 sampled firms per year, and that the study uses 2008-2015 waves. It aggregates firm tax payments by city-year and applies estimated government share ratios to construct local tax revenue. This is a paper-derived city-year panel; the underlying firm microdata remain access-controlled and are not implied to be public by the paper's aggregate results.
 provenance:
 - source: https://econpub.xmu.edu.cn/elib/db_detail/23/
   field_scope:
@@ -234,6 +271,29 @@ provenance:
   - commercial_access
   added: '2026-07-11'
   confidence: med
+- source: Wang, Wu & Wu (2025) working-paper data section https://www.china-ces.org/Files/3055abstract/202401241534361470.pdf and JUE DOI https://doi.org/10.1016/j.jue.2025.103796
+  field_scope:
+  - NTSD producer description
+  - approximate annual sample size
+  - 2008-2015 wave use
+  - city-year aggregation and tax-share construction
+  added: '2026-08-12'
+  confidence: high
+  verified: true
+- source: https://assets.aeaweb.org/asset-server/files/22048.pdf
+  field_scope:
+  - AER paper use of tax survey/ATS
+  - 2007–2010 robustness role
+  - unresolved ATS product identity
+  added: '2026-08-11'
+  confidence: high
+  verified: true
+- source: https://doi.org/10.3886/E196012V1
+  field_scope:
+  - public replication folder boundary
+  - Raw_Data/ATS label
+  added: '2026-08-11'
+  confidence: high
   verified: true
 related_datasets:
 - id: asif

@@ -107,6 +107,13 @@ linkable_keys:
 - date/hour
 - Administrative district code (after spatial superposition)
 joins:
+- target: chfs
+  relation: complement
+  keys:
+  - Restricted county/community geography or a documented coarser location
+  - Survey date or interview period
+  method: spatial-temporal-match; plausibility follows from compatible geography and timing, while the recorded CHFS heat paper does not identify ERA5-Land as its weather source
+  evidence_status: plausible
 - target: charls
   relation: complement
   keys:

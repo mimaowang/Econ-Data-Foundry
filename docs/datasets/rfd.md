@@ -125,6 +125,24 @@ access_routes:
   last_checked: '2026-07-10'
   caveat: As of the verification date, no standard download or online application page for the public has been found; we cannot
     guarantee that the application will be successful or give a fixed period.
+- route: econometrica-supplement
+  access_status: publisher-listed-supporting-material
+  direct_url: https://onlinelibrary.wiley.com/doi/10.3982/ECTA16598
+  requirements: The publisher page lists an online appendix (147.4 KB) and a data-and-programs archive (271.1 MB). The
+    archive must be inspected before use; its listing does not prove that the confidential RCRE/NFPS survey microdata are
+    included or redistributable.
+  steps:
+  - Open the Econometrica article page and follow the Supporting Information links for the appendix and data-and-programs archive.
+  - Read the archive README or manifest and record which files are supplied, which are derived outputs, and which raw RCRE inputs
+    are absent before attempting a rerun.
+  - If the raw household/farm panel is absent, apply through the RCRE institutional-cooperation route for the paper's 1993–2002
+    sample; use the public supplement for code, documentation, and any released derived files only.
+  deliverable: A publisher-hosted appendix and data/programs archive, with the exact file contents and raw-data boundary to be
+    confirmed from the downloaded manifest; raw RCRE/NFPS access remains a separate institutional question.
+  cost: mixed
+  last_checked: '2026-08-11'
+  caveat: The publisher page is public and labels the article open access, but automated access to the file links may be blocked
+    or change. Do not treat possession of the supplement as possession of the RCRE survey or as permission to redistribute it.
 - route: public-alternative
   access_status: available
   direct_url: https://www.isss.pku.edu.cn/cfps/
@@ -153,7 +171,7 @@ quality:
   profile_status: verified
   access_status: partial
   paper_use_status: verified
-  last_audited: '2026-07-10'
+  last_audited: '2026-08-11'
 used_by:
 - cite: 'Adamopoulos, Brandt, Leight & Restuccia (2022), Misallocation, Selection, and Productivity: A Quantitative Analysis
     with Panel Data from China'
@@ -161,10 +179,15 @@ used_by:
   journal: Econometrica
   year: 2022
   dataset_role: Key farmer-crop panel; used to estimate household productivity, land and capital misallocation
-  evidence_type: paper_data_section
-  evidence_url: https://onlinelibrary.wiley.com/doi/10.3982/ECTA16598
-  data_note: RCRE/Ministry of Agriculture survey, 1993–2002, 110 villages in 10 provinces, approximately 8,000 households
-    per year.
+  evidence_type: paper_data_section_and_publisher_supplement
+  evidence_url: https://www.econometricsociety.org/publications/econometrica/browse/2022/05/01/misallocation-selection-and-productivity-quantitative-analysis/file/ecta200400.pdf
+  data_note: >-
+    The official article describes the RCRE/Ministry of Agriculture household-farm panel for 1993–2002: 110 villages (104
+    observed for all 9 years), with approximately 6,000 households observed for all 9 years. The household-farm data include
+    land holdings, sown area and crop output, labor, fertilizer, machinery, and non-agricultural income/work. Wiley lists a
+    147.4 KB online appendix and a 271.1 MB data-and-programs archive. The public supplement is a route to code, documentation,
+    and any released derived files, but does not by itself establish that raw RCRE microdata are included; exact reruns therefore
+    remain conditional on legitimate institutional access to the source panel.
 - cite: Chari, Liu, Wang & Wang (2021), Property Rights, Land Misallocation, and Agricultural Efficiency in China
   doi: https://doi.org/10.1093/restud/rdaa072
   journal: ReStud
@@ -180,8 +203,58 @@ used_by:
   dataset_role: Main individual/farmer panel; joined with the county-level implementation of the new rural insurance
   evidence_type: paper_data_section
   evidence_url: https://onlinelibrary.wiley.com/doi/10.3982/ECTA19699
-  data_note: Using the 2003–2013 NFP, the agricultural and migrant labor force is tracked.
+  data_note: >-
+    The paper describes the RCRE National Fixed Point Survey as an annual longitudinal survey of roughly 20,000 households
+    and 80,000 individuals in about 350 villages across all 31 mainland provinces. Its individual questionnaire (available from
+    2003 onward) records schooling, sector of work, working days, out-of-town migration for work, and migrant earnings; the
+    paper uses 2003–2013 waves and combines the panel with county-level timing of the New Rural Pension Scheme. The survey is
+    institutionally restricted, so the article's sample description does not imply a public download or a universally identical
+    release; the paper-specific sample and the underlying NFP identity must remain separate.
+- cite: 'Martinez-Bravo, Padró i Miquel, Qian & Yao (2022), The Rise and Fall of Local Elections in China'
+  doi: https://doi.org/10.1257/aer.20181249
+  journal: AER
+  year: 2022
+  dataset_role: Village-level public goods, land allocation, and governance outcomes over 1986–2019
+  evidence_type: replication
+  evidence_url: https://www.openicpsr.org/openicpsr/project/166506/
+  data_note: Combined the MOA National Fixed Point Survey (NFS) village panel (1986 onward, ~3,600–4,300 village-year obs)
+    with the authors' own Village Democracy Survey to study the introduction and subsequent erosion of village elections. NFS
+    outcome variables include public goods expenditures, land allocation, and village committee composition.
+- cite: 'Adamopoulos, Brandt, Chen, Restuccia & Wei (2024), Land Security and Mobility Frictions'
+  doi: https://doi.org/10.1093/qje/qjae010
+  journal: QJE
+  year: 2024
+  dataset_role: Main household/individual panel for labor supply, farm production, incomes, land rentals, and rural-to-urban mobility
+  evidence_type: replication
+  evidence_url: https://doi.org/10.7910/DVN/G3WBU7
+  data_note: >-
+    Uses the RCRE National Fixed Point Survey for 2004–2018: an unbalanced panel with more than 20,000 households per year drawn
+    from about 300 villages nationwide, with individual labor-supply data available from 2003 onward. The paper also uses a
+    smaller supplementary RCRE survey on perceived land-reallocation risk and public Statistical Yearbooks for aggregate shares.
+    The Harvard Dataverse deposit is CC0 and contains cleaning/program files, data moments, and model inputs, but its README states
+    that the raw RCRE microdata are not publicly downloadable and were accessed through collective university access; the deposit
+    therefore reproduces the analysis conditional on those moments rather than providing the underlying survey itself.
+- cite: 'Qian (2008), Missing Women and the Price of Tea in China: The Effect of Sex-Specific Earnings on Sex Imbalance'
+  doi: https://doi.org/10.1162/qjec.2008.123.3.1251
+  journal: QJE
+  year: 2008
+  dataset_role: Auxiliary RCRE/NFS household-village observations used to check migration prevalence in tea-producing versus non-tea regions
+  evidence_type: final_paper
+  evidence_url: https://www.kellogg.northwestern.edu/faculty/qian/resources/Missing-Women_QJE_20080407_all.pdf
+  data_note: >-
+    The final-paper data section says RCRE's National Fixed Point Survey (NFS) for 1986–1990 is used to show that the probability
+    of a household member working away from the home village was low and similar across tea and non-tea regions, with almost no
+    migrants under age 20. This is an auxiliary migration-robustness check, not the paper's main outcome panel: the main matched
+    data are the 1990/2000 Population Census and 1997 Agricultural Census samples recorded in china-census. The paper does not
+    establish a public NFS download, exact delivered village list, or a reproducible Qian-specific extract.
 provenance:
+- source: https://www.kellogg.northwestern.edu/faculty/qian/resources/Missing-Women_QJE_20080407_all.pdf
+  field_scope:
+  - Qian paper's RCRE/NFS 1986–1990 auxiliary migration check
+  - distinction between auxiliary NFS evidence and main census/agricultural-census inputs
+  added: '2026-08-11'
+  confidence: high
+  verified: true
 - source: https://onlinelibrary.wiley.com/doi/10.3982/ECTA16598
   field_scope:
   - identity
@@ -207,6 +280,31 @@ provenance:
   added: '2026-07-10'
   confidence: med
   verified: true
+- source: https://academic.oup.com/qje/article/139/3/1941/7632762 and https://doi.org/10.7910/DVN/G3WBU7
+  field_scope:
+  - paper_use
+  - sample
+  - production
+  - access
+  added: '2026-08-10'
+  confidence: high
+  verified: true
+- source: https://www.econometricsociety.org/publications/econometrica/browse/2022/05/01/misallocation-selection-and-productivity-quantitative-analysis/file/ecta200400.pdf
+  field_scope:
+  - identity
+  - sample
+  - variables
+  - paper_use
+  added: '2026-08-11'
+  confidence: high
+  verified: true
+- source: https://onlinelibrary.wiley.com/doi/10.3982/ECTA16598
+  field_scope:
+  - paper_use
+  - access
+  added: '2026-08-11'
+  confidence: high
+  verified: true
 related_datasets:
 - id: rhs
   relation: often-confused-with
@@ -218,7 +316,7 @@ related_datasets:
 
 ## Positioning in one sentence
 
-The national rural fixed observation point is the annual panel of rural households and villages organized continuously by the Rural Economic Research Center of the Ministry of Agriculture and Rural Affairs. It is significantly stronger than the general household survey in terms of land, crop input and output, and labor allocation. It is a high-value data for agricultural productivity and rural land research, but there is no public download entrance, and access depends on institutional cooperation.
+The national rural fixed observation point is the annual panel of rural households and villages organized continuously by the Rural Economic Research Center of the Ministry of Agriculture and Rural Affairs. It is significantly stronger than the general household survey in terms of land, crop input and output, and labor allocation. It is a high-value data for agricultural productivity and rural land research: a publisher-hosted Econometrica supplement is a useful public starting point for one China application, but the underlying RCRE panel still has no confirmed public download entrance and access depends on institutional cooperation.
 
 ## Select reminder
 
@@ -229,4 +327,4 @@ The national rural fixed observation point is the annual panel of rural househol
 
 ## How to get
 
-Confirm the contact channel from the official website of the Rural Economic Research Center, prepare the specific year, variables and research plan and then apply for institutional cooperation. There is currently no public application process that promises success, so answers to users must clarify the thresholds and provide CFPS/CHNS alternatives.
+For the Adamopoulos et al. (2022) application, first download the appendix and data/programs archive from the Wiley article page and inspect its manifest; this gives the public documentation and any released derived files, not automatically the RCRE survey. If the raw panel is absent, confirm the required 1993–2002 waves and variables, then contact the Rural Economic Research Center through its official website and submit the research plan and confidentiality materials for institutional cooperation. There is currently no public application process that promises success, so answers to users must clarify the thresholds and provide CFPS/CHNS alternatives.

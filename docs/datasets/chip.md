@@ -72,6 +72,8 @@ research_fit:
   - Provincial representative estimates of the country’s 31 provinces
   needs_join_for:
   - Regional policies and macro indicators can usually only be joined by province/year at the public geographic level
+  - Wei–Zhang-style savings analysis needs a Census-derived county/city sex-ratio measure matched to the CHIP sample geography;
+    the paper's public appendix does not provide a general-purpose join key
   variation_available:
   - Six historical sections
   - Urban-rural and floating population samples
@@ -103,7 +105,7 @@ joins:
   - Year
   - town sample
   method: harmonized-comparison
-  evidence_status: official-description
+  evidence_status: plausible
 access_routes:
 - route: bnu-chip-platform
   access_status: available-with-application
@@ -117,6 +119,20 @@ access_routes:
   deliverable: CHIP1988/1995/2002/2007/2013/2018 approved data and related documents.
   cost: free
   last_checked: '2026-07-10'
+- route: ICPSR 21741 public-use CHIP 2002
+  access_status: available
+  direct_url: https://www.icpsr.umich.edu/web/DSDR/studies/21741
+  requirements:
+  - Create or sign in to an ICPSR account if prompted; the study page states that public-use access does not require ICPSR member affiliation.
+  - Accept the current ICPSR terms and cite the study as instructed.
+  steps:
+  - Open the ICPSR 21741 study page and confirm version V1 and the 2002 collection.
+  - Read the study description and codebooks before choosing the urban, rural, migrant, household, or village files.
+  - Download the public-use files and documentation, then reproduce the paper's sample restrictions and the merge to Census-derived county/city measures separately.
+  deliverable: Ten public-use CHIP 2002 files covering urban, rural, rural-urban migrant, household, individual, and village units, with ICPSR documentation.
+  cost: free
+  last_checked: '2026-08-11'
+  caveat: This is a public-use 2002 archive held by ICPSR, not the current BNU application route for every CHIP wave; ICPSR documents its own disclosure review and file processing.
 access:
   url: http://chip.bnu.edu.cn/
   cost: free
@@ -132,10 +148,72 @@ caveats: The six rounds are repeated cross-sections rather than household panels
 quality:
   profile_status: verified
   access_status: verified
-  paper_use_status: none
-  last_audited: '2026-07-10'
-used_by: []
+  paper_use_status: verified
+  last_audited: '2026-08-11'
+used_by:
+- cite: 'Wei & Zhang (2011), The Competitive Saving Motive: Evidence from Rising Sex Ratios and Savings Rates in China'
+  doi: https://doi.org/10.1086/660887
+  journal: JPE
+  year: 2011
+  dataset_role: CHIP 2002 rural and urban household surveys for household-level savings regressions
+  evidence_type: paper_and_data_appendix
+  evidence_url: https://users.nber.org/~confer/2009/China09/wei.pdf
+  data_note: >-
+    The data appendix identifies the 2002 Chinese Household Income Project as the source for the household-level regressions,
+    covering 122 rural counties and 70 cities. The savings rate is defined as log(income/consumption); the reported tables
+    restrict samples to households with both parents alive and a household head younger than 40. County-level sex ratios are
+    merged from the Population Census, so CHIP 2002 supplies the household outcomes while the Census supplies the external
+    regional measure. The public ICPSR archive is the obtainable starting artifact; the paper's exact restricted/cleaned analysis
+    file is not implied by downloading all ten public-use files.
+- cite: 'Piketty, Yang & Zucman (2019), Capital Accumulation, Private Property, and Rising Inequality in China, 1978–2015'
+  journal: AER
+  year: 2019
+  dataset_role: Wealth distribution microdata (1995 and 2002 waves); combined with CFPS wealth surveys for long-run wealth inequality
+  evidence_type: replication
+  evidence_url: https://www.openicpsr.org/openicpsr/project/116194/
+  data_note: Used CHIP 1995 and 2002 wealth survey microdata together with CFPS 2010/2012 to construct long-run wealth inequality
+    series for China's Distributional National Accounts. Combined with NBS national accounts, household survey income tables,
+    tax data on top earners, and Hurun rich list.
+- cite: 'Author (2026), Tasks and the Gender Wage Gap in Urban China, 2002-2023'
+  doi: https://doi.org/10.1016/j.chieco.2026.102740
+  journal: CER
+  year: 2026
+  dataset_role: CHIP 2002/2013/2023 individual-level wage and occupation data; main outcome
+  evidence_type: data-section
+  evidence_url: https://www.sciencedirect.com/science/article/abs/pii/S1043951X26000908
+  data_note: Uses CHIP three waves (2002, 2013, 2023) matched with O*NET task intensity measures via Chinese Classification of Occupations (CSCO) to decompose the gender wage gap by task content. Tracks how the changing nature of work — from routine to cognitive/interpersonal tasks — shapes gender wage differentials in urban China over two decades.
+- cite: 'Wang, Liang & Lehmann (2025), Import Competition and the Rise of Precarious Employment: Evidence from Individual-Level and Firm-Level Data in China'
+  doi: https://doi.org/10.1016/j.labeco.2025.102803
+  journal: Labour Economics
+  year: 2025
+  dataset_role: CHIP three waves (1995, 2002, 2007); individual-level employment status linked to regional tariff exposure
+  evidence_type: data-section
+  evidence_url: https://www.sciencedirect.com/science/article/pii/S0927537125001277
+  data_note: >-
+    Uses CHIP household survey data (1995, 2002, 2007 waves) combined with World Bank Enterprise Surveys (2001-2004) for firm-level analysis. Links regional tariff exposure to individual employment status (precarious vs. long-term). Finds workers in regions more exposed to import tariff cuts were significantly more likely to be in precarious jobs — an average tariff cut increased precarious employment probability by ~15pp. Precarious employment rose sharply from ~3% (1995) to ~28% (2007). Firm-level mechanism — smaller, less productive firms hired more temporary workers in response to import competition.
 provenance:
+- source: https://www.journals.uchicago.edu/doi/abs/10.1086/660887
+  field_scope:
+  - final JPE article identity and DOI
+  - cross-regional and household savings evidence context
+  added: '2026-08-11'
+  confidence: high
+  verified: true
+- source: https://users.nber.org/~confer/2009/China09/wei.pdf
+  field_scope:
+  - CHIP 2002 household-level use
+  - 122 rural counties and 70 cities coverage stated in the paper
+  - savings-rate definition and sample restrictions
+  added: '2026-08-11'
+  confidence: high
+  verified: true
+- source: https://www.icpsr.umich.edu/web/DSDR/studies/21741
+  field_scope:
+  - CHIP 2002 identity and version
+  - ten public-use files, units, coverage, and public-access status
+  added: '2026-08-11'
+  confidence: high
+  verified: true
 - source: https://bs.bnu.edu.cn/zgjmsrfpdcsjk/sjjs/index.html
   field_scope:
   - identity
@@ -156,6 +234,8 @@ provenance:
   confidence: high
   verified: true
 related_datasets:
+- id: china-census
+  relation: complement
 - id: uhs
   relation: related-sampling-frame
 - id: rhs

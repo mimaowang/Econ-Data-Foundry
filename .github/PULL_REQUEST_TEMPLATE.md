@@ -13,9 +13,13 @@
 - [ ] `python scripts/check_secrets.py`
 - [ ] `python scripts/validate_kb.py --write-report`
 - [ ] `python scripts/build_views.py`
-- [ ] `python scripts/validate_kb.py`
 - [ ] `python scripts/export_catalog.py`
+- [ ] `python scripts/build_site.py`
+- [ ] `python scripts/build_quality_card.py`
+- [ ] `python scripts/check_generated_views.py`
+- [ ] `python scripts/validate_kb.py`
 - [ ] `python -m pytest`
+- [ ] `python -m ruff check .`
 
 ## Safety
 
