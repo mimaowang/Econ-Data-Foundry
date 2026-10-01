@@ -2,7 +2,7 @@
 
 <p align="center"><a href="#简体中文">简体中文</a> · <a href="#english">English</a></p>
 
-<p align="center"><strong>让你的 agent 为研究 idea 匹配最合适的数据，并建立你所在领域的详细数据指南。</strong></p>
+<h2 align="center">让你的 agent 为研究 idea 匹配最合适的数据，并建立你所在领域的详细数据指南。</h2>
 
 <p align="center">
   <a href="https://github.com/mimaowang/Econ-DataKnowhow/actions/workflows/validate.yml"><img alt="CI" src="https://github.com/mimaowang/Econ-DataKnowhow/actions/workflows/validate.yml/badge.svg"></a>
